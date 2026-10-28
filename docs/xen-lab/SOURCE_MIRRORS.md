@@ -1,6 +1,6 @@
 # 源码镜像与复现
 
-本工程用 Yocto 编译 Xen、Pi4 内核、Dom0 和 guest1。镜像源提供构建配方和软件源码；Debian/Ubuntu 的 `.orig.tar.*` 是源码包。下面记录源码选择、校验和复现方法。完整镜像构建与自建镜像 QEMU 验证仍在进行，最终结果见 [STATUS.md](STATUS.md)；这里的源码或独立 bootstrap 检查不能代替这些结果。
+本工程已用 Yocto 编译 Xen、Pi4 内核、Dom0 和 guest1，生成整卡镜像，并用同一完整镜像通过 10/10 项 QEMU 检查与 31/31 条目标命令。镜像源提供构建配方和软件源码；Debian/Ubuntu 的 `.orig.tar.*` 是源码包。下面记录源码选择、校验和复现方法；最终构建和运行证据见 [STATUS.md](STATUS.md)。
 
 此次访问故障按域名出现：部分原站的代理连接返回 `403`，GitHub 和部分发行版镜像仍可访问。[原始连接记录](evidence/yocto-source-build/20261028/source-access.log)保留了失败信息。此前能取得其他来源的文件，不代表这些原站也能访问；现有证据不能据此断言网络配置发生过变化。下面的镜像配置解决源码获取，后续 Git 发布源码缺少生成文件的问题则由明确的构建步骤补齐。
 
@@ -45,4 +45,6 @@ python3 scripts/mirror-sources.py
 
 `sources` 在构建容器内生成任务图，再由 [source-manifest.py](../../scripts/source-manifest.py) 导出展开后的 URL、固定提交、下载路径及摘要到 `local/source-manifest.json`。[mirror-sources.py](../../scripts/mirror-sources.py) 是可选缓存辅助工具，只有下载字节匹配清单中的 SHA256 才会写入 `.cache/downloads/`；现有缓存摘要不符时会报错并保留原文件。结果写入 `local/source-mirrors.json`。它沿用正常代理和证书校验，在托管云环境中只尝试允许的源站或镜像域名。
 
-验证结果必须按范围读取：[源码证据目录](evidence/source-mirrors/20261028/)中的标签、签名、许可证、补丁及离线 bootstrap/native 编译记录，只证明各自记录的检查。例如 Autoconf 的独立编译通过，不代表完整 BitBake 构建通过。正式构建任务、镜像导出和 QEMU 验证分别查看 `local/logs/`、[STATUS.md](STATUS.md) 与 [QEMU.md](QEMU.md)；完整交付需要实际整卡产物和对该产物的运行记录。
+构建完成后已刷新[最终源码清单](evidence/yocto-image/20261028/source-manifest.json)：224 条源码记录；对应[任务图配方清单](evidence/yocto-image/20261028/pn-buildlist)为 232 个配方。[导出日志](evidence/yocto-image/20261028/source-manifest.log)、[构建版本](evidence/yocto-image/20261028/versions.json)和[镜像来源记录](evidence/yocto-image/20261028/provenance.json)一起保存，便于追溯实际交付镜像。
+
+验证结果必须按范围读取：[源码证据目录](evidence/source-mirrors/20261028/)中的标签、签名、许可证、补丁及离线 bootstrap/native 编译记录，只证明各自记录的检查。例如 Autoconf 的独立编译通过，不代表完整 BitBake 构建通过。本次完整构建另有[导出记录](evidence/yocto-image/20261028/build-export.log)，实际整卡运行另有 [QEMU 报告](evidence/yocto-image/20261028/report.json)；Pi4 实机验证仍未进行。

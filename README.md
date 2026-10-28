@@ -2,7 +2,23 @@
 
 目标：用同一套 Yocto 工程从源码构建 Raspberry Pi 4（AArch64）的 Xen、Dom0 Linux 和唯一的 Linux guest `guest1`，一起打包成可烧录的整卡镜像。guest 由操作者手动启动。本期不包含 TEE、安全启动或加密服务。
 
-**交付要求是 Yocto 自建的 Pi4 整卡产物及其运行验证。已配置可访问的源码镜像并开始实际 BitBake 编译；完整镜像及其 QEMU 验证尚未完成。** 先前通过的 Debian QEMU 实验保留为[历史记录](docs/xen-lab/evidence/qemu/20261028/report.json)，不作为本次自建 Pi4 镜像的验收结果。详见[状态记录](docs/xen-lab/STATUS.md)。
+**Yocto 自建整卡镜像已完成，并使用同一张完整镜像通过 QEMU 验证：10/10 项检查、31/31 条目标命令成功。** 静态检查 41 项通过，3 项运行或硬件检查保留为 `NOT_RUN`；辅助工具测试 99/99 通过。Pi4 实机、Pi 固件 → U-Boot 启动链仍待验证。详见[状态记录](docs/xen-lab/STATUS.md)和[本次运行报告](docs/xen-lab/evidence/yocto-image/20261028/report.json)。
+
+## 拉取并恢复可烧录镜像
+
+仓库包含经过验证的镜像压缩分片及清单。在已有仓库根目录执行：
+
+```sh
+git pull
+python3 scripts/repo-image.py restore
+```
+
+恢复只需要 Python 3 标准库，不需要 Docker 或重新编译。脚本校验每个分片、完整压缩流和恢复后的镜像，输出 `artifacts/pi4-xen-dom0-guest1.img`：
+
+- 大小：`1295329280` 字节。
+- SHA256：`49fe88a3649b446cabcda7aa7c27ad81845bb950a3cfe602b0d057d5ab53e305`。
+
+在 Raspberry Pi Imager 中选择 **Use Custom**，打开该 `.img`，选择目标 SD 卡并确认烧录。建议使用 8 GB 或更大的卡。镜像清单位于 [artifacts/repository-image/manifest.json](artifacts/repository-image/manifest.json)，构建版本和检查证据也随仓库提供。若要在电脑上复测同一镜像，安装 Docker Engine 后执行 `./scripts/qemu-yocto.sh validate`。
 
 ## 从源码构建并验证 Pi4 镜像
 
@@ -29,7 +45,7 @@ Dom0 和 guest 根文件系统分别记录 Yocto 构建标记。guest 内核、�
 
 `./scripts/container.sh sources` 导出实际选中配方的源码 URL、固定提交和压缩包校验值到 `local/source-manifest.json`。`scripts/mirror-sources.py` 可据此预取校验完全一致的备用压缩包；现有缓存内容不匹配时会报错，不能覆盖后继续。固定 Ubuntu 构建宿主配置位于 `meta-pi4-xen-lab/conf/build-host.inc`，目标系统的工具链和 libc 仍由 Yocto 从源码编译。
 
-默认最多两个 BitBake 任务、每个任务两个编译线程；启用 `rm_work` 以减少磁盘占用。建议为首次 Yocto 构建准备至少 100 GiB 可用磁盘，这是工程规划值，不是本项目实测峰值。现有云工作盘只有约 30 GiB，磁盘监视器会在空间不足时停止任务，不能保证全量构建能容纳。修改 `local/site.conf` 可覆盖并行度和缓存路径。不要删除下载缓存、sstate 或全量构建目录来代替故障诊断。
+默认最多两个 BitBake 任务、每个任务两个编译线程；启用 `rm_work` 以减少磁盘占用。建议为首次 Yocto 构建准备至少 100 GiB 可用磁盘，这是工程规划值，不是本项目实测峰值。本次在初始可用约 30 GiB 的云工作盘上完成构建，期间曾触发低空间停止，清理旧实验临时文件与闲置容器层后恢复。修改 `local/site.conf` 可覆盖并行度和缓存路径。不要删除下载缓存、sstate 或全量构建目录来代替故障诊断。
 
 无需手动安装 AArch64 交叉编译器；Yocto 会构建并选择自己的工具链。`build/conf/` 由脚本生成，有人工修改时脚本拒绝覆盖。所有依赖检出在 `.cache/sources/`，下载和 sstate 缓存分别在 `.cache/downloads/` 和 `.cache/sstate/`。
 
@@ -44,20 +60,20 @@ Dom0 和 guest 根文件系统分别记录 Yocto 构建标记。guest 内核、�
 
 运行准备脚本后这些文件权限为 `0600`；Git 不保存该权限，所以只拉取代码后直接使用 SSH 私钥时先执行 `chmod 600 local/credentials/id_ed25519`。这些已共享的凭据只用于本实验。构建仅使用公钥与哈希，日志不输出私钥或明文密码。SSH 禁用密码认证，使用公钥；guest1 的本地 Xen 控制台按教学用途自动进入 root shell。
 
-## 构建成功后的产物
+## 产物与证据
 
-成功构建和检查后，导出脚本生成：
+本次构建和检查已生成：
 
 - `artifacts/pi4-xen-dom0-guest1.img`：用于 Raspberry Pi Imager → Use Custom 的未压缩整卡镜像。
 - `artifacts/SHA256SUMS`、`versions.json`：校验值、镜像大小及实际选中的版本。
 - `artifacts/pi4-xen-kernel.config`、`pi4-xen-kernel.json`：最终内核配置、实际版本和源码提交。
 - `artifacts/pi4-guest1.manifest`、`artifacts/checks/`：自建 guest 包清单，以及整卡中 guest 载荷与构建输出一致的检查证据。
 
-这些是预期输出路径，文件不存在时不能烧录。原生 `.wic` 保留在 `build/tmp/deploy/images/raspberrypi4-64/`。建议使用 8 GB 或更大的卡，并以最终镜像实际字节数确认卡容量。使用 Imager 烧录需要用户选择并确认实体存储设备。
+Git 保存镜像分片、上述版本和检查文件，原始 `.img` 由 `repo-image.py restore` 恢复。自行构建时，原生 `.wic` 还保留在 `build/tmp/deploy/images/raspberrypi4-64/`。完整[构建导出日志](docs/xen-lab/evidence/yocto-image/20261028/build-export.log)、[静态检查](docs/xen-lab/evidence/yocto-image/20261028/image-checks.json)、[QEMU 串口日志](docs/xen-lab/evidence/yocto-image/20261028/serial.log)和[工具测试记录](docs/xen-lab/evidence/yocto-image/20261028/tool-tests.log)随仓库提供。
 
 ## 上板操作
 
-构建通过后，使用 3.3 V UART（GPIO14 TX、GPIO15 RX、共地，115200 8N1）捕获启动日志。启动链为 Pi 固件 → U-Boot → Xen → Dom0；接入以太网，Dom0 通过 DHCP 获取地址。在串口使用 root 和上述密码登录，通过 `ip -4 addr` 确认地址。从电脑连接：
+烧录后，使用 3.3 V UART（GPIO14 TX、GPIO15 RX、共地，115200 8N1）捕获启动日志。启动链为 Pi 固件 → U-Boot → Xen → Dom0；接入以太网，Dom0 通过 DHCP 获取地址。在串口使用 root 和上述密码登录，通过 `ip -4 addr` 确认地址。从电脑连接：
 
 ```sh
 ssh -i local/credentials/id_ed25519 root@DOM0_IP
