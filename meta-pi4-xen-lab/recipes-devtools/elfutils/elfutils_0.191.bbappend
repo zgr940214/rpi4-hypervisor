@@ -7,6 +7,14 @@ SRCREV = "18a015c0b0787ba5acb39801ab7c17dac50f584d"
 # autotools.bbclass installs gettext auxiliaries here when autopoint is skipped.
 AUTOTOOLS_AUXDIR = "${S}/config"
 
+# Release tarballs also include this standard gettext auxiliary. Poky's
+# autoreconf skips autopoint, so install it from the built gettext-native.
+DEPENDS:append = " gettext-native"
+do_configure[prefuncs] += "pi4_elfutils_gettext_aux"
+pi4_elfutils_gettext_aux() {
+    install -m 0644 ${STAGING_DATADIR_NATIVE}/gettext/ABOUT-NLS ${S}/ABOUT-NLS
+}
+
 # Git omits the release's generated disassembler tables. Generate these on the
 # build host, then stage the source headers for the cross build. Target binaries
 # must never be executed as build tools.

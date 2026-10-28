@@ -398,8 +398,21 @@ def main(argv=None):
     parser.add_argument("--guest-kernel-config", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--temp-dir", type=Path)
+    parser.add_argument("--native-sysroot", type=Path,
+                        help="Use matching Yocto native filesystem tools retained by the image recipe")
     args = parser.parse_args(argv)
     report = Report(args.output)
+    if args.native_sysroot:
+        native = args.native_sysroot.resolve()
+        directories = [native / part for part in ("sbin", "usr/sbin", "bin", "usr/bin")]
+        missing_native = [name for name in ("e2fsck", "debugfs", "dumpe2fs")
+                          if not any((directory / name).is_file() for directory in directories)]
+        if missing_native:
+            report.add("native_inspection_tools", "BLOCKED",
+                       f"Missing built native tools under {native}: {', '.join(missing_native)}")
+            return report.finish(args.image)
+        os.environ["PATH"] = os.pathsep.join(map(str, directories)) + os.pathsep + os.environ.get("PATH", "")
+        report.add("native_inspection_tools", "PASS", {"sysroot": str(native)})
     tools = ("mcopy", "mdir", "debugfs", "dumpe2fs", "e2fsck", "readelf")
     missing = [name for name in tools if not shutil.which(name)]
     if missing:

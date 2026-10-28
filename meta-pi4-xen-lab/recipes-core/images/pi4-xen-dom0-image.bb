@@ -21,6 +21,10 @@ WKS_FILE_DEPENDS = "parted-native dosfstools-native mtools-native bmaptool-nativ
 IMAGE_ROOTFS_EXTRA_SPACE = "262144"
 IMAGE_OVERHEAD_FACTOR = "1.3"
 
+# Export inspections use the built e2fsprogs version, including orphan_file support.
+# rm_work may remove the rootfs and task work but must retain these host tools.
+RM_WORK_EXCLUDE_ITEMS:append = " recipe-sysroot-native"
+
 IMAGE_BOOT_FILES:append = " xen-${MACHINE};xen"
 do_image_wic[depends] += "xen:do_deploy u-boot-default-script:do_deploy"
 
