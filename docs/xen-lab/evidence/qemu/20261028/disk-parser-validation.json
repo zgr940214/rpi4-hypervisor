@@ -1,0 +1,78 @@
+{
+  "result": "passed",
+  "scope": "Offline execution of xlu_disk_parse from the actual Yocto-built AArch64 libxlutil under qemu-aarch64-static. This parser check does not itself demonstrate guest boot or disk I/O.",
+  "source_commit": "026c9fa29716b0ff0f8b7c687908e71ba29cf239",
+  "source_evidence": [
+    {
+      "path": "docs/man/xl-disk-configuration.5.pod.in",
+      "lines": [
+        81,
+        88
+      ],
+      "rule": "Named target= consumes the rest of DISKSPEC and must come last."
+    },
+    {
+      "path": "tools/libs/util/libxlu_disk_l.l",
+      "lines": [
+        226,
+        228
+      ],
+      "rule": "target=.* matches the remainder and saves it as pdev_path."
+    },
+    {
+      "path": "tools/libs/util/libxlu_disk.c",
+      "lines": [
+        82,
+        84
+      ],
+      "rule": "Missing disk->vdev produces no vdev specified and EINVAL."
+    }
+  ],
+  "runtime_libraries": [
+    {
+      "path": "build/tmp/sysroots-components/cortexa72/xen-tools/usr/lib/libxlutil.so.4.19.0",
+      "sha256": "02aebd7b7d727ac7fb926e7925e861ba7600f3372d766fd4109e2a8b5a89cd8d"
+    },
+    {
+      "path": "build/tmp/sysroots-components/cortexa72/xen-tools/usr/lib/libxenlight.so.4.19.0",
+      "sha256": "4920fa429016c626c0cbdd2d5036fb63d284df07c71ff71518ac509632fd7129"
+    },
+    {
+      "path": "build/tmp/sysroots-components/cortexa72/glibc/usr/lib/libc.so.6",
+      "sha256": "a6464294d246d49100b165ed4e2c95e06d178bf2627fced35c1db59b823a5151"
+    }
+  ],
+  "environment": {
+    "container_image": "pi4-xen-qemu:4.19",
+    "network": "none",
+    "root_filesystem": "read-only",
+    "repository_mount": "/work:read-only",
+    "artifact_mutations": false,
+    "hypervisor_required": false
+  },
+  "harness": "disk-parser-probe.c",
+  "runner": "disk-parser-run.sh",
+  "output": "disk-parser-result.log",
+  "compile_command": "aarch64-linux-gnu-gcc -O2 -Wall -Wextra -I/work/build/tmp/sysroots-components/cortexa72/xen-tools/usr/include /probe/probe.c -L/work/build/tmp/sysroots-components/cortexa72/xen-tools/usr/lib -Wl,--allow-shlib-undefined -lxlutil -lxenlight -o /probe/probe",
+  "execution": "qemu-aarch64-static invokes the Yocto glibc loader with a library path containing target sysroot components; no hypervisor or image boot is used.",
+  "cases": [
+    {
+      "name": "old-target-first",
+      "return_code": 22,
+      "process_exit": 1,
+      "vdev": null,
+      "backend": "unknown",
+      "target": "/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy"
+    },
+    {
+      "name": "fixed-target-last",
+      "return_code": 0,
+      "process_exit": 0,
+      "vdev": "xvda",
+      "format": "raw",
+      "backend": "phy",
+      "readwrite": 1,
+      "target": "/var/lib/xen/images/guest1/rootfs.ext4"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+
+INPUT=target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy
+offline-disk-probe: config parsing error in disk specification: no vdev specified in `target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy'
+rc=22 error=Invalid argument
+vdev=(null)
+format=raw
+backend=unknown
+readwrite=1
+target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy
+PROCESS_EXIT=1
+
+INPUT=format=raw,vdev=xvda,access=rw,backendtype=phy,target=/var/lib/xen/images/guest1/rootfs.ext4
+rc=0 error=none
+vdev=xvda
+format=raw
+backend=phy
+readwrite=1
+target=/var/lib/xen/images/guest1/rootfs.ext4
+PROCESS_EXIT=0
