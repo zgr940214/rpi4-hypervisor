@@ -25,14 +25,24 @@ do_install:append:class-native() {
     install -m 0644 ${S}/libcpu/i386_dis.h ${S}/libcpu/x86_64_dis.h ${D}${datadir}/elfutils-source/
 }
 
+# Git omits gettext's quoted-English catalogue rules and their auxiliaries.
+# Preserve the release LINGUAS and generate both catalogues with gettext-native.
+pi4_elfutils_translation_aux() {
+    for aux in Rules-quot quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin; do
+        install -m 0644 ${STAGING_DATADIR_NATIVE}/gettext/po/$aux ${S}/po/
+    done
+}
+
 DEPENDS:append:class-target = " elfutils-native"
 do_configure:prepend:class-target() {
+    pi4_elfutils_translation_aux
     install -m 0644 ${STAGING_DATADIR_NATIVE}/elfutils-source/i386_dis.h ${STAGING_DATADIR_NATIVE}/elfutils-source/x86_64_dis.h ${S}/libcpu/
     install -m 0644 ${STAGING_INCDIR_NATIVE}/elfutils/known-dwarf.h ${S}/libdw/
 }
 
 DEPENDS:append:class-nativesdk = " elfutils-native"
 do_configure:prepend:class-nativesdk() {
+    pi4_elfutils_translation_aux
     install -m 0644 ${STAGING_DATADIR_NATIVE}/elfutils-source/i386_dis.h ${STAGING_DATADIR_NATIVE}/elfutils-source/x86_64_dis.h ${S}/libcpu/
     install -m 0644 ${STAGING_INCDIR_NATIVE}/elfutils/known-dwarf.h ${S}/libdw/
 }
