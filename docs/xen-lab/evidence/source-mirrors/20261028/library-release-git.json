@@ -258,7 +258,7 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
       "yocto_native_validation": {
         "result": "passed",
         "tasks": [
@@ -421,7 +421,7 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
       "offline_autoreconf": "passed using pi4-xen-qemu:4.19 tools, with network disabled",
       "yocto_native_validation": {
         "result": "passed",
@@ -484,7 +484,28 @@
       ],
       "bitbake_style_local_clone_checkout": "passed",
       "patches": [],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
+      "yocto_target_validation": {
+        "machine": "raspberrypi4-64",
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot",
+          "do_package_qa",
+          "do_package_write_ipk"
+        ],
+        "source_log": "local/logs/build-mirrors-13.log",
+        "observations": [
+          "NOTE: recipe iproute2-6.7.0-r0: task do_configure: Succeeded",
+          "NOTE: recipe iproute2-6.7.0-r0: task do_compile: Succeeded",
+          "NOTE: recipe iproute2-6.7.0-r0: task do_install: Succeeded",
+          "NOTE: recipe iproute2-6.7.0-r0: task do_populate_sysroot: Succeeded",
+          "NOTE: recipe iproute2-6.7.0-r0: task do_package_qa: Succeeded",
+          "NOTE: recipe iproute2-6.7.0-r0: task do_package_write_ipk: Succeeded"
+        ]
+      }
     },
     {
       "package": "kbd",
@@ -515,7 +536,7 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
       "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source",
       "yocto_target_validation": {
         "machine": "raspberrypi4-64",
@@ -561,7 +582,7 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
       "yocto_target_validation": {
         "machine": "raspberrypi4-64",
         "result": "passed",
@@ -596,7 +617,7 @@
       ],
       "bitbake_style_local_clone_checkout": "passed",
       "patches": [],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "validation_scope": "Source provenance, original license hashes, existing recipe patches, and local checkout were checked. Actual Yocto task results for the native or Raspberry Pi 4 target variants are recorded separately below; these component checks do not establish complete-image or runtime validation.",
       "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source",
       "yocto_native_validation": {
         "result": "passed",
