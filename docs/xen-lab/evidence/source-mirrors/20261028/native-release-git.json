@@ -483,7 +483,7 @@
     ],
     "bootstrap": "configure.ac AC_INIT is 0.191; native maintainer-mode builds generated source headers. Stage libcpu disassembler tables and the native-installed libdw known-dwarf.h for target/nativesdk builds.",
     "commit_metadata": "18a015c0b0787ba5acb39801ab7c17dac50f584d\n2024-03-01T12:31:49-05:00\nPrepare for 0.191",
-    "bitbake_compile": "PASS: elfutils-native configure, compile, install and populate_sysroot verified in build pass 11.",
+    "bitbake_compile": "PASS: elfutils-native configure/compile/install/populate_sysroot in pass 11; target elfutils configure/compile/install/populate_sysroot and packaging QA/IPK output in pass 13.",
     "independent_host_verification": "PASS: autoreconf + configure --enable-maintainer-mode + full native compile with all original patches, elflint version0.191, both source tables generated",
     "generated_headers": {
       "i386_dis.h": "c885f73bce1b9bf24a56360ada7cdb8b3534749f76117ea6e970669fea59b07f",
@@ -537,29 +537,72 @@
     "target_bitbake_verification": {
       "recipe": "elfutils",
       "recipe_id": "elfutils-0.191-r0",
-      "log": "local/logs/build-mirrors-12.log",
+      "variant": "target",
+      "status": "PASS",
+      "as_of_build_pass": 13,
+      "log": "local/logs/build-mirrors-13.log",
       "tasks": [
         {
           "task": "do_configure",
           "status": "PASS",
-          "line": 348
+          "line": 67
         },
         {
           "task": "do_compile",
-          "status": "FAIL",
-          "line": 1673
+          "status": "PASS",
+          "line": 70
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 73
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 78
+        },
+        {
+          "task": "do_package",
+          "status": "PASS",
+          "line": 87
+        },
+        {
+          "task": "do_packagedata",
+          "status": "PASS",
+          "line": 90
+        },
+        {
+          "task": "do_package_qa",
+          "status": "PASS",
+          "line": 93
+        },
+        {
+          "task": "do_package_write_ipk",
+          "status": "PASS",
+          "line": 96
+        },
+        {
+          "task": "do_create_spdx",
+          "status": "PASS",
+          "line": 99
+        },
+        {
+          "task": "do_create_runtime_spdx",
+          "status": "PASS",
+          "line": 102
+        },
+        {
+          "task": "do_rm_work",
+          "status": "PASS",
+          "line": 105
         }
       ],
-      "status": "INCOMPLETE",
-      "variant": "target",
-      "as_of_build_pass": 12,
-      "observed_failure": {
-        "stage": "do_compile",
-        "message": "File en@quot.po does not exist; en@quot.po-create failed during translation catalog generation.",
-        "log_line": 1664
-      },
-      "diagnosis": "The standard gettext po/Rules-quot auxiliary is absent from the Git source bootstrap; a targeted auxiliary-copy fix is staged separately. No target compile/install/sysroot success is claimed.",
-      "staged_fix": "local/reviewpatches/elfutils-quoted-catalogues.patch"
+      "scope": "Only the listed target recipe tasks; the pass log was still active when recorded, so no final whole-log hash is asserted. This does not certify full-image or QEMU completion.",
+      "resolved_git_source_gaps": [
+        "Copy known-dwarf.h generated and installed by elfutils-native into target libdw before configuring; avoids executing a target generator.",
+        "Restore the standard gettext po/Rules-quot auxiliary from built gettext-native so en@quot and en@boldquot catalogs can be generated."
+      ]
     }
   },
   {
