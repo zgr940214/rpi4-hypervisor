@@ -1,0 +1,444 @@
+[
+  {
+    "source": "git://git.yoctoproject.org/pseudo;branch=master;protocol=https",
+    "recipe": "pseudo-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.pseudo",
+    "checks": [
+      {
+        "revision": "ba8887e5f1e922f866681ec7dec1a00b602a9328",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https",
+    "recipe": "linux-yocto",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.linux-yocto.git",
+    "checks": [
+      {
+        "revision": "0d5c8af531e021d38d2589c109268b644bdf3320",
+        "branch": "v6.6/standard/bcm-2xxx-rpi",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https",
+    "recipe": "linux-yocto",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+    "checks": [
+      {
+        "revision": "dd201eb6ec53179f45836d41610ca68c725d28e2",
+        "branch": "yocto-6.6",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "recipe": "cross-localedef-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.glibc.git",
+    "checks": [
+      {
+        "revision": "be1e627cd72db31161a3b4ce1c8114674f0895eb",
+        "branch": "release/2.39/master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "recipe": "opkg-utils-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+    "checks": [
+      {
+        "revision": "589880d01969eb9af1e66120e731d43193504718",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "recipe": "update-rc.d-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+    "checks": [
+      {
+        "revision": "b8f950105010270a768aa12245d6abf166346015",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "recipe": "u-boot",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+    "checks": [
+      {
+        "revision": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git;branch=master;protocol=https",
+    "recipe": "btrfs-tools-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.linux.kernel.git.kdave.btrfs-progs.git",
+    "checks": [
+      {
+        "revision": "60abf7a90776c2405f616182ef6129474bbcb109",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://sourceware.org/git/binutils-gdb.git;branch=binutils-2_42-branch;protocol=https",
+    "recipe": "binutils-cross-aarch64",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.binutils-gdb.git",
+    "checks": [
+      {
+        "revision": "f9488b0d92b591bdf3ff8cce485cb0e1b3727cc0",
+        "branch": "binutils-2_42-branch",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "recipe": "e2fsprogs-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+    "checks": [
+      {
+        "revision": "f4c9cc4bedacde8408edda3520a32d3842290112",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git;branch=master;protocol=https",
+    "recipe": "erofs-utils-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.linux.kernel.git.xiang.erofs-utils.git",
+    "checks": [
+      {
+        "revision": "83d94dc619075e71ca4d0f42941cfc18d269a2af",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://gitlab.freedesktop.org/pkg-config/pkg-config.git;branch=master;protocol=https",
+    "recipe": "pkgconfig-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.pkg-config.pkg-config.git",
+    "checks": [
+      {
+        "revision": "d97db4fae4c1cd099b506970b285dc2afd818ea2",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "recipe": "kmod-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+    "checks": [
+      {
+        "revision": "aff617ea871d0568cc491bd116c0be1e857463bb",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/yocto-kernel-tools.git;branch=master;protocol=https",
+    "recipe": "kern-tools-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-tools.git",
+    "checks": [
+      {
+        "revision": "7160ebe8b865dd6028aef278efa219433db93f7e",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/yocto-kernel-cache;branch=yocto-6.6",
+    "recipe": "yocto-cfg-fragments-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+    "checks": [
+      {
+        "revision": "eb283ea577df80542d48f0c498365960b4c4ecd9",
+        "branch": "yocto-6.6",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "recipe": "glibc",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.glibc.git",
+    "checks": [
+      {
+        "revision": "be1e627cd72db31161a3b4ce1c8114674f0895eb",
+        "branch": "release/2.39/master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "recipe": "dtc-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+    "checks": [
+      {
+        "revision": "039a99414e778332d8f9c04cbd3072e1dcc62798",
+        "branch": "main",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "recipe": "dtc",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+    "checks": [
+      {
+        "revision": "039a99414e778332d8f9c04cbd3072e1dcc62798",
+        "branch": "main",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://codeberg.org/jmoyer/libaio.git;protocol=https;branch=master",
+    "recipe": "libaio",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/codeberg.org.jmoyer.libaio.git",
+    "checks": [
+      {
+        "revision": "1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://gitlab.com/procps-ng/procps.git;protocol=https;branch=master",
+    "recipe": "procps",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.com.procps-ng.procps.git",
+    "checks": [
+      {
+        "revision": "4ddcef2fd843170c8e2d59a83042978f41037a2b",
+        "branch": "master",
+        "exit_code": 128
+      }
+    ],
+    "status": "MISSING_OR_FAILED"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/network/bridge/bridge-utils.git;branch=main",
+    "recipe": "bridge-utils",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.network.bridge.bridge-utils.git",
+    "checks": [
+      {
+        "revision": "75d949b9fae9718201422f0bd3d1103e67dd597c",
+        "branch": "main",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "recipe": "u-boot-tools-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+    "checks": [
+      {
+        "revision": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.savannah.gnu.org/git/config.git;protocol=https;branch=master",
+    "recipe": "gnu-config-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.savannah.gnu.org.git.config.git",
+    "checks": [
+      {
+        "revision": "948ae97ca5703224bd3eada06b7a69f40dd15a02",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "recipe": "opkg-utils",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+    "checks": [
+      {
+        "revision": "589880d01969eb9af1e66120e731d43193504718",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "recipe": "kmod",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+    "checks": [
+      {
+        "revision": "aff617ea871d0568cc491bd116c0be1e857463bb",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "recipe": "bzip2-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+    "checks": [
+      {
+        "revision": "f9061c030a25de5b6829e1abf373057309c734c0",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://salsa.debian.org/debian/debianutils.git;protocol=https;branch=master",
+    "recipe": "debianutils-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/salsa.debian.org.debian.debianutils.git",
+    "checks": [
+      {
+        "revision": "9e0facf19b17b6d090a5dcc8cacb0c16e5ad9f72",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "recipe": "e2fsprogs",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+    "checks": [
+      {
+        "revision": "f4c9cc4bedacde8408edda3520a32d3842290112",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://salsa.debian.org/debian/ifupdown.git;protocol=https;branch=master",
+    "recipe": "ifupdown",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/salsa.debian.org.debian.ifupdown.git",
+    "checks": [
+      {
+        "revision": "369d9d3c13a0c56ad09fd4f13b4a80eb9a94e270",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "recipe": "update-rc.d",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+    "checks": [
+      {
+        "revision": "b8f950105010270a768aa12245d6abf166346015",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "recipe": "shared-mime-info",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+    "checks": [
+      {
+        "revision": "9a6d6b8e963935f145f3a1ef446552de6996dada",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "recipe": "bzip2",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+    "checks": [
+      {
+        "revision": "f9061c030a25de5b6829e1abf373057309c734c0",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "recipe": "shared-mime-info-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+    "checks": [
+      {
+        "revision": "9a6d6b8e963935f145f3a1ef446552de6996dada",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source": "git://codeberg.org/xmlto/xmlto.git;protocol=https;branch=master",
+    "recipe": "xmlto-native",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/codeberg.org.xmlto.xmlto.git",
+    "checks": [
+      {
+        "revision": "6fa6a0e07644f20abf2596f78a60112713e11cbe",
+        "branch": "master",
+        "exit_code": 0
+      }
+    ],
+    "status": "PASS"
+  }
+]

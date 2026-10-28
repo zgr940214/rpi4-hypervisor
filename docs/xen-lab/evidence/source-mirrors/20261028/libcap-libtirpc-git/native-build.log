@@ -1,0 +1,342 @@
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /usr/bin/autoconf --force
+configure.ac:37: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:37: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+configure.ac:37: the top level
+configure.ac:56: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:56: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+configure.ac:56: the top level
+configure.ac:64: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:64: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+configure.ac:64: the top level
+configure.ac:72: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:72: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+./lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
+configure.ac:72: the top level
+configure.ac:93: warning: The macro `AC_PROG_LIBTOOL' is obsolete.
+configure.ac:93: You should run autoupdate.
+m4/libtool.m4:99: AC_PROG_LIBTOOL is expanded from...
+configure.ac:93: the top level
+configure.ac:101: warning: AC_OUTPUT should be used without arguments.
+configure.ac:101: You should run autoupdate.
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:6: installing './compile'
+configure.ac:77: installing './config.guess'
+configure.ac:77: installing './config.sub'
+configure.ac:2: installing './install-sh'
+configure.ac:2: installing './missing'
+src/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory '.'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for gssapi/gssapi.h... no
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for arpa/inet.h... yes
+checking for fcntl.h... yes
+checking for libintl.h... yes
+checking for limits.h... yes
+checking for locale.h... yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for stddef.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for features.h... yes
+checking for gssapi/gssapi_ext.h... no
+checking how to run the C preprocessor... gcc -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for getrpcbyname... yes
+checking for getrpcbynumber... yes
+checking for setrpcent... yes
+checking for endrpcent... yes
+checking for getrpcent... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating man/Makefile
+config.status: creating doc/Makefile
+config.status: creating libtirpc.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory '/work/local/crypto-mirrors/libtirpc'
+Making all in src
+make[2]: Entering directory '/work/local/crypto-mirrors/libtirpc/src'
+  CC       libtirpc_la-auth_none.lo
+  CC       libtirpc_la-auth_unix.lo
+  CC       libtirpc_la-authunix_prot.lo
+  CC       libtirpc_la-binddynport.lo
+  CC       libtirpc_la-bindresvport.lo
+  CC       libtirpc_la-clnt_bcast.lo
+  CC       libtirpc_la-clnt_dg.lo
+  CC       libtirpc_la-clnt_generic.lo
+  CC       libtirpc_la-clnt_perror.lo
+  CC       libtirpc_la-clnt_raw.lo
+  CC       libtirpc_la-clnt_simple.lo
+  CC       libtirpc_la-clnt_vc.lo
+  CC       libtirpc_la-rpc_dtablesize.lo
+  CC       libtirpc_la-getnetconfig.lo
+  CC       libtirpc_la-getnetpath.lo
+  CC       libtirpc_la-getrpcent.lo
+  CC       libtirpc_la-getrpcport.lo
+  CC       libtirpc_la-mt_misc.lo
+  CC       libtirpc_la-pmap_clnt.lo
+  CC       libtirpc_la-pmap_getmaps.lo
+  CC       libtirpc_la-pmap_getport.lo
+  CC       libtirpc_la-pmap_prot.lo
+  CC       libtirpc_la-pmap_prot2.lo
+  CC       libtirpc_la-pmap_rmt.lo
+  CC       libtirpc_la-rpc_prot.lo
+  CC       libtirpc_la-rpc_commondata.lo
+  CC       libtirpc_la-rpc_callmsg.lo
+  CC       libtirpc_la-rpc_generic.lo
+  CC       libtirpc_la-rpc_soc.lo
+  CC       libtirpc_la-rpcb_clnt.lo
+  CC       libtirpc_la-rpcb_prot.lo
+  CC       libtirpc_la-rpcb_st_xdr.lo
+  CC       libtirpc_la-svc.lo
+  CC       libtirpc_la-svc_auth.lo
+  CC       libtirpc_la-svc_dg.lo
+  CC       libtirpc_la-svc_auth_unix.lo
+  CC       libtirpc_la-svc_auth_none.lo
+  CC       libtirpc_la-svc_generic.lo
+  CC       libtirpc_la-svc_raw.lo
+  CC       libtirpc_la-svc_run.lo
+  CC       libtirpc_la-svc_simple.lo
+  CC       libtirpc_la-svc_vc.lo
+  CC       libtirpc_la-getpeereid.lo
+  CC       libtirpc_la-auth_time.lo
+  CC       libtirpc_la-debug.lo
+  CC       libtirpc_la-xdr.lo
+  CC       libtirpc_la-xdr_rec.lo
+  CC       libtirpc_la-xdr_array.lo
+  CC       libtirpc_la-xdr_float.lo
+  CC       libtirpc_la-xdr_mem.lo
+  CC       libtirpc_la-xdr_reference.lo
+  CC       libtirpc_la-xdr_stdio.lo
+  CC       libtirpc_la-xdr_sizeof.lo
+  CC       libtirpc_la-key_call.lo
+  CC       libtirpc_la-key_prot_xdr.lo
+  CC       libtirpc_la-getpublickey.lo
+  CC       libtirpc_la-netname.lo
+  CC       libtirpc_la-netnamer.lo
+  CC       libtirpc_la-rpcdname.lo
+  CC       libtirpc_la-rtime.lo
+  CCLD     libtirpc.la
+make[2]: Leaving directory '/work/local/crypto-mirrors/libtirpc/src'
+Making all in man
+make[2]: Entering directory '/work/local/crypto-mirrors/libtirpc/man'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/work/local/crypto-mirrors/libtirpc/man'
+Making all in doc
+make[2]: Entering directory '/work/local/crypto-mirrors/libtirpc/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/work/local/crypto-mirrors/libtirpc/doc'
+make[2]: Entering directory '/work/local/crypto-mirrors/libtirpc'
+make[2]: Leaving directory '/work/local/crypto-mirrors/libtirpc'
+make[1]: Leaving directory '/work/local/crypto-mirrors/libtirpc'
+libtirpc configure 1.3.4
+generated by GNU Autoconf 2.71
+
+Copyright (C) 2021 Free Software Foundation, Inc.
+This configure script is free software; the Free Software Foundation
+gives unlimited permission to copy, distribute and modify it.
+make -C libcap all
+make[1]: Entering directory '/work/local/crypto-mirrors/libcap/libcap'
+sed -e 's,@prefix@,/usr,' \
+	-e 's,@exec_prefix@,,' \
+	-e 's,@libdir@,/lib64,' \
+	-e 's,@includedir@,/usr/include,' \
+	-e 's,@VERSION@,2.69,' \
+	-e 's,@deps@,,' \
+	libcap.pc.in >libcap.pc
+=> making cap_names.list.h from /work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi/linux/capability.h
+grep -E '^#define\s+CAP_([^\s]+)\s+[0-9]+\s*$' include/uapi/linux/capability.h | sed -e 's/^#define\s\+/{"/' -e 's/\s*$/},/' -e 's/\s\+/",/' -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/' > cap_names.list.h
+make libpsx.pc
+gcc -O2 -Dlinux -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code  -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include _makenames.c -o _makenames
+make[2]: Entering directory '/work/local/crypto-mirrors/libcap/libcap'
+sed -e 's,@prefix@,/usr,' \
+	-e 's,@exec_prefix@,,' \
+	-e 's,@libdir@,/lib64,' \
+	-e 's,@includedir@,/usr/include,' \
+	-e 's,@VERSION@,2.69,' \
+	-e 's,@deps@,,' \
+	libpsx.pc.in >libpsx.pc
+make[2]: Leaving directory '/work/local/crypto-mirrors/libcap/libcap'
+./_makenames > cap_names.h
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c cap_alloc.c -o cap_alloc.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c cap_proc.c -o cap_proc.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c cap_extint.c -o cap_extint.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c cap_flag.c -o cap_flag.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include  -c cap_text.c -o cap_text.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c cap_file.c -o cap_file.o
+ar rcs libcap.a cap_alloc.o cap_proc.o cap_extint.o cap_flag.o cap_text.o cap_file.o
+ranlib libcap.a
+make libcap.so
+make[2]: Entering directory '/work/local/crypto-mirrors/libcap/libcap'
+gcc -o empty empty.c
+objcopy --dump-section .interp=loader.txt empty /dev/null
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -DLIBRARY_VERSION=\"libcap-2.69\" -DSHARED_LOADER=\"/lib64/ld-linux-x86-64.so.2\" -include ./libcap.h -c execable.c -o cap_magic.o
+gcc -Wl,-x -shared -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC  -Wl,-soname,libcap.so.2 -o libcap.so.2.69 cap_alloc.o cap_proc.o cap_extint.o cap_flag.o cap_text.o cap_file.o cap_magic.o -Wl,-e,__so_start
+ln -sf libcap.so.2.69 libcap.so.2
+ln -sf libcap.so.2 libcap.so
+make[2]: Leaving directory '/work/local/crypto-mirrors/libcap/libcap'
+make libpsx.a
+make[2]: Entering directory '/work/local/crypto-mirrors/libcap/libcap'
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -c ../psx/psx.c -o ../psx/psx.o
+rm -f include/sys/psx_syscall.h
+ln -s ../../../psx/psx_syscall.h include/sys/psx_syscall.h
+ar rcs libpsx.a ../psx/psx.o
+ranlib libpsx.a
+make[2]: Leaving directory '/work/local/crypto-mirrors/libcap/libcap'
+make libpsx.so
+make[2]: Entering directory '/work/local/crypto-mirrors/libcap/libcap'
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/libcap/../libcap/include -DLIBRARY_VERSION=\"libpsx-2.69\" -DSHARED_LOADER=\"/lib64/ld-linux-x86-64.so.2\" -c psx_exec.c -o psx_magic.o
+gcc -Wl,-x -shared -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -fPIC  -Wl,-soname,libpsx.so.2 -o libpsx.so.2.69 ../psx/psx.o psx_magic.o -Wl,-e,__so_start -lpthread -Wl,-wrap,pthread_create
+ln -sf libpsx.so.2.69 libpsx.so.2
+ln -sf libpsx.so.2 libpsx.so
+make[2]: Leaving directory '/work/local/crypto-mirrors/libcap/libcap'
+make[1]: Leaving directory '/work/local/crypto-mirrors/libcap/libcap'
+make -C tests all
+make[1]: Entering directory '/work/local/crypto-mirrors/libcap/tests'
+leave test building to test target
+make[1]: Leaving directory '/work/local/crypto-mirrors/libcap/tests'
+make -C progs all
+make[1]: Entering directory '/work/local/crypto-mirrors/libcap/progs'
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/progs/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/progs/../libcap/include -c getpcaps.c -o getpcaps.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/progs/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/progs/../libcap/include -c getcap.c -o getcap.o
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/progs/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/progs/../libcap/include -c setcap.c -o setcap.o
+./mkcapshdoc.sh > capshdoc.c.cf
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code  getpcaps.o -L/work/local/crypto-mirrors/libcap/progs/../libcap -lcap  -o getpcaps
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code  getcap.o -L/work/local/crypto-mirrors/libcap/progs/../libcap -lcap  -o getcap
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code  setcap.o -L/work/local/crypto-mirrors/libcap/progs/../libcap -lcap  -o setcap
+diff -u capshdoc.c capshdoc.c.cf || (rm capshdoc.c.cf ; exit 1)
+gcc -O2  -Wall -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wshadow -Wunreachable-code -Dlinux -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -I/work/local/crypto-mirrors/libcap/progs/../libcap/include/uapi -I/work/local/crypto-mirrors/libcap/progs/../libcap/include   capsh.c capshdoc.c -L/work/local/crypto-mirrors/libcap/progs/../libcap -lcap  -o capsh
+make[1]: Leaving directory '/work/local/crypto-mirrors/libcap/progs'
+make -C doc all
+make[1]: Entering directory '/work/local/crypto-mirrors/libcap/doc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/work/local/crypto-mirrors/libcap/doc'
+Current: =
+Bounding set =cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_net_raw,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap
+Ambient set =
+Current IAB: !cap_dac_read_search,!cap_linux_immutable,!cap_net_broadcast,!cap_net_admin,!cap_ipc_lock,!cap_ipc_owner,!cap_sys_module,!cap_sys_rawio,!cap_sys_ptrace,!cap_sys_pacct,!cap_sys_admin,!cap_sys_boot,!cap_sys_nice,!cap_sys_resource,!cap_sys_time,!cap_sys_tty_config,!cap_lease,!cap_audit_control,!cap_mac_override,!cap_mac_admin,!cap_syslog,!cap_wake_alarm,!cap_block_suspend,!cap_audit_read,!cap_perfmon,!cap_bpf,!cap_checkpoint_restore
+Securebits: 00/0x0/1'b0 (no-new-privs=0)
+ secure-noroot: no (unlocked)
+ secure-no-suid-fixup: no (unlocked)
+ secure-keep-caps: no (unlocked)
+ secure-no-ambient-raise: no (unlocked)
+uid=1000(builder) euid=1000(builder)
+gid=1000(builder)
+groups=1000(builder)
+Guessed mode: UNCERTAIN (0)

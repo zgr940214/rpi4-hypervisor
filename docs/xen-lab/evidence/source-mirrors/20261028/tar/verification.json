@@ -1,0 +1,12 @@
+{
+  "package": "tar",
+  "upstream_version": "1.35",
+  "selected_source_variant": "Debian +dfsg repack; no Debian patches or binaries applied",
+  "url": "https://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.35+dfsg.orig.tar.xz",
+  "sha256": "9ae57e981c1e73c0eebc2b26c9b0c4497fe310ef1d516ea430efb5470b71f7a8",
+  "source_index": "../ubuntu-gnu/InRelease authenticates noble/main/source/Sources.xz SHA 4f8e45d8f84dd2a6b7ce87695c70336114b9e96e6fd6db066c115f758e39308e; included tar.sources authenticates archive",
+  "original_license_checksum": "PASS",
+  "all_seven_original_poky_patches": "PASS",
+  "repack_scope": "Included cleanup-script.sh removes doc tree, restores doc/tar.1 and doc/rmt.8, writes no-op doc/Makefile, doc/Makefile.in and explanation doc/README. Script itself is an additional repack metadata file.",
+  "formal_bitbake_build": "reported separately"
+}

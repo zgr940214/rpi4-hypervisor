@@ -1,0 +1,27 @@
+From: Pi4 Xen Lab <pi4-xen-lab@example.invalid>
+Subject: [PATCH] bootstrap: accept dependencies prepared by the build system
+
+BitBake fetches immutable revisions for the build dependencies before running
+tasks without network access. Skip upstream's developer/test submodule update
+when those dependencies have already been prepared. The normal upstream
+bootstrap behavior is unchanged unless explicitly requested.
+
+Upstream-Status: Inappropriate [build-system integration]
+
+--- a/bootstrap.conf
++++ b/bootstrap.conf
+@@ -59,9 +59,11 @@ if test -n "$SUBMODULE_NOFETCH"; then
+   git_options="--no-fetch"
+ fi
+ 
+-for mod in $required_submodules; do
+-  git submodule update --init $git_options $mod
+-done
++if test "${GNUTLS_BOOTSTRAP_OFFLINE:-no}" != yes; then
++  for mod in $required_submodules; do
++    git submodule update --init $git_options $mod
++  done
++fi
+ 
+ # This check needs to be done before actual import.
+ TMP_GNULIB_SRCDIR="${GNULIB_SRCDIR:-gnulib}"

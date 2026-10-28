@@ -1,0 +1,476 @@
+{
+  "source_change": "Explicit same-version upstream Git release sources, not archive checksum substitutions",
+  "libraries": [
+    {
+      "package": "glib",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/GNOME/glib.git",
+      "tag": "2.78.6",
+      "tag_commit": "d40f72e98e4734ba826ba9a278814530720ba760",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "COPYING;md5=41890f71f740302b785c27661123bff5",
+          "md5": "41890f71f740302b785c27661123bff5"
+        },
+        {
+          "file": "glib/glib.h;beginline=4;endline=17;md5=72f7cc2847407f65d8981ef112e4e630",
+          "md5": "72f7cc2847407f65d8981ef112e4e630"
+        },
+        {
+          "file": "LICENSES/LGPL-2.1-or-later.txt;md5=41890f71f740302b785c27661123bff5",
+          "md5": "41890f71f740302b785c27661123bff5"
+        },
+        {
+          "file": "gmodule/gmodule.h;beginline=4;endline=17;md5=72f7cc2847407f65d8981ef112e4e630",
+          "md5": "72f7cc2847407f65d8981ef112e4e630"
+        },
+        {
+          "file": "docs/reference/COPYING;md5=f51a5100c17af6bae00735cd791e1fcc",
+          "md5": "f51a5100c17af6bae00735cd791e1fcc"
+        }
+      ],
+      "submodules": [
+        {
+          "url": "https://github.com/GNOME/gvdb.git",
+          "path": "subprojects/gvdb",
+          "gitlink": "0854af0fdb6d527a8d1999835ac2c5059976c210",
+          "git_fsck": "passed"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [
+        {
+          "file": "0001-Fix-DATADIRNAME-on-uclibc-Linux.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-Remove-the-warning-about-deprecated-paths-in-schemas.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-Install-gio-querymodules-as-libexec_PROGRAM.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0010-Do-not-hardcode-python-path-into-various-tools.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-Set-host_machine-correctly-when-building-with-mingw3.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-Do-not-write-bindir-into-pkg-config-files.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-meson-Run-atomics-test-on-clang-as-well.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-gio-tests-resources.c-comment-out-a-build-host-only-.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-Switch-from-the-deprecated-distutils-module-to-the-p.patch",
+          "result": "passed"
+        },
+        {
+          "file": "memory-monitor.patch",
+          "result": "passed"
+        },
+        {
+          "file": "skip-timeout.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2024-52533.patch",
+          "result": "passed"
+        },
+        {
+          "file": "gdatetime-test-fail-0001.patch",
+          "result": "passed"
+        },
+        {
+          "file": "gdatetime-test-fail-0002.patch",
+          "result": "passed"
+        },
+        {
+          "file": "gdatetime-test-fail-0003.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-03.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-04.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-05.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-3360-06.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-4373-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-4373-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-7039.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-6052-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-6052-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-6052-03.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-13601-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-13601-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-14087-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-14087-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-14087-03.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-14512.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0988.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1484-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1484-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1485.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1489-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1489-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1489-03.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1489-04.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58016-1.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58016-2.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58010.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58011.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58012.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58013.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58014.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58015_p1.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58015_p2.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58015_p3.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-58015_p4.patch",
+          "result": "passed"
+        },
+        {
+          "file": "relocate-modules.patch",
+          "result": "passed"
+        },
+        {
+          "file": "0001-meson.build-do-not-enable-pidfd-features-on-native-g.patch",
+          "result": "passed"
+        }
+      ],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+    },
+    {
+      "package": "libxml2",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/GNOME/libxml2.git",
+      "tag": "v2.12.10",
+      "tag_commit": "02d577715e1951cf114ca4e9adaf5605156c4f4c",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "Copyright;md5=fec7ecfe714722b2bb0aaff7d200c701",
+          "md5": "fec7ecfe714722b2bb0aaff7d200c701"
+        },
+        {
+          "file": "dict.c;beginline=6;endline=15;md5=2b4b7b827d2d8b080372433c4c9c85b6",
+          "md5": "2b4b7b827d2d8b080372433c4c9c85b6"
+        },
+        {
+          "file": "list.c;beginline=4;endline=13;md5=b9c25b021ccaf287e50060602d20f3a7",
+          "md5": "b9c25b021ccaf287e50060602d20f3a7"
+        },
+        {
+          "file": "trio.c;beginline=5;endline=14;md5=cd4f61e27f88c1d43df112966b1cd28f",
+          "md5": "cd4f61e27f88c1d43df112966b1cd28f"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [
+        {
+          "file": "install-tests.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-32414.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-32415.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-6021.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-49794-CVE-2025-49796.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-49795.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-6170.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2025-7425.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0989.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0990.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0992-01.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0992-02.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-0992-03.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-1757.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-11979.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86137.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86138.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86140.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86141.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86142.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86143.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-86144.patch",
+          "result": "passed"
+        }
+      ],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "offline_autoreconf": "passed using pi4-xen-qemu:4.19 tools, with network disabled"
+    },
+    {
+      "package": "iproute2",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/iproute2/iproute2.git",
+      "tag": "v6.7.0",
+      "tag_commit": "3dc3445bbfa9b84d4166e5837f8d5a4994faf2e7",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "COPYING;md5=eb723b61539feef013de476e68b5c50a",
+          "md5": "eb723b61539feef013de476e68b5c50a"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+    },
+    {
+      "package": "kbd",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/legionus/kbd.git",
+      "tag": "v2.6.4",
+      "tag_commit": "d27e4a38e7cb0a0ff0665e8017425911a7cc04f0",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263",
+          "md5": "b234ee4d69f5fce4486a80fdaf4a4263"
+        },
+        {
+          "file": "data/keymaps/pine/en.map;beginline=2;endline=15;md5=20914a59c0546a7b77ebf959bc88ad5d",
+          "md5": "20914a59c0546a7b77ebf959bc88ad5d"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [
+        {
+          "file": "0001-Remove-non-free-Agafari-fonts.patch",
+          "result": "passed"
+        },
+        {
+          "file": "CVE-2026-72693.patch",
+          "result": "passed"
+        }
+      ],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source"
+    },
+    {
+      "package": "pciutils",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/pciutils/pciutils.git",
+      "tag": "v3.11.1",
+      "tag_commit": "08f8e6666a69595ba4532f16a46b9dc46b677860",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "COPYING;md5=751419260aa954499f7abaabaa882bbe",
+          "md5": "751419260aa954499f7abaabaa882bbe"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [
+        {
+          "file": "configure.patch",
+          "result": "passed"
+        }
+      ],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+    },
+    {
+      "package": "popt",
+      "type": "same-version-upstream-release-git",
+      "url": "https://github.com/rpm-software-management/popt.git",
+      "tag": "popt-1.19-release",
+      "tag_commit": "916e61045d268f7e37ade5ec047eb77e8299e6ad",
+      "git_fsck": "passed",
+      "archive_checksum_equivalence": false,
+      "license_checks": [
+        {
+          "file": "COPYING;md5=e0206ac9471d06667e076212db20c5f4",
+          "md5": "e0206ac9471d06667e076212db20c5f4"
+        }
+      ],
+      "bitbake_style_local_clone_checkout": "passed",
+      "patches": [],
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source"
+    }
+  ]
+}

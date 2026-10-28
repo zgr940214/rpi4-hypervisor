@@ -1,0 +1,19 @@
+patching file builtins/mkbuiltins.c
+patching file Makefile.in
+Hunk #1 succeeded at 958 (offset 15 lines).
+patching file tests/run-all
+Hunk #1 succeeded at 57 (offset 24 lines).
+patching file tests/builtins.tests
+Hunk #1 succeeded at 124 (offset 15 lines).
+patching file configure.ac
+patching file general.c
+Hunk #1 succeeded at 264 (offset 2 lines).
+patching file jobs.c
+Hunk #6 succeeded at 4149 (offset 5 lines).
+patching file tests/redir.right
+patching file tests/redir11.sub
+patching file tests/type.right
+patching file tests/type.tests
+patching file builtins/evalstring.c
+patching file aclocal.m4
+patching file configure.ac

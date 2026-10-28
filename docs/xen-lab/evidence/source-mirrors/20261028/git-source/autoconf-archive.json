@@ -1,0 +1,11 @@
+{
+  "recipe": "autoconf-archive",
+  "version": "2023.02.20",
+  "url": "https://github.com/autoconf-archive/autoconf-archive.git",
+  "tag": "v2023.02.20",
+  "commit": "4cd9fa38f0f6cd6998a8d25d25824a0d59ee4fea",
+  "original_two_license_checksums": "PASS",
+  "installed_macro_count": 582,
+  "installation": "Exactly the m4/*.m4 files listed by upstream Makefile.am dist_aclocal_DATA; COPYING, COPYING.EXCEPTION, README.md included. No pkgconfig files exist or are installed upstream. Optional manuals and maintainer-generated AUTHORS omitted.",
+  "formal_bitbake_build": "reported separately"
+}

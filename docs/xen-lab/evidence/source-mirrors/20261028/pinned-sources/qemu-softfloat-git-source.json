@@ -1,0 +1,7 @@
+{
+  "source": "https://gitlab.com/qemu-project/berkeley-softfloat-3.git",
+  "tag": null,
+  "commit": "b64af41c3276f97f0e181920400ee056b9c88037",
+  "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.com.qemu-project.berkeley-softfloat-3.git",
+  "git_fsck": "PASS"
+}

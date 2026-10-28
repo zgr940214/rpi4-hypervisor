@@ -1,0 +1,50 @@
+[
+  {
+    "recipe": "attr",
+    "version": "2.5.1",
+    "format_change": "upstream .tar.gz to same release .tar.xz",
+    "source_url": "https://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1.orig.tar.xz",
+    "downloadfilename": "attr-2.5.1.tar.xz",
+    "bytes": 318188,
+    "sha256": "db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32",
+    "md5": "e459262266bbd82b3dd348fc8cc68a6d",
+    "original_license_checks": {
+      "doc/COPYING": "2d0aa14b3fce4694e4f615e30186335f",
+      "doc/COPYING.LGPL": "b8d31f339300bc239d73461d68e77b9c"
+    },
+    "metadata": {
+      "inrelease_url": "https://deb.debian.org/debian/dists/bookworm/InRelease",
+      "inrelease_sha256": "77737fa4b34f2693e982cc9ee35736816c35a7778fc2d326cc1bbf5b301fe1aa",
+      "sources_url": "https://deb.debian.org/debian/dists/bookworm/main/source/Sources.xz",
+      "sources_sha256": "92d11a035571df011f06f28c61cb9825130ef1d92abb2f2e0525e8674dc44af8",
+      "sources_bytes": 9491888,
+      "trusted_keyring": "/usr/share/keyrings/debian-archive-keyring.gpg"
+    },
+    "verification": "gpgv trusted Debian keyring -> signed InRelease SHA256 -> Sources.xz Checksums-Sha256 -> exact upstream same-version XZ; recipe license hashes unchanged",
+    "status": "VERIFIED"
+  },
+  {
+    "recipe": "acl",
+    "version": "2.3.2",
+    "format_change": "upstream .tar.gz to same release .tar.xz",
+    "source_url": "https://deb.debian.org/debian/pool/main/a/acl/acl_2.3.2.orig.tar.xz",
+    "downloadfilename": "acl-2.3.2.tar.xz",
+    "bytes": 371680,
+    "sha256": "97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd",
+    "md5": "590765dee95907dbc3c856f7255bd669",
+    "original_license_checks": {
+      "doc/COPYING": "c781d70ed2b4d48995b790403217a249",
+      "doc/COPYING.LGPL": "9e9a206917f8af112da634ce3ab41764"
+    },
+    "metadata": {
+      "inrelease_url": "https://deb.debian.org/debian/dists/trixie/InRelease",
+      "inrelease_sha256": "0584fba32e13e0ab8285fb16c27adea1ec03a73669c18702821094fd6ca86675",
+      "sources_url": "https://deb.debian.org/debian/dists/trixie/main/source/Sources.xz",
+      "sources_sha256": "6002f81f463a2d976d84b34170367cc16da2d60bd0ba9ab9d868d6e1c1a935d9",
+      "sources_bytes": 10540436,
+      "trusted_keyring": "/usr/share/keyrings/debian-archive-keyring.gpg"
+    },
+    "verification": "gpgv trusted Debian keyring -> signed InRelease SHA256 -> Sources.xz Checksums-Sha256 -> exact upstream same-version XZ; recipe license hashes unchanged",
+    "status": "VERIFIED"
+  }
+]

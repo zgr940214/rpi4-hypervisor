@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/qemu/qemu.git",
+  "tag": "v8.2.7",
+  "commit": "317c999868dfbc6e4630a39ca10cf189b81d17ad",
+  "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/github.com.qemu.qemu.git",
+  "git_fsck": "PASS",
+  "copying_md5": "441c28d2cf86e15a37fa47e15a72fbac",
+  "copying_lib_md5": "8c5efda6cf1e1b03dcfd0e6c0d271c7f"
+}

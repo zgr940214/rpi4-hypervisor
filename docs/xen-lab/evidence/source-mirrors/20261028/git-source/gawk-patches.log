@@ -1,0 +1,13 @@
+patching file m4/readline.m4
+patching file io.c
+patching file ChangeLog
+patching file io.c
+patching file ChangeLog
+patching file builtin.c
+patching file node.c
+patching file ChangeLog
+patching file builtin.c
+patching file extension/ChangeLog
+patching file extension/readdir.c
+patching file extension/ChangeLog
+patching file extension/readdir.c

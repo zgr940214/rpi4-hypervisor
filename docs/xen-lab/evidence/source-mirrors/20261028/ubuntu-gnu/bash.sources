@@ -1,0 +1,39 @@
+Package: bash
+Format: 3.0 (quilt)
+Binary: bash, bash-static, bash-builtins, bash-doc
+Architecture: any all
+Version: 5.2.21-2ubuntu4
+Priority: required
+Section: shells
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Standards-Version: 4.6.2
+Build-Depends: autoconf, autotools-dev, bison, libncurses5-dev, texinfo, texi2html, debhelper (>= 11), gettext, sharutils, locales <!nocheck>, time <!nocheck>, xz-utils
+Build-Depends-Indep: texlive-latex-base, ghostscript, texlive-fonts-recommended, man2html-base
+Build-Conflicts: r-base-core
+Testsuite: autopkgtest
+Homepage: http://tiswww.case.edu/php/chet/bash/bashtop.html
+Vcs-Browser: https://code.launchpad.net/~doko/+junk/pkg-bash-debian
+Vcs-Bzr: http://bazaar.launchpad.net/~doko/+junk/pkg-bash-debian
+Directory: pool/main/b/bash
+Package-List:
+ bash deb shells required arch=any essential=yes
+ bash-builtins deb utils optional arch=any
+ bash-doc deb doc optional arch=all
+ bash-static deb shells optional arch=any
+Files:
+ a30452618c7ab61f07472f523a19abc4 2437 bash_5.2.21-2ubuntu4.dsc
+ b5acac4803646b77088117c3df3e4f55 5598816 bash_5.2.21.orig.tar.xz
+ 05cfb097873aa6220c48577d5c8b37ed 94124 bash_5.2.21-2ubuntu4.debian.tar.xz
+Checksums-Sha1:
+ 60877e0445b1c0d79a16c37d50ee5d53eed8212b 2437 bash_5.2.21-2ubuntu4.dsc
+ ab3f7f3ee2ca2a79e00037aab518934ba9ae566b 5598816 bash_5.2.21.orig.tar.xz
+ 254e7371bca8e65770f8d78b0a666007c0477690 94124 bash_5.2.21-2ubuntu4.debian.tar.xz
+Checksums-Sha256:
+ d5a89c09f42c828d5e31dc3a1680882aa0ddaad5072963e563dec7dfc4919d33 2437 bash_5.2.21-2ubuntu4.dsc
+ ec21ab4efd6bd7a6e2802fbda622b81bfc43a8095d721234d4bf075797683014 5598816 bash_5.2.21.orig.tar.xz
+ bdb10c18d167dda3b265cb3db75314d524edbf7794fed36f0fb0dcc32f5e6ac9 94124 bash_5.2.21-2ubuntu4.debian.tar.xz
+Checksums-Sha512:
+ 7e783b1a20b339b2c15070e1cf3419a10e94a17c9dda520025b6eeb07f285dcbe8455aa1647254fc422cb314dd1382ef97c65cab088793de699d4714f65eaa0d 2437 bash_5.2.21-2ubuntu4.dsc
+ ccfd5201ebc32feb302db324868bec42a525a6b08176c77e16feb191fcd6ee4240182dcad783e6e3f010c6d33f356b2c628758f0387ef488ab8b3f932e54babb 5598816 bash_5.2.21.orig.tar.xz
+ cbe580880995984a6ceb6c980d2fa87bbb1ace85d834a147ce39eaf44692af654c2c537716a19c8ed21b20e8abad9240d3f3349cc51020aeba2cd6e490802725 94124 bash_5.2.21-2ubuntu4.debian.tar.xz

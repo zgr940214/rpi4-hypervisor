@@ -1,0 +1,5 @@
+{
+  "url": "https://raw.githubusercontent.com/spleen1981/GMP_tarballs/135946054b0ee10925d9fb58edab7e90d9606145/gmp-6.3.0.tar.xz",
+  "sha256": "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898",
+  "proof": "lzma.decompress then bz2.compress(level=9) reproduces the original Poky bz2 SHA256 exactly"
+}

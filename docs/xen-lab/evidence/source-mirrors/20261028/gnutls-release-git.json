@@ -1,0 +1,226 @@
+{
+  "url": "https://github.com/gnutls/gnutls.git",
+  "tag": "3.8.4",
+  "commit": "4a4cefef6c194f8fbbffd7fb19651219421b085b",
+  "license_checks": [
+    {
+      "file": "LICENSE",
+      "md5": "71391c8e0c1cfe68077e7fce3b586283"
+    },
+    {
+      "file": "doc/COPYING",
+      "md5": "1ebbd3e34237af26da5dc08a4e440464"
+    },
+    {
+      "file": "doc/COPYING.LESSER",
+      "md5": "4fbd65380cdd255951079008b364516c"
+    }
+  ],
+  "patch_checks": [
+    {
+      "file": "arm_eabi.patch",
+      "returncode": 0
+    },
+    {
+      "file": "0001-Creating-.hmac-file-should-be-excuted-in-target-envi.patch",
+      "returncode": 0
+    },
+    {
+      "file": "Add-ptest-support.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2024-12243.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-32989.patch",
+      "returncode": 0
+    },
+    {
+      "file": "0001-psk-fix-read-buffer-overrun-in-the-pre_shared_key-ex.patch",
+      "returncode": 0
+    },
+    {
+      "file": "0001-x509-reject-zero-length-version-in-certificate-reque.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-32988.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-32990.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-6395.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-9820.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-2.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-3.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-4.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-5.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-6.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-7.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-8.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2025-14831-9.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42009_p1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42009_p2.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-3833.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42010.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42011_p1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42011_p2.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-33846.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-33845.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-5419.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42012-pre1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42012-pre2.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42012-pre3.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42012.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42013-pre1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42013.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42014.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-42015.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-5260_p1.patch",
+      "returncode": 0
+    },
+    {
+      "file": "CVE-2026-5260_p2.patch",
+      "returncode": 0
+    }
+  ],
+  "submodules": [
+    {
+      "name": "cligen",
+      "url": "https://gitlab.com/gnutls/cligen.git",
+      "commit": "ed2ed7b19a5bcbc0f39505722058befc923eeeda",
+      "path": "cligen",
+      "git_fsck": "passed"
+    },
+    {
+      "name": "nettle",
+      "url": "https://gitlab.com/gnutls/nettle.git",
+      "commit": "236d79b8bc508ae089f63a75c16f87c7076babdf",
+      "path": "devel/nettle",
+      "git_fsck": "passed"
+    },
+    {
+      "name": "libtasn1",
+      "url": "https://gitlab.com/gnutls/libtasn1.git",
+      "commit": "2b7ee166f031bea63c5e7badcedc69f1cea69c89",
+      "path": "devel/libtasn1",
+      "git_fsck": "passed"
+    },
+    {
+      "name": "gnulib",
+      "url": "https://gitlab.com/libidn/gnulib-mirror.git",
+      "commit": "41d5dae3b7d239f167f09e4398f3970845a0ddc0",
+      "path": "gnulib",
+      "git_fsck": "passed"
+    }
+  ],
+  "offline_bootstrap": {
+    "result": "passed",
+    "container_image": "pi4-xen-bootstrap-check:local",
+    "network": "none",
+    "command": "GNUTLS_BOOTSTRAP_OFFLINE=yes ./bootstrap --skip-po --no-git --gnulib-srcdir=gnulib --no-bootstrap-sync",
+    "configure_sha256": "7fc2a26a3e49689dabc842612d3b89ca8ffc967361bcc234628d737131383785",
+    "library_generated_c_files": 78,
+    "command_line_generated_c_files": 118
+  },
+  "scope": "Same upstream release Git source alternative. License and patch checks and offline bootstrap passed; this record does not assert a completed Yocto image build or runtime test.",
+  "generation_dependencies": [
+    "gettext-native",
+    "gperf-native",
+    "bison-native",
+    "libtasn1-native",
+    "gtk-doc-native (inherited)",
+    "python3-native (inherited)"
+  ],
+  "offline_bootstrap_guard_patch": "meta-pi4-xen-lab/recipes-support/gnutls/gnutls/0001-bootstrap-allow-prepared-offline-submodules.patch"
+}

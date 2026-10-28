@@ -1,0 +1,346 @@
+[
+  {
+    "name": "git",
+    "url": "https://github.com/git/git.git",
+    "tag": "v2.44.4",
+    "commit": "080b728d4b2bbdd2c0b9eb9ed6a41195f8303088",
+    "cache": ".cache/downloads/git2/github.com.git.git.git",
+    "tree": "local/native-source-probes/git-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "COPYING",
+        "license-match"
+      ],
+      [
+        "reftable/LICENSE",
+        "license-match"
+      ],
+      [
+        "sha1dc/LICENSE.txt",
+        "license-match"
+      ],
+      [
+        "compat/nedmalloc/License.txt",
+        "license-match"
+      ],
+      [
+        "compat/inet_ntop.c",
+        "license-match"
+      ],
+      [
+        "compat/obstack.h",
+        "license-match"
+      ],
+      [
+        "compat/poll/poll.h",
+        "license-match"
+      ],
+      [
+        "compat/regex/regex.h",
+        "license-match"
+      ],
+      [
+        "fixsort.patch",
+        "pass"
+      ],
+      [
+        "0001-config.mak.uname-do-not-force-RHEL-7-specific-build-.patch",
+        "pass"
+      ],
+      [
+        "0001-reflog-rename-unreachable.patch",
+        "pass"
+      ],
+      [
+        "0001-index-pack-rename-struct-thread_local.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "GIT-VERSION-GEN defaults to v2.44.4; regenerate the release tarball version file at unpack. Existing autotools recipe generates configure.",
+    "commit_metadata": "080b728d4b2bbdd2c0b9eb9ed6a41195f8303088\n2025-05-28T14:51:12-04:00\nGit 2.44.4",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: offline autoreconf + configure, generated version2.44.4"
+  },
+  {
+    "name": "swig",
+    "url": "https://github.com/swig/swig.git",
+    "tag": "v4.2.1",
+    "commit": "b592468f522cf7f4a0812493bfa07cbe60679d7c",
+    "cache": ".cache/downloads/git2/github.com.swig.swig.git",
+    "tree": "local/native-source-probes/swig-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "LICENSE",
+        "license-match"
+      ],
+      [
+        "LICENSE-GPL",
+        "license-match"
+      ],
+      [
+        "LICENSE-UNIVERSITIES",
+        "license-match"
+      ],
+      [
+        "0001-Use-proc-self-exe-for-swig-swiglib-on-non-Win32-plat.patch",
+        "pass"
+      ],
+      [
+        "0001-configure-use-pkg-config-for-pcre-detection.patch",
+        "pass"
+      ],
+      [
+        "determinism.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "configure.ac AC_INIT is4.2.1; existing autotools and bison-native generate configure/parser.",
+    "commit_metadata": "b592468f522cf7f4a0812493bfa07cbe60679d7c\n2024-02-23T23:57:14Z\nhtml fixes",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: offline autoreconf + configure + full compile, SWIG4.2.1 --version; host smoke disabled PCRE solely because the validation container lacks pcre development headers (Yocto dependency preserved)."
+  },
+  {
+    "name": "gnu-efi",
+    "url": "https://github.com/ncroxon/gnu-efi.git",
+    "tag": "3.0.17",
+    "commit": "24c80efc1af996bf8252f4a2f5ffc02d8c44640b",
+    "cache": ".cache/downloads/git2/github.com.ncroxon.gnu-efi.git",
+    "tree": "local/native-source-probes/gnu-efi-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "gnuefi/crt0-efi-arm.S",
+        "license-match"
+      ],
+      [
+        "gnuefi/crt0-efi-aarch64.S",
+        "license-match"
+      ],
+      [
+        "inc/efishellintf.h",
+        "license-match"
+      ],
+      [
+        "lib/arm/math.c",
+        "license-match"
+      ],
+      [
+        "lib/arm/initplat.c",
+        "license-match"
+      ],
+      [
+        "lib/aarch64/math.c",
+        "license-match"
+      ],
+      [
+        "lib/aarch64/initplat.c",
+        "license-match"
+      ],
+      [
+        "parallel-make-archives.patch",
+        "pass"
+      ],
+      [
+        "gnu-efi-3.0.9-fix-clang-build.patch",
+        "pass"
+      ],
+      [
+        "0001-riscv64-adjust-type-definitions.patch",
+        "pass"
+      ],
+      [
+        "0001-riscv64-ignore-unknown-relocs.patch",
+        "pass"
+      ],
+      [
+        "no-werror.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "Release Makefiles committed; no bootstrap needed.",
+    "commit_metadata": "24c80efc1af996bf8252f4a2f5ffc02d8c44640b\n2023-05-02T07:51:45-04:00\nBump revision to VERSION = 3.0.17",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: full x86_64 Makefile compile with all original patches"
+  },
+  {
+    "name": "quilt",
+    "url": "https://github.com/sailfishos-mirror/quilt.git",
+    "tag": "v0.67",
+    "commit": "1731753a56234abc9a367f0e476bd5eeec126fde",
+    "cache": ".cache/downloads/git2/github.com.sailfishos-mirror.quilt.git",
+    "tree": "local/native-source-probes/quilt-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "COPYING",
+        "license-match"
+      ],
+      [
+        "0001-tests-Allow-different-output-from-mv.patch",
+        "pass"
+      ],
+      [
+        "fix-grep-3.8.patch",
+        "pass"
+      ],
+      [
+        "faildiff-order.patch",
+        "pass"
+      ],
+      [
+        "0001-test-Fix-a-race-condition-in-merge.test.patch",
+        "pass"
+      ],
+      [
+        "gnu_patch_test_fix_target.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "configure.ac AC_INIT is0.67 and generated configure/Makefile.in are committed; native bootstrap dependencies unchanged. Touch committed configure before native configure to restore generated-file timestamp ordering after Git checkout.",
+    "commit_metadata": "1731753a56234abc9a367f0e476bd5eeec126fde\n2022-02-15T14:30:36+01:00\nSet version to 0.67.",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: native build without autoreconf, version0.67, real patch refresh/pop/push round-trip"
+  },
+  {
+    "name": "elfutils",
+    "url": "https://github.com/libbpf/elfutils-mirror.git",
+    "tag": "elfutils-0.191",
+    "commit": "18a015c0b0787ba5acb39801ab7c17dac50f584d",
+    "cache": ".cache/downloads/git2/github.com.libbpf.elfutils-mirror.git",
+    "tree": "local/native-source-probes/elfutils-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "COPYING",
+        "license-match"
+      ],
+      [
+        "debuginfod/debuginfod-client.c",
+        "license-match"
+      ],
+      [
+        "0001-dso-link-change.patch",
+        "pass"
+      ],
+      [
+        "0002-Fix-elf_cvt_gunhash-if-dest-and-src-are-same.patch",
+        "pass"
+      ],
+      [
+        "0003-fixheadercheck.patch",
+        "pass"
+      ],
+      [
+        "0006-Fix-build-on-aarch64-musl.patch",
+        "pass"
+      ],
+      [
+        "0001-libasm-may-link-with-libbz2-if-found.patch",
+        "pass"
+      ],
+      [
+        "0001-libelf-elf_end.c-check-data_list.data.d.d_buf-before.patch",
+        "pass"
+      ],
+      [
+        "0001-skip-the-test-when-gcc-not-deployed.patch",
+        "pass"
+      ],
+      [
+        "ptest.patch",
+        "pass"
+      ],
+      [
+        "0001-tests-Makefile.am-compile-test_nlist-with-standard-C.patch",
+        "pass"
+      ],
+      [
+        "0001-debuginfod-Remove-unused-variable.patch",
+        "pass"
+      ],
+      [
+        "0001-srcfiles-fix-unused-variable-BUFFER_SIZE.patch",
+        "pass"
+      ],
+      [
+        "0001-config-eu.am-do-not-force-Werror.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1352.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1365.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1372.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1371.patch",
+        "pass"
+      ],
+      [
+        "0007-Fix-build-with-gcc-15.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1376.patch",
+        "pass"
+      ],
+      [
+        "CVE-2025-1377.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "configure.ac AC_INIT is0.191; native maintainer-mode builds libcpu generated source tables; stage tables for target/nativesdk builds.",
+    "commit_metadata": "18a015c0b0787ba5acb39801ab7c17dac50f584d\n2024-03-01T12:31:49-05:00\nPrepare for 0.191",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: autoreconf + configure --enable-maintainer-mode + full native compile with all original patches, elflint version0.191, both source tables generated",
+    "generated_headers": {
+      "i386_dis.h": "c885f73bce1b9bf24a56360ada7cdb8b3534749f76117ea6e970669fea59b07f",
+      "x86_64_dis.h": "5b4640e35a15edf163181d248cc993c4cb4c338949827c1d401f6870f98f47a1"
+    }
+  },
+  {
+    "name": "opkg",
+    "url": "https://github.com/moto-timo/opkg.git",
+    "tag": "v0.6.3",
+    "commit": "96c7fdef4112b97929053316bf4c5a136de71ef8",
+    "cache": ".cache/downloads/git2/github.com.moto-timo.opkg.git",
+    "tree": "local/native-source-probes/opkg-source",
+    "fsck": "pass",
+    "source_choice": "Same-version pinned upstream Git release, explicitly replacing archive format; original tarball checksum left untouched.",
+    "checks": [
+      [
+        "COPYING",
+        "license-match"
+      ],
+      [
+        "src/opkg.c",
+        "license-match"
+      ],
+      [
+        "0001-opkg_conf-create-opkg.lock-in-run-instead-of-var-run.patch",
+        "pass"
+      ],
+      [
+        "0001-libopkg-Use-libgen.h-to-provide-basename-API.patch",
+        "pass"
+      ]
+    ],
+    "bootstrap": "configure.ac release version0.6.3; autotools regenerates configure.",
+    "commit_metadata": "96c7fdef4112b97929053316bf4c5a136de71ef8\n2023-12-05T10:20:59-05:00\nROADMAP: update",
+    "bitbake_compile": "Pending parent build",
+    "independent_host_verification": "PASS: offline autoreconf generates configure with all original patches"
+  }
+]

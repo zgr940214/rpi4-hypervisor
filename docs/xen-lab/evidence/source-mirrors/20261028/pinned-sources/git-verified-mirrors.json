@@ -1,0 +1,482 @@
+[
+  {
+    "recipe": "pseudo-native",
+    "source_uri": "git://git.yoctoproject.org/pseudo;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_pseudo.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.pseudo",
+    "verified_objects": [
+      {
+        "object_id": "ba8887e5f1e922f866681ec7dec1a00b602a9328",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "bbd9d4a37c979d4ca33ce3632e4ed794dc294f93",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "linux-yocto",
+    "source_uri": "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https",
+    "mirror_uri": "git://github.com/WindRiverLinux24/linux-yocto-6.6.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.linux-yocto.git",
+    "verified_objects": [
+      {
+        "object_id": "0d5c8af531e021d38d2589c109268b644bdf3320",
+        "object_type": "commit",
+        "branch": "v6.6/standard/bcm-2xxx-rpi",
+        "branch_head": "0d5c8af531e021d38d2589c109268b644bdf3320",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "linux-yocto",
+    "source_uri": "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https",
+    "mirror_uri": "git://github.com/jhnc-oss/yocto-kernel-cache.git;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+    "verified_objects": [
+      {
+        "object_id": "dd201eb6ec53179f45836d41610ca68c725d28e2",
+        "object_type": "commit",
+        "branch": "yocto-6.6",
+        "branch_head": "111e66d07f015c08755ae564c4a2f4a7710863ef",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "cross-localedef-native",
+    "source_uri": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.glibc.git",
+    "verified_objects": [
+      {
+        "object_id": "be1e627cd72db31161a3b4ce1c8114674f0895eb",
+        "object_type": "commit",
+        "branch": "release/2.39/master",
+        "branch_head": "b7a0de2c8f68722cfdfc735b8358a3a6559ec0eb",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "opkg-utils-native",
+    "source_uri": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_opkg-utils.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+    "verified_objects": [
+      {
+        "object_id": "589880d01969eb9af1e66120e731d43193504718",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "d179a334f7bfbe55dec4839607dac2c38f6b7c8f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "update-rc.d-native",
+    "source_uri": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_update-rc.d.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+    "verified_objects": [
+      {
+        "object_id": "b8f950105010270a768aa12245d6abf166346015",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "b8f950105010270a768aa12245d6abf166346015",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "u-boot",
+    "source_uri": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/u-boot/u-boot.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+    "verified_objects": [
+      {
+        "object_id": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "ece349ade2973e220f524ce59e59711cc919263f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "e2fsprogs-native",
+    "source_uri": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/tytso/e2fsprogs.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+    "verified_objects": [
+      {
+        "object_id": "f4c9cc4bedacde8408edda3520a32d3842290112",
+        "object_type": "tag",
+        "branch": "master",
+        "branch_head": "8fd79523d051d5ea881237f27eb1c664486e0078",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "binutils-cross-aarch64",
+    "source_uri": "git://sourceware.org/git/binutils-gdb.git;branch=binutils-2_42-branch;protocol=https",
+    "mirror_uri": "git://github.com/RTEMS/sourceware-mirror-binutils-gdb.git;branch=binutils-2_42-branch;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.binutils-gdb.git",
+    "verified_objects": [
+      {
+        "object_id": "f9488b0d92b591bdf3ff8cce485cb0e1b3727cc0",
+        "object_type": "commit",
+        "branch": "binutils-2_42-branch",
+        "branch_head": "f9488b0d92b591bdf3ff8cce485cb0e1b3727cc0",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "pkgconfig-native",
+    "source_uri": "git://gitlab.freedesktop.org/pkg-config/pkg-config.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_pkg-config.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.pkg-config.pkg-config.git",
+    "verified_objects": [
+      {
+        "object_id": "d97db4fae4c1cd099b506970b285dc2afd818ea2",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "d97db4fae4c1cd099b506970b285dc2afd818ea2",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "kmod-native",
+    "source_uri": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/kmod-project/kmod.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+    "verified_objects": [
+      {
+        "object_id": "aff617ea871d0568cc491bd116c0be1e857463bb",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "692c5a0f731f31c1da49cce12b231be35c76b7fe",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "kern-tools-native",
+    "source_uri": "git://git.yoctoproject.org/yocto-kernel-tools.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_yocto-kernel-tools.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-tools.git",
+    "verified_objects": [
+      {
+        "object_id": "7160ebe8b865dd6028aef278efa219433db93f7e",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "96a8d58bcd260f104c193a81b727818424d7b263",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "yocto-cfg-fragments-native",
+    "source_uri": "git://git.yoctoproject.org/yocto-kernel-cache;branch=yocto-6.6",
+    "mirror_uri": "git://github.com/jhnc-oss/yocto-kernel-cache.git;branch=yocto-6.6;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+    "verified_objects": [
+      {
+        "object_id": "eb283ea577df80542d48f0c498365960b4c4ecd9",
+        "object_type": "commit",
+        "branch": "yocto-6.6",
+        "branch_head": "111e66d07f015c08755ae564c4a2f4a7710863ef",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "glibc",
+    "source_uri": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.glibc.git",
+    "verified_objects": [
+      {
+        "object_id": "be1e627cd72db31161a3b4ce1c8114674f0895eb",
+        "object_type": "commit",
+        "branch": "release/2.39/master",
+        "branch_head": "b7a0de2c8f68722cfdfc735b8358a3a6559ec0eb",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "dtc-native",
+    "source_uri": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "mirror_uri": "git://github.com/dgibson/dtc.git;branch=main;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+    "verified_objects": [
+      {
+        "object_id": "039a99414e778332d8f9c04cbd3072e1dcc62798",
+        "object_type": "commit",
+        "branch": "main",
+        "branch_head": "1d50f3f8fa8bf9429eebb0769dafa5df37381ae1",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "dtc",
+    "source_uri": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "mirror_uri": "git://github.com/dgibson/dtc.git;branch=main;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+    "verified_objects": [
+      {
+        "object_id": "039a99414e778332d8f9c04cbd3072e1dcc62798",
+        "object_type": "commit",
+        "branch": "main",
+        "branch_head": "1d50f3f8fa8bf9429eebb0769dafa5df37381ae1",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "libaio",
+    "source_uri": "git://codeberg.org/jmoyer/libaio.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_libaio.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/codeberg.org.jmoyer.libaio.git",
+    "verified_objects": [
+      {
+        "object_id": "1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "b8eadc9f89e8f7ab0338eacda9f98a6caea76883",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "bridge-utils",
+    "source_uri": "git://git.kernel.org/pub/scm/network/bridge/bridge-utils.git;branch=main",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_bridge-utils.git;branch=main;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.network.bridge.bridge-utils.git",
+    "verified_objects": [
+      {
+        "object_id": "75d949b9fae9718201422f0bd3d1103e67dd597c",
+        "object_type": "commit",
+        "branch": "main",
+        "branch_head": "1763c5b7f8f72d651d62337029c3bdfb269491e4",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "u-boot-tools-native",
+    "source_uri": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/u-boot/u-boot.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+    "verified_objects": [
+      {
+        "object_id": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "ece349ade2973e220f524ce59e59711cc919263f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "gnu-config-native",
+    "source_uri": "git://git.savannah.gnu.org/git/config.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/chipp/gnu-config.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.savannah.gnu.org.git.config.git",
+    "verified_objects": [
+      {
+        "object_id": "948ae97ca5703224bd3eada06b7a69f40dd15a02",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "00b15927496058d23e6258a28d8996f87cf1f191",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "opkg-utils",
+    "source_uri": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_opkg-utils.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+    "verified_objects": [
+      {
+        "object_id": "589880d01969eb9af1e66120e731d43193504718",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "d179a334f7bfbe55dec4839607dac2c38f6b7c8f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "kmod",
+    "source_uri": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/kmod-project/kmod.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+    "verified_objects": [
+      {
+        "object_id": "aff617ea871d0568cc491bd116c0be1e857463bb",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "692c5a0f731f31c1da49cce12b231be35c76b7fe",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "bzip2-native",
+    "source_uri": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/qrdk_bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+    "verified_objects": [
+      {
+        "object_id": "f9061c030a25de5b6829e1abf373057309c734c0",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "5f31d0d2ef548f5232e1806796817f8e342ff63f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "debianutils-native",
+    "source_uri": "git://salsa.debian.org/debian/debianutils.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_debianutils.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/salsa.debian.org.debian.debianutils.git",
+    "verified_objects": [
+      {
+        "object_id": "9e0facf19b17b6d090a5dcc8cacb0c16e5ad9f72",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "015efec85971f1ce0fcfe6e26180f574846036ca",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "ifupdown",
+    "source_uri": "git://salsa.debian.org/debian/ifupdown.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/kmluoh/ifupdown.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/salsa.debian.org.debian.ifupdown.git",
+    "verified_objects": [
+      {
+        "object_id": "369d9d3c13a0c56ad09fd4f13b4a80eb9a94e270",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "be2c56429a8b622cfdd7c31f96c3a1467dea5f51",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "e2fsprogs",
+    "source_uri": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/tytso/e2fsprogs.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+    "verified_objects": [
+      {
+        "object_id": "f4c9cc4bedacde8408edda3520a32d3842290112",
+        "object_type": "tag",
+        "branch": "master",
+        "branch_head": "8fd79523d051d5ea881237f27eb1c664486e0078",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "update-rc.d",
+    "source_uri": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_update-rc.d.git;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+    "verified_objects": [
+      {
+        "object_id": "b8f950105010270a768aa12245d6abf166346015",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "b8f950105010270a768aa12245d6abf166346015",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "shared-mime-info",
+    "source_uri": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_shared-mime-info.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+    "verified_objects": [
+      {
+        "object_id": "9a6d6b8e963935f145f3a1ef446552de6996dada",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "93706a8b92311c1694f767b86aa53cecab2f53ba",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "bzip2",
+    "source_uri": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/qrdk_bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+    "verified_objects": [
+      {
+        "object_id": "f9061c030a25de5b6829e1abf373057309c734c0",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "5f31d0d2ef548f5232e1806796817f8e342ff63f",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "recipe": "shared-mime-info-native",
+    "source_uri": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "mirror_uri": "git://github.com/CodeLinaro-mirror/yocto-mirrors_shared-mime-info.git;protocol=https;branch=master",
+    "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+    "verified_objects": [
+      {
+        "object_id": "9a6d6b8e963935f145f3a1ef446552de6996dada",
+        "object_type": "commit",
+        "branch": "master",
+        "branch_head": "93706a8b92311c1694f767b86aa53cecab2f53ba",
+        "is_ancestor": true
+      }
+    ],
+    "status": "PASS"
+  }
+]

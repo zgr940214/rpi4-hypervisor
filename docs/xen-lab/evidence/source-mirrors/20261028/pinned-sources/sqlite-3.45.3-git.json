@@ -1,0 +1,37 @@
+{
+  "component": "sqlite3",
+  "version": "3.45.3",
+  "source_kind": "same-version upstream release Git source; amalgamation generated before original recipe patches",
+  "url": "https://github.com/sqlite/sqlite.git",
+  "tag": "version-3.45.3",
+  "commit": "b74eb00e2cb05d9749859e6fbe77d229ad1dc1e1",
+  "git_fsck": "PASS",
+  "cache": ".cache/downloads/git2/github.com.sqlite.sqlite.git",
+  "recipe_bootstrap_executed": "PASS",
+  "license_sqlite3_h_lines_1_11_md5": "786d3dc581eff03f4fd9e4a77ed00c66",
+  "original_license_matches": true,
+  "all_six_original_patches_fuzz_0": "PASS",
+  "patches": [
+    "CVE-2025-3277.patch",
+    "CVE-2025-29088.patch",
+    "CVE-2025-6965.patch",
+    "CVE-2025-7709.patch",
+    "CVE-2025-70873.patch",
+    "CVE-2026-11822_CVE-2026-11824.patch"
+  ],
+  "host_compile_smoke": "PASS",
+  "smoke_stdout": "3.45.3|7\n1\n",
+  "bootstrap_tools": [
+    "/usr/bin/cc",
+    "/usr/bin/make",
+    "/usr/bin/tclsh"
+  ],
+  "original_archive_sha256": "b2809ca53124c19c60f42bf627736eae011afdcc205bb48270a5ee9a38191531",
+  "original_archive_sha256_matched": false,
+  "notes": [
+    "Fixed Git commit identifies this explicit source alternative, not the original archive checksum.",
+    "Existing CVE patches and recipe license checksum remain unchanged.",
+    "Standalone source-generation, patch and host compile tests passed; BitBake build was not run by this verification.",
+    "Build container requires Tcl; parent notified to add apt package tcl."
+  ]
+}

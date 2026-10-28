@@ -2,7 +2,7 @@
 
 目标：用同一套 Yocto 工程从源码构建 Raspberry Pi 4（AArch64）的 Xen、Dom0 Linux 和唯一的 Linux guest `guest1`，一起打包成可烧录的整卡镜像。guest 由操作者手动启动。本期不包含 TEE、安全启动或加密服务。
 
-**交付要求是 Yocto 自建的 Pi4 整卡产物及其运行验证。当前构建链路与产物一致性检查已实现，完整编译仍被源码访问 403 阻塞，尚无可烧录镜像。** 先前通过的 Debian QEMU 实验保留为[历史记录](docs/xen-lab/evidence/qemu/20261028/report.json)，不作为本次自建 Pi4 镜像的验收结果。详见[状态记录](docs/xen-lab/STATUS.md)。
+**交付要求是 Yocto 自建的 Pi4 整卡产物及其运行验证。已配置可访问的源码镜像并开始实际 BitBake 编译；完整镜像及其 QEMU 验证尚未完成。** 先前通过的 Debian QEMU 实验保留为[历史记录](docs/xen-lab/evidence/qemu/20261028/report.json)，不作为本次自建 Pi4 镜像的验收结果。详见[状态记录](docs/xen-lab/STATUS.md)。
 
 ## 从源码构建并验证 Pi4 镜像
 
@@ -25,7 +25,9 @@ Dom0 和 guest 根文件系统分别记录 Yocto 构建标记。guest 内核、�
 
 `qemu-yocto.sh validate` 只接受通过这些检查的 `artifacts/pi4-xen-dom0-guest1.img`，从它的 FAT 分区提取原有 Xen 与内核，直接把完整整卡镜像作为 QEMU 磁盘。Dom0 中的 guest 文件保持原样；使用 `-snapshot` 保存运行期间的临时写入，并在结束后检查源镜像哈希。缺少自建产物时命令明确失败。详情见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。
 
-当前 403 发生在 `git.yoctoproject.org/meta-virtualization` 构建配方源码获取阶段，并非预制系统镜像下载。已保存所需源码域名的网络配置草稿；当前云运行时尚未应用，需在环境设置中保存配置后继续构建。
+部分 Yocto、GNU 原站在当前云网络中不可访问。工程已提供固定提交的 Git 镜像及校验值相同的压缩包镜像；需要改用上游同版本 Git 发布源码或另一种经过验证的源码压缩格式时，通过独立 bbappend 明确指定。原许可证检查和补丁保留，具体来源及验证证据见 [source-mirrors](docs/xen-lab/evidence/source-mirrors/20261028/)。镜像配置随仓库加载，不依赖临时修改网络设置。
+
+`./scripts/container.sh sources` 导出实际选中配方的源码 URL、固定提交和压缩包校验值到 `local/source-manifest.json`。`scripts/mirror-sources.py` 可据此预取校验完全一致的备用压缩包；现有缓存内容不匹配时会报错，不能覆盖后继续。固定 Ubuntu 构建宿主配置位于 `meta-pi4-xen-lab/conf/build-host.inc`，目标系统的工具链和 libc 仍由 Yocto 从源码编译。
 
 默认最多两个 BitBake 任务、每个任务两个编译线程；启用 `rm_work` 以减少磁盘占用。建议为首次 Yocto 构建准备至少 100 GiB 可用磁盘，这是工程规划值，不是本项目实测峰值。现有云工作盘只有约 30 GiB，磁盘监视器会在空间不足时停止任务，不能保证全量构建能容纳。修改 `local/site.conf` 可覆盖并行度和缓存路径。不要删除下载缓存、sstate 或全量构建目录来代替故障诊断。
 

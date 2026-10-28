@@ -1,0 +1,4 @@
+patching file lib/getline.cc
+patching file ChangeLog
+patching file src/options.cc
+patching file lib/filename.h

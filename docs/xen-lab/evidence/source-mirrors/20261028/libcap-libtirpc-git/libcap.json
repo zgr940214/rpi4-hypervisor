@@ -1,0 +1,28 @@
+{
+  "recipe": "libcap",
+  "version": "2.69",
+  "source_format": "Git release source replaces release archive; no archive checksum bypass",
+  "url": "https://github.com/kernelorg-mirror/libs_libcap_libcap.git",
+  "tag": "libcap-2.69",
+  "commit": "8bed80f9b54b7bd2a1ee1fdc2124a094733c9356",
+  "tree": "13e7d9070ff0f463f1ebb644cf5afa3d90277043",
+  "git_fsck": "PASS",
+  "original_license_checks": [
+    "License",
+    "pam_cap/License"
+  ],
+  "original_license_result": "PASS",
+  "original_target_patches_applied": 4,
+  "patch_result": "PASS",
+  "shallow_bare_cache": ".cache/downloads/git2/github.com.kernelorg-mirror.libs_libcap_libcap.git",
+  "bootstrap": "plain Makefile; source Make.Rules retains VERSION=2, MINOR=69",
+  "status": "VERIFIED_SOURCE_AND_PATCHES",
+  "native_build": {
+    "status": "PASS",
+    "container": "pi4-xen-qemu:4.19",
+    "network": "none",
+    "compiler_target": "x86_64 host",
+    "configure": "make PAM_CAP=no GOLANG=no DYNAMIC=yes USE_GPERF=no RAISE_SETFCAP=no",
+    "validation_scope": "source bootstrap and compilation with all original target patches; separate from Yocto cross build and Pi4 image/QEMU boot"
+  }
+}

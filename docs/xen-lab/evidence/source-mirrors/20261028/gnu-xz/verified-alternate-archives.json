@@ -1,0 +1,29 @@
+[
+  {
+    "package": "automake-1.16",
+    "version": "1.16.5",
+    "name": "automake-1.16_1.16.5.orig.tar.xz",
+    "url": "https://deb.debian.org/debian/pool/main/a/automake-1.16/automake-1.16_1.16.5.orig.tar.xz",
+    "sha256": "f01d58cd6d9d77fbdca9eb4bbd5ead1988228fdb73d6f7a201f5f8d6b118b469",
+    "md5": "4017e96f89fca45ca946f1c5db6be714",
+    "source_index_sha256": "92d11a035571df011f06f28c61cb9825130ef1d92abb2f2e0525e8674dc44af8"
+  },
+  {
+    "package": "patch",
+    "version": "2.7.6",
+    "name": "patch_2.7.6.orig.tar.xz",
+    "url": "https://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz",
+    "sha256": "ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd",
+    "md5": "78ad9937e4caadcba1526ef1853730d5",
+    "source_index_sha256": "92d11a035571df011f06f28c61cb9825130ef1d92abb2f2e0525e8674dc44af8"
+  },
+  {
+    "package": "libtool",
+    "version": "2.4.7",
+    "name": "libtool_2.4.7.orig.tar.xz",
+    "url": "https://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7.orig.tar.xz",
+    "sha256": "dd637e270439b208907ceead3f163470ed2ce5723ef97ffbda6463c64b57128a",
+    "md5": "8d5260fed7d8f9bb6aac3999d43e8d92",
+    "source_index_sha256": "92d11a035571df011f06f28c61cb9825130ef1d92abb2f2e0525e8674dc44af8"
+  }
+]

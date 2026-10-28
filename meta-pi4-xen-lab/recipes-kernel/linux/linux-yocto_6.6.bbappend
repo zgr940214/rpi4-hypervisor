@@ -1,6 +1,12 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI:append:raspberrypi4-64 = " file://pi4-xen.cfg"
 
+# Pin the actual Pi4 BSP branch, rather than inheriting Poky's standard/base
+# revision. The reviewed Wind River mirror retains this upstream Yocto branch.
+KBRANCH:raspberrypi4-64 = "v6.6/standard/bcm-2xxx-rpi"
+SRCREV_machine:raspberrypi4-64 = "0d5c8af531e021d38d2589c109268b644bdf3320"
+LINUX_VERSION:raspberrypi4-64 = "6.6.100"
+
 # Keep the finalized merged configuration even when rm_work is enabled.
 do_deploy:append:raspberrypi4-64() {
     install -m 0644 ${B}/.config ${DEPLOYDIR}/pi4-xen-kernel.config

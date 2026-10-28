@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/madler/pigz.git",
+  "tag": "v2.8",
+  "tag_object": "829eabb60cb4e6c42aff9d419bf6cf621dce76fd",
+  "commit": "fe4894f57739e3039a2ffc2a2a360d35e19bacbe",
+  "cache": "/workspace/rpi4-hypervisor/.cache/downloads/git2/github.com.madler.pigz.git",
+  "git_fsck": "PASS",
+  "source_change": "Same release version from upstream Git; not the original compressed release archive",
+  "license_md5": "9ae6dee8ceba9610596ed0ada493d142"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "package": "bash",
+    "version": "5.2.21",
+    "filename": "bash_5.2.21.orig.tar.xz",
+    "sha256": "ec21ab4efd6bd7a6e2802fbda622b81bfc43a8095d721234d4bf075797683014",
+    "md5": "b5acac4803646b77088117c3df3e4f55",
+    "signed_source_index_sha256": "4f8e45d8f84dd2a6b7ce87695c70336114b9e96e6fd6db066c115f758e39308e",
+    "index_component": "main"
+  },
+  {
+    "package": "lzlib",
+    "version": "1.14",
+    "filename": "lzlib_1.14.orig.tar.xz",
+    "sha256": "decd2ef0752a20e77bd13b4c10bbadd5b0289166895a5808f8911ebd9709f324",
+    "md5": "f683d8257a02dbb9c395441cc2f04c02",
+    "signed_source_index_sha256": "796c4253df46fe9d0b468c5b18259f8d5172bf6c8b3b17451ba98ffc1781f682",
+    "index_component": "universe"
+  }
+]

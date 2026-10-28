@@ -26,11 +26,13 @@ BUILDHISTORY_COMMIT = "0"
 BB_DISKMON_DIRS = "STOPTASKS,${TMPDIR},3G,100K STOPTASKS,${DL_DIR},3G,100K HALT,${TMPDIR},1G,10K"
 CONF_VERSION = "2"
 require /work/local/generated/access.inc
+require /work/meta-pi4-xen-lab/conf/build-host.inc
 include /work/local/site.conf
 '''
     for name, contents in [("bblayers.conf", bblayers), ("local.conf", local)]:
         target = conf / name
-        if target.exists() and target.read_text() != contents:
+        previous = contents.replace('require /work/meta-pi4-xen-lab/conf/build-host.inc\n', '')
+        if target.exists() and target.read_text() not in (contents, previous):
             raise SystemExit(f"Refusing to overwrite edited {target}; use local/site.conf for overrides")
         target.write_text(contents)
     print("Build configuration prepared in /work/build; overrides: local/site.conf")

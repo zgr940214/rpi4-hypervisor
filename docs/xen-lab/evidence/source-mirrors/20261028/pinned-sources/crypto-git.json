@@ -1,0 +1,75 @@
+[
+  {
+    "package": "libgcrypt",
+    "version": "1.10.4",
+    "source": "https://github.com/gpg/libgcrypt.git",
+    "release_tag": "libgcrypt-1.10.4",
+    "commit": "d365a41094571f2cce18f27b53ffdceb540f77bb",
+    "verification": "original recipe license checks all match; upstream version detection reports exact release",
+    "license_md5": {
+      "COPYING": "94d55d512a9ba36caa9b7df079bae19f",
+      "COPYING.LIB": "bbb461211a33b134d42ed5ee802b37ff",
+      "LICENSES": "ef545b6cc717747072616519a1256d69"
+    },
+    "autogen_version": "libgcrypt-1.10.4:no:yes:1.10.4:1.10.4::d365a41:54117:",
+    "bitbake_build_verified": false,
+    "patch_verification": {
+      "applied": 5,
+      "fuzz": 0,
+      "all_passed": true
+    }
+  },
+  {
+    "package": "libgpg-error",
+    "version": "1.48",
+    "source": "https://github.com/gpg/libgpg-error.git",
+    "release_tag": "libgpg-error-1.48",
+    "commit": "77b7c5ff6b756870811acaff53df0ebf1e5c2368",
+    "verification": "original recipe license checks all match; upstream version detection reports exact release",
+    "license_md5": {
+      "COPYING": "59530bdf33659b29e73d4adb9f9f6552",
+      "COPYING.LIB": "2d5025d4aa3495befef8f17206a5b0a1",
+      "src/gpg-error.h.in:2-18": "20f4cf5d81ea2fad18f6297500018654",
+      "src/init.c:2-17": "f01cdfcf747af5380590cfd9bbfeaaf7"
+    },
+    "autogen_version": "libgpg-error-1.48:no:yes:1.48:1.48::77b7c5f:30647:",
+    "bitbake_build_verified": false,
+    "patch_verification": {
+      "applied": 3,
+      "fuzz": 0,
+      "all_passed": true
+    }
+  },
+  {
+    "package": "libunistring",
+    "version": "1.2",
+    "source": "https://github.com/GitMirroring/libunistring.git",
+    "release_tag": "v1.2",
+    "commit": "479b580dedca32662b34336183abfec95b71c42e",
+    "gnulib_source": "https://github.com/coreutils/gnulib.git",
+    "gnulib_commit": "5828723e285945975dbb3d2e89cd8854d5b7a075",
+    "gnulib_pin_source": "upstream version.sh GNULIB_GIT_COMMIT",
+    "license_md5": {
+      "COPYING.LIB": "6a6a8e020838b23406c81b19c1d46df6",
+      "README:45-65": "3a896a943b4da2c551e6be1af27eff8d",
+      "doc/libunistring.texi": "36b7d20daef7fbcc032333ae2429aa94"
+    },
+    "offline_gnulib_import": {
+      "exit_code": 0,
+      "imported_library_c_sources": 617
+    },
+    "bitbake_build_verified": false,
+    "autotools_bootstrap": {
+      "exit_code": 0,
+      "network": "disabled",
+      "image": "pi4-xen-build:scarthgap",
+      "log": "local/crypto-mirrors/unistring-autogen.log",
+      "configure_generated": true
+    },
+    "gnulib_download_cache": {
+      "path": ".cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "shallow": true,
+      "shared_clone_and_exact_checkout_verified": true
+    }
+  }
+]

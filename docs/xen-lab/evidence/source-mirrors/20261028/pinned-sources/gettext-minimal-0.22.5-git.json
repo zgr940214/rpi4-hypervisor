@@ -1,0 +1,21 @@
+{
+  "component": "gettext-minimal-native",
+  "version": "0.22.5",
+  "source": "https://github.com/autotools-mirror/gettext.git",
+  "tag": "v0.22.5",
+  "commit": "0d53c885229fc59ca3ce6a8e70fb3f6d59ece361",
+  "gnulib_url": "https://github.com/coreutils/gnulib.git",
+  "gnulib_commit": "dd801be6c84325d140c67ec9869b3844bc5550ac",
+  "gnulib_pin_from": "gitlink in upstream v0.22.5",
+  "bootstrap_function_test": "PASS",
+  "original_install_file_copy": "PASS",
+  "aclocal_file_count": 11,
+  "original_license_md5_matches": "4bd090a20bfcd1a18f1f79837b5e3e91",
+  "original_archive_sha256": "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0",
+  "original_archive_sha256_matched": false,
+  "notes": [
+    "Explicit same-release Git source alternative, preserves original recipe license/install.",
+    "Only needed gnulib macros and config.rpath copied; no gettext executable bootstrap required for minimal recipe.",
+    "Standalone verification, BitBake tasks not run by this agent."
+  ]
+}

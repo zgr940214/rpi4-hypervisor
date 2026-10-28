@@ -1,0 +1,11 @@
+{
+  "recipe": "gawk",
+  "version": "5.3.0",
+  "url": "https://github.com/GitMirroring/gawk.git",
+  "tag": "gawk-5.3.0",
+  "commit": "5efd1487e16e68a1bb52fa5ca997d2d51182bff2",
+  "original_license_checksum": "PASS",
+  "all_seven_original_recipe_patches": "PASS",
+  "configure_version": "GNU Awk 5.3.0",
+  "formal_bitbake_build": "reported separately"
+}

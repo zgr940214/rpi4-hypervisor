@@ -1,0 +1,28 @@
+{
+  "recipe": "libtirpc",
+  "version": "1.3.4",
+  "source_format": "Git release source replaces release archive; no archive checksum bypass",
+  "url": "https://github.com/linux-nfs/libtirpc.git",
+  "tag": "libtirpc-1-3-4",
+  "commit": "e86eef35f3628b3adf388a522ab5731bb4487f34",
+  "tree": "beafd7d2e39342e436eacba6fa1f4f41df12f2c4",
+  "git_fsck": "PASS",
+  "original_license_checks": [
+    "COPYING",
+    "src/netname.c"
+  ],
+  "original_license_result": "PASS",
+  "original_target_patches_applied": 3,
+  "patch_result": "PASS",
+  "shallow_bare_cache": ".cache/downloads/git2/github.com.linux-nfs.libtirpc.git",
+  "bootstrap": "normal autotools class autoreconf",
+  "status": "VERIFIED_SOURCE_AND_PATCHES",
+  "native_build": {
+    "status": "PASS",
+    "container": "pi4-xen-qemu:4.19",
+    "network": "none",
+    "compiler_target": "x86_64 host",
+    "configure": "autoreconf -fiv; ./configure --disable-gssapi --disable-authdes",
+    "validation_scope": "source bootstrap and compilation with all original target patches; separate from Yocto cross build and Pi4 image/QEMU boot"
+  }
+}

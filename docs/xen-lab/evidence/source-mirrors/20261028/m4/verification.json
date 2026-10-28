@@ -1,0 +1,12 @@
+{
+  "artifact": "m4-1.4.19.tar.xz",
+  "sha256": "63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96",
+  "md5": "0d90823e1426f1da2fd872df0311298d",
+  "mirror": "https://deb.debian.org/debian/pool/main/m/m4/m4_1.4.19.orig.tar.xz",
+  "signature": "https://deb.debian.org/debian/pool/main/m/m4/m4_1.4.19.orig.tar.xz.asc",
+  "key_source": "https://deb.debian.org/debian/pool/main/m/m4/m4_1.4.19-3.debian.tar.xz:debian/upstream/signing-key.asc",
+  "upstream_signer_fingerprint": "71C2CC22B1C4602927D2F3AAA7A16B4A2527436A",
+  "signature_result": "Good signature; no claim of GPG web-of-trust certification",
+  "independent_digest_reference": "https://github.com/bazel-contrib/rules_foreign_cc/blob/main/examples/third_party/autotools/autotools_repositories.bzl",
+  "change": "Explicit upstream archive-format selection from gzip to XZ; same source release1.4.19. Original gzip checksum was not accepted or rewritten to match mismatched gzip bytes."
+}

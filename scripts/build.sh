@@ -26,6 +26,10 @@ case "$action" in
     prepare) bitbake-layers show-layers; bitbake-layers show-recipes xen xen-tools linux-yocto u-boot ;;
     parse) bitbake -p ;;
     plan) bitbake -g pi4-xen-dom0-image ;;
+    sources)
+        bitbake -g pi4-xen-dom0-image
+        python3 /work/scripts/source-manifest.py
+        ;;
     build)
         bitbake pi4-xen-dom0-image
         /work/scripts/export-image.py

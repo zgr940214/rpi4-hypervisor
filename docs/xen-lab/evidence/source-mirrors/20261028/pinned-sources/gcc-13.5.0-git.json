@@ -1,0 +1,26 @@
+{
+  "source_kind": "explicit upstream Git release source, not the distribution tarball",
+  "repository": "https://github.com/gcc-mirror/gcc.git",
+  "tag": "releases/gcc-13.5.0",
+  "tag_object": "31310602206a3f45dcca385f5bb9db5081cc97a1",
+  "commit": "0bba35ae26a574150f6d1ae55f8ab1f4c2314a56",
+  "version": "13.5.0",
+  "dev_phase": "",
+  "license_md5_matches_original_recipe": {
+    "COPYING": "59530bdf33659b29e73d4adb9f9f6552",
+    "COPYING3": "d32239bcb673463ab874e80d47fae504",
+    "COPYING3.LIB": "6a6a8e020838b23406c81b19c1d46df6",
+    "COPYING.LIB": "2d5025d4aa3495befef8f17206a5b0a1",
+    "COPYING.RUNTIME": "fe60d87048567d4fe8c8a0ed2448bcc8"
+  },
+  "tracked_generated_files": {
+    "configure": true,
+    "gcc/configure": true,
+    "libcc1/configure": true,
+    "libstdc++-v3/configure": true,
+    "gcc/gengtype-lex.cc": false
+  },
+  "git_fsck": "PASS",
+  "canonical_cache": ".cache/downloads/git2/github.com.gcc-mirror.gcc.git",
+  "bitbake_unpack_directory": "${TMPDIR}/work-shared/gcc-${PV}-${PR}/gcc-${PV}"
+}

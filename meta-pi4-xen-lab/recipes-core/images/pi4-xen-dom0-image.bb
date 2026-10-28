@@ -15,6 +15,9 @@ IMAGE_INSTALL = " \
 IMAGE_FSTYPES = "wic wic.bmap"
 WKS_FILE = "pi4-xen.wks"
 WKS_SEARCH_PATH:append = ":${PI4_XEN_LAYERDIR}/wic"
+# This ARM card has only FAT/ext4 partitions. ISO9660, Syslinux, Btrfs,
+# SquashFS and EROFS host tools are not used by its Wic plugins.
+WKS_FILE_DEPENDS = "parted-native dosfstools-native mtools-native bmaptool-native e2fsprogs-native gptfdisk-native virtual/${TARGET_PREFIX}binutils"
 IMAGE_ROOTFS_EXTRA_SPACE = "262144"
 IMAGE_OVERHEAD_FACTOR = "1.3"
 

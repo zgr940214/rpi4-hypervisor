@@ -1,0 +1,35 @@
+Package: tar
+Format: 3.0 (quilt)
+Binary: tar, tar-scripts
+Architecture: any all
+Version: 1.35+dfsg-3build1
+Priority: required
+Section: utils
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Janos Lenart <ocsi@debian.org>
+Uploaders: Carl Worth <cworth@cworth.org>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13), dh-exec, gettext, autoconf, automake, autopoint, bison, libacl1-dev, libselinux1-dev [linux-any]
+Homepage: https://www.gnu.org/software/tar/
+Vcs-Browser: https://salsa.debian.org/debian/tar
+Vcs-Git: https://salsa.debian.org/debian/tar.git
+Directory: pool/main/t/tar
+Package-List:
+ tar deb utils required arch=any essential=yes
+ tar-scripts deb utils optional arch=all
+Files:
+ afbeada9a5054cfc4a79e53eb5689cf6 2141 tar_1.35+dfsg-3build1.dsc
+ 9e853834ac6ec4dc3b62b0325b7a33f6 2111608 tar_1.35+dfsg.orig.tar.xz
+ 3ed43925c0a13d65e1e07fd5f5de9ede 20948 tar_1.35+dfsg-3build1.debian.tar.xz
+Checksums-Sha1:
+ de938cbd304dcf432634833a0cd636d4ad1dfe11 2141 tar_1.35+dfsg-3build1.dsc
+ d910d9a9dc1252a793ca1837ac4f1080a64fca1f 2111608 tar_1.35+dfsg.orig.tar.xz
+ 5762dc7e3fc663077460055e0e86113638161c3d 20948 tar_1.35+dfsg-3build1.debian.tar.xz
+Checksums-Sha256:
+ 4d312308207cec798d4335b62102f2a6b82bde6ae59b3775a3e2307ca6dd7235 2141 tar_1.35+dfsg-3build1.dsc
+ 9ae57e981c1e73c0eebc2b26c9b0c4497fe310ef1d516ea430efb5470b71f7a8 2111608 tar_1.35+dfsg.orig.tar.xz
+ e895dbfe0a807ced9d0a1f85568b3d663b1fc1c91118ea56c05155c34033273e 20948 tar_1.35+dfsg-3build1.debian.tar.xz
+Checksums-Sha512:
+ bb080610adc480448cf511d591eaaeb301395e5bbe01b16b254ad33edb33233aba18af79a4cf505fec330c83dac9570d84122432ff11b781a12c5dc409a173f6 2141 tar_1.35+dfsg-3build1.dsc
+ 3aea32b5c8de229131308420d8a7aa57f7fd1b376980456dd1aa66f97509572750c3833ab9cc2edc6fdea51f802033598c83a0d6e7f18680b1638996f0acaae7 2111608 tar_1.35+dfsg.orig.tar.xz
+ 82b1a9f70c99c17f5288a4a9fbe8b1bef0adcd9543f97f876ee81afc16e3ac02e46182557406ff434ae90c81950f22346c3229ee3e5f5f9578dcf09a20053e9f 20948 tar_1.35+dfsg-3build1.debian.tar.xz

@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/autotools-mirror/autoconf.git",
+  "tag": "v2.72e",
+  "tag_object": "5bace49377a04002e1bcbc80cf5093310622eaa8",
+  "commit": "ba087b38f8fb360674db5ece1d3e0394dc6a998a",
+  "version": "2.72e",
+  "source_selection": "Immutable same-version Git release instead of a differently located release tarball; no archive checksum was replaced to accept mismatched bytes.",
+  "validation": {
+    "bootstrap": "PASS; upstream source bootstrap in Ubuntu22.04 container, network disabled",
+    "existing_yocto_patches": "7/7 apply unchanged, including no-man.patch against generated Makefile.in",
+    "licence_checksums": "COPYING andCOPYINGv3 match original recipe",
+    "native_build_probe": "configure + make-j2 PASS; bin/autoconf --version reports2.72e",
+    "formal_bitbake_build": "NOT_RUN by this probe"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/fanf2/unifdef.git",
+  "tag": "unifdef-2.12",
+  "annotated_tag_object": "da688503bef95b40c5edcba1a467b27991f0fb97",
+  "commit": "99d17074b9ba66cc9da2ce60fb29c6b1beb0370a",
+  "git_fsck": "PASS",
+  "license_checks": "unchanged and PASS",
+  "build": "maintainer Git source, release version files generated before patching; compilation and upstream tests PASS",
+  "archive_sha256_claim": "None: explicit Git source choice, not a byte-identical tar.xz mirror"
+}

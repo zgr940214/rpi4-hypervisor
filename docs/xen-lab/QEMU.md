@@ -1,6 +1,6 @@
 # 自建 Pi4 镜像的 QEMU 验证
 
-本项目的验收入口是 `scripts/qemu-yocto.sh`：使用 Yocto 构建的同一张 Pi4 整卡镜像运行 Xen、Dom0 和其内嵌 guest1。**当前 Pi4 源码构建受网络 403 阻塞，尚无该整卡产物；此入口的运行验证状态为 NOT_RUN。** 已完成的 Debian QEMU 实验见文末历史记录。
+本项目的验收入口是 `scripts/qemu-yocto.sh`：使用 Yocto 构建的同一张 Pi4 整卡镜像运行 Xen、Dom0 和其内嵌 guest1。**当前已配置源码镜像并执行实际 BitBake 编译，尚无完整整卡产物；此入口的运行验证状态为 NOT_RUN。** 已完成的 Debian QEMU 实验见文末历史记录。
 
 ## 构建和运行
 

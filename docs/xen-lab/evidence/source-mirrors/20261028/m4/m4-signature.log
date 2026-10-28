@@ -1,0 +1,9 @@
+gpg: Signature made Fri May 28 21:55:07 2021 UTC
+gpg:                using RSA key 71C2CC22B1C4602927D2F3AAA7A16B4A2527436A
+gpg: /workspace/rpi4-hypervisor/local/source-mirror-probes/gnupg/trustdb.gpg: trustdb created
+gpg: Good signature from "Eric Blake <eblake@redhat.com>" [unknown]
+gpg:                 aka "Eric Blake (Free Software Programmer) <ebb9@byu.net>" [unknown]
+gpg:                 aka "[jpeg image of size 6874]" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 71C2 CC22 B1C4 6029 27D2  F3AA A7A1 6B4A 2527 436A

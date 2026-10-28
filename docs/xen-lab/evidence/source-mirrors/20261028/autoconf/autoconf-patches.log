@@ -1,0 +1,14 @@
+program_prefix.patch
+patching file lib/autoconf/general.m4
+autoreconf-exclude.patch
+patching file bin/autoreconf.in
+remove-usr-local-lib-from-m4.patch
+patching file lib/autoconf/functions.m4
+preferbash.patch
+patching file lib/m4sugar/m4sh.m4
+autotest-automake-result-format.patch
+patching file lib/autotest/general.m4
+man-host-perl.patch
+patching file man/local.mk
+no-man.patch
+patching file Makefile.in

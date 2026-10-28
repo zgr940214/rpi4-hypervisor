@@ -4,20 +4,21 @@
 
 ## 当前结论
 
-**当前交付目标是 Yocto 从源码构建 Pi4 的 Xen、Dom0 和 guest1，并将它们一起打包、验证。完整镜像构建尚未完成，当前没有可烧录产物。** `git.yoctoproject.org/meta-virtualization` 的源码拉取仍被云环境代理返回 CONNECT 403；[本次访问记录](evidence/yocto-source-build/20261028/source-access.log)。这是构建配方源码的访问问题，不是预制 OS 镜像下载。
+**当前交付目标是 Yocto 从源码构建 Pi4 的 Xen、Dom0 和 guest1，并将它们一起打包、验证。已通过镜像取得固定 layer 和 Pi4 内核源码，并开始实际 BitBake 编译；完整镜像尚未完成，当前没有可烧录产物。** 部分原站仍返回 CONNECT 403；工程已使用可访问镜像及明确固定的同版本源码替代，相关配置和证据均纳入仓库。
 
 已实现同一构建的 guest/内核打包、来源记录与字节一致性校验，以及直接使用完整 Pi4 `.img` 的 QEMU 入口。先前 Debian QEMU 实验的真实通过记录仍保留，但不属于本次 Yocto 自建 Pi4 镜像验收。详见 [QEMU 验证说明](QEMU.md)。
 
 | 检查 | 状态 | 证据或原因 |
 | --- | --- | --- |
 | Ubuntu 构建容器 | PASS | `evidence/container-build.log`，实际 Docker 构建成功；重复构建退出码 0 |
-| 管理、凭据、镜像及构建来源检查工具 | PASS | [本次记录](evidence/yocto-source-build/20261028/tool-tests.log)，69 项通过、0 跳过，退出码 0；包含替换 guest、来源不一致及旧检查结果的拒绝路径，仍属于工具测试 |
+| 管理、凭据、镜像、构建来源与镜像下载工具 | PASS | [容器内记录](evidence/source-mirrors/20261028/tool-tests.log)，82 项通过、0 跳过，退出码 0；属于工具测试 |
 | 正式 Poky、meta-openembedded、meta-raspberrypi 固定检出 | PASS | `evidence/bootstrap-host.log`，前 3 个 lock commit 已取得 |
-| 官方 meta-virtualization 固定检出 | BLOCKED | [实际源码访问](evidence/yocto-source-build/20261028/source-access.log)仍为 HTTPS CONNECT 403 |
+| meta-virtualization 固定检出 | PASS | [镜像与固定对象检查](evidence/source-mirrors/20261028/pinned-sources/layer-kernel-verification.json)；GitHub 镜像提供原 lock commit，重复 bootstrap 与严格 fsck 通过 |
 | 隔离离线配方解析 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-parse.log)：2939 recipes、4885 targets、687 skipped、0 errors。使用已有研究 layer，未验证官方来源，不是正式构建通过 |
 | 隔离离线任务图 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-taskgraph.log)：286 recipes；确认 guest 镜像与共享内核是 Dom0 打包依赖 |
-| 正式 BitBake 解析与源码版本核对 | BLOCKED | 等待官方 layer 获取；Pi4 内核分支与 SRCREV 对应关系仍需核实 |
-| Yocto Pi4 整卡编译 | BLOCKED | 未完成正式源码获取，尚未执行整卡编译任务 |
+| 正式 BitBake 解析与任务图 | PASS | [记录](evidence/source-mirrors/20261028/source-plan.log)：2939 recipes、4885 targets、0 errors；选中 232 个构建配方 |
+| Pi4 内核源码与分支 | PASS | 实际 Pi4 分支提交 `0d5c8af531e021d38d2589c109268b644bdf3320`，源码版本 6.6.100；fsck、许可证和 Pi4 DTS 核对通过 |
+| Yocto Pi4 整卡编译 | IN_PROGRESS | 实际 BitBake 已编译通过 quilt、m4、autoconf、automake、libtool、zlib 等 native 工具；完整任务仍在执行和修复，日志保存在 `local/logs/build-mirrors-*.log` |
 | 自建整卡静态检查 | NOT_RUN | 没有 `.wic`/`.img`；合成测试文件不能充当交付镜像 |
 | 自建整卡 QEMU 启动及 guest 验证 | NOT_RUN | [新入口实际拒绝记录](evidence/yocto-source-build/20261028/qemu-required-image.log)：缺少自建 Pi4 镜像时退出码 1，不替换为 Debian |
 | Pi4 实机启动与运行验证 | NOT_RUN | 尚无构建镜像与已连接板卡 |
@@ -31,7 +32,7 @@
 
 容器把仓库根目录映射到 `/work`。宿主是 x86_64 Debian 13；实际构建宿主采用 Ubuntu 22.04，CPU cgroup 配额约 4 核、内存限制 32 GiB；准备开始时工作盘可用约 30 GiB，容器和源码准备后约 28 GiB。没有发现既有 downloads/sstate 缓存。
 
-下表为当前配置。隔离离线审计确认了候选 provider 和任务图；该审计使用本地研究 layer，不能代替官方源码检出和正式构建。成功构建后，实际 provider、版本和源码信息会导出到 `artifacts/versions.json`。
+下表为当前配置。正式构建已使用镜像提供的固定 layer；成功构建后，实际 provider、版本和源码信息会导出到 `artifacts/versions.json`。
 
 | 项目 | 配置 |
 | --- | --- |
@@ -39,8 +40,8 @@
 | MACHINE / DISTRO | `raspberrypi4-64` / `pi4-xen` |
 | Dom0 image | `pi4-xen-dom0-image` |
 | Guest image | `pi4-guest1-image`，独立无分区 ext4，复用同一份 ARM64 内核 |
-| Linux | `linux-yocto` 6.6；固定 Poky recipe 当前标识 6.6.151 |
-| Linux Pi4 BSP | `v6.6/standard/bcm-2xxx-rpi` / `bcm-2xxx-rpi4`，需取得官方源码后核对 recipe SRCREV 与分支关系 |
+| Linux | `linux-yocto` 6.6.100，bbappend 明确覆盖版本与对应 Pi4 分支提交 |
+| Linux Pi4 BSP | `v6.6/standard/bcm-2xxx-rpi` / `bcm-2xxx-rpi4`，从 Wind River 镜像取得真实分支，Pi4 DTS 与许可证已核对 |
 | Xen / xen-tools | 上游 4.19.0；recipe PV 分别为 `4.19.0+stable` 和 `4.19+stable` |
 | Xen source | 官方 `xen-project/xen` commit `026c9fa29716b0ff0f8b7c687908e71ba29cf239` |
 | U-Boot | 2024.01，Pi4 ARM64，复用 `xen-rpi-u-boot-scr` recipe 并替换脚本模板 |
@@ -48,9 +49,9 @@
 | 磁盘 | Wic MBR：FAT 启动分区 + ext4 Dom0；guest ext4 存放于 Dom0 的 `/var/lib/xen/images/guest1/` |
 | 登录 | Dom0 root SSH 公钥与串口密码；guest hvc0 本地自动进入 root shell |
 
-`meta-virtualization` 候选 commit 来自先前的 scarthgap 研究 clone。本次仅在独立 scratch 配置中使用该已有 clone 做离线审计，容器 `--network none`，BitBake `BB_NO_NETWORK=1`；未替换正式源码目录，也未用它构建交付镜像。正式获取脚本仍要求 `https://git.yoctoproject.org/meta-virtualization` 的固定提交。
+`meta-virtualization` 的规范来源仍记录为 `git.yoctoproject.org`，`sources.lock.json` 同时声明 GitHub 镜像。获取脚本核对原固定提交，拒绝脏目录、未知来源和不匹配的 HEAD。
 
-离线审计还发现：Pi4 覆盖层设置 `KBRANCH=v6.6/standard/bcm-2xxx-rpi`，而 `SRCREV_machine` 沿用 Poky 默认值。获取权威内核源码后，需要核实提交与 Pi4 分支的关系，不能只凭拉取成功推断 BSP 正确。
+此前 Pi4 覆盖层只改了 `KBRANCH`、沿用了 Poky 通用内核提交；现已同时固定实际 Pi4 分支提交和 6.6.100 版本。默认 6.6.151 标记不再被当作 Pi4 分支的实际版本。
 
 ## 实现内容
 
@@ -66,13 +67,13 @@
 
 用户要求直接拉取仓库，因此工程、上述 evidence 原始记录及 `local/credentials/` 中的四个实验凭据文件纳入 Git。首次准备会修复 Git 检出导致的私钥权限变化并验证凭据配对关系。缓存、构建输出和生成的本地配置继续忽略。
 
-## 恢复构建所需动作
+## 继续构建
 
-环境网络配置草稿已保存 Yocto layer、内核、工具链和用户空间源码所需的域名，包括 `git.yoctoproject.org`、`downloads.yoctoproject.org`、GNU、Kernel.org、U-Boot 等上游站点及 Pi 固件使用的 GitHub API。当前运行时仍未应用这些增补。需要在环境设置中保存网络配置；保存草稿本身不会改变运行中的访问权限。源码重定向或后续依赖若出现新的明确拒绝，再按实际 URL 补充。
+当前镜像配置随仓库加载，无需依赖此前未应用的网络配置草稿。相同原包继续验证原 SHA256；Git 发布源码、另一压缩格式或 Debian 明确删去手册的 tar 源码，分别以 bbappend 和独立证据记录，不能宣称它们匹配原压缩包哈希。
 
-已保存并确认持久化的字段为 `network.allowed_domains`、`install_script` 和 `start_skill`。安装脚本的内容已在当前实例实际演练；保存配置不等于已应用网络设置或已发布新快照，未来任务恢复尚未验证。
+容器宿主工具用于从 Git 生成发布文件；目标系统和交叉工具链仍由 Yocto 构建。未使用外部预构建 sstate。`rm_work` 和低空间监控保持启用；曾因 32 GiB 工作盘不足停止一次，已回收旧实验临时文件与闲置容器层后恢复。源码缓存和现有成功任务保留。
 
-网络生效后，从仓库根目录继续：
+从仓库根目录继续：
 
 ```sh
 ./scripts/container.sh prepare
@@ -82,6 +83,6 @@
 ./scripts/qemu-yocto.sh validate
 ```
 
-先核对官方 layer commit、Pi4 内核分支与 SRCREV、解析出的 provider 和任务图，再执行全量构建。构建流程获取源码、构建支持工具及 Pi 必需启动固件，不下载预制 guest OS 镜像。保留 TLS、签名与校验和验证。当前工作盘可用空间约 18 GiB，实际编译峰值尚未测出；保留 `rm_work` 与磁盘低空间监控，不能宣称现有容量已验证足够，也不删除已有下载缓存来绕过空间问题。
+构建流程获取源码、构建支持工具及 Pi 必需启动固件，不下载预制 guest OS 镜像。TLS、来源验证和许可证校验保留。尚不能宣称当前云磁盘容量已经过完整构建验证。
 
 预期烧录文件为 `artifacts/pi4-xen-dom0-guest1.img`，校验值为 `artifacts/SHA256SUMS`；**当前两个文件都尚未生成**。烧录与上板步骤见仓库 README，只有执行并保留真实日志后才能将对应状态改为 PASS。

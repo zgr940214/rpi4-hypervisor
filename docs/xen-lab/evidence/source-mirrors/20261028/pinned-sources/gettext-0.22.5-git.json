@@ -1,0 +1,39 @@
+{
+  "component": "gettext",
+  "version": "0.22.5",
+  "source": "https://github.com/autotools-mirror/gettext.git",
+  "tag": "v0.22.5",
+  "commit": "0d53c885229fc59ca3ce6a8e70fb3f6d59ece361",
+  "gnulib_url": "https://github.com/coreutils/gnulib.git",
+  "gnulib_commit": "dd801be6c84325d140c67ec9869b3844bc5550ac",
+  "gnulib_pin_from": "gitlink in upstream v0.22.5",
+  "both_git_caches_fsck": "PASS",
+  "upstream_autogen_in_pinned_build_container_without_network": "PASS",
+  "configure_version": "gettext configure 0.22.5",
+  "generated_configure_files": [
+    "configure",
+    "gettext-runtime/configure",
+    "gettext-runtime/intl/configure",
+    "gettext-runtime/libasprintf/configure",
+    "libtextstyle/configure",
+    "gettext-tools/configure",
+    "gettext-tools/examples/configure"
+  ],
+  "original_license_checks": {
+    "COPYING": "c678957b0c8e964aa6c70fd77641a71e",
+    "libtextstyle/lib/libxml/COPYING": "2044417e2e5006b65a8b9067b683fcf1",
+    "libtextstyle/lib/glib/ghash.c": "e3159f5ac38dfe77af5cc0ee104dab2d"
+  },
+  "all_six_original_patches_fuzz_0": "PASS",
+  "patch_log": "local/mirror-extra/gettext-0.22.5/patches.log",
+  "bootstrap_log": "local/mirror-extra/gettext-0.22.5/bootstrap.log",
+  "original_archive_sha256": "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0",
+  "original_archive_sha256_matched": false,
+  "notes": [
+    "Explicit same-release Git source alternative, not original distribution-archive checksum match.",
+    "Autogen local symlinks are materialized as regular files before unchanged patches, matching distribution source layout.",
+    "Build container Autoconf2.71 and Automake1.16.5 used.",
+    "bison-native added for generated parser C files omitted from release Git tree.",
+    "BitBake compilation not run by this verification."
+  ]
+}

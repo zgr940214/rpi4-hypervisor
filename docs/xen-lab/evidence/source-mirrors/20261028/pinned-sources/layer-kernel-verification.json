@@ -1,0 +1,34 @@
+{
+  "scope": "Mirror retrieval of pinned Git objects; no upstream signature claim",
+  "meta_virtualization": {
+    "canonical_url": "https://git.yoctoproject.org/meta-virtualization",
+    "fetched_from": "https://github.com/hexagon-geo-surv/meta-virtualization.git",
+    "commit": "6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819",
+    "tree": "f52d7554687babc374fcbd5fc4696b1ad51c0c1d",
+    "fsck_strict": "PASS",
+    "repeat_bootstrap": "PASS"
+  },
+  "kernel_metadata": {
+    "canonical_url": "https://git.yoctoproject.org/yocto-kernel-cache",
+    "fetched_from": "https://github.com/jhnc-oss/yocto-kernel-cache.git",
+    "commit": "dd201eb6ec53179f45836d41610ca68c725d28e2",
+    "branch": "yocto-6.6",
+    "branch_tip": "111e66d07f015c08755ae564c4a2f4a7710863ef",
+    "pinned_commit_is_ancestor_of_remote_branch": true,
+    "fsck_strict": "PASS"
+  },
+  "kernel": {
+    "canonical_url": "https://git.yoctoproject.org/linux-yocto.git",
+    "fetched_from": "https://github.com/WindRiverLinux24/linux-yocto-6.6.git",
+    "branch": "v6.6/standard/bcm-2xxx-rpi",
+    "advertised_branch_tip": "0d5c8af531e021d38d2589c109268b644bdf3320",
+    "makefile_version": "6.6.100",
+    "fetch_status": "PASS",
+    "fsck_strict": "PASS",
+    "head": "0d5c8af531e021d38d2589c109268b644bdf3320",
+    "tree": "48669118dd147550fddca7099bfc3cbb44c078eb",
+    "source_date": "2025-07-24",
+    "license_md5": "6bc538ed5bd9a7fc9398086aedcd7e46",
+    "pi4_dts_compatible": "raspberrypi,4-model-b"
+  }
+}

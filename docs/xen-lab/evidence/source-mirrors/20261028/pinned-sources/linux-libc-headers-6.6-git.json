@@ -1,0 +1,30 @@
+{
+  "component": "linux-libc-headers",
+  "version": "6.6",
+  "source_kind": "same-version upstream release Git source, explicit alternative to distribution archive",
+  "url": "https://github.com/torvalds/linux.git",
+  "tag": "v6.6",
+  "tag_object": "5260836abb7056beed3f3f0d0e4262c11f36f0d0",
+  "commit": "ffc253263a1375a65fa6c9f62a893e9767fbebfa",
+  "makefile_version": {
+    "VERSION": "6",
+    "PATCHLEVEL": "6",
+    "SUBLEVEL": "0",
+    "EXTRAVERSION": "",
+    "NAME": "Hurr durr I'ma ninja sloth"
+  },
+  "license_copying_md5": "6bc538ed5bd9a7fc9398086aedcd7e46",
+  "recipe_license_checksum_matches": true,
+  "git_fsck": "PASS",
+  "git_fsck_notice": "notice: HEAD points to an unborn branch (master)",
+  "cache": ".cache/downloads/git2/github.com.torvalds.linux.git",
+  "source_directory": "${WORKDIR}/linux-${PV}",
+  "original_archive_sha256": "d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0",
+  "original_archive_sha256_matched": false,
+  "notes": [
+    "This Git source is authenticated by its immutable commit, not by the original distribution archive SHA256.",
+    "Preserves Linux 6.6 headers, original patches, original license check, and headers_install.",
+    "The Pi4 runtime kernel source/cache is separate and untouched.",
+    "BitBake compile/install not run by this verification."
+  ]
+}

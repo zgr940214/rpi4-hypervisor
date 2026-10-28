@@ -1,0 +1,134 @@
+[
+  {
+    "original": "git://git.yoctoproject.org/pseudo;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_pseudo.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https",
+    "resolved": "git://github.com/WindRiverLinux24/linux-yocto-6.6.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https"
+  },
+  {
+    "original": "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https",
+    "resolved": "git://github.com/jhnc-oss/yocto-kernel-cache.git;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https"
+  },
+  {
+    "original": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_glibc.git;protocol=https;branch=release/2.39/master;name=glibc"
+  },
+  {
+    "original": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_opkg-utils.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_update-rc.d.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "resolved": "git://github.com/u-boot/u-boot.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git;branch=master;protocol=https",
+    "resolved": "git://github.com/kdave/btrfs-progs.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://sourceware.org/git/binutils-gdb.git;branch=binutils-2_42-branch;protocol=https",
+    "resolved": "git://github.com/RTEMS/sourceware-mirror-binutils-gdb.git;branch=binutils-2_42-branch;protocol=https"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "resolved": "git://github.com/tytso/e2fsprogs.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git;branch=master;protocol=https",
+    "resolved": "git://github.com/erofs/erofs-utils.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://gitlab.freedesktop.org/pkg-config/pkg-config.git;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_pkg-config.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "resolved": "git://github.com/kmod-project/kmod.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://git.yoctoproject.org/yocto-kernel-tools.git;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_yocto-kernel-tools.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://git.yoctoproject.org/yocto-kernel-cache;branch=yocto-6.6",
+    "resolved": "git://github.com/jhnc-oss/yocto-kernel-cache.git;branch=yocto-6.6;protocol=https"
+  },
+  {
+    "original": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_glibc.git;protocol=https;branch=release/2.39/master;name=glibc"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "resolved": "git://github.com/dgibson/dtc.git;branch=main;protocol=https"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+    "resolved": "git://github.com/dgibson/dtc.git;branch=main;protocol=https"
+  },
+  {
+    "original": "git://codeberg.org/jmoyer/libaio.git;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_libaio.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/network/bridge/bridge-utils.git;branch=main",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_bridge-utils.git;branch=main;protocol=https"
+  },
+  {
+    "original": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+    "resolved": "git://github.com/u-boot/u-boot.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.savannah.gnu.org/git/config.git;protocol=https;branch=master",
+    "resolved": "git://github.com/chipp/gnu-config.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_opkg-utils.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+    "resolved": "git://github.com/kmod-project/kmod.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/qrdk_bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https"
+  },
+  {
+    "original": "git://salsa.debian.org/debian/debianutils.git;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_debianutils.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+    "resolved": "git://github.com/tytso/e2fsprogs.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://salsa.debian.org/debian/ifupdown.git;protocol=https;branch=master",
+    "resolved": "git://github.com/kmluoh/ifupdown.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_update-rc.d.git;branch=master;protocol=https"
+  },
+  {
+    "original": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_shared-mime-info.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+    "resolved": "git://github.com/CodeLinaro-mirror/qrdk_bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https"
+  },
+  {
+    "original": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+    "resolved": "git://github.com/CodeLinaro-mirror/yocto-mirrors_shared-mime-info.git;protocol=https;branch=master"
+  },
+  {
+    "original": "git://codeberg.org/xmlto/xmlto.git;protocol=https;branch=master",
+    "resolved": "git://gitlab.com/freedesktop-sdk/mirrors/pagure/xmlto.git;protocol=https;branch=master"
+  }
+]
