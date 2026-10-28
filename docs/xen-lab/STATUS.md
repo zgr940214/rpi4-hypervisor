@@ -11,14 +11,14 @@
 | 检查 | 状态 | 证据或原因 |
 | --- | --- | --- |
 | Ubuntu 构建容器 | PASS | `evidence/container-build.log`，实际 Docker 构建成功；重复构建退出码 0 |
-| 管理、凭据、镜像、构建来源与镜像下载工具 | PASS | [容器内记录](evidence/source-mirrors/20261028/tool-tests.log)，82 项通过、0 跳过，退出码 0；属于工具测试 |
+| 管理、凭据、镜像、构建来源与镜像下载工具 | PASS | [容器内记录](evidence/source-mirrors/20261028/delivery-tool-tests.log)，98 项通过、0 跳过，退出码 0；包含镜像分片恢复工具测试，不能代替启动验证 |
 | 正式 Poky、meta-openembedded、meta-raspberrypi 固定检出 | PASS | `evidence/bootstrap-host.log`，前 3 个 lock commit 已取得 |
 | meta-virtualization 固定检出 | PASS | [镜像与固定对象检查](evidence/source-mirrors/20261028/pinned-sources/layer-kernel-verification.json)；GitHub 镜像提供原 lock commit，重复 bootstrap 与严格 fsck 通过 |
 | 隔离离线配方解析 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-parse.log)：2939 recipes、4885 targets、687 skipped、0 errors。使用已有研究 layer，未验证官方来源，不是正式构建通过 |
 | 隔离离线任务图 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-taskgraph.log)：286 recipes；确认 guest 镜像与共享内核是 Dom0 打包依赖 |
 | 正式 BitBake 解析与任务图 | PASS | [记录](evidence/source-mirrors/20261028/source-plan.log)：2939 recipes、4885 targets、0 errors；选中 232 个构建配方 |
 | Pi4 内核源码与分支 | PASS | 实际 Pi4 分支提交 `0d5c8af531e021d38d2589c109268b644bdf3320`，源码版本 6.6.100；fsck、许可证和 Pi4 DTS 核对通过 |
-| Yocto Pi4 整卡编译 | IN_PROGRESS | 实际 BitBake 已编译通过 quilt、m4、autoconf、automake、libtool、zlib 等 native 工具；完整任务仍在执行和修复，日志保存在 `local/logs/build-mirrors-*.log` |
+| Yocto Pi4 整卡编译 | IN_PROGRESS | 实际 BitBake 已编译通过 GCC 13.5 交叉编译器、glibc 2.39、Gettext 及 GnuTLS 等依赖；Pi4 内核配置已通过。完整任务仍在执行，日志保存在 `local/logs/build-mirrors-*.log` |
 | 自建整卡静态检查 | NOT_RUN | 没有 `.wic`/`.img`；合成测试文件不能充当交付镜像 |
 | 自建整卡 QEMU 启动及 guest 验证 | NOT_RUN | [新入口实际拒绝记录](evidence/yocto-source-build/20261028/qemu-required-image.log)：缺少自建 Pi4 镜像时退出码 1，不替换为 Debian |
 | Pi4 实机启动与运行验证 | NOT_RUN | 尚无构建镜像与已连接板卡 |

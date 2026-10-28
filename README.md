@@ -85,10 +85,14 @@ xl console guest1
 ./scripts/container.sh test
 ```
 
-在构建容器内可单独检查真实产物：
+在构建容器内可单独检查真实产物。使用镜像构建所保留的原生工具，确保 e2fsprogs 支持构建输出启用的 ext4 特性：
 
 ```sh
+source .cache/sources/poky/oe-init-build-env build
+native_sysroot=$(bitbake-getvar -r pi4-xen-dom0-image --value RECIPE_SYSROOT_NATIVE)
+cd ..
 python3 scripts/check-image.py \
+  --native-sysroot "$native_sysroot" \
   --image artifacts/pi4-xen-dom0-guest1.img \
   --deploy build/tmp/deploy/images/raspberrypi4-64 \
   --kernel-config artifacts/pi4-xen-kernel.config \

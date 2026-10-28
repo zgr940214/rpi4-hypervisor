@@ -32,6 +32,8 @@ Pi4 内核分支与版本另由 [linux-yocto_6.6.bbappend](../../meta-pi4-xen-la
 
 宿主配置关闭 `uninative`，避免依赖原站的预编译宿主兼容包。M4、Automake、Libtool、Patch 的早期 native 任务用 [host-xz-bootstrap.inc](../../meta-pi4-xen-lab/recipes-devtools/host-xz-bootstrap.inc) 中固定的 `/usr/bin/xz` 解压，打破它们与 `xz-native` 的循环依赖；只移除这几个 native 配方的解压依赖，其他 `xz-native`/liblzma 构建依赖保留。
 
+Gettext 0.22.5 的 Git 源码与它记录的 gnulib 提交共同生成发布文件。`autopoint` 所需的历史宏归档另从经过 Debian 签名索引认证的 Gettext 0.23.1 源码包中提取，仅使用 `archive.dir.tar`，并核对内层摘要及其中 0.22.5 快照的全部 22 个文件；不编译或安装 0.23.1 的程序。配方跳过 Git 检出中缺少发布生成文件的可选手册与示例，保留程序、库、普通翻译目录、宏、autopoint 和测试。详细记录见 [gettext-history](evidence/source-mirrors/20261028/gettext-history/)。
+
 可导出当前实际选中配方的源码清单，随后按需预取备用压缩包：
 
 ```sh
