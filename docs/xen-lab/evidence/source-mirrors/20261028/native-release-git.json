@@ -60,8 +60,39 @@
     ],
     "bootstrap": "GIT-VERSION-GEN defaults to v2.44.4; regenerate the release tarball version file at unpack. Existing autotools recipe generates configure.",
     "commit_metadata": "080b728d4b2bbdd2c0b9eb9ed6a41195f8303088\n2025-05-28T14:51:12-04:00\nGit 2.44.4",
-    "bitbake_compile": "Pending parent build",
-    "independent_host_verification": "PASS: offline autoreconf + configure, generated version2.44.4"
+    "bitbake_compile": "PASS: git-native configure, compile, install and populate_sysroot verified in build pass 6.",
+    "independent_host_verification": "PASS: offline autoreconf + configure, generated version2.44.4",
+    "bitbake_verification": {
+      "recipe": "git-native",
+      "recipe_id": "git-native-2.44.4-r0",
+      "log": "local/logs/build-mirrors-6.log",
+      "log_sha256": "ab0869b030f610b442ea5cfc050506be3283126a4d5683aed7358a6a58bb6064",
+      "tasks": [
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 2640
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 2643
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 2646
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 2649
+        }
+      ],
+      "status": "PASS",
+      "variant": "native",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    }
   },
   {
     "name": "swig",
@@ -100,8 +131,59 @@
     ],
     "bootstrap": "configure.ac AC_INIT is4.2.1; existing autotools and bison-native generate configure/parser.",
     "commit_metadata": "b592468f522cf7f4a0812493bfa07cbe60679d7c\n2024-02-23T23:57:14Z\nhtml fixes",
-    "bitbake_compile": "Pending parent build",
-    "independent_host_verification": "PASS: offline autoreconf + configure + full compile, SWIG4.2.1 --version; host smoke disabled PCRE solely because the validation container lacks pcre development headers (Yocto dependency preserved)."
+    "bitbake_compile": "PASS: swig-native configure, compile, install and populate_sysroot verified in build pass 7.",
+    "independent_host_verification": "PASS: offline autoreconf + configure + full compile, SWIG4.2.1 --version; host smoke disabled PCRE solely because the validation container lacks pcre development headers (Yocto dependency preserved).",
+    "bitbake_verification": {
+      "recipe": "swig-native",
+      "recipe_id": "swig-native-4.2.1-r0",
+      "log": "local/logs/build-mirrors-7.log",
+      "log_sha256": "ef515550b699aff627b3d3795751917b0a7cbb2e9dee73098b2f4bf00825e2e9",
+      "tasks": [
+        {
+          "task": "do_fetch",
+          "status": "PASS",
+          "line": 749
+        },
+        {
+          "task": "do_unpack",
+          "status": "PASS",
+          "line": 755
+        },
+        {
+          "task": "do_patch",
+          "status": "PASS",
+          "line": 767
+        },
+        {
+          "task": "do_populate_lic",
+          "status": "PASS",
+          "line": 770
+        },
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 776
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 779
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 782
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 785
+        }
+      ],
+      "status": "PASS",
+      "variant": "native",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    }
   },
   {
     "name": "gnu-efi",
@@ -164,8 +246,59 @@
     ],
     "bootstrap": "Release Makefiles committed; no bootstrap needed.",
     "commit_metadata": "24c80efc1af996bf8252f4a2f5ffc02d8c44640b\n2023-05-02T07:51:45-04:00\nBump revision to VERSION = 3.0.17",
-    "bitbake_compile": "Pending parent build",
-    "independent_host_verification": "PASS: full x86_64 Makefile compile with all original patches"
+    "bitbake_compile": "PASS: gnu-efi configure, compile, install and populate_sysroot verified in build pass 6.",
+    "independent_host_verification": "PASS: full x86_64 Makefile compile with all original patches",
+    "bitbake_verification": {
+      "recipe": "gnu-efi",
+      "recipe_id": "gnu-efi-3.0.17-r0",
+      "log": "local/logs/build-mirrors-6.log",
+      "log_sha256": "ab0869b030f610b442ea5cfc050506be3283126a4d5683aed7358a6a58bb6064",
+      "tasks": [
+        {
+          "task": "do_fetch",
+          "status": "PASS",
+          "line": 4326
+        },
+        {
+          "task": "do_unpack",
+          "status": "PASS",
+          "line": 4338
+        },
+        {
+          "task": "do_patch",
+          "status": "PASS",
+          "line": 4344
+        },
+        {
+          "task": "do_populate_lic",
+          "status": "PASS",
+          "line": 4350
+        },
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 4358
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 4380
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 4383
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 4386
+        }
+      ],
+      "status": "PASS",
+      "variant": "target",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    }
   },
   {
     "name": "quilt",
@@ -204,8 +337,54 @@
     ],
     "bootstrap": "configure.ac AC_INIT is0.67 and generated configure/Makefile.in are committed; native bootstrap dependencies unchanged. Touch committed configure before native configure to restore generated-file timestamp ordering after Git checkout.",
     "commit_metadata": "1731753a56234abc9a367f0e476bd5eeec126fde\n2022-02-15T14:30:36+01:00\nSet version to 0.67.",
-    "bitbake_compile": "Pending parent build",
-    "independent_host_verification": "PASS: native build without autoreconf, version0.67, real patch refresh/pop/push round-trip"
+    "bitbake_compile": "PASS: quilt-native configure, compile, install and populate_sysroot verified in build pass 4.",
+    "independent_host_verification": "PASS: native build without autoreconf, version0.67, real patch refresh/pop/push round-trip",
+    "bitbake_verification": {
+      "recipe": "quilt-native",
+      "recipe_id": "quilt-native-0.67-r0",
+      "log": "local/logs/build-mirrors-4.log",
+      "log_sha256": "db1b06a2958bd3377064904863073afc6a6d4d3cd163a97e4b4898729953b11e",
+      "tasks": [
+        {
+          "task": "do_fetch",
+          "status": "PASS",
+          "line": 60
+        },
+        {
+          "task": "do_unpack",
+          "status": "PASS",
+          "line": 68
+        },
+        {
+          "task": "do_patch",
+          "status": "PASS",
+          "line": 73
+        },
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 80
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 83
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 86
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 92
+        }
+      ],
+      "status": "PASS",
+      "variant": "native",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    }
   },
   {
     "name": "elfutils",
@@ -302,13 +481,85 @@
         "pass"
       ]
     ],
-    "bootstrap": "configure.ac AC_INIT is0.191; native maintainer-mode builds libcpu generated source tables; stage tables for target/nativesdk builds.",
+    "bootstrap": "configure.ac AC_INIT is 0.191; native maintainer-mode builds generated source headers. Stage libcpu disassembler tables and the native-installed libdw known-dwarf.h for target/nativesdk builds.",
     "commit_metadata": "18a015c0b0787ba5acb39801ab7c17dac50f584d\n2024-03-01T12:31:49-05:00\nPrepare for 0.191",
-    "bitbake_compile": "Pending parent build",
+    "bitbake_compile": "PASS: elfutils-native configure, compile, install and populate_sysroot verified in build pass 11.",
     "independent_host_verification": "PASS: autoreconf + configure --enable-maintainer-mode + full native compile with all original patches, elflint version0.191, both source tables generated",
     "generated_headers": {
       "i386_dis.h": "c885f73bce1b9bf24a56360ada7cdb8b3534749f76117ea6e970669fea59b07f",
-      "x86_64_dis.h": "5b4640e35a15edf163181d248cc993c4cb4c338949827c1d401f6870f98f47a1"
+      "x86_64_dis.h": "5b4640e35a15edf163181d248cc993c4cb4c338949827c1d401f6870f98f47a1",
+      "known-dwarf.h": "f195ec1dd206c105e1765cbbc681029782128ab8f5654bfccd84738f2c81d963"
+    },
+    "bitbake_verification": {
+      "recipe": "elfutils-native",
+      "recipe_id": "elfutils-native-0.191-r0",
+      "log": "local/logs/build-mirrors-11.log",
+      "log_sha256": "f9316750b350564684ad50e2c2999bc48a0e62912d395cd528952b66cfebb3de",
+      "tasks": [
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 94
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 167
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 170
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 173
+        }
+      ],
+      "status": "PASS",
+      "variant": "native",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    },
+    "generated_header_cross_build": {
+      "header": "known-dwarf.h",
+      "source": "${STAGING_INCDIR_NATIVE}/elfutils/known-dwarf.h",
+      "destination": "${S}/libdw/known-dwarf.h",
+      "variants": [
+        "target",
+        "nativesdk"
+      ],
+      "reason": "Reuse the header generated and installed by elfutils-native instead of executing a target program during a cross build.",
+      "verified_native_installed_path": "build/tmp/sysroots-components/x86_64/elfutils-native/usr/include/elfutils/known-dwarf.h",
+      "verified_target_source_path": "build/tmp/work/cortexa72-poky-linux/elfutils/0.191/elfutils-0.191/libdw/known-dwarf.h",
+      "byte_identical": true
+    },
+    "target_bitbake_verification": {
+      "recipe": "elfutils",
+      "recipe_id": "elfutils-0.191-r0",
+      "log": "local/logs/build-mirrors-12.log",
+      "tasks": [
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 348
+        },
+        {
+          "task": "do_compile",
+          "status": "FAIL",
+          "line": 1673
+        }
+      ],
+      "status": "INCOMPLETE",
+      "variant": "target",
+      "as_of_build_pass": 12,
+      "observed_failure": {
+        "stage": "do_compile",
+        "message": "File en@quot.po does not exist; en@quot.po-create failed during translation catalog generation.",
+        "log_line": 1664
+      },
+      "diagnosis": "The standard gettext po/Rules-quot auxiliary is absent from the Git source bootstrap; a targeted auxiliary-copy fix is staged separately. No target compile/install/sysroot success is claimed.",
+      "staged_fix": "local/reviewpatches/elfutils-quoted-catalogues.patch"
     }
   },
   {
@@ -340,7 +591,58 @@
     ],
     "bootstrap": "configure.ac release version0.6.3; autotools regenerates configure.",
     "commit_metadata": "96c7fdef4112b97929053316bf4c5a136de71ef8\n2023-12-05T10:20:59-05:00\nROADMAP: update",
-    "bitbake_compile": "Pending parent build",
-    "independent_host_verification": "PASS: offline autoreconf generates configure with all original patches"
+    "bitbake_compile": "PASS: opkg-native configure, compile, install and populate_sysroot verified in build pass 7.",
+    "independent_host_verification": "PASS: offline autoreconf generates configure with all original patches",
+    "bitbake_verification": {
+      "recipe": "opkg-native",
+      "recipe_id": "opkg-native-1_0.6.3-r0",
+      "log": "local/logs/build-mirrors-7.log",
+      "log_sha256": "ef515550b699aff627b3d3795751917b0a7cbb2e9dee73098b2f4bf00825e2e9",
+      "tasks": [
+        {
+          "task": "do_fetch",
+          "status": "PASS",
+          "line": 364
+        },
+        {
+          "task": "do_unpack",
+          "status": "PASS",
+          "line": 370
+        },
+        {
+          "task": "do_patch",
+          "status": "PASS",
+          "line": 382
+        },
+        {
+          "task": "do_populate_lic",
+          "status": "PASS",
+          "line": 385
+        },
+        {
+          "task": "do_configure",
+          "status": "PASS",
+          "line": 391
+        },
+        {
+          "task": "do_compile",
+          "status": "PASS",
+          "line": 394
+        },
+        {
+          "task": "do_install",
+          "status": "PASS",
+          "line": 397
+        },
+        {
+          "task": "do_populate_sysroot",
+          "status": "PASS",
+          "line": 400
+        }
+      ],
+      "status": "PASS",
+      "variant": "native",
+      "scope": "Only the listed recipe variant and task stages; this does not certify completion of the full image or QEMU validation."
+    }
   }
 ]
