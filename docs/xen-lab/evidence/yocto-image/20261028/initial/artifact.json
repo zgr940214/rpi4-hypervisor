@@ -1,0 +1,6 @@
+{
+  "image": "/work/artifacts/pi4-xen-dom0-guest1.img",
+  "sha256": "16208e4ae8e019de43318b5de9474389941ec0cfa0f46bf0e2007f115c15c966",
+  "bytes": 1295329280,
+  "kernel_config_sha256": "e89db015e23edce5931bb0fc465ee5d14a060d90ef3c2d8cb3213b4b84fb5983"
+}

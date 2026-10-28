@@ -109,6 +109,9 @@ class Runner:
                     self.sendline(proc, Path(self.args.password_file).read_text().strip())
             else:
                 raise RuntimeError(f'Could not enter {domain} shell')
+        if domain == 'guest1' and '__DOM0_PROMPT__#' in proc.after:
+            raise RuntimeError('guest1 console was not attached; command returned to Dom0:\n' +
+                               proc.before[-6000:])
         self.prompts[id(proc)] = f'__{domain.upper()}_PROMPT__# '
         self.command(proc, f"stty -echo -onlcr; export PS1='__{domain.upper()}_PROMPT__# '; id -u",
                      contains=r'(?m)^0$')

@@ -1,0 +1,396 @@
+Lab credentials are in local/credentials/ (contents not logged).
+Pinned source already present: poky
+Pinned source already present: meta-openembedded
+Pinned source already present: meta-raspberrypi
+Pinned source already present: meta-virtualization
+Build configuration prepared in /work/build; overrides: local/site.conf
+This is the default build configuration for the Poky reference distribution.
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-full-cmdline
+    core-image-sato
+    core-image-weston
+    meta-toolchain
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86-64'.
+
+Other commonly useful commands are:
+ - 'devtool' and 'recipetool' handle common recipe tasks
+ - 'bitbake-layers' handles common layer tasks
+ - 'oe-pkgdata-util' handles common target package tasks
+Loading cache...done.
+Loaded 4885 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2939 .bb files complete (2938 cached, 1 parsed). 4885 targets, 687 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.8.1"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "ubuntu-22.04"
+TARGET_SYS           = "aarch64-poky-linux"
+MACHINE              = "raspberrypi4-64"
+DISTRO               = "pi4-xen"
+DISTRO_VERSION       = "1.0"
+TUNE_FEATURES        = "aarch64 crc cortexa72"
+TARGET_FPU           = ""
+meta                 
+meta-poky            = "HEAD:b6ae714a1d1bfae8384654a13da15996cac64712"
+meta-oe              
+meta-python          
+meta-networking      
+meta-filesystems     = "HEAD:2db6aece32c7f8ebf6015b468e1b4e21de072e3b"
+meta-raspberrypi     = "HEAD:018d44467c4f09eb63f8ea5e86e85d755250cf89"
+meta-virtualization  = "HEAD:6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819"
+meta-pi4-xen-lab     = "main:26f25892aa208ce91877a759e20b2b2cd3ab6d27"
+
+Initialising tasks...Sstate summary: Wanted 156 Local 98 Mirrors 0 Missed 58 Current 1657 (62% match, 96% complete)
+done.
+NOTE: Executing Tasks
+NOTE: Running setscene task 1787 of 1813 (/work/.cache/sources/poky/meta/recipes-core/systemd/systemd_255.22.bb:do_package_write_ipk_setscene)
+NOTE: Running setscene task 1792 of 1813 (/work/.cache/sources/meta-openembedded/meta-networking/recipes-support/bridge-utils/bridge-utils_1.7.1.bb:do_package_write_ipk_setscene)
+NOTE: recipe bridge-utils-1.7.1-r0: task do_package_write_ipk_setscene: Started
+NOTE: recipe systemd-1_255.22-r0: task do_package_write_ipk_setscene: Started
+NOTE: recipe bridge-utils-1.7.1-r0: task do_package_write_ipk_setscene: Succeeded
+NOTE: Running setscene task 1793 of 1813 (/work/.cache/sources/poky/meta/recipes-extended/iptables/iptables_1.8.10.bb:do_package_write_ipk_setscene)
+NOTE: recipe iptables-1.8.10-r0: task do_package_write_ipk_setscene: Started
+NOTE: recipe systemd-1_255.22-r0: task do_package_write_ipk_setscene: Succeeded
+NOTE: recipe iptables-1.8.10-r0: task do_package_write_ipk_setscene: Succeeded
+NOTE: Running task 2530 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_configure)
+NOTE: recipe elfutils-0.191-r0: task do_configure: Started
+NOTE: recipe elfutils-0.191-r0: task do_configure: Succeeded
+NOTE: Running task 3807 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_compile)
+NOTE: recipe elfutils-0.191-r0: task do_compile: Started
+NOTE: recipe elfutils-0.191-r0: task do_compile: Succeeded
+NOTE: Running task 3808 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_install)
+NOTE: recipe elfutils-0.191-r0: task do_install: Started
+NOTE: recipe elfutils-0.191-r0: task do_install: Succeeded
+NOTE: Running task 3809 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_package)
+NOTE: Running task 3810 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_populate_sysroot)
+NOTE: recipe elfutils-0.191-r0: task do_populate_sysroot: Started
+NOTE: recipe elfutils-0.191-r0: task do_package: Started
+NOTE: recipe elfutils-0.191-r0: task do_populate_sysroot: Succeeded
+NOTE: Running task 3811 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_prepare_recipe_sysroot)
+NOTE: recipe iproute2-6.7.0-r0: task do_prepare_recipe_sysroot: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_prepare_recipe_sysroot: Succeeded
+NOTE: Running task 3812 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_configure)
+NOTE: recipe iproute2-6.7.0-r0: task do_configure: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_configure: Succeeded
+NOTE: Running task 3813 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_compile)
+NOTE: recipe iproute2-6.7.0-r0: task do_compile: Started
+NOTE: recipe elfutils-0.191-r0: task do_package: Succeeded
+NOTE: Running task 3814 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_packagedata)
+NOTE: recipe elfutils-0.191-r0: task do_packagedata: Started
+NOTE: recipe elfutils-0.191-r0: task do_packagedata: Succeeded
+NOTE: Running task 3815 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_package_qa)
+NOTE: recipe elfutils-0.191-r0: task do_package_qa: Started
+NOTE: recipe elfutils-0.191-r0: task do_package_qa: Succeeded
+NOTE: Running task 3816 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_package_write_ipk)
+NOTE: recipe elfutils-0.191-r0: task do_package_write_ipk: Started
+NOTE: recipe elfutils-0.191-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3817 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_create_spdx)
+NOTE: recipe elfutils-0.191-r0: task do_create_spdx: Started
+NOTE: recipe elfutils-0.191-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3818 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_create_runtime_spdx)
+NOTE: recipe elfutils-0.191-r0: task do_create_runtime_spdx: Started
+NOTE: recipe elfutils-0.191-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3819 of 3916 (/work/.cache/sources/poky/meta/recipes-devtools/elfutils/elfutils_0.191.bb:do_rm_work)
+NOTE: recipe elfutils-0.191-r0: task do_rm_work: Started
+NOTE: recipe elfutils-0.191-r0: task do_rm_work: Succeeded
+NOTE: Running task 3820 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_collect_spdx_deps)
+NOTE: recipe iproute2-6.7.0-r0: task do_collect_spdx_deps: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_collect_spdx_deps: Succeeded
+NOTE: recipe iproute2-6.7.0-r0: task do_compile: Succeeded
+NOTE: Running task 3821 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_install)
+NOTE: recipe iproute2-6.7.0-r0: task do_install: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_install: Succeeded
+NOTE: Running task 3822 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_package)
+NOTE: Running task 3823 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_populate_sysroot)
+NOTE: recipe iproute2-6.7.0-r0: task do_package: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_populate_sysroot: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_populate_sysroot: Succeeded
+NOTE: Running task 3824 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_prepare_recipe_sysroot)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_prepare_recipe_sysroot: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_prepare_recipe_sysroot: Succeeded
+NOTE: Running task 3825 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_configure)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_configure: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_package: Succeeded
+NOTE: Running task 3826 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_packagedata)
+NOTE: recipe iproute2-6.7.0-r0: task do_packagedata: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_packagedata: Succeeded
+NOTE: Running task 3827 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_package_qa)
+NOTE: recipe iproute2-6.7.0-r0: task do_package_qa: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_package_qa: Succeeded
+NOTE: Running task 3828 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_package_write_ipk)
+NOTE: recipe iproute2-6.7.0-r0: task do_package_write_ipk: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_configure: Succeeded
+NOTE: Running task 3829 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_create_spdx)
+NOTE: recipe iproute2-6.7.0-r0: task do_create_spdx: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3830 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_create_runtime_spdx)
+NOTE: recipe iproute2-6.7.0-r0: task do_create_runtime_spdx: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3831 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_collect_spdx_deps)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_collect_spdx_deps: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_collect_spdx_deps: Succeeded
+NOTE: Running task 3832 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_collect_spdx_deps)
+NOTE: recipe xen-4.19.0+stable-r0: task do_collect_spdx_deps: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3833 of 3916 (/work/.cache/sources/poky/meta/recipes-connectivity/iproute2/iproute2_6.7.0.bb:do_rm_work)
+NOTE: recipe xen-4.19.0+stable-r0: task do_collect_spdx_deps: Succeeded
+NOTE: Running task 3834 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_compile)
+NOTE: recipe iproute2-6.7.0-r0: task do_rm_work: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_compile: Started
+NOTE: recipe iproute2-6.7.0-r0: task do_rm_work: Succeeded
+NOTE: Running task 3835 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_prepare_recipe_sysroot)
+NOTE: recipe xen-4.19.0+stable-r0: task do_prepare_recipe_sysroot: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_prepare_recipe_sysroot: Succeeded
+NOTE: Running task 3836 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_configure)
+NOTE: recipe xen-4.19.0+stable-r0: task do_configure: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_configure: Succeeded
+NOTE: Running task 3837 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_compile)
+NOTE: recipe xen-4.19.0+stable-r0: task do_compile: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_compile: Succeeded
+NOTE: Running task 3838 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_install)
+NOTE: recipe xen-4.19.0+stable-r0: task do_install: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_install: Succeeded
+NOTE: Running task 3839 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_package)
+NOTE: recipe xen-4.19.0+stable-r0: task do_package: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_package: Succeeded
+NOTE: Running task 3840 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_packagedata)
+NOTE: recipe xen-4.19.0+stable-r0: task do_packagedata: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_packagedata: Succeeded
+NOTE: Running task 3841 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_package_qa)
+NOTE: recipe xen-4.19.0+stable-r0: task do_package_qa: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_package_qa: Succeeded
+NOTE: Running task 3842 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_package_write_ipk)
+NOTE: recipe xen-4.19.0+stable-r0: task do_package_write_ipk: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3843 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_create_spdx)
+NOTE: recipe xen-4.19.0+stable-r0: task do_create_spdx: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3844 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_create_runtime_spdx)
+NOTE: recipe xen-4.19.0+stable-r0: task do_create_runtime_spdx: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3845 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_populate_sysroot)
+NOTE: recipe xen-4.19.0+stable-r0: task do_populate_sysroot: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_populate_sysroot: Succeeded
+NOTE: recipe xen-tools-4.19+stable-r0: task do_compile: Succeeded
+NOTE: Running task 3846 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_install)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_install: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_install: Succeeded
+NOTE: Running task 3847 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_package)
+NOTE: Running task 3848 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_populate_sysroot)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_populate_sysroot: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_populate_sysroot: Succeeded
+NOTE: Running task 3849 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_deploy)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_deploy: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_deploy: Succeeded
+NOTE: Running task 3850 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_deploy)
+NOTE: recipe xen-4.19.0+stable-r0: task do_deploy: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_deploy: Succeeded
+NOTE: Running task 3851 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb:do_rm_work)
+NOTE: recipe xen-4.19.0+stable-r0: task do_rm_work: Started
+NOTE: recipe xen-4.19.0+stable-r0: task do_rm_work: Succeeded
+NOTE: Running task 3852 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_validate_pi4_payloads)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_validate_pi4_payloads: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_validate_pi4_payloads: Succeeded
+NOTE: Running task 3853 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_compile)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_compile: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_compile: Succeeded
+NOTE: Running task 3854 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_deploy)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_deploy: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_deploy: Succeeded
+NOTE: Running task 3855 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_install)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_install: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_install: Succeeded
+NOTE: Running task 3856 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_populate_sysroot)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_populate_sysroot: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_populate_sysroot: Succeeded
+NOTE: Running task 3857 of 3916 (/work/.cache/sources/meta-virtualization/dynamic-layers/raspberrypi/recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bb:do_rm_work)
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_rm_work: Started
+NOTE: recipe xen-rpi-u-boot-scr-1.0-r0: task do_rm_work: Succeeded
+NOTE: Running task 3858 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_prepare_recipe_sysroot)
+NOTE: recipe u-boot-1_2024.01-r0: task do_prepare_recipe_sysroot: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_prepare_recipe_sysroot: Succeeded
+NOTE: Running task 3859 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_configure)
+NOTE: recipe u-boot-1_2024.01-r0: task do_configure: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_configure: Succeeded
+NOTE: Running task 3860 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_compile)
+NOTE: recipe u-boot-1_2024.01-r0: task do_compile: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package: Succeeded
+NOTE: Running task 3861 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_packagedata)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_packagedata: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_packagedata: Succeeded
+NOTE: Running task 3862 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb:do_package_qa)
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_package_qa: Started
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_package_qa: Succeeded
+NOTE: Running task 3863 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_package_qa)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package_qa: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package_qa: Succeeded
+NOTE: Running task 3864 of 3916 (/work/meta-pi4-xen-lab/recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb:do_package_qa)
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_package_qa: Started
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_package_qa: Succeeded
+NOTE: Running task 3865 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb:do_package_write_ipk)
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_package_write_ipk: Started
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3866 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_package_write_ipk)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package_write_ipk: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3867 of 3916 (/work/meta-pi4-xen-lab/recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb:do_package_write_ipk)
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_package_write_ipk: Started
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3868 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_create_spdx)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_create_spdx: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3869 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb:do_create_runtime_spdx)
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_create_runtime_spdx: Started
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3870 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb:do_rm_work)
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_rm_work: Started
+NOTE: recipe pi4-xen-runtime-1.0-r0: task do_rm_work: Succeeded
+NOTE: Running task 3871 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_create_runtime_spdx)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_create_runtime_spdx: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3872 of 3916 (/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb:do_rm_work)
+NOTE: recipe xen-tools-4.19+stable-r0: task do_rm_work: Started
+NOTE: recipe xen-tools-4.19+stable-r0: task do_rm_work: Succeeded
+NOTE: Running task 3873 of 3916 (/work/meta-pi4-xen-lab/recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb:do_create_runtime_spdx)
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_create_runtime_spdx: Started
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3874 of 3916 (/work/meta-pi4-xen-lab/recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb:do_rm_work)
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_rm_work: Started
+NOTE: recipe pi4-xen-dom0-config-1.0-r0: task do_rm_work: Succeeded
+NOTE: Running task 3875 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_rootfs)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_rootfs: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_compile: Succeeded
+NOTE: Running task 3876 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_create_extlinux_config)
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_extlinux_config: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_extlinux_config: Succeeded
+NOTE: Running task 3877 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_uboot_generate_rsa_keys)
+NOTE: recipe u-boot-1_2024.01-r0: task do_uboot_generate_rsa_keys: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_uboot_generate_rsa_keys: Succeeded
+NOTE: Running task 3878 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_uboot_assemble_fitimage)
+NOTE: recipe u-boot-1_2024.01-r0: task do_uboot_assemble_fitimage: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_uboot_assemble_fitimage: Succeeded
+NOTE: Running task 3879 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_deploy)
+NOTE: recipe u-boot-1_2024.01-r0: task do_deploy: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_deploy: Succeeded
+NOTE: Running task 3880 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_install)
+NOTE: recipe u-boot-1_2024.01-r0: task do_install: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_install: Succeeded
+NOTE: Running task 3881 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_package)
+NOTE: recipe u-boot-1_2024.01-r0: task do_package: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_package: Succeeded
+NOTE: Running task 3882 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_packagedata)
+NOTE: recipe u-boot-1_2024.01-r0: task do_packagedata: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_packagedata: Succeeded
+NOTE: Running task 3883 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_package_qa)
+NOTE: recipe u-boot-1_2024.01-r0: task do_package_qa: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_package_qa: Succeeded
+NOTE: Running task 3884 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_package_write_ipk)
+NOTE: recipe u-boot-1_2024.01-r0: task do_package_write_ipk: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_package_write_ipk: Succeeded
+NOTE: Running task 3885 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_create_spdx)
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_spdx: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3886 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_create_runtime_spdx)
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_runtime_spdx: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3887 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_populate_sysroot)
+NOTE: recipe u-boot-1_2024.01-r0: task do_populate_sysroot: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_populate_sysroot: Succeeded
+NOTE: Running task 3888 of 3916 (/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb:do_rm_work)
+NOTE: recipe u-boot-1_2024.01-r0: task do_rm_work: Started
+NOTE: recipe u-boot-1_2024.01-r0: task do_rm_work: Succeeded
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_rootfs: Succeeded
+NOTE: Running task 3889 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_flush_pseudodb)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_flush_pseudodb: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_flush_pseudodb: Succeeded
+NOTE: Running task 3890 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_image_qa)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_qa: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_qa: Succeeded
+NOTE: Running task 3891 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_image)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image: Succeeded
+NOTE: Running task 3892 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_image_ext4)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_ext4: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_ext4: Succeeded
+NOTE: Running task 3893 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_image_complete)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_complete: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_image_complete: Succeeded
+NOTE: Running task 3894 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_install)
+NOTE: Running task 3895 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_populate_lic_deploy)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_install: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_populate_lic_deploy: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_populate_lic_deploy: Succeeded
+NOTE: Running task 3896 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb:do_rm_work)
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_rm_work: Started
+NOTE: recipe pi4-guest1-image-1.0-r0: task do_rm_work: Succeeded
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_install: Succeeded
+NOTE: Running task 3897 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_package)
+NOTE: Running task 3898 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_populate_sysroot)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_populate_sysroot: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_populate_sysroot: Succeeded
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package: Succeeded
+NOTE: Running task 3899 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_packagedata)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_packagedata: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_packagedata: Succeeded
+NOTE: Running task 3900 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_package_qa)
+NOTE: Running task 3901 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_package_write_ipk)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package_qa: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package_write_ipk: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package_qa: Succeeded
+NOTE: Running task 3902 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_create_spdx)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_package_write_ipk: Succeeded
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_create_spdx: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_create_spdx: Succeeded
+NOTE: Running task 3903 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_create_runtime_spdx)
+NOTE: Running task 3904 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_create_runtime_spdx)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_create_runtime_spdx: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_create_runtime_spdx: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3905 of 3916 (/work/meta-pi4-xen-lab/recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb:do_rm_work)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_create_runtime_spdx: Succeeded
+NOTE: Running task 3906 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_rootfs)
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_rm_work: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rootfs: Started
+NOTE: recipe pi4-xen-guest1-1.0-r0: task do_rm_work: Succeeded
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rootfs: Succeeded
+NOTE: Running task 3907 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_flush_pseudodb)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_flush_pseudodb: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_flush_pseudodb: Succeeded
+NOTE: Running task 3908 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_image_qa)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_qa: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_qa: Succeeded
+NOTE: Running task 3909 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_image)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image: Succeeded
+NOTE: Running task 3910 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_rootfs_wicenv)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rootfs_wicenv: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rootfs_wicenv: Succeeded
+NOTE: Running task 3911 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_image_wic)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_wic: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_wic: Succeeded
+NOTE: Running task 3912 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_image_complete)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_complete: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_image_complete: Succeeded
+NOTE: Running task 3913 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_populate_lic_deploy)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_populate_lic_deploy: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_populate_lic_deploy: Succeeded
+NOTE: Running task 3914 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_rm_work)
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rm_work: Started
+NOTE: recipe pi4-xen-dom0-image-1.0-r0: task do_rm_work: Succeeded
+NOTE: Running noexec task 3915 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_rm_work_all)
+NOTE: Running noexec task 3916 of 3916 (/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb:do_build)
+NOTE: Tasks Summary: Attempted 3916 tasks of which 3805 didn't need to be rerun and all succeeded.
+NOTE: No commit since BUILDHISTORY_COMMIT != '1'
+COMMAND_EXIT_STATUS=0

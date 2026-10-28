@@ -1,0 +1,303 @@
+{
+  "started_at": "2026-10-28T13:07:15.630863+00:00",
+  "scope": "QEMU ARM virt; exact exported raspberrypi4-64 Yocto card image with its Xen, Linux and embedded guest1",
+  "pi4_image_build": "VERIFIED_SELF_BUILT_ARTIFACT",
+  "pi4_hardware": "NOT_RUN",
+  "checks": [
+    {
+      "name": "xen_banner",
+      "status": "PASS",
+      "detail": "Xen 4.19.0 banner observed from emulated ARM execution"
+    },
+    {
+      "name": "xen_and_dom0_boot",
+      "status": "PASS",
+      "detail": "dom0 root shell reached on a real console"
+    },
+    {
+      "name": "dom0_toolstack",
+      "status": "PASS",
+      "detail": {
+        "xl_info": "host                   : pi4-dom0\nrelease                : 6.6.100-yocto-standard\nversion                : #1 SMP PREEMPT Fri Jul 25 02:56:10 UTC 2025\nmachine                : aarch64\nnr_cpus                : 2\nmax_cpu_id             : 1\nnr_nodes               : 1\ncores_per_socket       : 2\nthreads_per_core       : 1\ncpu_mhz                : 62.500\nhw_caps                : 00000000:00000000:00000000:00000000:00000000:00000000:00000000:00000000\nvirt_caps              : hvm hap vpmu gnttab-v1\narm_sve_vector_length  : 0\ntotal_memory           : 1536\nfree_memory            : 999\nsharing_freed_memory   : 0\nsharing_used_memory    : 0\noutstanding_claims     : 0\nfree_cpus              : 0\nxen_major              : 4\nxen_minor              : 19\nxen_extra              : .0\nxen_version            : 4.19.0\nxen_caps               : xen-3.0-aarch64 xen-3.0-armv7l \nxen_scheduler          : credit2\nxen_pagesize           : 4096\nplatform_params        : virt_start=0x0\nxen_changeset          : Mon Jul 29 18:20:45 2024 +0100 git:026c9fa297-dirty\nxen_commandline        : console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\ncc_compiler            : aarch64-poky-linux-gcc (GCC) 13.5.0\ncc_compile_by          : \ncc_compile_domain      : \ncc_compile_date        : 2024-07-29\nbuild_id               : 2dc0b9a6f749652be016e3d5bb522daaa7f312e2\nxend_config_format     : 4",
+        "initial_domains": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      35.1"
+      }
+    },
+    {
+      "name": "guest1_first_boot_and_writable_root",
+      "status": "FAIL",
+      "detail": "Expected output '(?m)^guest1\\\\r?$' absent for hostname\npi4-dom0\n\n"
+    },
+    {
+      "name": "dom0_ssh_and_guest_console_reattach",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_pause_resume_and_project_demo",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_clean_shutdown",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_recreate_and_persistent_root",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_final_shutdown",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "source_disk_unchanged",
+      "status": "PASS",
+      "detail": {
+        "sha256_before_and_after": "16208e4ae8e019de43318b5de9474389941ec0cfa0f46bf0e2007f115c15c966"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "stty -echo -onlcr; export PS1='__DOM0_PROMPT__# '; id -u",
+      "exit_code": 0,
+      "output": "{ stty -echo -onlcr; export PS1='__DOM0_PROMPT__# '; id -u; }; rresult=$?; printf '\\n__RC_0cbce9ae6d41_%s__\\n' \"$result\"\n0"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "systemctl start pi4-xen-ready.service && systemctl is-active --quiet pi4-xen-ready.service",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl info",
+      "exit_code": 0,
+      "output": "host                   : pi4-dom0\nrelease                : 6.6.100-yocto-standard\nversion                : #1 SMP PREEMPT Fri Jul 25 02:56:10 UTC 2025\nmachine                : aarch64\nnr_cpus                : 2\nmax_cpu_id             : 1\nnr_nodes               : 1\ncores_per_socket       : 2\nthreads_per_core       : 1\ncpu_mhz                : 62.500\nhw_caps                : 00000000:00000000:00000000:00000000:00000000:00000000:00000000:00000000\nvirt_caps              : hvm hap vpmu gnttab-v1\narm_sve_vector_length  : 0\ntotal_memory           : 1536\nfree_memory            : 999\nsharing_freed_memory   : 0\nsharing_used_memory    : 0\noutstanding_claims     : 0\nfree_cpus              : 0\nxen_major              : 4\nxen_minor              : 19\nxen_extra              : .0\nxen_version            : 4.19.0\nxen_caps               : xen-3.0-aarch64 xen-3.0-armv7l \nxen_scheduler          : credit2\nxen_pagesize           : 4096\nplatform_params        : virt_start=0x0\nxen_changeset          : Mon Jul 29 18:20:45 2024 +0100 git:026c9fa297-dirty\nxen_commandline        : console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\ncc_compiler            : aarch64-poky-linux-gcc (GCC) 13.5.0\ncc_compile_by          : \ncc_compile_domain      : \ncc_compile_date        : 2024-07-29\nbuild_id               : 2dc0b9a6f749652be016e3d5bb522daaa7f312e2\nxend_config_format     : 4"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl list",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      35.1"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl dmesg",
+      "exit_code": 0,
+      "output": "(XEN) Checking for initrd in /chosen\n(XEN) RAM: 0000000040000000 - 000000009fffffff\n(XEN) \n(XEN) MODULE[0]: 0000000040200000 - 000000004033d000 Xen         \n(XEN) MODULE[1]: 0000000048000000 - 0000000048008ca6 Device Tree \n(XEN) MODULE[2]: 0000000045000000 - 0000000046a0d200 Kernel      \n(XEN) \n(XEN) \n(XEN) Command line: console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\n(XEN) parameter \"dom0_mem\" has invalid value \"512M,max:512M\", rc=-22!\n(XEN) Domain heap initialised\n(XEN) Booting using Device Tree\n(XEN) Platform: Generic System\n(XEN) Looking for dtuart at \"/pl011@9000000\", options \"\"\n Xen 4.19.0\n(XEN) Xen version 4.19.0 (@) (aarch64-poky-linux-gcc (GCC) 13.5.0) debug=n 2024-07-29\n(XEN) Latest ChangeSet: Mon Jul 29 18:20:45 2024 +0100 git:026c9fa297-dirty\n(XEN) build-id: 2dc0b9a6f749652be016e3d5bb522daaa7f312e2\n(XEN) Processor: 00000000411fd070: \"ARM Limited\", variant: 0x1, part 0xd07,rev 0x0\n(XEN) 64-bit Execution:\n(XEN)   Processor Features: 0000000001000222 0000000000000000\n(XEN)     Exception Levels: EL3:No EL2:64+32 EL1:64+32 EL0:64+32\n(XEN)     Extensions: FloatingPoint AdvancedSIMD GICv3-SysReg\n(XEN)   Debug Features: 0000000010305106 0000000000000000\n(XEN)   Auxiliary Features: 0000000000000000 0000000000000000\n(XEN)   Memory Model Features: 0000000000001124 0000000000000000\n(XEN)   ISA Features:  0000000000011120 0000000000000000\n(XEN) 32-bit Execution:\n(XEN)   Processor Features: 0000000000000131:0000000010011001\n(XEN)     Instruction Sets: AArch32 A32 Thumb Thumb-2 Jazelle\n(XEN)     Extensions: GenericTimer\n(XEN)   Debug Features: 0000000003010066\n(XEN)   Auxiliary Features: 0000000000000000\n(XEN)   Memory Model Features: 0000000010101105 0000000040000000\n(XEN)                          0000000001260000 0000000002102211\n(XEN)   ISA Features: 0000000002101110 0000000013112111 0000000021232042\n(XEN)                 0000000001112131 0000000000011142 0000000000011121\n(XEN) Using SMC Calling Convention v1.0\n(XEN) Using PSCI v0.2\n(XEN) SMP: Allowing 2 CPUs\n(XEN) enabled workaround for: ARM erratum 832075\n(XEN) enabled workaround for: ARM erratum 834220\n(XEN) enabled workaround for: ARM erratum 1319367\n(XEN) Generic Timer IRQ: phys=30 hyp=26 virt=27 Freq: 62500 KHz\n(XEN) GICv3 initialization:\n(XEN)       gic_dist_addr=0x00000008000000\n(XEN)       gic_maintenance_irq=25\n(XEN)       gic_rdist_stride=0\n(XEN)       gic_rdist_regions=1\n(XEN)       redistributor regions:\n(XEN)         - region 0: 0x000000080a0000 - 0x00000009000000\n(XEN) GICv3: 256 lines, (IID 0000043b).\n(XEN) GICv3: CPU0: Found redistributor in region 0 @00000a004001c000\n(XEN) XSM Framework v1.0.1 initialized\n(XEN) Initialising XSM SILO mode\n(XEN) Using scheduler: SMP Credit Scheduler rev2 (credit2)\n(XEN) Initializing Credit2 scheduler\n(XEN)  load_precision_shift: 18\n(XEN)  load_window_shift: 30\n(XEN)  underload_balance_tolerance: 0\n(XEN)  overload_balance_tolerance: -3\n(XEN)  runqueues arrangement: socket\n(XEN)  cap enforcement granularity: 10ms\n(XEN) load tracking window length 1073741824 ns\n(XEN) Allocated console ring of 16 KiB.\n(XEN) Bringing up CPU1\n(XEN) GICv3: CPU1: Found redistributor in region 0 @00000a004003c000\n(XEN) Brought up 2 CPUs\n(XEN) I/O virtualisation disabled\n(XEN) P2M: 44-bit IPA with 44-bit PA and 8-bit VMID\n(XEN) P2M: 4 levels with order-0 root, VTCR 0x0000000080043594\n(XEN) Scheduling granularity: cpu, 1 CPU per sched-resource\n(XEN) Initializing Credit2 scheduler\n(XEN)  load_precision_shift: 18\n(XEN)  load_window_shift: 30\n(XEN)  underload_balance_tolerance: 0\n(XEN)  overload_balance_tolerance: -3\n(XEN)  runqueues arrangement: socket\n(XEN)  cap enforcement granularity: 10ms\n(XEN) load tracking window length 1073741824 ns\n(XEN) Adding cpu 0 to runqueue 0\n(XEN)  First cpu on runqueue, activating\n(XEN) Adding cpu 1 to runqueue 0\n(XEN) alternatives: Patching with alt table 00000a00002c5a78 -> 00000a00002c6c9c\n(XEN) **** No support for ARM_SMCCC_ARCH_WORKAROUND_1. ****\n(XEN) **** Please update your firmware.                ****\n(XEN) **** No support for ARM_SMCCC_ARCH_WORKAROUND_1. ****\n(XEN) **** Please update your firmware.                ****\n(XEN) **** Guests without CPU erratum workarounds can deadlock the system! ****\n(XEN) **** Only trusted guests should be used.                             ****\n(XEN) *** LOADING DOMAIN 0 ***\n(XEN) Loading d0 kernel from boot module @ 0000000045000000\n(XEN) Allocating 1:1 mappings totalling 512MB for dom0:\n(XEN) BANK[0] 0x00000060000000-0x00000080000000 (512MB)\n(XEN) Grant table range: 0x00000040200000-0x00000040240000\n(XEN) Allocating PPI 16 for event channel interrupt\n(XEN) d0: extended region 0: 0x40400000->0x5fe00000\n(XEN) d0: extended region 1: 0x80000000->0x9fe00000\n(XEN) Loading zImage from 0000000045000000 to 0000000060000000-0000000061a0d200\n(XEN) Loading d0 DTB to 0x0000000068000000-0x0000000068001c7f\n(XEN) Initial low memory virq threshold set at 0x4000 pages.\n(XEN) Scrubbing Free RAM in background\n(XEN) Std. Loglevel: Errors, warnings and info\n(XEN) Guest Loglevel: Errors, warnings and info\n(XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch input)\n(XEN) Freed 336kB init memory.\n(XEN) d0v0 Unhandled SMC/HVC: 0x84000050\n(XEN) d0v0 Unhandled SMC/HVC: 0x8600ff01\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER4\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER8\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER12\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER16\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER20\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER24\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER28\n(XEN) d0v0: vGICR: SGI: unhandled word write 0x000000ffffffff to ICACTIVER0\n(XEN) d0v1: vGICR: SGI: unhandled word write 0x000000ffffffff to ICACTIVER0"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "test -s /etc/xen/guest1.cfg && test -x /usr/sbin/guest1-start",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "stty -echo -onlcr; export PS1='__GUEST1_PROMPT__# '; id -u",
+      "exit_code": 0,
+      "output": "0"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "hostname",
+      "exit_code": 0,
+      "output": "pi4-dom0"
+    }
+  ],
+  "artifacts": {
+    "xen": {
+      "path": "/work/local/qemu-yocto/xen",
+      "bytes": 983048,
+      "sha256": "dc2b9ef80b25cdc92a9fad3b0f4c5a45bd278f76617578e7a6a23f8bdef49288"
+    },
+    "kernel": {
+      "path": "/work/local/qemu-yocto/Image",
+      "bytes": 27316736,
+      "sha256": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+    },
+    "rootfs": {
+      "path": "/work/artifacts/pi4-xen-dom0-guest1.img",
+      "bytes": 1295329280,
+      "sha256": "16208e4ae8e019de43318b5de9474389941ec0cfa0f46bf0e2007f115c15c966"
+    }
+  },
+  "status": "FAIL",
+  "disk_mode": "QEMU -snapshot temporary overlay; base disk hash checked after QEMU exits",
+  "yocto_provenance": {
+    "schema_version": 1,
+    "build_system": "yocto-bitbake",
+    "machine": "raspberrypi4-64",
+    "prepared_at": "2026-10-28T13:07:09.683920+00:00",
+    "scope": "Exact self-built Pi4 card disk; boot Xen and Image extracted from its FAT partition",
+    "dom0_args": "console=hvc0 earlycon=xenboot root=/dev/vda2 rw rootwait net.ifnames=0",
+    "runtime_artifacts": {
+      "rootfs": {
+        "path": "/work/artifacts/pi4-xen-dom0-guest1.img",
+        "bytes": 1295329280,
+        "sha256": "16208e4ae8e019de43318b5de9474389941ec0cfa0f46bf0e2007f115c15c966"
+      },
+      "xen": {
+        "path": "/work/local/qemu-yocto/xen",
+        "bytes": 983048,
+        "sha256": "dc2b9ef80b25cdc92a9fad3b0f4c5a45bd278f76617578e7a6a23f8bdef49288"
+      },
+      "kernel": {
+        "path": "/work/local/qemu-yocto/Image",
+        "bytes": 27316736,
+        "sha256": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+      }
+    },
+    "build_versions": {
+      "build_system": "yocto-bitbake",
+      "source_lock": {
+        "release": "scarthgap",
+        "repositories": [
+          {
+            "name": "poky",
+            "url": "https://github.com/yoctoproject/poky.git",
+            "commit": "b6ae714a1d1bfae8384654a13da15996cac64712"
+          },
+          {
+            "name": "meta-openembedded",
+            "url": "https://github.com/openembedded/meta-openembedded.git",
+            "commit": "2db6aece32c7f8ebf6015b468e1b4e21de072e3b"
+          },
+          {
+            "name": "meta-raspberrypi",
+            "url": "https://github.com/agherzan/meta-raspberrypi.git",
+            "commit": "018d44467c4f09eb63f8ea5e86e85d755250cf89"
+          },
+          {
+            "name": "meta-virtualization",
+            "url": "https://git.yoctoproject.org/meta-virtualization",
+            "mirrors": [
+              "https://github.com/hexagon-geo-surv/meta-virtualization.git"
+            ],
+            "commit": "6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819"
+          }
+        ]
+      },
+      "native_wic": "/work/build/tmp/deploy/images/raspberrypi4-64/pi4-xen-dom0-image-raspberrypi4-64.rootfs-20261028125845.wic",
+      "bytes": 1295329280,
+      "machine": "raspberrypi4-64",
+      "distro": "pi4-xen",
+      "kernel": {
+        "kernel_release": "6.6.100-yocto-standard",
+        "machine": "raspberrypi4-64",
+        "recipe": "linux-yocto",
+        "schema_version": 1,
+        "source_revision": "0d5c8af531e021d38d2589c109268b644bdf3320",
+        "version": "6.6.100+git"
+      },
+      "selected_recipes": {
+        "pi4-xen-dom0-image": {
+          "PN": "pi4-xen-dom0-image",
+          "PV": "1.0",
+          "FILE": "/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb"
+        },
+        "pi4-guest1-image": {
+          "PN": "pi4-guest1-image",
+          "PV": "1.0",
+          "FILE": "/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb"
+        },
+        "xen": {
+          "PN": "xen",
+          "PV": "4.19.0+stable",
+          "FILE": "/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb"
+        },
+        "xen-tools": {
+          "PN": "xen-tools",
+          "PV": "4.19+stable",
+          "FILE": "/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb"
+        },
+        "virtual/kernel": {
+          "PN": "linux-yocto",
+          "PV": "6.6.100+git",
+          "FILE": "/work/.cache/sources/poky/meta/recipes-kernel/linux/linux-yocto_6.6.bb"
+        },
+        "u-boot": {
+          "PN": "u-boot",
+          "PV": "2024.01",
+          "FILE": "/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb"
+        }
+      },
+      "guest_build_outputs": {
+        "pi4-guest1.ext4": {
+          "sha256": "74ca738325733fc64fe1d1058f5f2445602b60206a892ff5f0b2a1e09963d23d",
+          "bytes": 301989888
+        },
+        "pi4-guest1.manifest": {
+          "sha256": "f4c61d02c847664c251ea4fc9e385dac210049bb4a63367e8665abdcc138b8bc",
+          "bytes": 3642
+        }
+      }
+    },
+    "evidence_artifacts": {
+      "versions_file": {
+        "path": "/work/artifacts/versions.json",
+        "bytes": 2717,
+        "sha256": "ac7fe8e8b4df91908d8afc3b49eb6170f0d0081f787717f6d4a4f76b874961bc"
+      },
+      "checks_file": {
+        "path": "/work/artifacts/checks/image-checks.json",
+        "bytes": 16953,
+        "sha256": "33a078c1808d290f7cac60ed171d4862752cdc90b54a0ed11651896483c020d2"
+      },
+      "kernel_config": {
+        "path": "/work/artifacts/pi4-xen-kernel.config",
+        "bytes": 206529,
+        "sha256": "e89db015e23edce5931bb0fc465ee5d14a060d90ef3c2d8cb3213b4b84fb5983"
+      }
+    },
+    "guest_payload": "Original /var/lib/xen/images/guest1 inside the unchanged Dom0 partition",
+    "pi4_hardware": "NOT_RUN"
+  },
+  "yocto_provenance_sha256": "a28c179dd128cc266666bbe5b2b3055bfb21d54505853430bad2fe7c37808f55",
+  "qemu_command": [
+    "qemu-system-aarch64",
+    "-machine",
+    "virt,gic-version=3,virtualization=on",
+    "-accel",
+    "tcg",
+    "-cpu",
+    "cortex-a57",
+    "-smp",
+    "2",
+    "-m",
+    "1536",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-snapshot",
+    "-kernel",
+    "/work/local/qemu-yocto/xen",
+    "-dtb",
+    "/work/local/qemu-yocto/results/20261028T130710Z/xen.dtb",
+    "-device",
+    "loader,file=/work/local/qemu-yocto/Image,addr=0x45000000",
+    "-drive",
+    "if=none,id=dom0,format=raw,file=/work/artifacts/pi4-xen-dom0-guest1.img",
+    "-device",
+    "virtio-blk-device,drive=dom0",
+    "-netdev",
+    "user,id=net0,hostfwd=tcp:127.0.0.1:58409-:22",
+    "-device",
+    "virtio-net-device,netdev=net0"
+  ],
+  "qemu_version": "QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.31)",
+  "error": "Expected output '(?m)^guest1\\\\r?$' absent for hostname\npi4-dom0\n\n",
+  "qemu_exit_status": 0,
+  "qemu_signal_status": null,
+  "qemu_stop_reason": "Runner cleanup after the recorded checks",
+  "finished_at": "2026-10-28T13:07:44.376359+00:00"
+}
