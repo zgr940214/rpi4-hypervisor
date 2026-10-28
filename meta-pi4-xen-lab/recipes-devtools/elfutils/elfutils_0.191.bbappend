@@ -28,9 +28,11 @@ do_install:append:class-native() {
 DEPENDS:append:class-target = " elfutils-native"
 do_configure:prepend:class-target() {
     install -m 0644 ${STAGING_DATADIR_NATIVE}/elfutils-source/i386_dis.h ${STAGING_DATADIR_NATIVE}/elfutils-source/x86_64_dis.h ${S}/libcpu/
+    install -m 0644 ${STAGING_INCDIR_NATIVE}/elfutils/known-dwarf.h ${S}/libdw/
 }
 
 DEPENDS:append:class-nativesdk = " elfutils-native"
 do_configure:prepend:class-nativesdk() {
     install -m 0644 ${STAGING_DATADIR_NATIVE}/elfutils-source/i386_dis.h ${STAGING_DATADIR_NATIVE}/elfutils-source/x86_64_dis.h ${S}/libcpu/
+    install -m 0644 ${STAGING_INCDIR_NATIVE}/elfutils/known-dwarf.h ${S}/libdw/
 }

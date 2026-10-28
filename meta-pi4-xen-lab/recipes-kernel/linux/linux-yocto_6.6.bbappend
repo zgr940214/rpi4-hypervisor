@@ -1,6 +1,10 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI:append:raspberrypi4-64 = " file://pi4-xen.cfg"
 
+# kernel-yocto merges SRC_URI fragments before meta-virtualization KERNEL_FEATURES.
+# Reapply the lab fragment last, after cfg/xen.scc selects modular backends.
+KERNEL_FEATURES:append:raspberrypi4-64 = " pi4-xen.cfg"
+
 # Pin the actual Pi4 BSP branch, rather than inheriting Poky's standard/base
 # revision. The reviewed Wind River mirror retains this upstream Yocto branch.
 KBRANCH:raspberrypi4-64 = "v6.6/standard/bcm-2xxx-rpi"
