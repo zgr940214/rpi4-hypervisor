@@ -5,7 +5,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/gnutls:"
 SRC_URI:remove = "https://www.gnupg.org/ftp/gcrypt/gnutls/v${SHRT_VER}/gnutls-${PV}.tar.xz"
 SRC_URI:append = " \
     git://github.com/gnutls/gnutls.git;protocol=https;nobranch=1;name=gnutls;destsuffix=${BP} \
-    git://gitlab.com/libidn/gnulib-mirror.git;protocol=https;nobranch=1;name=gnulib;destsuffix=${BP}/gnulib \
+    git://gitlab.com/libidn/gnulib-mirror.git;protocol=https;nobranch=1;name=gnulib;destsuffix=${BPN}-gnulib \
     git://gitlab.com/gnutls/nettle.git;protocol=https;nobranch=1;name=nettle;destsuffix=${BP}/devel/nettle \
     git://gitlab.com/gnutls/libtasn1.git;protocol=https;nobranch=1;name=libtasn1;destsuffix=${BP}/devel/libtasn1 \
     git://gitlab.com/gnutls/cligen.git;protocol=https;nobranch=1;name=cligen;destsuffix=${BP}/cligen \
@@ -18,14 +18,17 @@ SRCREV_libtasn1 = "2b7ee166f031bea63c5e7badcedc69f1cea69c89"
 SRCREV_cligen = "ed2ed7b19a5bcbc0f39505722058befc923eeeda"
 SRCREV_FORMAT = "gnutls_gnulib_nettle_libtasn1_cligen"
 
+# Keep gnulib outside ${S}: autotools recursively prunes gettext macros
+# below ${S}, which must not delete the inputs needed for another configure.
 # The release archive contains generated gnulib, command-line and autotools
 # files. Generate them from the pinned inputs with Yocto's native tools.
 DEPENDS:append = " gettext-native gperf-native bison-native libtasn1-native"
 do_configure:prepend() {
     (
         cd ${S}
+        GNULIB_SRCDIR=${WORKDIR}/${BPN}-gnulib \
         GNUTLS_BOOTSTRAP_OFFLINE=yes ./bootstrap \
-            --skip-po --no-git --gnulib-srcdir=gnulib --no-bootstrap-sync
+            --skip-po --no-git --gnulib-srcdir=${WORKDIR}/${BPN}-gnulib --no-bootstrap-sync
     )
 }
 

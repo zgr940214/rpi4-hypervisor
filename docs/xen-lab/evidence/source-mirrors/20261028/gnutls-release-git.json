@@ -222,5 +222,26 @@
     "gtk-doc-native (inherited)",
     "python3-native (inherited)"
   ],
-  "offline_bootstrap_guard_patch": "meta-pi4-xen-lab/recipes-support/gnutls/gnutls/0001-bootstrap-allow-prepared-offline-submodules.patch"
+  "offline_bootstrap_guard_patch": "meta-pi4-xen-lab/recipes-support/gnutls/gnutls/0001-bootstrap-allow-prepared-offline-submodules.patch",
+  "yocto_target_validation": {
+    "machine": "raspberrypi4-64",
+    "result": "passed",
+    "tasks": [
+      "do_configure",
+      "do_compile",
+      "do_install",
+      "do_populate_sysroot"
+    ],
+    "source_log": "local/logs/build-mirrors-9.log",
+    "observations": [
+      "NOTE: recipe gnutls-3.8.4-r0: task do_configure: Succeeded",
+      "NOTE: recipe gnutls-3.8.4-r0: task do_compile: Succeeded",
+      "NOTE: recipe gnutls-3.8.4-r0: task do_install: Succeeded",
+      "NOTE: recipe gnutls-3.8.4-r0: task do_populate_sysroot: Succeeded"
+    ]
+  },
+  "release_build_options": {
+    "full_test_suite": "disabled explicitly to match release archives, which omit tests/suite/prime-check.c",
+    "documentation": "disabled when api-documentation is absent because Git omits Texinfo tables whose rules execute target-built helpers"
+  }
 }

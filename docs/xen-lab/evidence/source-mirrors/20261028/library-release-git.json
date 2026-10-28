@@ -258,7 +258,23 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "yocto_native_validation": {
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "source_log": "local/logs/build-mirrors-9.log",
+        "observations": [
+          "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_configure: Succeeded",
+          "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_compile: Succeeded",
+          "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_install: Succeeded",
+          "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_populate_sysroot: Succeeded"
+        ]
+      }
     },
     {
       "package": "libxml2",

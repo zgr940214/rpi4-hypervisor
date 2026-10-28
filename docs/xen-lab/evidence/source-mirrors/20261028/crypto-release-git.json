@@ -29,7 +29,6 @@
           "do_populate_sysroot"
         ],
         "metadata": "Consistent pass6 after cooker restart, repository checkpoint ce94c8a",
-        "target_compile_verified": false,
         "task_pass_evidence": [
           {
             "log": "build-mirrors-6.log",
@@ -76,7 +75,35 @@
           "fuzz": 0
         }
       ],
-      "git_build_adjustment": "Disable optional documentation for native and when api-documentation is absent; the release Git tree omits rendered PNG/PDF figures."
+      "git_build_adjustment": "Disable optional documentation for native and when api-documentation is absent; the release Git tree omits rendered PNG/PDF figures.",
+      "target_bitbake_validation": {
+        "variant": "cortexa72-poky-linux",
+        "log": "local/logs/build-mirrors-9.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgcrypt-1.10.4-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgcrypt-1.10.4-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgcrypt-1.10.4-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgcrypt-1.10.4-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
+      }
     },
     {
       "package": "libgpg-error",
@@ -143,7 +170,35 @@
           "fuzz": 0
         }
       ],
-      "git_build_adjustment": "Before compilation, invoke the upstream doc/stamp-vti make target to generate real version.texi needed by yat2m."
+      "git_build_adjustment": "Before compilation, invoke the upstream doc/stamp-vti make target to generate real version.texi needed by yat2m.",
+      "target_bitbake_validation": {
+        "variant": "cortexa72-poky-linux",
+        "log": "local/logs/build-mirrors-9.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgpg-error-1.48-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgpg-error-1.48-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgpg-error-1.48-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-9.log",
+            "line": "NOTE: recipe libgpg-error-1.48-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
+      }
     },
     {
       "package": "libunistring",
