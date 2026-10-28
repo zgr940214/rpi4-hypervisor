@@ -1,5 +1,5 @@
 # Entire SD card: firmware/U-Boot/Xen/kernel FAT partition, then writable Dom0.
 # guest1's raw ext4 disk is a file inside the writable second partition.
-part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 128
-part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 4096
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 128 --use-uuid
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 4096 --use-uuid
 bootloader --ptable msdos

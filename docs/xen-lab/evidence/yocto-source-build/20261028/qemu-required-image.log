@@ -1,0 +1,2 @@
+Missing self-built Pi4 image. Run ./scripts/container.sh build first.
+COMMAND_EXIT_STATUS=1

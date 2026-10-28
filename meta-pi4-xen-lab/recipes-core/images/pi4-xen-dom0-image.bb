@@ -1,6 +1,7 @@
 SUMMARY = "Bootable Pi4 Xen Dom0 image with one manually started Linux guest"
 LICENSE = "MIT"
 inherit core-image extrausers
+require pi4-xen-image-provenance.inc
 
 IMAGE_FEATURES = "ssh-server-openssh"
 IMAGE_INSTALL = " \

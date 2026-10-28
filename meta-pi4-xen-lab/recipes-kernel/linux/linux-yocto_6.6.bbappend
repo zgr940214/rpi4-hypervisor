@@ -6,6 +6,26 @@ do_deploy:append:raspberrypi4-64() {
     install -m 0644 ${B}/.config ${DEPLOYDIR}/pi4-xen-kernel.config
 }
 
+do_deploy[postfuncs] += "pi4_xen_kernel_provenance"
+python pi4_xen_kernel_provenance() {
+    import json
+    from pathlib import Path
+    if d.getVar('MACHINE') != 'raspberrypi4-64':
+        return
+    release = Path(d.getVar('B'), 'include/config/kernel.release').read_text().strip()
+    metadata = {
+        'schema_version': 1,
+        'recipe': d.getVar('PN'),
+        'version': d.getVar('PV'),
+        'kernel_release': release,
+        'machine': d.getVar('MACHINE'),
+        'source_revision': d.getVar('SRCREV_machine') or d.getVar('SRCREV'),
+    }
+    path = Path(d.getVar('DEPLOYDIR'), 'pi4-xen-kernel.json')
+    path.write_text(json.dumps(metadata, indent=2, sort_keys=True) + '\n')
+    path.chmod(0o644)
+}
+
 python do_pi4_xen_config_check() {
     from pathlib import Path
     if d.getVar('MACHINE') != 'raspberrypi4-64':
@@ -18,6 +38,8 @@ python do_pi4_xen_config_check() {
         'XEN_COMPAT_XENFS', 'BLK_DEV_LOOP', 'EXT4_FS', 'DEVTMPFS',
         'DEVTMPFS_MOUNT', 'MMC', 'MMC_BLOCK', 'MMC_SDHCI',
         'MMC_SDHCI_PLTFM', 'MMC_SDHCI_IPROC', 'BCMGENET',
+        'ARM_GIC_V3', 'VIRTIO', 'VIRTIO_MMIO', 'VIRTIO_BLK', 'VIRTIO_NET',
+        'MSDOS_PARTITION',
     )
     missing = [name for name in expected if 'CONFIG_%s=y' % name not in text.splitlines()]
     if missing:

@@ -42,7 +42,7 @@ class Runner:
                    'source_disk_unchanged']
         self.report = {
             'started_at': datetime.now(timezone.utc).isoformat(),
-            'scope': 'QEMU ARM virt; Xen plus validation rootfs and project guest-management scripts',
+            'scope': 'QEMU ARM virt; separate Debian validation rootfs, not the Yocto Pi4 image',
             'pi4_image_build': 'NOT_RUN', 'pi4_hardware': 'NOT_RUN',
             'checks': [{'name': name, 'status': 'NOT_RUN', 'detail': 'Not reached yet'} for name in planned],
             'commands': [], 'artifacts': {}, 'status': 'FAIL',
@@ -91,7 +91,8 @@ class Runner:
 
     def shell(self, proc, domain):
         prompt = r'(?m)^[^\r\n]*[#$][ \t]*$'
-        if not self.args.manual_login:
+        manual_login = self.args.manual_login or (domain == 'dom0' and self.args.dom0_manual_login)
+        if not manual_login:
             # The validation images use agetty --autologin root. The text
             # "login: root (automatic login)" must not cause an extra username.
             proc.expect(prompt)
@@ -141,6 +142,28 @@ class Runner:
         self.serial.expect_exact('__DOM0_PROMPT__# ')
         self.prompts[id(self.serial)] = '__DOM0_PROMPT__# '
 
+    def verify_yocto_provenance(self):
+        path = Path(self.args.yocto_provenance).resolve()
+        provenance = json.loads(path.read_text())
+        if (provenance.get('schema_version') != 1 or
+                provenance.get('build_system') != 'yocto-bitbake' or
+                provenance.get('machine') != 'raspberrypi4-64'):
+            raise RuntimeError('Expected provenance for a self-built raspberrypi4-64 Yocto image')
+        if self.args.initrd:
+            raise RuntimeError('Yocto image validation must use its built-in drivers, without an external initrd')
+        if self.args.dom0_args != provenance.get('dom0_args'):
+            raise RuntimeError('Yocto Dom0 boot arguments differ from the verified whole-card layout')
+        for name in ['xen', 'kernel', 'rootfs']:
+            expected = provenance['runtime_artifacts'][name]
+            actual = self.report['artifacts'][name]
+            if actual['sha256'] != expected['sha256'] or actual['bytes'] != expected['bytes']:
+                raise RuntimeError(f'{name} differs from the verified Yocto card image')
+        self.report['scope'] = ('QEMU ARM virt; exact exported raspberrypi4-64 Yocto card image '
+                                'with its Xen, Linux and embedded guest1')
+        self.report['pi4_image_build'] = 'VERIFIED_SELF_BUILT_ARTIFACT'
+        self.report['yocto_provenance'] = provenance
+        self.report['yocto_provenance_sha256'] = digest(path)
+
     def boot(self):
         args = self.args
         for name in ['xen', 'kernel', 'rootfs', 'initrd']:
@@ -152,6 +175,8 @@ class Runner:
                 raise RuntimeError(f'Missing {name}: {path}')
             self.report['artifacts'][name] = {'path': str(path), 'bytes': path.stat().st_size,
                                                'sha256': digest(path)}
+        if args.yocto_provenance:
+            self.verify_yocto_provenance()
         with socket.socket() as sock:
             sock.bind(('127.0.0.1', args.ssh_port))
             port = sock.getsockname()[1]
@@ -160,7 +185,8 @@ class Runner:
         dtb_cmd = [sys.executable, str(Path(__file__).with_name('make-dtb.py')),
                    '--qemu', args.qemu, '--kernel', str(Path(args.kernel).resolve()),
                    '--output', str(dtb), '--memory', str(args.memory), '--cpus', str(args.cpus),
-                   '--cpu', args.cpu, '--dom0-memory', str(args.dom0_memory)]
+                   '--cpu', args.cpu, '--dom0-memory', str(args.dom0_memory),
+                   '--dom0-args', args.dom0_args]
         if args.initrd:
             dtb_cmd += ['--initrd', str(Path(args.initrd).resolve())]
         subprocess.run(dtb_cmd, check=True)
@@ -347,6 +373,9 @@ def main():
     parser.add_argument('--rootfs', default=str(ROOT / 'local/qemu/dom0.ext4'))
     parser.add_argument('--ssh-key', default=str(ROOT / 'local/credentials/id_ed25519'))
     parser.add_argument('--password-file', default=str(ROOT / 'local/credentials/root-password.txt'))
+    parser.add_argument('--yocto-provenance', help='Verified manifest from prepare-yocto.py; enforces exact built artifacts')
+    parser.add_argument('--dom0-args', default='console=hvc0 earlycon=xenboot root=/dev/vda rw rootwait net.ifnames=0')
+    parser.add_argument('--dom0-manual-login', action='store_true', help='Use password login only for Dom0; guest remains autologin')
     parser.add_argument('--manual-login', action='store_true', help='Use login/password prompts instead of the validation images\' root autologin')
     parser.add_argument('--ssh-port', type=int, default=0)
     parser.add_argument('--memory', type=int, default=1536)

@@ -1,0 +1,34 @@
+Loading cache...done.
+Loaded 4282 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2939 .bb files complete (2560 cached, 379 parsed). 4885 targets, 687 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+NOTE: PN build list saved to 'pn-buildlist'
+NOTE: Task dependencies saved to 'task-depends.dot'
+NOTE: Starting bitbake server...
+Loading cache...done.
+Loaded 4885 entries from dependency cache.
+=== Matching recipes: ===
+linux-yocto:
+  meta                 6.6.151+git
+u-boot:
+  meta                 1:2024.01
+xen:
+  research-meta-virtualization 4.19.0+stable
+  research-meta-virtualization 4.19+git
+  research-meta-virtualization 4.18+stable
+  research-meta-virtualization 4.17+stable
+xen-tools:
+  research-meta-virtualization 4.19+stable
+  research-meta-virtualization 4.18+stable
+  research-meta-virtualization 4.18+git
+  research-meta-virtualization 4.17+stable
+PN=linux-yocto
+PV=6.6.151+git
+KBRANCH=v6.6/standard/bcm-2xxx-rpi
+KMACHINE=bcm-2xxx-rpi4
+SRCREV_machine=5ae544e1312ed5b4ed130d22ff1f44333494c4c3
+SRCREV_meta=dd201eb6ec53179f45836d41610ca68c725d28e2
+KERNEL_DEVICETREE=broadcom/bcm2711-rpi-4-b.dtb
+KERNEL_IMAGETYPE=Image
+COMMAND_EXIT_STATUS=0

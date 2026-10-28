@@ -1,0 +1,5 @@
+Loading cache...done.
+Loaded 0 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2939 .bb files complete (0 cached, 2939 parsed). 4885 targets, 687 skipped, 0 masked, 0 errors.
+COMMAND_EXIT_STATUS=0

@@ -1,0 +1,34 @@
+{
+  "scope": "Offline metadata audit using existing research-layer clone; NOT an official-source build verification",
+  "network": "Docker --network none; BB_NO_NETWORK=1",
+  "research_layer_commit": "6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819",
+  "parsed_recipes": 2939,
+  "parse_errors": 0,
+  "buildlist_recipes": 286,
+  "task_nodes": 4883,
+  "graph_acyclic": true,
+  "required_edges": [
+    [
+      "pi4-xen-guest1.do_install",
+      "pi4-guest1-image.do_image_complete"
+    ],
+    [
+      "pi4-xen-guest1.do_install",
+      "linux-yocto.do_deploy"
+    ],
+    [
+      "pi4-xen-dom0-image.do_image_wic",
+      "xen.do_deploy"
+    ],
+    [
+      "pi4-xen-dom0-image.do_image_wic",
+      "u-boot.do_deploy"
+    ],
+    [
+      "pi4-xen-dom0-image.do_image_wic",
+      "xen-rpi-u-boot-scr.do_deploy"
+    ]
+  ],
+  "formal_build": "NOT_RUN",
+  "kernel_source_revision_verification": "BLOCKED"
+}

@@ -338,6 +338,58 @@ class Report:
         return int(status != "PASS")
 
 
+def build_identity(fs, recipe):
+    identity = json.loads(fs.text('/etc/pi4-xen-build.json'))
+    expected = {'schema_version': 1, 'build_system': 'yocto-bitbake',
+                'image_recipe': recipe, 'machine': 'raspberrypi4-64', 'distro': 'pi4-xen'}
+    if not isinstance(identity, dict) or any(identity.get(k) != v for k, v in expected.items()):
+        raise CheckError(f'Expected Yocto-built {recipe} for raspberrypi4-64')
+    return identity
+
+
+def built_guest_payloads(fs, guest_image, guest_kernel, deploy):
+    """Require packaged bytes to match both provenance and actual BitBake output."""
+    deploy = Path(deploy)
+    provenance = json.loads(fs.text('/var/lib/xen/images/guest1/provenance.json'))
+    expected = {'schema_version': 1, 'build_system': 'yocto-bitbake',
+                'guest_image_recipe': 'pi4-guest1-image',
+                'machine': 'raspberrypi4-64', 'distro': 'pi4-xen'}
+    if not isinstance(provenance, dict) or any(provenance.get(k) != v for k, v in expected.items()):
+        raise CheckError('Missing or incorrect Yocto guest provenance')
+    kernel = json.loads((deploy / 'pi4-xen-kernel.json').read_text())
+    if (not isinstance(kernel, dict) or kernel.get('recipe') != 'linux-yocto'
+            or kernel.get('machine') != 'raspberrypi4-64'
+            or not kernel.get('kernel_release') or not kernel.get('source_revision')
+            or provenance.get('kernel') != kernel):
+        raise CheckError('Packaged guest kernel provenance differs from the built Pi4 kernel')
+    manifest = fs.read('/var/lib/xen/images/guest1/guest.manifest')
+    payloads = {
+        'Image': ({'sha256': sha256(guest_kernel), 'bytes': guest_kernel.stat().st_size}, deploy / 'Image'),
+        'rootfs.ext4': ({'sha256': sha256(guest_image), 'bytes': guest_image.stat().st_size}, deploy / 'pi4-guest1.ext4'),
+        'guest.manifest': ({'sha256': hashlib.sha256(manifest).hexdigest(), 'bytes': len(manifest)}, deploy / 'pi4-guest1.manifest'),
+    }
+    recorded = provenance.get('artifacts')
+    if not isinstance(recorded, dict):
+        raise CheckError('Guest provenance lacks payload hashes')
+    for name, (actual, source) in payloads.items():
+        if recorded.get(name) != actual:
+            raise CheckError(f'Packaged {name} differs from its recorded build provenance')
+        if not source.is_file() or actual != {'sha256': sha256(source), 'bytes': source.stat().st_size}:
+            raise CheckError(f'Packaged {name} differs from the actual Yocto deploy output')
+    return provenance
+
+
+def built_boot_payloads(boot, deploy):
+    matches = {}
+    for name, source_name in [('Image', 'Image'), ('xen', 'xen-raspberrypi4-64')]:
+        source = Path(deploy) / source_name
+        actual = sha256(Path(boot) / name)
+        if not source.is_file() or actual != sha256(source):
+            raise CheckError(f'Boot {name} differs from the actual Yocto deploy output')
+        matches[name] = actual
+    return matches
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--image", type=Path, required=True)
@@ -370,12 +422,14 @@ def main(argv=None):
                 report.check("boot_file:" + filename,
                              lambda name=filename: run(["mcopy", "-i", fat, "::/" + name, str(boot / name)]))
             report.check("dom0_kernel_image", lambda: arm64_image(boot / "Image"))
+            report.check("boot_payloads_match_build", lambda: built_boot_payloads(boot, args.deploy))
             root = scratch / "dom0.ext4"
             sparse_copy(args.image, table[1]["offset"], table[1]["size"], root)
             report.check("dom0_filesystem", lambda: filesystem_info(root))
             report.check("dom0_superblock", lambda: run(["dumpe2fs", "-h", str(root)]))
             report.check("dom0_filesystem_integrity", lambda: run(["e2fsck", "-f", "-n", str(root)]))
             fs = Ext4(root, scratch)
+            report.check("dom0_yocto_build_identity", lambda: build_identity(fs, 'pi4-xen-dom0-image'))
             report.check("dom0_required_files", lambda: fs.require([
                 "/bin/sh", "/sbin/init", "/usr/sbin/sshd", "/etc/xen/guest1.cfg",
                 "/var/lib/xen/images/guest1/Image", "/var/lib/xen/images/guest1/rootfs.ext4",
@@ -396,6 +450,7 @@ def main(argv=None):
             report.check("guest_filesystem", lambda: filesystem_info(guest_image))
             report.check("guest_filesystem_integrity", lambda: run(["e2fsck", "-f", "-n", str(guest_image)]))
             guest = Ext4(guest_image, scratch)
+            report.check("guest_yocto_build_identity", lambda: build_identity(guest, 'pi4-guest1-image'))
             report.check("guest_required_files", lambda: guest.require(["/bin/sh", "/sbin/init"]))
             def hostname():
                 name = guest.text("/etc/hostname").strip()
@@ -406,6 +461,7 @@ def main(argv=None):
             guest_kernel = scratch / "guest-Image"
             fs.dump("/var/lib/xen/images/guest1/Image", guest_kernel)
             report.check("guest_kernel_image", lambda: arm64_image(guest_kernel))
+            report.check("guest_payloads_match_build", lambda: built_guest_payloads(fs, guest_image, guest_kernel, args.deploy))
             if not args.guest_kernel_config:
                 def shared_kernel():
                     if sha256(guest_kernel) != sha256(boot / "Image"):

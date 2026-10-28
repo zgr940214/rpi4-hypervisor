@@ -1,32 +1,31 @@
 # Raspberry Pi 4 Xen lab
 
-目标：Raspberry Pi 4（AArch64）启动 Xen、Dom0 Linux，并由操作者手动启动唯一的 Linux guest `guest1`。本期不包含 TEE、安全启动或加密服务。
+目标：用同一套 Yocto 工程从源码构建 Raspberry Pi 4（AArch64）的 Xen、Dom0 Linux 和唯一的 Linux guest `guest1`，一起打包成可烧录的整卡镜像。guest 由操作者手动启动。本期不包含 TEE、安全启动或加密服务。
 
-**QEMU 实测通过：Xen 4.19.0 → Dom0 → guest1，SSH、guest shell、磁盘写入、暂停恢复、正常关机与重新创建均通过，10/10 项检查通过。** [原始报告](docs/xen-lab/evidence/qemu/20261028/report.json)。QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的 Yocto 整卡镜像仍被官方源站访问阻塞，尚无可烧录产物。详见 [状态和验证记录](docs/xen-lab/STATUS.md)。
+**交付要求是 Yocto 自建的 Pi4 整卡产物及其运行验证。当前构建链路与产物一致性检查已实现，完整编译仍被源码访问 403 阻塞，尚无可烧录镜像。** 先前通过的 Debian QEMU 实验保留为[历史记录](docs/xen-lab/evidence/qemu/20261028/report.json)，不作为本次自建 Pi4 镜像的验收结果。详见[状态记录](docs/xen-lab/STATUS.md)。
 
-## QEMU 验证
+## 从源码构建并验证 Pi4 镜像
 
-在 Linux 或 WSL2 的 Linux 文件系统中安装 Docker Engine、Git 和 Python 3，从仓库根目录执行：
-
-```sh
-./scripts/qemu.sh prepare
-./scripts/qemu.sh validate
-```
-
-`prepare` 构建 ARM64 Xen、匹配的工具栈和独立的 Debian 验证磁盘；`validate` 在 QEMU `virt` 上启动真实的 Xen、Dom0 和 guest1，检查 SSH、控制台、磁盘写入、暂停恢复、关机与再次创建，并保存日志和 JSON 报告。使用 TCG，不需要宿主支持 ARM KVM。详情、产物路径和验证范围见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。
-
-## Pi4 镜像构建
-
-在 Linux 或 WSL2 的 Linux 文件系统中工作，安装 Docker Engine 后，从仓库根目录执行：
+在 x86_64 Linux 或 WSL2 的 Linux 文件系统中安装 Docker Engine、Git 和 Python 3，从仓库根目录执行：
 
 ```sh
 ./scripts/container.sh build-container
 ./scripts/container.sh prepare
 ./scripts/container.sh parse
+./scripts/container.sh plan
 ./scripts/container.sh build
+./scripts/qemu-yocto.sh validate
 ```
 
-`build-container` 创建 Ubuntu 22.04 构建环境；`prepare` 获取 `sources.lock.json` 中固定提交的依赖、生成本地登录凭据和配置并检查 layer/provider；`parse` 检查 BitBake 元数据；`build` 构建、导出整卡镜像并执行只读检查。所有 build.sh 操作保留退出码及日志，位于 `local/logs/`。尚未验证的命令不能视为已构建成功。
+`build-container` 创建 Ubuntu 22.04 构建环境；`prepare` 获取 `sources.lock.json` 中固定提交的构建配方、生成本地登录凭据和配置并检查 layer/provider；`parse` 和 `plan` 检查 BitBake 元数据及任务依赖；`build` 执行 `bitbake pi4-xen-dom0-image`，导出整卡镜像并检查实际产物。所有 `build.sh` 操作保留退出码及日志，位于 `local/logs/`。
+
+这次构建由 BitBake 生成 `pi4-guest1-image` 的用户空间和 ext4 磁盘，并编译共享的 `linux-yocto` 内核。`pi4-xen-guest1` 将这份内核、guest 磁盘及包清单装入 Dom0；最终 Wic 镜像的 FAT 分区包含 Pi 启动固件、U-Boot、Xen 和内核，ext4 分区包含 Dom0 与 guest。流程获取源码、构建工具和 Pi 必需的启动固件，不采用预制的 Raspberry Pi OS 或 Debian guest 镜像。
+
+Dom0 和 guest 根文件系统分别记录 Yocto 构建标记。guest 内核、磁盘和包清单在打包时及整卡导出后都必须与 BitBake 部署目录的原始产物匹配；检查失败会停止导出。
+
+`qemu-yocto.sh validate` 只接受通过这些检查的 `artifacts/pi4-xen-dom0-guest1.img`，从它的 FAT 分区提取原有 Xen 与内核，直接把完整整卡镜像作为 QEMU 磁盘。Dom0 中的 guest 文件保持原样；使用 `-snapshot` 保存运行期间的临时写入，并在结束后检查源镜像哈希。缺少自建产物时命令明确失败。详情见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。
+
+当前 403 发生在 `git.yoctoproject.org/meta-virtualization` 构建配方源码获取阶段，并非预制系统镜像下载。已保存所需源码域名的网络配置草稿；当前云运行时尚未应用，需在环境设置中保存配置后继续构建。
 
 默认最多两个 BitBake 任务、每个任务两个编译线程；启用 `rm_work` 以减少磁盘占用。建议为首次 Yocto 构建准备至少 100 GiB 可用磁盘，这是工程规划值，不是本项目实测峰值。现有云工作盘只有约 30 GiB，磁盘监视器会在空间不足时停止任务，不能保证全量构建能容纳。修改 `local/site.conf` 可覆盖并行度和缓存路径。不要删除下载缓存、sstate 或全量构建目录来代替故障诊断。
 
@@ -49,7 +48,8 @@
 
 - `artifacts/pi4-xen-dom0-guest1.img`：用于 Raspberry Pi Imager → Use Custom 的未压缩整卡镜像。
 - `artifacts/SHA256SUMS`、`versions.json`：校验值、镜像大小及实际选中的版本。
-- `artifacts/pi4-xen-kernel.config`、`artifacts/checks/`：最终内核配置及静态检查证据。
+- `artifacts/pi4-xen-kernel.config`、`pi4-xen-kernel.json`：最终内核配置、实际版本和源码提交。
+- `artifacts/pi4-guest1.manifest`、`artifacts/checks/`：自建 guest 包清单，以及整卡中 guest 载荷与构建输出一致的检查证据。
 
 这些是预期输出路径，文件不存在时不能烧录。原生 `.wic` 保留在 `build/tmp/deploy/images/raspberrypi4-64/`。建议使用 8 GB 或更大的卡，并以最终镜像实际字节数确认卡容量。使用 Imager 烧录需要用户选择并确认实体存储设备。
 

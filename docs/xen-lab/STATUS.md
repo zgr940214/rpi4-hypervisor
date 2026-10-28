@@ -4,28 +4,26 @@
 
 ## 当前结论
 
-**QEMU 完整运行验证通过：10/10 项检查通过，31/31 条目标命令退出码为 0，验证脚本退出码为 0。** [原始报告](evidence/qemu/20261028/report.json)记录了 Xen 4.19.0、Dom0、guest1、SSH、磁盘写入、暂停恢复与重新创建。运行时间为 2026-10-28 16:45–16:47（北京时间）。
+**当前交付目标是 Yocto 从源码构建 Pi4 的 Xen、Dom0 和 guest1，并将它们一起打包、验证。完整镜像构建尚未完成，当前没有可烧录产物。** `git.yoctoproject.org/meta-virtualization` 的源码拉取仍被云环境代理返回 CONNECT 403；[本次访问记录](evidence/yocto-source-build/20261028/source-access.log)。这是构建配方源码的访问问题，不是预制 OS 镜像下载。
 
-QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构建仍被官方源站访问阻塞，尚无可烧录产物。详见 [运行方式与范围](QEMU.md)。
+已实现同一构建的 guest/内核打包、来源记录与字节一致性校验，以及直接使用完整 Pi4 `.img` 的 QEMU 入口。先前 Debian QEMU 实验的真实通过记录仍保留，但不属于本次 Yocto 自建 Pi4 镜像验收。详见 [QEMU 验证说明](QEMU.md)。
 
 | 检查 | 状态 | 证据或原因 |
 | --- | --- | --- |
-| Ubuntu 构建容器 | PASS | `docs/xen-lab/evidence/container-build.log`，实际 Docker 构建成功 |
-| 容器重复构建 | PASS | `docs/xen-lab/evidence/container-repeat.log`，缓存复用、退出码 0 |
-| 目标管理、凭据和镜像检查工具测试 | PASS | [最新记录](evidence/qemu/20261028/helper-tests.log)，49 项执行、0 失败、0 跳过，退出码 0；包含暂停前正常调度状态变化与实例替换的回归检查 |
-| 干净 Git 检出验证 | PASS | 从提交 `a63c6316c8a0455a874ab3f4ec03af15e1e113fb` 本地 clone，凭据初始化、47 项容器测试通过且无跟踪文件变化；`docs/xen-lab/evidence/clean-checkout-test.log` |
-| layer 词法及内嵌 Python 静态检查 | PASS | `docs/xen-lab/evidence/layer-static-check.log`，14 个 metadata 文件；不等同于完整 BitBake 解析 |
-| 保存的云安装脚本演练 | PASS | `docs/xen-lab/evidence/cloud-install.log`，容器缓存复用、凭据复用和 46 项测试通过 |
-| 凭据生成和复用 | PASS | 本地检查确认重复运行不改变凭据、公私钥匹配、密码与 SHA512 哈希匹配、文件权限 0600；不记录秘密内容 |
-| Poky、meta-openembedded、meta-raspberrypi 固定检出 | PASS | `docs/xen-lab/evidence/bootstrap-host.log`，前 3 个 lock commit 已取得 |
-| 官方 meta-virtualization 固定检出 | BLOCKED | 同上及 `docs/xen-lab/evidence/dependency-prepare.log`，HTTPS CONNECT 被平台代理返回 403 |
-| 完整 BitBake 解析/provider 和任务图 | BLOCKED | 缺少上述正式 layer，尚未运行完整解析 |
-| 目标整卡构建 | BLOCKED | 前置依赖获取失败；未启动 BitBake 编译任务，不能报告构建通过 |
-| 真实镜像静态检查 | NOT_RUN | 尚未生成 `.wic`/`.img`；工具的测试镜像不代表交付镜像 |
-| QEMU Xen、Dom0 与 guest1 启动 | PASS | [报告](evidence/qemu/20261028/report.json)与[串口日志](evidence/qemu/20261028/serial.log)：`xl info/list/dmesg`、ARM64 guest root shell、磁盘写入均通过 |
-| QEMU SSH、暂停恢复、关机及重复创建 | PASS | [SSH 控制台日志](evidence/qemu/20261028/ssh-guest-console.log)与上述报告：公钥登录、计数停止/恢复、Dom0 保持响应、同一 guest UUID、重建后文件保留均通过 |
-| QEMU 源磁盘只读保护 | PASS | `-snapshot` 运行前后 Dom0 原始磁盘 SHA256 相同，见报告 `source_disk_unchanged` |
-| Pi4 实机启动、Dom0 SSH、guest shell、暂停恢复及重复创建 | NOT_RUN | 没有已连接的板卡，也尚无镜像 |
+| Ubuntu 构建容器 | PASS | `evidence/container-build.log`，实际 Docker 构建成功；重复构建退出码 0 |
+| 管理、凭据、镜像及构建来源检查工具 | PASS | [本次记录](evidence/yocto-source-build/20261028/tool-tests.log)，69 项通过、0 跳过，退出码 0；包含替换 guest、来源不一致及旧检查结果的拒绝路径，仍属于工具测试 |
+| 正式 Poky、meta-openembedded、meta-raspberrypi 固定检出 | PASS | `evidence/bootstrap-host.log`，前 3 个 lock commit 已取得 |
+| 官方 meta-virtualization 固定检出 | BLOCKED | [实际源码访问](evidence/yocto-source-build/20261028/source-access.log)仍为 HTTPS CONNECT 403 |
+| 隔离离线配方解析 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-parse.log)：2939 recipes、4885 targets、687 skipped、0 errors。使用已有研究 layer，未验证官方来源，不是正式构建通过 |
+| 隔离离线任务图 | PASS（仅诊断） | [记录](evidence/yocto-source-build/20261028/offline-taskgraph.log)：286 recipes；确认 guest 镜像与共享内核是 Dom0 打包依赖 |
+| 正式 BitBake 解析与源码版本核对 | BLOCKED | 等待官方 layer 获取；Pi4 内核分支与 SRCREV 对应关系仍需核实 |
+| Yocto Pi4 整卡编译 | BLOCKED | 未完成正式源码获取，尚未执行整卡编译任务 |
+| 自建整卡静态检查 | NOT_RUN | 没有 `.wic`/`.img`；合成测试文件不能充当交付镜像 |
+| 自建整卡 QEMU 启动及 guest 验证 | NOT_RUN | [新入口实际拒绝记录](evidence/yocto-source-build/20261028/qemu-required-image.log)：缺少自建 Pi4 镜像时退出码 1，不替换为 Debian |
+| Pi4 实机启动与运行验证 | NOT_RUN | 尚无构建镜像与已连接板卡 |
+| 历史 Debian QEMU 实验 | PASS（独立实验） | [报告](evidence/qemu/20261028/report.json)：10/10 项、31/31 条命令通过；不是 Yocto Pi4 镜像 |
+
+此前的干净 Git 检出测试为提交 `a63c6316c8a0455a874ab3f4ec03af15e1e113fb` 的 47 项测试，记录于 `evidence/clean-checkout-test.log`。云安装脚本演练的 46 项与后续 49 项工具测试各自对应原始提交与日志，不作为当前新增逻辑的测试数量。
 
 ## 工程起点与选择
 
@@ -33,7 +31,7 @@ QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构�
 
 容器把仓库根目录映射到 `/work`。宿主是 x86_64 Debian 13；实际构建宿主采用 Ubuntu 22.04，CPU cgroup 配额约 4 核、内存限制 32 GiB；准备开始时工作盘可用约 30 GiB，容器和源码准备后约 28 GiB。没有发现既有 downloads/sstate 缓存。
 
-下表是配置意图，**不是完整 BitBake 解析后证实的 provider 结果**。正式 provider 和版本将在成功构建后导出到 `artifacts/versions.json`。
+下表为当前配置。隔离离线审计确认了候选 provider 和任务图；该审计使用本地研究 layer，不能代替官方源码检出和正式构建。成功构建后，实际 provider、版本和源码信息会导出到 `artifacts/versions.json`。
 
 | 项目 | 配置 |
 | --- | --- |
@@ -50,16 +48,19 @@ QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构�
 | 磁盘 | Wic MBR：FAT 启动分区 + ext4 Dom0；guest ext4 存放于 Dom0 的 `/var/lib/xen/images/guest1/` |
 | 登录 | Dom0 root SSH 公钥与串口密码；guest hvc0 本地自动进入 root shell |
 
-`meta-virtualization` 候选 commit 来自一个可读取的第三方 scarthgap 镜像，用于源码调查。正式获取脚本只接受 `https://git.yoctoproject.org/meta-virtualization`，未把第三方镜像当作已验证的官方检出。官方 commit 校验仍是上述阻塞的一部分。
+`meta-virtualization` 候选 commit 来自先前的 scarthgap 研究 clone。本次仅在独立 scratch 配置中使用该已有 clone 做离线审计，容器 `--network none`，BitBake `BB_NO_NETWORK=1`；未替换正式源码目录，也未用它构建交付镜像。正式获取脚本仍要求 `https://git.yoctoproject.org/meta-virtualization` 的固定提交。
+
+离线审计还发现：Pi4 覆盖层设置 `KBRANCH=v6.6/standard/bcm-2xxx-rpi`，而 `SRCREV_machine` 沿用 Poky 默认值。获取权威内核源码后，需要核实提交与 Pi4 分支的关系，不能只凭拉取成功推断 BSP 正确。
 
 ## 实现内容
 
 - `sources.lock.json`、`container/` 和 `scripts/{bootstrap,init-build,configure-access,...}`：固定源版本、Ubuntu 构建环境、可重复配置、凭据生成、日志及退出状态。
-- `meta-pi4-xen-lab/`：小型自定义 layer、集中资源参数、两个 image、内核片段与最终配置检查、启动脚本、Xen 管理服务、SSH/DHCP、Guest 打包任务依赖。
+- `meta-pi4-xen-lab/`：同一 Yocto 工程构建两个 image、共享内核、Xen/U-Boot 与最终 Wic。guest 打包任务依赖真实的 guest image 完成和 kernel deploy；两个根文件系统带 Yocto 构建标记，guest 包携带包清单、内核来源和载荷哈希。
 - `scripts/target/`：避免重复创建 guest、有限计数及带清理逻辑的暂停恢复。采用 domain ID 和 UUID 联合核对；CLI 检查与操作仍要求没有其他并发 domain 管理者。
-- `scripts/check-image.py`、`export-image.py`：成功构建后导出字节一致的 raw `.img`，进行只读结构/文件/配置检查并生成版本与 SHA256 证据。
+- `scripts/check-image.py`、`export-image.py`：导出字节一致的整卡 `.img`，校验内嵌 guest 磁盘、共享内核和包清单与实际 BitBake 部署输出一致，核对启动分区 Xen/内核，并生成版本与 SHA256 证据。
 - `tests/`：运行工具错误路径和真实文件系统读取测试；不把合成测试产物当作启动镜像。
-- `scripts/qemu.sh`、`scripts/qemu/`、`container/qemu.Dockerfile`：构建独立的 ARM64 Xen/Debian 验证系统，在 QEMU 上实际执行项目的 guest 管理脚本，保留串口、SSH 和逐项结果。
+- `scripts/qemu-yocto.sh`、`scripts/qemu/prepare-yocto.py`：验证自建 Pi4 整卡来源，提取该卡原有 Xen/内核，把完整原卡直接作为 QEMU 磁盘；内嵌 guest 不替换。
+- `scripts/qemu.sh`：仅保留此前独立 Debian 实验的复现入口，不作为自建 Pi4 镜像验收入口。
 
 ## 仓库交付
 
@@ -67,7 +68,7 @@ QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构�
 
 ## 恢复构建所需动作
 
-环境网络配置草稿已增加 `git.yoctoproject.org`、`downloads.yoctoproject.org` 和 `sstate.yoctoproject.org`，但当前运行时仍为原来的网络列表。需要在环境设置中保存更改；配置与快照发布由产品界面完成。
+环境网络配置草稿已保存 Yocto layer、内核、工具链和用户空间源码所需的域名，包括 `git.yoctoproject.org`、`downloads.yoctoproject.org`、GNU、Kernel.org、U-Boot 等上游站点及 Pi 固件使用的 GitHub API。当前运行时仍未应用这些增补。需要在环境设置中保存网络配置；保存草稿本身不会改变运行中的访问权限。源码重定向或后续依赖若出现新的明确拒绝，再按实际 URL 补充。
 
 已保存并确认持久化的字段为 `network.allowed_domains`、`install_script` 和 `start_skill`。安装脚本的内容已在当前实例实际演练；保存配置不等于已应用网络设置或已发布新快照，未来任务恢复尚未验证。
 
@@ -78,8 +79,9 @@ QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构�
 ./scripts/container.sh parse
 ./scripts/container.sh plan
 ./scripts/container.sh build
+./scripts/qemu-yocto.sh validate
 ```
 
-先核对官方 layer commit、Pi4 内核分支与 SRCREV、解析出的 provider 和任务图，再执行全量构建。若 BitBake 下载其他上游依赖遇到具体拒绝，应根据失败 URL 补充对应域名，保留 TLS/校验和验证。工作盘容量的实际构建峰值尚未测出；监控低空间阈值，不删除已有缓存来绕过空间问题。
+先核对官方 layer commit、Pi4 内核分支与 SRCREV、解析出的 provider 和任务图，再执行全量构建。构建流程获取源码、构建支持工具及 Pi 必需启动固件，不下载预制 guest OS 镜像。保留 TLS、签名与校验和验证。当前工作盘可用空间约 18 GiB，实际编译峰值尚未测出；保留 `rm_work` 与磁盘低空间监控，不能宣称现有容量已验证足够，也不删除已有下载缓存来绕过空间问题。
 
 预期烧录文件为 `artifacts/pi4-xen-dom0-guest1.img`，校验值为 `artifacts/SHA256SUMS`；**当前两个文件都尚未生成**。烧录与上板步骤见仓库 README，只有执行并保留真实日志后才能将对应状态改为 PASS。

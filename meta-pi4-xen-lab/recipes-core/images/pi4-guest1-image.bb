@@ -1,6 +1,7 @@
 SUMMARY = "Unpartitioned ext4 root filesystem for the single Xen guest"
 LICENSE = "MIT"
 inherit core-image
+require pi4-xen-image-provenance.inc
 
 IMAGE_INSTALL = "packagegroup-core-boot pi4-xen-guest-console pi4-xen-runtime-guest util-linux-agetty"
 IMAGE_FEATURES = "empty-root-password allow-empty-password"

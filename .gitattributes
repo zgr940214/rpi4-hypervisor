@@ -2,3 +2,4 @@
 # Preserve the original terminal evidence, including carriage returns.
 docs/xen-lab/evidence/*.log -text -whitespace
 docs/xen-lab/evidence/qemu/**/*.log -text -whitespace
+docs/xen-lab/evidence/yocto-source-build/**/*.log -text -whitespace

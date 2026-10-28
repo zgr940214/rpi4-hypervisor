@@ -39,11 +39,26 @@ def main():
     if not config.is_file():
         raise SystemExit(f'Final built kernel configuration is absent: {config}')
     shutil.copy2(config, out / config.name)
-    versions = {'source_lock': json.loads((ROOT / 'sources.lock.json').read_text()),
+    kernel_metadata = deploy / 'pi4-xen-kernel.json'
+    if not kernel_metadata.is_file():
+        raise SystemExit(f'Built kernel provenance is absent: {kernel_metadata}')
+    shutil.copy2(kernel_metadata, out / kernel_metadata.name)
+    versions = {'build_system': 'yocto-bitbake',
+                'source_lock': json.loads((ROOT / 'sources.lock.json').read_text()),
                 'native_wic': str(native.resolve()), 'bytes': image.stat().st_size,
+                'machine': value(image_recipe, 'MACHINE'),
+                'distro': value(image_recipe, 'DISTRO'),
+                'kernel': json.loads(kernel_metadata.read_text()),
                 'selected_recipes': {}}
-    for recipe in ['xen', 'xen-tools', 'virtual/kernel', 'u-boot']:
+    for recipe in [image_recipe, 'pi4-guest1-image', 'xen', 'xen-tools', 'virtual/kernel', 'u-boot']:
         versions['selected_recipes'][recipe] = {k: value(recipe, k) for k in ['PN', 'PV', 'FILE']}
+    versions['guest_build_outputs'] = {}
+    for name in ['pi4-guest1.ext4', 'pi4-guest1.manifest']:
+        payload = deploy / name
+        if not payload.is_file():
+            raise SystemExit(f'Yocto guest build output is absent: {payload}')
+        versions['guest_build_outputs'][name] = {'sha256': digest(payload), 'bytes': payload.stat().st_size}
+    shutil.copy2(deploy / 'pi4-guest1.manifest', out / 'pi4-guest1.manifest')
     (out / 'versions.json').write_text(json.dumps(versions, indent=2) + '\n')
     (out / 'SHA256SUMS').write_text(f'{digest(image)}  {image.name}\n')
     # Nonzero status is preserved. Hardware success is never inferred here.
