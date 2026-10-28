@@ -1,0 +1,26 @@
+[
+  {
+    "source": "berkeley-softfloat-3",
+    "commit": "b64af41c3276f97f0e181920400ee056b9c88037",
+    "tree": "5f46f374bcf9aef50442ba5fd25f3b5bcdf963c4",
+    "cache": ".cache/downloads/git2/gitlab.com.qemu-project.berkeley-softfloat-3.git",
+    "before_refs": "",
+    "after_refs": "b64af41c3276f97f0e181920400ee056b9c88037 refs/heads/pi4-pinned\n",
+    "cache_fsck": "pass",
+    "bitbake_style_shared_clone_and_checkout": "pass",
+    "checked_out_c_sources": 441,
+    "reason": "Fetched commits existed only as dangling objects; advertise explicit local fixed-commit ref so clone includes them. Upstream branch identity is not asserted."
+  },
+  {
+    "source": "berkeley-testfloat-3",
+    "commit": "e7af9751d9f9fd3b47911f51a5cfd08af256a9ab",
+    "tree": "9e166ce5ee90e0cb45f975a89c877bc4114de601",
+    "cache": ".cache/downloads/git2/gitlab.com.qemu-project.berkeley-testfloat-3.git",
+    "before_refs": "",
+    "after_refs": "e7af9751d9f9fd3b47911f51a5cfd08af256a9ab refs/heads/pi4-pinned\n",
+    "cache_fsck": "pass",
+    "bitbake_style_shared_clone_and_checkout": "pass",
+    "checked_out_c_sources": 162,
+    "reason": "Fetched commits existed only as dangling objects; advertise explicit local fixed-commit ref so clone includes them. Upstream branch identity is not asserted."
+  }
+]

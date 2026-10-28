@@ -378,7 +378,23 @@
         }
       ],
       "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
-      "offline_autoreconf": "passed using pi4-xen-qemu:4.19 tools, with network disabled"
+      "offline_autoreconf": "passed using pi4-xen-qemu:4.19 tools, with network disabled",
+      "yocto_native_validation": {
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "source_log": "local/logs/build-mirrors-6.log",
+        "observations": [
+          "NOTE: recipe libxml2-native-2.12.10-r0: task do_configure: Succeeded",
+          "NOTE: recipe libxml2-native-2.12.10-r0: task do_compile: Succeeded",
+          "NOTE: recipe libxml2-native-2.12.10-r0: task do_install: Succeeded",
+          "NOTE: recipe libxml2-native-2.12.10-r0: task do_populate_sysroot: Succeeded"
+        ]
+      }
     },
     {
       "package": "iproute2",

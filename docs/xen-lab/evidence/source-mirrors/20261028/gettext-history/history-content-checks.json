@@ -1,0 +1,134 @@
+[
+  {
+    "archive_member": "gettext-0.22.5/config.rpath",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/build-aux/config.rpath",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "0f1c83beb955c1d9afa7cb9f2cc590575201339c8042d57093849166608ccf93"
+  },
+  {
+    "archive_member": "gettext-0.22.5/ABOUT-NLS",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/ABOUT-NLS",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "fbe8681a07eab3934d302edb4db8fbcea014b460232e3638e7f4cdb7da53e5aa"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/en@boldquot.header",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/en@boldquot.header",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "99ad82767e9b1b4dd1e413664e06c686c8ab70eaadb129ac08a8b8b76f9173d2"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/en@quot.header",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/en@quot.header",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "6f4df89908e6e413db10738ff01e0c7046922c2a4aa4f9e64d376235745a4af5"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/Makefile.in.in",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/Makefile.in.in",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "8484db6cb36d0d8052cbc0181c83af858bb3f69d489bcdad12139789f85c4406"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/Makevars.template",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-tools/po/Makevars.template",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "d374f67b9c269f97539789e4dc464753cf263064eccb971a70e1e92d3955f4c2"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/Rules-quot",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/Rules-quot",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "8ced8cd2b86458be88c38322db49df53f41f87200a79233ce34499cb031db0cd"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/quot.sed",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/quot.sed",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "d19ab2cc69000c1206f1b8460952857f05d154158da8b89273ac2900a5c80ec0"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/remove-potcdate.sin",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/remove-potcdate.sin",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "d582513385c800f75224f4041fbff207053d4229be6038c6810af382420ac362"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/insert-header.sin",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/insert-header.sin",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "87041830aa4c5e87cedd35a2a95cf94c4e889604580481430b214422a5e8dc98"
+  },
+  {
+    "archive_member": "gettext-0.22.5/po/boldquot.sed",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/po/boldquot.sed",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "33234736a58f1610c73e1c8c08faf1b2ef1397d878dd7d2cbd888ca0f2da4ffc"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/intlmacosx.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/intlmacosx.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "fa430b4fed7ce7b5111dba53b65fef1325a64f67bf84bcf55e311c4278ef8f56"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/lib-prefix.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/gnulib-m4/lib-prefix.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "96c10cc2a9b7b3dda6fc05231b314c4f326d7254fe4e4e3e3b194792d2d25f43"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/build-to-host.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/build-to-host.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "331a4432631bec49fb8a1a65b08d5ec469573fe6bf8dc0d6dfed57f1e374f085"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/po.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/po.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "24f4e46ecaed9867b9601e17f800241fa3d79f5d507fa7f8fb4b0066d39eed6c"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/gettext.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/gettext.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "170bc333b45edc3330f4cd5911ce5b0ed2b8a5afa8d090a12d9ccec5afb9d9d0"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/lib-link.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/gnulib-m4/lib-link.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "9d8f2f77ac96afad28782b3524534cf2fbb0ac887df75e57dee4645f47fa6cf3"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/iconv.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/iconv.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "3f6b2b869a2b705ed3aa941461fcfc9e83d8e185d476c95150b384672b1b6dbb"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/nls.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/nls.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "9a03d3ce6aa13df441be97d9d75ec34a7012403cfc78168d012519c152e60a3f"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/lib-ld.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/gnulib-m4/lib-ld.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "fefe99dc99f096c70f897ee44d1ae1e065963ab3839630aed84809427b0a6430"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/host-cpu-c-abi.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/gnulib-m4/host-cpu-c-abi.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "07c50de068be731c2256a788586c633e91d7b54149a24de1ade0b9fc21f7a5a9"
+  },
+  {
+    "archive_member": "gettext-0.22.5/m4/progtest.m4",
+    "source_path": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/gettext-0.22.5/gettext-runtime/m4/progtest.m4",
+    "same_bytes_as_original_0.22.5_sources": true,
+    "sha256": "34c10f2969b9dc95acd3a4be0080898c1832974373c2a228a30d4cbb27ea6336"
+  }
+]

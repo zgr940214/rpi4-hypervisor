@@ -1,0 +1,116 @@
+test_fresh_git_checkout_permissions_are_repaired_before_key_use (test_access.AccessTests) ... ok
+test_mismatched_password_is_detected (test_access.AccessTests) ... ok
+test_mismatched_public_key_is_detected (test_access.AccessTests) ... ok
+test_missing_hash_does_not_replace_existing_password (test_access.AccessTests) ... ok
+test_missing_password_does_not_replace_old_hash (test_access.AccessTests) ... ok
+test_repeated_setup_keeps_usable_matching_credentials (test_access.AccessTests) ... ok
+test_dirty_checkout_is_preserved_and_rejected (test_bootstrap.BootstrapMirrorTests) ... From file:///tmp/tmpl0ljvuyu/mirror
+ * branch            f27b1ce6dab0785fb9fabad4f111c9906c10e313 -> FETCH_HEAD
+HEAD is now at f27b1ce Pinned source
+ok
+test_mirror_fetches_exact_pin_and_preserves_canonical_origin (test_bootstrap.BootstrapMirrorTests) ... From file:///tmp/tmpth2u6nlj/mirror
+ * branch            f27b1ce6dab0785fb9fabad4f111c9906c10e313 -> FETCH_HEAD
+HEAD is now at f27b1ce Pinned source
+ok
+test_repeat_reuses_verified_checkout_without_available_remote (test_bootstrap.BootstrapMirrorTests) ... From file:///tmp/tmp3vkziuwm/mirror
+ * branch            f27b1ce6dab0785fb9fabad4f111c9906c10e313 -> FETCH_HEAD
+HEAD is now at f27b1ce Pinned source
+ok
+test_unconfigured_origin_is_rejected_even_with_correct_commit (test_bootstrap.BootstrapMirrorTests) ... From file:///tmp/tmpl2hduxhw/mirror
+ * branch            f27b1ce6dab0785fb9fabad4f111c9906c10e313 -> FETCH_HEAD
+HEAD is now at f27b1ce Pinned source
+ok
+test_boot_xen_must_match_same_build (test_build_provenance.ProvenanceTests) ... ok
+test_guest_modified_after_packaging_is_rejected (test_build_provenance.ProvenanceTests) ... ok
+test_manifest_from_different_build_rejected (test_build_provenance.ProvenanceTests) ... ok
+test_non_yocto_build_is_rejected (test_build_provenance.ProvenanceTests) ... ok
+test_other_build_kernel_metadata_rejected (test_build_provenance.ProvenanceTests) ... ok
+test_packaged_bytes_match_build_outputs (test_build_provenance.ProvenanceTests) ... ok
+test_replacement_with_matching_embedded_hash_still_rejected (test_build_provenance.ProvenanceTests) ... ok
+test_rootfs_identity_must_be_guest_recipe_for_pi4 (test_build_provenance.ProvenanceTests) ... ok
+test_missing_inode_is_detected_despite_debugfs_zero_exit (test_check_image.Ext4IntegrationTests) ... ok
+test_readonly_ext4_extraction_and_directory_symlinks (test_check_image.Ext4IntegrationTests) ... ok
+test_symlink_loop_is_bounded (test_check_image.Ext4IntegrationTests) ... ok
+test_arm64_magic_is_required (test_check_image.ImageCheckTests) ... ok
+test_boot_script_crc_failure_is_reported (test_check_image.ImageCheckTests) ... ok
+test_debugfs_command_injection_rejected (test_check_image.ImageCheckTests) ... ok
+test_duplicate_guest_setting_rejected (test_check_image.ImageCheckTests) ... ok
+test_extra_partition_rejected (test_check_image.ImageCheckTests) ... ok
+test_filesystem_path_escape_rejected (test_check_image.ImageCheckTests) ... ok
+test_gpt_is_explicitly_unsupported (test_check_image.ImageCheckTests) ... ok
+test_guest_config_code_is_never_executed (test_check_image.ImageCheckTests) ... ok
+test_hardware_is_always_not_run (test_check_image.ImageCheckTests) ... ok
+test_invalid_boot_flag_rejected (test_check_image.ImageCheckTests) ... ok
+test_kernel_module_is_not_accepted_for_early_root_driver (test_check_image.ImageCheckTests) ... ok
+test_literal_guest_config (test_check_image.ImageCheckTests) ... ok
+test_nonliteral_guest_setting_rejected (test_check_image.ImageCheckTests) ... ok
+test_overlapping_partitions_rejected (test_check_image.ImageCheckTests) ... ok
+test_packaged_script_cannot_differ_from_deploy_script (test_check_image.ImageCheckTests) ... ok
+test_partitioned_guest_root_rejected (test_check_image.ImageCheckTests) ... ok
+test_readonly_guest_disk_rejected (test_check_image.ImageCheckTests) ... ok
+test_rootfs_is_not_card_image (test_check_image.ImageCheckTests) ... ok
+test_runtime_kernel_size_cannot_overlap_fdt (test_check_image.ImageCheckTests) ... ok
+test_sparse_copy_is_exact_and_source_is_unchanged (test_check_image.ImageCheckTests) ... ok
+test_sparse_copy_reports_truncation (test_check_image.ImageCheckTests) ... ok
+test_truncated_partition_rejected (test_check_image.ImageCheckTests) ... ok
+test_unexpected_backend_rejected (test_check_image.ImageCheckTests) ... ok
+test_valid_two_partition_layout (test_check_image.ImageCheckTests) ... ok
+test_cache_mismatch_is_preserved_not_overwritten (test_mirror_sources.MirrorSourceTests) ... ok
+test_debian_native_archive_preserves_original_path (test_mirror_sources.MirrorSourceTests) ... ok
+test_denied_original_host_is_not_requested (test_mirror_sources.MirrorSourceTests) ... ok
+test_gcc_canonical_mirror_preserves_version_directory (test_mirror_sources.MirrorSourceTests) ... ok
+test_mismatched_mirror_is_not_cached (test_mirror_sources.MirrorSourceTests) ... ok
+test_recompression_must_match_original_archive_hash (test_mirror_sources.MirrorSourceTests) ... ok
+test_unpinned_archive_is_refused (test_mirror_sources.MirrorSourceTests) ... ok
+test_verified_bytes_are_staged (test_mirror_sources.MirrorSourceTests) ... ok
+test_verified_cache_needs_no_network (test_mirror_sources.MirrorSourceTests) ... ok
+test_changed_card_bytes_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_changed_kernel_configuration_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_changed_source_pin_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_failed_static_checks_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_input_validation_preserves_card_bytes (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_legacy_pass_report_without_build_provenance_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_missing_guest_build_recipe_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_missing_image_has_no_debian_fallback (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_non_yocto_kernel_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_other_machine_export_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_stale_successful_report_for_other_image_rejected (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_virtio_root_driver_module_rejected_without_initrd (test_qemu_yocto.YoctoInputGateTests) ... ok
+test_absent_image_cannot_publish (test_repo_image.RepositoryImageTests) ... ok
+test_changed_evidence_is_rejected (test_repo_image.RepositoryImageTests) ... ok
+test_compressed_and_restored_hashes_are_checked (test_repo_image.RepositoryImageTests) ... ok
+test_corrupt_chunk_preserves_existing_output_even_with_force (test_repo_image.RepositoryImageTests) ... ok
+test_debian_qemu_pass_is_not_a_yocto_pass (test_repo_image.RepositoryImageTests) ... ok
+test_existing_different_image_requires_force (test_repo_image.RepositoryImageTests) ... ok
+test_external_boot_payload_cannot_differ_from_static_image (test_repo_image.RepositoryImageTests) ... ok
+test_failed_or_stale_static_report_cannot_publish (test_repo_image.RepositoryImageTests) ... ok
+test_image_changed_during_pack_leaves_no_chunks (test_repo_image.RepositoryImageTests) ... ok
+test_missing_chunk_leaves_no_output (test_repo_image.RepositoryImageTests) ... ok
+test_multichunk_roundtrip_and_idempotent_restore (test_repo_image.RepositoryImageTests) ... ok
+test_other_pending_static_check_remains_rejected (test_repo_image.RepositoryImageTests) ... ok
+test_pack_refuses_existing_directory_and_oversized_chunks (test_repo_image.RepositoryImageTests) ... ok
+test_pending_qemu_check_and_wrong_disk_are_rejected (test_repo_image.RepositoryImageTests) ... ok
+test_truncated_xz_is_rejected_even_with_updated_chunk_hash (test_repo_image.RepositoryImageTests) ... ok
+test_unsafe_names_and_symlinks_are_rejected (test_repo_image.RepositoryImageTests) ... ok
+test_absent_guest_is_created_once (test_target_tools.TargetTools) ... ok
+test_counter_is_finite (test_target_tools.TargetTools) ... ok
+test_domain_zero_is_never_mutated (test_target_tools.TargetTools) ... ok
+test_existing_guest_console (test_target_tools.TargetTools) ... ok
+test_existing_guest_is_not_created (test_target_tools.TargetTools) ... ok
+test_new_guest_attaches_during_creation (test_target_tools.TargetTools) ... ok
+test_normal_running_blocked_transition_is_allowed (test_target_tools.TargetTools) ... ok
+test_originally_paused_is_untouched (test_target_tools.TargetTools) ... ok
+test_pause_duration_is_bounded (test_target_tools.TargetTools) ... ok
+test_pause_failure_after_side_effect_still_cleans_up (test_target_tools.TargetTools) ... ok
+test_pause_resumes_same_domain (test_target_tools.TargetTools) ... ok
+test_query_failure_does_not_create (test_target_tools.TargetTools) ... ok
+test_replaced_domain_is_not_resumed (test_target_tools.TargetTools) ... ok
+test_replacement_before_pause_is_rejected (test_target_tools.TargetTools) ... ok
+test_termination_resumes_guest (test_target_tools.TargetTools) ... ok
+test_unpause_failure_is_failure (test_target_tools.TargetTools) ... ok
+
+----------------------------------------------------------------------
+Ran 98 tests in 2.224s
+
+OK
+COMMAND_EXIT_STATUS=0

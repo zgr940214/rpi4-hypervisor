@@ -20,8 +20,34 @@
       },
       "all_original_license_checks_match": true,
       "bitbake_validation": {
-        "passed_compile": false,
-        "note": "Require a clean metadata replay: pass 5 observed successful native tasks, but recipe changes between cooker/worker parses caused basehash errors."
+        "variant": "native",
+        "log": "local/logs/build-mirrors-6.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "metadata": "Consistent pass6 after cooker restart, repository checkpoint ce94c8a",
+        "target_compile_verified": false,
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libgcrypt-native-1.10.4-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libgcrypt-native-1.10.4-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libgcrypt-native-1.10.4-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libgcrypt-native-1.10.4-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
       },
       "original_recipe_patches": [
         {
@@ -80,7 +106,25 @@
         ],
         "fix": "Generate real documentation version.texi through the existing upstream stamp-vti target",
         "fix_rebuild_pending": false,
-        "configure_log": "local/logs/build-mirrors-4.log"
+        "configure_log": "local/logs/build-mirrors-4.log",
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-4.log",
+            "line": "NOTE: recipe libgpg-error-native-1.48-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-5.log",
+            "line": "NOTE: recipe libgpg-error-native-1.48-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-5.log",
+            "line": "NOTE: recipe libgpg-error-native-1.48-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-5.log",
+            "line": "NOTE: recipe libgpg-error-native-1.48-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
       },
       "original_recipe_patches": [
         {
@@ -125,6 +169,24 @@
           "do_compile",
           "do_install",
           "do_populate_sysroot"
+        ],
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-4.log",
+            "line": "NOTE: recipe libunistring-native-1.2-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-4.log",
+            "line": "NOTE: recipe libunistring-native-1.2-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-4.log",
+            "line": "NOTE: recipe libunistring-native-1.2-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-4.log",
+            "line": "NOTE: recipe libunistring-native-1.2-r0: task do_populate_sysroot: Succeeded"
+          }
         ]
       },
       "gnulib_release_input": {
@@ -140,6 +202,34 @@
         "image": "pi4-xen-build:scarthgap",
         "configure_generated": true,
         "texinfo_file": "Preseeded from the exact pinned gnulib tree to avoid optional network retrieval"
+      },
+      "target_bitbake_validation": {
+        "variant": "cortexa72-poky-linux",
+        "log": "local/logs/build-mirrors-6.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "task_pass_evidence": [
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libunistring-1.2-r0: task do_configure: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libunistring-1.2-r0: task do_compile: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libunistring-1.2-r0: task do_install: Succeeded"
+          },
+          {
+            "log": "build-mirrors-6.log",
+            "line": "NOTE: recipe libunistring-1.2-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
       }
     }
   ]

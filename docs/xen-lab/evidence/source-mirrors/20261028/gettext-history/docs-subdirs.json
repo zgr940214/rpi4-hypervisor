@@ -1,0 +1,93 @@
+[
+  {
+    "file": "gettext-runtime/Makefile.am",
+    "before": [
+      "doc",
+      "intl",
+      "intl-java",
+      "intl-csharp",
+      "gnulib-lib",
+      "$(SUBDIR_libasprintf)",
+      "src",
+      "po",
+      "man",
+      "m4",
+      "tests"
+    ],
+    "after": [
+      "intl",
+      "intl-java",
+      "intl-csharp",
+      "gnulib-lib",
+      "$(SUBDIR_libasprintf)",
+      "src",
+      "po",
+      "m4",
+      "tests"
+    ],
+    "only_removed": [
+      "doc",
+      "man"
+    ]
+  },
+  {
+    "file": "gettext-tools/Makefile.am",
+    "before": [
+      "gnulib-lib",
+      "libgrep",
+      "src",
+      "libgettextpo",
+      "po",
+      "its",
+      "projects",
+      "styles",
+      "emacs",
+      "misc",
+      "man",
+      "m4",
+      "tests",
+      "system-tests",
+      "gnulib-tests",
+      "examples",
+      "doc"
+    ],
+    "after": [
+      "gnulib-lib",
+      "libgrep",
+      "src",
+      "libgettextpo",
+      "po",
+      "its",
+      "projects",
+      "styles",
+      "emacs",
+      "misc",
+      "m4",
+      "tests",
+      "system-tests",
+      "gnulib-tests",
+      "examples"
+    ],
+    "only_removed": [
+      "man",
+      "doc"
+    ]
+  },
+  {
+    "file": "libtextstyle/Makefile.am",
+    "before": [
+      "lib",
+      "tests",
+      "adhoc-tests",
+      "doc"
+    ],
+    "after": [
+      "lib",
+      "tests",
+      "adhoc-tests"
+    ],
+    "only_removed": [
+      "doc"
+    ]
+  }
+]

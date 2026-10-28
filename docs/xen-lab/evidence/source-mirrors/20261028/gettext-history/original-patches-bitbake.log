@@ -1,0 +1,115 @@
+DEBUG: Executing python function extend_recipe_sysroot
+NOTE: Direct dependencies are ['/work/.cache/sources/poky/meta/recipes-devtools/quilt/quilt-native_0.67.bb:do_populate_sysroot']
+NOTE: Installed into sysroot: []
+NOTE: Skipping as already exists in sysroot: ['quilt-native']
+DEBUG: Python function extend_recipe_sysroot finished
+DEBUG: Executing python function do_patch
+DEBUG: Executing python function patch_do_patch
+DEBUG: Searching for parallel.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/parallel.patch for parallel.patch
+DEBUG: Searching for use-pkgconfig.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/use-pkgconfig.patch for use-pkgconfig.patch
+DEBUG: Searching for run-ptest in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/run-ptest for run-ptest
+DEBUG: Searching for serial-tests-config.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/serial-tests-config.patch for serial-tests-config.patch
+DEBUG: Searching for 0001-tests-autopoint-3-unset-MAKEFLAGS.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-tests-autopoint-3-unset-MAKEFLAGS.patch for 0001-tests-autopoint-3-unset-MAKEFLAGS.patch
+DEBUG: Searching for 0001-init-env.in-do-not-add-C-CXX-parameters.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-init-env.in-do-not-add-C-CXX-parameters.patch for 0001-init-env.in-do-not-add-C-CXX-parameters.patch
+DEBUG: Searching for 0001-intl-Fix-build-failure-with-make-j.patch in paths:
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/pi4-xen
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/x86-64
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext-0.22.5/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/
+    /work/.cache/sources/poky/meta/recipes-core/gettext/files/
+DEBUG: Using /work/.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-intl-Fix-build-failure-with-make-j.patch for 0001-intl-Fix-build-failure-with-make-j.patch
+NOTE: Applying patch 'parallel.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/parallel.patch)
+NOTE: Applying patch 'use-pkgconfig.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/use-pkgconfig.patch)
+NOTE: Applying patch 'serial-tests-config.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/serial-tests-config.patch)
+NOTE: Applying patch '0001-tests-autopoint-3-unset-MAKEFLAGS.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-tests-autopoint-3-unset-MAKEFLAGS.patch)
+NOTE: Applying patch '0001-init-env.in-do-not-add-C-CXX-parameters.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-init-env.in-do-not-add-C-CXX-parameters.patch)
+NOTE: Applying patch '0001-intl-Fix-build-failure-with-make-j.patch' (../.cache/sources/poky/meta/recipes-core/gettext/gettext/0001-intl-Fix-build-failure-with-make-j.patch)
+DEBUG: Python function patch_do_patch finished
+DEBUG: Python function do_patch finished
+DEBUG: Executing python function do_qa_patch
+DEBUG: Python function do_qa_patch finished
