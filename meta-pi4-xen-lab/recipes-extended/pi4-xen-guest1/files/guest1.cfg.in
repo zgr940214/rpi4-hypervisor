@@ -4,7 +4,8 @@ memory = @@GUEST_MEMORY@@
 maxmem = @@GUEST_MEMORY@@
 vcpus = @@GUEST_VCPUS@@
 kernel = "/var/lib/xen/images/guest1/Image"
-disk = ["target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy"]
+# Xen parses target= as the complete remainder, so it must be last.
+disk = ["format=raw,vdev=xvda,access=rw,backendtype=phy,target=/var/lib/xen/images/guest1/rootfs.ext4"]
 extra = "console=hvc0 root=/dev/xvda rootwait rw"
 on_poweroff = "destroy"
 on_reboot = "destroy"

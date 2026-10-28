@@ -94,13 +94,20 @@ memory = 256
 vcpus = 1
 kernel = '/var/lib/xen/images/guest1/Image'
 extra = 'console=hvc0 root=/dev/xvda rw rootwait'
-disk = ['target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy']
+disk = ['format=raw,vdev=xvda,access=rw,backendtype=phy,target=/var/lib/xen/images/guest1/rootfs.ext4']
 vif = []
 """
 
     def test_literal_guest_config(self):
         parsed = CHECK.parse_guest_config(self.config())
         self.assertEqual(parsed["memory"], 256)
+
+    def test_guest_disk_target_before_parameters_rejected(self):
+        broken = self.config().replace(
+            "format=raw,vdev=xvda,access=rw,backendtype=phy,target=/var/lib/xen/images/guest1/rootfs.ext4",
+            "target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy")
+        with self.assertRaisesRegex(CHECK.CheckError, "target= must be last"):
+            CHECK.parse_guest_config(broken)
 
     def test_partitioned_guest_root_rejected(self):
         with self.assertRaisesRegex(CHECK.CheckError, "raw xvda"):

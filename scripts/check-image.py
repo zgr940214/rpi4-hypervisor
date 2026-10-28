@@ -241,6 +241,11 @@ def parse_guest_config(text):
     if values:
         if any("=" not in item for item in fields):
             raise CheckError("Mixed positional and named disk syntax is unsupported")
+        # Xen's disk lexer consumes the complete remainder after target=,
+        # including commas; splitting it into unordered pairs would hide an
+        # invalid configuration that xl rejects as missing a virtual device.
+        if not fields[-1].startswith("target="):
+            raise CheckError("Named guest disk target= must be last (Xen consumes the remainder)")
         expected_disk = {"target": "/var/lib/xen/images/guest1/rootfs.ext4",
                          "format": "raw", "vdev": "xvda", "access": "rw", "backendtype": "phy"}
         if any(values.get(key) != value for key, value in expected_disk.items()):
