@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "scope": "Same-version source recovery for Yocto Scarthgap. Archive checksums remain provenance of the unused original archives; Git sources are pinned by release commit and preserve the recipe license checks. Native task passes do not establish target-image or boot validation.",
+  "recipes": [
+    {
+      "package": "libgcrypt",
+      "version": "1.10.4",
+      "release_source": {
+        "url": "https://github.com/gpg/libgcrypt.git",
+        "release_tag": "libgcrypt-1.10.4",
+        "commit": "d365a41094571f2cce18f27b53ffdceb540f77bb"
+      },
+      "original_archive_sha256": "d6d2f835a79711ceba54b53d1081d388d24fb0341d79a268a6557e12908a90a0",
+      "original_archive_used": false,
+      "recipe_license_md5": {
+        "COPYING": "94d55d512a9ba36caa9b7df079bae19f",
+        "COPYING.LIB": "bbb461211a33b134d42ed5ee802b37ff",
+        "LICENSES": "ef545b6cc717747072616519a1256d69"
+      },
+      "all_original_license_checks_match": true,
+      "bitbake_validation": {
+        "passed_compile": false,
+        "note": "Require a clean metadata replay: pass 5 observed successful native tasks, but recipe changes between cooker/worker parses caused basehash errors."
+      },
+      "original_recipe_patches": [
+        {
+          "file": "0001-libgcrypt-fix-m4-file-for-oe-core.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "0004-tests-Makefile.am-fix-undefined-reference-to-pthread.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "no-native-gpg-error.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "no-bench-slope.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "0002-random-cipher-handle-substitution-in-sed-command.patch",
+          "applied": true,
+          "fuzz": 0
+        }
+      ],
+      "git_build_adjustment": "Disable optional documentation for native and when api-documentation is absent; the release Git tree omits rendered PNG/PDF figures."
+    },
+    {
+      "package": "libgpg-error",
+      "version": "1.48",
+      "release_source": {
+        "url": "https://github.com/gpg/libgpg-error.git",
+        "release_tag": "libgpg-error-1.48",
+        "commit": "77b7c5ff6b756870811acaff53df0ebf1e5c2368"
+      },
+      "original_archive_sha256": "89ce1ae893e122924b858de84dc4f67aae29ffa610ebf668d5aa539045663d6f",
+      "original_archive_used": false,
+      "recipe_license_md5": {
+        "COPYING": "59530bdf33659b29e73d4adb9f9f6552",
+        "COPYING.LIB": "2d5025d4aa3495befef8f17206a5b0a1",
+        "src/gpg-error.h.in:2-18": "20f4cf5d81ea2fad18f6297500018654",
+        "src/init.c:2-17": "f01cdfcf747af5380590cfd9bbfeaaf7"
+      },
+      "all_original_license_checks_match": true,
+      "bitbake_validation": {
+        "variant": "native",
+        "log": "local/logs/build-mirrors-5.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "fix": "Generate real documentation version.texi through the existing upstream stamp-vti target",
+        "fix_rebuild_pending": false,
+        "configure_log": "local/logs/build-mirrors-4.log"
+      },
+      "original_recipe_patches": [
+        {
+          "file": "pkgconfig.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "0001-Do-not-fail-when-testing-config-scripts.patch",
+          "applied": true,
+          "fuzz": 0
+        },
+        {
+          "file": "0001-Avoid-use-of-nullptr-for-an-identifier.patch",
+          "applied": true,
+          "fuzz": 0
+        }
+      ],
+      "git_build_adjustment": "Before compilation, invoke the upstream doc/stamp-vti make target to generate real version.texi needed by yat2m."
+    },
+    {
+      "package": "libunistring",
+      "version": "1.2",
+      "release_source": {
+        "url": "https://github.com/GitMirroring/libunistring.git",
+        "release_tag": "v1.2",
+        "commit": "479b580dedca32662b34336183abfec95b71c42e"
+      },
+      "original_archive_sha256": "fd6d5662fa706487c48349a758b57bc149ce94ec6c30624ec9fdc473ceabbc8e",
+      "original_archive_used": false,
+      "recipe_license_md5": {
+        "COPYING.LIB": "6a6a8e020838b23406c81b19c1d46df6",
+        "README:45-65": "3a896a943b4da2c551e6be1af27eff8d",
+        "doc/libunistring.texi": "36b7d20daef7fbcc032333ae2429aa94"
+      },
+      "all_original_license_checks_match": true,
+      "bitbake_validation": {
+        "variant": "native",
+        "log": "local/logs/build-mirrors-4.log",
+        "passed_tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ]
+      },
+      "gnulib_release_input": {
+        "url": "https://github.com/coreutils/gnulib.git",
+        "commit": "5828723e285945975dbb3d2e89cd8854d5b7a075",
+        "pin_source": "Upstream v1.2 version.sh GNULIB_GIT_COMMIT (not a floating subcheckout)"
+      },
+      "bootstrap_validation": {
+        "gnulib_import_exit_code": 0,
+        "imported_library_c_sources": 617,
+        "autogen_exit_code": 0,
+        "network": "disabled",
+        "image": "pi4-xen-build:scarthgap",
+        "configure_generated": true,
+        "texinfo_file": "Preseeded from the exact pinned gnulib tree to avoid optional network retrieval"
+      }
+    }
+  ]
+}

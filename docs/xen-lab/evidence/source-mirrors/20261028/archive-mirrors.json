@@ -304,5 +304,29 @@
     "original_url": "https://archive.hadrons.org/software/libmd/libmd-1.1.0.tar.xz",
     "mirror_url": "https://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.1.0.orig.tar.xz",
     "sha256": "1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332"
+  },
+  {
+    "original_url": "https://ftpmirror.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
+    "mirror_url": "https://mirror.bazel.build/ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
+    "sha256": "9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2",
+    "note": "Audited clean-clone mirror coverage; no preseeded cache required"
+  },
+  {
+    "original_url": "https://zlib.net/zlib-1.3.1.tar.gz",
+    "mirror_url": "https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz",
+    "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+    "note": "Audited clean-clone mirror coverage; no preseeded cache required"
+  },
+  {
+    "original_url": "http://www.lua.org/ftp/lua-5.4.6.tar.gz",
+    "mirror_url": "https://archive.ubuntu.com/ubuntu/pool/main/l/lua5.4/lua5.4_5.4.6.orig.tar.gz",
+    "sha256": "7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88",
+    "note": "Audited clean-clone mirror coverage; no preseeded cache required"
+  },
+  {
+    "original_url": "https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz",
+    "mirror_url": "https://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0.orig.tar.gz",
+    "sha256": "92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c",
+    "note": "Audited clean-clone mirror coverage; no preseeded cache required"
   }
 ]

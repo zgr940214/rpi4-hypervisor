@@ -1,0 +1,13 @@
+{
+  "url": "https://gitlab.com/qemu-project/keycodemapdb.git",
+  "commit": "f5772a62ec52591ff6870b7e8ef32482371f22c6",
+  "reference": "QEMU8.2.7 subprojects/keycodemapdb.wrap",
+  "qemu_commit": "317c999868dfbc6e4630a39ca10cf189b81d17ad",
+  "fsck": "pass",
+  "required_inputs": [
+    "README",
+    "meson.build"
+  ],
+  "tree": ".cache/downloads/git2/gitlab.com.qemu-project.keycodemapdb.git",
+  "reason": "configure requires README when --disable-download, including user-mode builds"
+}

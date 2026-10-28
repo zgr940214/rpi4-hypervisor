@@ -1,6 +1,8 @@
 # Optional source mirrors; recipe SRCREV values and archive checksums remain enforced.
 # The Pi4 kernel version/revision is pinned explicitly in its bbappend.
 PREMIRRORS:prepend = " \
+    https://ftpmirror.gnu.org/gnu/bison/bison-3.8.2.tar.xz https://mirror.bazel.build/ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz \
+    https://zlib.net/zlib-1.3.1.tar.gz https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz \
     git://sourceware.org/git/binutils-gdb.git git://github.com/RTEMS/sourceware-mirror-binutils-gdb.git;protocol=https \
     git://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git git://github.com/kdave/btrfs-progs.git;protocol=https \
     git://salsa.debian.org/debian/debianutils.git git://github.com/CodeLinaro-mirror/yocto-mirrors_debianutils.git;protocol=https \

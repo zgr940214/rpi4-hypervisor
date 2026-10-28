@@ -2,6 +2,8 @@
 # Direct URI substitution permits distribution mirrors with different filenames.
 # See docs/xen-lab/evidence/source-mirrors/20261028/archive-mirrors.json.
 PI4_XEN_ARCHIVE_MIRRORS = " \
+    http://www.lua.org/ftp/lua-5.4.6.tar.gz https://archive.ubuntu.com/ubuntu/pool/main/l/lua5.4/lua5.4_5.4.6.orig.tar.gz \
+    https://ftpmirror.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz https://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0.orig.tar.gz \
     http://ftp.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20260816.tar.xz https://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20260816.tar.xz \
     http://ftp.debian.org/debian/pool/main/n/netbase/netbase_6.4.tar.xz https://deb.debian.org/debian/pool/main/n/netbase/netbase_6.4.tar.xz \
     http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz https://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.6p1.orig.tar.gz \
