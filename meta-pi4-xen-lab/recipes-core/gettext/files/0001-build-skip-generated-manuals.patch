@@ -1,13 +1,15 @@
 From: Pi4 Xen Lab <lab@example.invalid>
-Subject: [PATCH] build: omit generated manuals for the minimal lab
+Subject: [PATCH] build: omit manuals and example projects for the minimal lab
 
-The upstream Git release omits generated man/HTML pages. They require native
-program execution and documentation tools, while this lab needs the runtime
+The upstream Git release omits generated man/HTML pages and the combined
+example-project POT catalogue. Rebuilding them requires documentation tools
+and optional language compilers such as Pascal. This lab needs the runtime
 libraries, gettext programs, M4 data and autopoint history. Exclude only the
-recursive man/doc directories; retain every other build/install subdirectory.
-This also avoids attempting to execute target programs during cross builds.
+recursive man/doc/examples directories; retain the runtime, translations,
+macros, autopoint and all test subdirectories. This also avoids attempting
+to execute target programs during cross builds.
 
-Upstream-Status: Inappropriate [minimal lab documentation policy]
+Upstream-Status: Inappropriate [minimal lab documentation and examples policy]
 ---
 diff --git a/gettext-runtime/Makefile.am b/gettext-runtime/Makefile.am
 --- a/gettext-runtime/Makefile.am
@@ -29,7 +31,7 @@ diff --git a/gettext-tools/Makefile.am b/gettext-tools/Makefile.am
  ACLOCAL_AMFLAGS = -I m4 -I ../gettext-runtime/m4 -I ../m4 -I gnulib-m4 -I libgrep/gnulib-m4 -I libgettextpo/gnulib-m4
  
 -SUBDIRS = gnulib-lib libgrep src libgettextpo po its projects styles emacs misc man m4 tests system-tests gnulib-tests examples doc
-+SUBDIRS = gnulib-lib libgrep src libgettextpo po its projects styles emacs misc m4 tests system-tests gnulib-tests examples
++SUBDIRS = gnulib-lib libgrep src libgettextpo po its projects styles emacs misc m4 tests system-tests gnulib-tests
  
  EXTRA_DIST = misc/DISCLAIM
  MOSTLYCLEANFILES = core *.stackdump

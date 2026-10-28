@@ -1,0 +1,101 @@
+{
+  "component": "gettext-native optional example-project generation",
+  "active_metadata_changed": false,
+  "failure_log": "build/tmp/work/x86_64-linux/gettext-native/0.22.5/temp/log.do_compile.733370",
+  "root_cause": "Upstream release Git omits gettext-tools/examples/po/gettext-examples.pot, causing the expensive example POT regeneration rule to configure optional language projects and need per-example translations. Pascal compiler is absent.",
+  "pot_absent_in_fixed_git_tag": true,
+  "failure_lines": [
+    {
+      "line": 13552,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 13882,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 14236,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 14567,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 14920,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 15250,
+      "text": "msgmerge: error while opening \"af.po\" for reading: No such file or directory"
+    },
+    {
+      "line": 15619,
+      "text": "*** Essential program ppc386 or ppcx64 not found"
+    },
+    {
+      "line": 15716,
+      "text": "make[5]: *** [Makefile:763: ../../../../gettext-0.22.5/gettext-tools/examples/po/gettext-examples.pot] Error 2"
+    }
+  ],
+  "already_built_core_outputs": {
+    "gettext-tools/src/.libs/msgfmt": {
+      "bytes": 106600,
+      "sha256": "50d57797b2f660a52e147004f0c08268e90daed6d726ebdfd06014d7b69224a5",
+      "ELF": true
+    },
+    "gettext-tools/src/.libs/xgettext": {
+      "bytes": 351368,
+      "sha256": "8968c95459cc369429d7902fbf8ad45b1e0d55229f1ce82f9c36aaea8b5c2144",
+      "ELF": true
+    },
+    "gettext-tools/libgettextpo/.libs/libgettextpo.so.0.5.10": {
+      "bytes": 457000,
+      "sha256": "504a2479b7f097eb78336e5cb87732d189358ad407bac0adc5427cbd5150f69e",
+      "ELF": true
+    }
+  },
+  "recursive_subdirs_before": [
+    "gnulib-lib",
+    "libgrep",
+    "src",
+    "libgettextpo",
+    "po",
+    "its",
+    "projects",
+    "styles",
+    "emacs",
+    "misc",
+    "m4",
+    "tests",
+    "system-tests",
+    "gnulib-tests",
+    "examples"
+  ],
+  "recursive_subdirs_after": [
+    "gnulib-lib",
+    "libgrep",
+    "src",
+    "libgettextpo",
+    "po",
+    "its",
+    "projects",
+    "styles",
+    "emacs",
+    "misc",
+    "m4",
+    "tests",
+    "system-tests",
+    "gnulib-tests"
+  ],
+  "only_additional_subdir_removed": "examples",
+  "runtime_libraries_cli_macros_autopoint_and_tests_preserved": true,
+  "full_source_patch_fuzz_0_dry_run": "PASS on original0.22.5 Makefile.am files",
+  "compile_after_fix": "NOT_RUN; metadata frozen during pass7",
+  "ordinary_translation_catalogs_in_fixed_git": {
+    "gettext-runtime/po": 40,
+    "gettext-tools/po": 37
+  },
+  "ordinary_po_recursion_pass7": "Both gettext-runtime/po and gettext-tools/po completed before the later optional examples failure.",
+  "nls_policy_change": "NONE"
+}
