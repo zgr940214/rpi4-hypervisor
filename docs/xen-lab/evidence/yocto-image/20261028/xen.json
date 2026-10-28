@@ -1,0 +1,32 @@
+{
+  "qemu_dump_command": [
+    "qemu-system-aarch64",
+    "-machine",
+    "virt,gic-version=3,virtualization=on,dumpdtb=/work/local/qemu-yocto/results/20261028T131617Z/xen.base.dtb",
+    "-cpu",
+    "cortex-a57",
+    "-smp",
+    "2",
+    "-m",
+    "1536",
+    "-display",
+    "none",
+    "-serial",
+    "none",
+    "-monitor",
+    "none",
+    "-nic",
+    "none"
+  ],
+  "uart": "/pl011@9000000",
+  "xen_args": "console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info",
+  "dom0_args": "console=hvc0 earlycon=xenboot root=/dev/vda2 rw rootwait net.ifnames=0",
+  "modules": [
+    {
+      "kind": "kernel",
+      "path": "/work/local/qemu-yocto/Image",
+      "address": 1157627904,
+      "size": 27316736
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "pack_process_exit_status": 0,
+  "restore_process_exit_status": 0,
+  "independent_file_hash_comparison": [
+    {
+      "path": "artifacts/pi4-xen-dom0-guest1.img",
+      "bytes": 1295329280,
+      "sha256": "49fe88a3649b446cabcda7aa7c27ad81845bb950a3cfe602b0d057d5ab53e305"
+    },
+    {
+      "path": "/tmp/pi4-xen-delivery-restore.img",
+      "bytes": 1295329280,
+      "sha256": "49fe88a3649b446cabcda7aa7c27ad81845bb950a3cfe602b0d057d5ab53e305"
+    }
+  ],
+  "compressed_bytes": 63271860,
+  "chunks": [
+    {
+      "name": "pi4-xen-dom0-guest1.img.xz.part00001",
+      "bytes": 50331648,
+      "sha256": "0115472437df51050e9386248adf00bc6bb7b166c3a33bb28c3e831ce735cbef"
+    },
+    {
+      "name": "pi4-xen-dom0-guest1.img.xz.part00002",
+      "bytes": 12940212,
+      "sha256": "a041bd1619e29e89befaa023e3a622794aa9c05a472796e3393b343ae25511b2"
+    }
+  ]
+}

@@ -1,0 +1,2932 @@
+{
+  "sources": [
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.sailfishos-mirror.quilt.git",
+      "md5": null,
+      "recipe": "quilt-native",
+      "revisions": {
+        "default": "1731753a56234abc9a367f0e476bd5eeec126fde"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/sailfishos-mirror/quilt.git;protocol=https;nobranch=1;destsuffix=quilt-0.67",
+      "version": "0.67"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/patch-2.7.6.tar.xz",
+      "md5": "78ad9937e4caadcba1526ef1853730d5",
+      "recipe": "patch-native",
+      "revisions": {},
+      "sha256": "ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz;downloadfilename=patch-2.7.6.tar.xz",
+      "version": "2.7.6"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.pseudo",
+      "md5": null,
+      "recipe": "pseudo-native",
+      "revisions": {
+        "default": "ba8887e5f1e922f866681ec7dec1a00b602a9328"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/pseudo;branch=master;protocol=https",
+      "version": "1.9.11"
+    },
+    {
+      "branches": {
+        "machine": "v6.6/standard/bcm-2xxx-rpi"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.linux-yocto.git",
+      "md5": null,
+      "recipe": "linux-yocto",
+      "revisions": {
+        "machine": "0d5c8af531e021d38d2589c109268b644bdf3320"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=v6.6/standard/bcm-2xxx-rpi;protocol=https",
+      "version": "6.6.100+git"
+    },
+    {
+      "branches": {
+        "meta": "yocto-6.6"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+      "md5": null,
+      "recipe": "linux-yocto",
+      "revisions": {
+        "meta": "dd201eb6ec53179f45836d41610ca68c725d28e2"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=kernel-meta;protocol=https",
+      "version": "6.6.100+git"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/xz-5.4.7.tar.gz",
+      "md5": null,
+      "recipe": "xz-native",
+      "revisions": {},
+      "sha256": "8db6664c48ca07908b92baedcfe7f3ba23f49ef2476864518ab5db6723836e71",
+      "type": "https",
+      "url": "https://github.com/tukaani-project/xz/releases/download/v5.4.7/xz-5.4.7.tar.gz",
+      "version": "5.4.7"
+    },
+    {
+      "branches": {
+        "glibc": "release/2.39/master"
+      },
+      "localpath": "/work/.cache/downloads/git2/sourceware.org.git.glibc.git",
+      "md5": null,
+      "recipe": "cross-localedef-native",
+      "revisions": {
+        "glibc": "be1e627cd72db31161a3b4ce1c8114674f0895eb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+      "version": "2.39+git"
+    },
+    {
+      "branches": {
+        "localedef": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.kraj.localedef",
+      "md5": null,
+      "recipe": "cross-localedef-native",
+      "revisions": {
+        "localedef": "cba02c503d7c853a38ccfb83c57e343ca5ecd7e5"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/kraj/localedef;branch=master;name=localedef;destsuffix=git/localedef;protocol=https",
+      "version": "2.39+git"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+      "md5": null,
+      "recipe": "opkg-utils-native",
+      "revisions": {
+        "default": "589880d01969eb9af1e66120e731d43193504718"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+      "version": "0.6.3"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+      "md5": null,
+      "recipe": "update-rc.d-native",
+      "revisions": {
+        "default": "b8f950105010270a768aa12245d6abf166346015"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+      "version": "0.8+git"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.moto-timo.opkg.git",
+      "md5": null,
+      "recipe": "opkg-native",
+      "revisions": {
+        "default": "96c7fdef4112b97929053316bf4c5a136de71ef8"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/moto-timo/opkg.git;protocol=https;nobranch=1;destsuffix=opkg-0.6.3",
+      "version": "0.6.3"
+    },
+    {
+      "branches": {
+        "default": "main"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.yoctoproject.bmaptool",
+      "md5": null,
+      "recipe": "bmaptool-native",
+      "revisions": {
+        "default": "2ff5750b8a3e0b36a9993c20e2ea10a07bc62085"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/yoctoproject/bmaptool;branch=main;protocol=https",
+      "version": "3.8.0+git"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.madler.pigz.git",
+      "md5": null,
+      "recipe": "pigz-native",
+      "revisions": {
+        "default": "fe4894f57739e3039a2ffc2a2a360d35e19bacbe"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/madler/pigz.git;protocol=https;nobranch=1",
+      "version": "2.8"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/raspberrypi-firmware-bc7f439.tar.gz",
+      "md5": null,
+      "recipe": "rpi-bootfiles",
+      "revisions": {},
+      "sha256": "2c027debbef53c86c9ff9197d056d501b95f6ad214ad4db00a8a59b947574eb1",
+      "type": "https",
+      "url": "https://codeload.github.com/raspberrypi/firmware/legacy.tar.gz/bc7f439c234e19371115e07b57c366df59cc1bc7;downloadfilename=raspberrypi-firmware-bc7f439.tar.gz",
+      "version": "20250430"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+      "md5": null,
+      "recipe": "u-boot",
+      "revisions": {
+        "default": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+      "version": "2024.01"
+    },
+    {
+      "branches": {
+        "default": "stable-4.19"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.xen-project.xen.git",
+      "md5": null,
+      "recipe": "xen",
+      "revisions": {
+        "default": "026c9fa29716b0ff0f8b7c687908e71ba29cf239"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/xen-project/xen.git;protocol=https;branch=stable-4.19",
+      "version": "4.19.0+stable"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/parted-3.6.tar.xz",
+      "md5": null,
+      "recipe": "parted-native",
+      "revisions": {},
+      "sha256": "3b43dbe33cca0f9a18601ebab56b7852b128ec1a3df3a9b30ccde5e73359e612",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/p/parted/parted_3.6.orig.tar.xz;downloadfilename=parted-3.6.tar.xz",
+      "version": "3.6"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gptfdisk-1.0.9.tar.gz",
+      "md5": null,
+      "recipe": "gptfdisk-native",
+      "revisions": {},
+      "sha256": "dafead2693faeb8e8b97832b23407f6ed5b3219bc1784f482dd855774e2d50c2",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gdisk/gdisk_1.0.9.orig.tar.gz;downloadfilename=gptfdisk-1.0.9.tar.gz",
+      "version": "1.0.9"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/dosfstools-4.2.tar.gz",
+      "md5": null,
+      "recipe": "dosfstools-native",
+      "revisions": {},
+      "sha256": "64926eebf90092dca21b14259a5301b7b98e7b1943e8a201c7d726084809b527",
+      "type": "https",
+      "url": "https://github.com/dosfstools/dosfstools/releases//download/v4.2/dosfstools-4.2.tar.gz",
+      "version": "4.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/mtools-4.0.49.tar.bz2",
+      "md5": null,
+      "recipe": "mtools-native",
+      "revisions": {},
+      "sha256": "6fe5193583d6e7c59da75e63d7234f76c0b07caf33b103894f46f66a871ffc9f",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/m/mtools/mtools_4.0.49.orig.tar.bz2;downloadfilename=mtools-4.0.49.tar.bz2",
+      "version": "4.0.49"
+    },
+    {
+      "branches": {
+        "default": "binutils-2_42-branch"
+      },
+      "localpath": "/work/.cache/downloads/git2/sourceware.org.git.binutils-gdb.git",
+      "md5": null,
+      "recipe": "binutils-cross-aarch64",
+      "revisions": {
+        "default": "f9488b0d92b591bdf3ff8cce485cb0e1b3727cc0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://sourceware.org/git/binutils-gdb.git;branch=binutils-2_42-branch;protocol=https",
+      "version": "2.42"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+      "md5": null,
+      "recipe": "e2fsprogs-native",
+      "revisions": {
+        "default": "25ad8a431331b4d1d444a70b6079456cc612ac40"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+      "version": "1.47.0"
+    },
+    {
+      "branches": {
+        "default": "stable-4.19"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.xen-project.xen.git",
+      "md5": null,
+      "recipe": "xen-tools",
+      "revisions": {
+        "default": "026c9fa29716b0ff0f8b7c687908e71ba29cf239"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/xen-project/xen.git;protocol=https;branch=stable-4.19",
+      "version": "4.19+stable"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/util-linux-2.39.3.tar.xz",
+      "md5": null,
+      "recipe": "util-linux",
+      "revisions": {},
+      "sha256": "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.39.3.orig.tar.xz;downloadfilename=util-linux-2.39.3.tar.xz",
+      "version": "2.39.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/coreutils-9.4.tar.xz",
+      "md5": null,
+      "recipe": "coreutils",
+      "revisions": {},
+      "sha256": "ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_9.4.orig.tar.xz;downloadfilename=coreutils-9.4.tar.xz",
+      "version": "9.4"
+    },
+    {
+      "branches": {
+        "default": "v255-stable"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.systemd.systemd-stable.git",
+      "md5": null,
+      "recipe": "systemd",
+      "revisions": {
+        "default": "356c54394add8c6a1d52773852c23656590dc33b"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/systemd/systemd-stable.git;protocol=https;branch=v255-stable",
+      "version": "255.22"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/base-passwd_3.6.8.tar.xz",
+      "md5": null,
+      "recipe": "base-passwd",
+      "revisions": {},
+      "sha256": "fab3d0e6e8b641e116bda9bd5f7a7ed24482384c1513f6a369b506327fbc8dde",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.6.8.tar.xz;downloadfilename=base-passwd_3.6.8.tar.xz",
+      "version": "3.6.8"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/shadow-4.14.2.tar.gz",
+      "md5": null,
+      "recipe": "shadow",
+      "revisions": {},
+      "sha256": "a305edf5d19bddbdf5e836d2d609fa8bff2d35458819de4d9f06306a1cf24342",
+      "type": "https",
+      "url": "https://github.com/shadow-maint/shadow/releases/download/4.14.2/shadow-4.14.2.tar.gz",
+      "version": "4.14.2"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.python.cpython.git",
+      "md5": null,
+      "recipe": "python3-native",
+      "revisions": {
+        "default": "e848e4b09ca4bc67c0041c9ce7526dae471d4c36"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/python/cpython.git;protocol=https;nobranch=1",
+      "version": "3.12.15"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/coreutils-9.4.tar.xz",
+      "md5": null,
+      "recipe": "coreutils-native",
+      "revisions": {},
+      "sha256": "ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_9.4.orig.tar.xz;downloadfilename=coreutils-9.4.tar.xz",
+      "version": "9.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/setuptools-69.1.1.tar.gz",
+      "md5": null,
+      "recipe": "python3-setuptools-native",
+      "revisions": {},
+      "sha256": "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-69.1.1.tar.gz;downloadfilename=setuptools-69.1.1.tar.gz",
+      "version": "69.1.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/six-1.16.0.tar.gz",
+      "md5": null,
+      "recipe": "python3-six-native",
+      "revisions": {},
+      "sha256": "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/s/six/six-1.16.0.tar.gz;downloadfilename=six-1.16.0.tar.gz",
+      "version": "1.16.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.autotools-mirror.autoconf.git",
+      "md5": null,
+      "recipe": "autoconf-native",
+      "revisions": {
+        "default": "ba087b38f8fb360674db5ece1d3e0394dc6a998a"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/autotools-mirror/autoconf.git;protocol=https;nobranch=1",
+      "version": "2.72e"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/automake-1.16.5.tar.xz",
+      "md5": null,
+      "recipe": "automake-native",
+      "revisions": {},
+      "sha256": "f01d58cd6d9d77fbdca9eb4bbd5ead1988228fdb73d6f7a201f5f8d6b118b469",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/a/automake-1.16/automake-1.16_1.16.5.orig.tar.xz;downloadfilename=automake-1.16.5.tar.xz",
+      "version": "1.16.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libtool-2.4.7.tar.xz",
+      "md5": null,
+      "recipe": "libtool-native",
+      "revisions": {},
+      "sha256": "dd637e270439b208907ceead3f163470ed2ce5723ef97ffbda6463c64b57128a",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7.orig.tar.xz;downloadfilename=libtool-2.4.7.tar.xz",
+      "version": "2.4.7"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/attr-2.5.1.tar.xz",
+      "md5": null,
+      "recipe": "attr-native",
+      "revisions": {},
+      "sha256": "db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1.orig.tar.xz;downloadfilename=attr-2.5.1.tar.xz",
+      "version": "2.5.1"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.sqlite.sqlite.git",
+      "md5": null,
+      "recipe": "sqlite3-native",
+      "revisions": {
+        "default": "b74eb00e2cb05d9749859e6fbe77d229ad1dc1e1"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/sqlite/sqlite.git;protocol=https;nobranch=1;destsuffix=sqlite-source",
+      "version": "3.45.3"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.freedesktop.org.pkg-config.pkg-config.git",
+      "md5": null,
+      "recipe": "pkgconfig-native",
+      "revisions": {
+        "default": "d97db4fae4c1cd099b506970b285dc2afd818ea2"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.freedesktop.org/pkg-config/pkg-config.git;branch=master;protocol=https",
+      "version": "0.29.2+git"
+    },
+    {
+      "branches": {
+        "default": "rpm-4.19.x"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.rpm-software-management.rpm",
+      "md5": null,
+      "recipe": "rpm-native",
+      "revisions": {
+        "default": "13b4521341781293c41ac898aa9c2d2f6bc1f21d"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/rpm-software-management/rpm;branch=rpm-4.19.x;protocol=https",
+      "version": "4.19.1.1"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+      "md5": null,
+      "recipe": "kmod-native",
+      "revisions": {
+        "default": "aff617ea871d0568cc491bd116c0be1e857463bb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+      "version": "31"
+    },
+    {
+      "branches": {
+        "default": "release"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.facebook.zstd.git",
+      "md5": null,
+      "recipe": "zstd-native",
+      "revisions": {
+        "default": "63779c798237346c2b245c546c40b72a5a5913fe"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/facebook/zstd.git;branch=release;protocol=https",
+      "version": "1.5.5"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.ThomasDickey.ncurses-snapshots.git",
+      "md5": null,
+      "recipe": "ncurses-native",
+      "revisions": {
+        "default": "1003914e200fd622a27237abca155ce6bf2e6030"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/ThomasDickey/ncurses-snapshots.git;protocol=https;branch=master",
+      "version": "6.4"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-tools.git",
+      "md5": null,
+      "recipe": "kern-tools-native",
+      "revisions": {
+        "default": "7160ebe8b865dd6028aef278efa219433db93f7e"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/yocto-kernel-tools.git;branch=master;protocol=https",
+      "version": "0.3+git"
+    },
+    {
+      "branches": {
+        "default": "yocto-6.6"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.yocto-kernel-cache",
+      "md5": null,
+      "recipe": "yocto-cfg-fragments-native",
+      "revisions": {
+        "default": "eb283ea577df80542d48f0c498365960b4c4ecd9"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/yocto-kernel-cache;branch=yocto-6.6",
+      "version": "v6.6+giteb283ea577df80542d48f0c498365960b4c4ecd9"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bc-1.07.1.tar.gz",
+      "md5": "cda93857418655ea43590736fc3ca9fc",
+      "recipe": "bc-native",
+      "revisions": {},
+      "sha256": "62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/b/bc/bc_1.07.1.orig.tar.gz;downloadfilename=bc-1.07.1.tar.gz",
+      "version": "1.07.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bison-3.8.2.tar.xz",
+      "md5": null,
+      "recipe": "bison-native",
+      "revisions": {},
+      "sha256": "9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2",
+      "type": "https",
+      "url": "https://ftpmirror.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
+      "version": "3.8.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/util-linux-2.39.3.tar.xz",
+      "md5": null,
+      "recipe": "util-linux-native",
+      "revisions": {},
+      "sha256": "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.39.3.orig.tar.xz;downloadfilename=util-linux-2.39.3.tar.xz",
+      "version": "2.39.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/openssl-3.5.9.tar.gz",
+      "md5": null,
+      "recipe": "openssl-native",
+      "revisions": {},
+      "sha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+      "type": "https",
+      "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz;downloadfilename=openssl-3.5.9.tar.gz",
+      "version": "3.5.9"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.libbpf.elfutils-mirror.git",
+      "md5": null,
+      "recipe": "elfutils-native",
+      "revisions": {
+        "default": "18a015c0b0787ba5acb39801ab7c17dac50f584d"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/libbpf/elfutils-mirror.git;protocol=https;nobranch=1;destsuffix=elfutils-0.191",
+      "version": "0.191"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gmp-6.3.0.tar.xz",
+      "md5": null,
+      "recipe": "gmp-native",
+      "revisions": {},
+      "sha256": "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898",
+      "type": "https",
+      "url": "https://raw.githubusercontent.com/spleen1981/GMP_tarballs/135946054b0ee10925d9fb58edab7e90d9606145/gmp-6.3.0.tar.xz",
+      "version": "6.3.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/mpc-1.3.1.tar.gz",
+      "md5": null,
+      "recipe": "libmpc-native",
+      "revisions": {},
+      "sha256": "ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/m/mpclib3/mpclib3_1.3.1.orig.tar.gz;downloadfilename=mpc-1.3.1.tar.gz",
+      "version": "1.3.1"
+    },
+    {
+      "branches": {
+        "gettext": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.autotools-mirror.gettext.git",
+      "md5": null,
+      "recipe": "gettext-minimal-native",
+      "revisions": {
+        "gettext": "0d53c885229fc59ca3ce6a8e70fb3f6d59ece361"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/autotools-mirror/gettext.git;protocol=https;nobranch=1;name=gettext;destsuffix=gettext-0.22.5",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "md5": null,
+      "recipe": "gettext-minimal-native",
+      "revisions": {
+        "gnulib": "dd801be6c84325d140c67ec9869b3844bc5550ac"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/coreutils/gnulib.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gettext-gnulib",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {
+        "qemu": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.qemu.qemu.git",
+      "md5": null,
+      "recipe": "qemu-native",
+      "revisions": {
+        "qemu": "317c999868dfbc6e4630a39ca10cf189b81d17ad"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/qemu/qemu.git;protocol=https;nobranch=1;name=qemu",
+      "version": "8.2.7"
+    },
+    {
+      "branches": {
+        "keycodemap": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.qemu-project.keycodemapdb.git",
+      "md5": null,
+      "recipe": "qemu-native",
+      "revisions": {
+        "keycodemap": "f5772a62ec52591ff6870b7e8ef32482371f22c6"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/qemu-project/keycodemapdb.git;protocol=https;nobranch=1;name=keycodemap;destsuffix=git/subprojects/keycodemapdb",
+      "version": "8.2.7"
+    },
+    {
+      "branches": {
+        "softfloat": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.qemu-project.berkeley-softfloat-3.git",
+      "md5": null,
+      "recipe": "qemu-native",
+      "revisions": {
+        "softfloat": "b64af41c3276f97f0e181920400ee056b9c88037"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/qemu-project/berkeley-softfloat-3.git;protocol=https;nobranch=1;name=softfloat;destsuffix=git/subprojects/berkeley-softfloat-3",
+      "version": "8.2.7"
+    },
+    {
+      "branches": {
+        "testfloat": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.qemu-project.berkeley-testfloat-3.git",
+      "md5": null,
+      "recipe": "qemu-native",
+      "revisions": {
+        "testfloat": "e7af9751d9f9fd3b47911f51a5cfd08af256a9ab"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/qemu-project/berkeley-testfloat-3.git;protocol=https;nobranch=1;name=testfloat;destsuffix=git/subprojects/berkeley-testfloat-3",
+      "version": "8.2.7"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/perl-5.38.4.tar.gz",
+      "md5": null,
+      "recipe": "perl-native",
+      "revisions": {},
+      "sha256": "fb888accf8b50b5180e91166e5153608be294c57c19878e95f7659c1f1f12758",
+      "type": "https",
+      "url": "https://www.cpan.org/src/5.0/perl-5.38.4.tar.gz;name=perl",
+      "version": "5.38.4"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.openSUSE.libsolv.git",
+      "md5": null,
+      "recipe": "libsolv-native",
+      "revisions": {
+        "default": "c8dbb3a77c86600ce09d4f80a504cf4e78a3c359"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/openSUSE/libsolv.git;branch=master;protocol=https",
+      "version": "0.7.28"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libarchive-3.7.9.tar.gz",
+      "md5": null,
+      "recipe": "libarchive-native",
+      "revisions": {},
+      "sha256": "aa90732c5a6bdda52fda2ad468ac98d75be981c15dde263d7b5cf6af66fd009f",
+      "type": "https",
+      "url": "https://github.com/libarchive/libarchive/releases/download/v3.7.9/libarchive-3.7.9.tar.gz;downloadfilename=libarchive-3.7.9.tar.gz",
+      "version": "3.7.9"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/wheel-0.42.0.tar.gz",
+      "md5": null,
+      "recipe": "python3-wheel-native",
+      "revisions": {},
+      "sha256": "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/w/wheel/wheel-0.42.0.tar.gz;downloadfilename=wheel-0.42.0.tar.gz",
+      "version": "0.42.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/installer-0.7.0.tar.gz",
+      "md5": null,
+      "recipe": "python3-installer-native",
+      "revisions": {},
+      "sha256": "a26d3e3116289bb08216e0d0f7d925fcef0b0194eedfa0c944bcaaa106c4b631",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/i/installer/installer-0.7.0.tar.gz;downloadfilename=installer-0.7.0.tar.gz",
+      "version": "0.7.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/build-1.1.1.tar.gz",
+      "md5": null,
+      "recipe": "python3-build-native",
+      "revisions": {},
+      "sha256": "8eea65bb45b1aac2e734ba2cc8dad3a6d97d97901a395bd0ed3e7b46953d2a31",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/b/build/build-1.1.1.tar.gz;downloadfilename=build-1.1.1.tar.gz",
+      "version": "1.1.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/zlib-1.3.1.tar.gz",
+      "md5": null,
+      "recipe": "zlib-native",
+      "revisions": {},
+      "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+      "type": "https",
+      "url": "https://zlib.net/zlib-1.3.1.tar.gz",
+      "version": "1.3.1"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.Evilpaul.RPi-config.git",
+      "md5": null,
+      "recipe": "rpi-config",
+      "revisions": {
+        "default": "6ac2d832c6c3b208e2669f50ec1abf2c20cb7ff4"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/Evilpaul/RPi-config.git;protocol=https;branch=master",
+      "version": "git"
+    },
+    {
+      "branches": {
+        "glibc": "release/2.39/master"
+      },
+      "localpath": "/work/.cache/downloads/git2/sourceware.org.git.glibc.git",
+      "md5": null,
+      "recipe": "glibc",
+      "revisions": {
+        "glibc": "be1e627cd72db31161a3b4ce1c8114674f0895eb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://sourceware.org/git/glibc.git;protocol=https;branch=release/2.39/master;name=glibc",
+      "version": "2.39+git"
+    },
+    {
+      "branches": {
+        "default": "main"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+      "md5": null,
+      "recipe": "dtc-native",
+      "revisions": {
+        "default": "039a99414e778332d8f9c04cbd3072e1dcc62798"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+      "version": "1.7.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/pyelftools-0.30.tar.gz",
+      "md5": null,
+      "recipe": "python3-pyelftools-native",
+      "revisions": {},
+      "sha256": "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/p/pyelftools/pyelftools-0.30.tar.gz;downloadfilename=pyelftools-0.30.tar.gz",
+      "version": "0.30"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/flex-2.6.4.tar.gz",
+      "md5": "2882e3179748cc9f9c23ec593d6adc8d",
+      "recipe": "flex-native",
+      "revisions": {},
+      "sha256": "e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995",
+      "type": "https",
+      "url": "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz",
+      "version": "2.6.4"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.swig.swig.git",
+      "md5": null,
+      "recipe": "swig-native",
+      "revisions": {
+        "default": "b592468f522cf7f4a0812493bfa07cbe60679d7c"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/swig/swig.git;protocol=https;nobranch=1",
+      "version": "4.2.1"
+    },
+    {
+      "branches": {
+        "gnutls": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gnutls.gnutls.git",
+      "md5": null,
+      "recipe": "gnutls",
+      "revisions": {
+        "gnutls": "4a4cefef6c194f8fbbffd7fb19651219421b085b"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gnutls/gnutls.git;protocol=https;nobranch=1;name=gnutls;destsuffix=gnutls-3.8.4",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.libidn.gnulib-mirror.git",
+      "md5": null,
+      "recipe": "gnutls",
+      "revisions": {
+        "gnulib": "41d5dae3b7d239f167f09e4398f3970845a0ddc0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/libidn/gnulib-mirror.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gnutls-gnulib",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "nettle": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.nettle.git",
+      "md5": null,
+      "recipe": "gnutls",
+      "revisions": {
+        "nettle": "236d79b8bc508ae089f63a75c16f87c7076babdf"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/nettle.git;protocol=https;nobranch=1;name=nettle;destsuffix=gnutls-3.8.4/devel/nettle",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "libtasn1": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.libtasn1.git",
+      "md5": null,
+      "recipe": "gnutls",
+      "revisions": {
+        "libtasn1": "2b7ee166f031bea63c5e7badcedc69f1cea69c89"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/libtasn1.git;protocol=https;nobranch=1;name=libtasn1;destsuffix=gnutls-3.8.4/devel/libtasn1",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "cligen": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.cligen.git",
+      "md5": null,
+      "recipe": "gnutls",
+      "revisions": {
+        "cligen": "ed2ed7b19a5bcbc0f39505722058befc923eeeda"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/cligen.git;protocol=https;nobranch=1;name=cligen;destsuffix=gnutls-3.8.4/cligen",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/zlib-1.3.1.tar.gz",
+      "md5": null,
+      "recipe": "zlib",
+      "revisions": {},
+      "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+      "type": "https",
+      "url": "https://zlib.net/zlib-1.3.1.tar.gz",
+      "version": "1.3.1"
+    },
+    {
+      "branches": {
+        "default": "main"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.network.bridge.bridge-utils.git",
+      "md5": null,
+      "recipe": "bridge-utils",
+      "revisions": {
+        "default": "75d949b9fae9718201422f0bd3d1103e67dd597c"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/network/bridge/bridge-utils.git;branch=main",
+      "version": "1.7.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libnl-3.9.0.tar.gz",
+      "md5": null,
+      "recipe": "libnl",
+      "revisions": {},
+      "sha256": "aed507004d728a5cf11eab48ca4bf9e6e1874444e33939b9d3dfed25018ee9bb",
+      "type": "https",
+      "url": "https://github.com/thom311/libnl/releases/download/libnl3_9_0/libnl-3.9.0.tar.gz",
+      "version": "3.9.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/curl-8.7.1.tar.xz",
+      "md5": null,
+      "recipe": "curl",
+      "revisions": {},
+      "sha256": "6fea2aac6a4610fbd0400afb0bcddbe7258a64c63f1f68e5855ebc0c659710cd",
+      "type": "https",
+      "url": "https://github.com/curl/curl/releases/download/curl-8_7_1/curl-8.7.1.tar.xz;downloadfilename=curl-8.7.1.tar.xz",
+      "version": "8.7.1"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.procps-ng.procps.git",
+      "md5": null,
+      "recipe": "procps",
+      "revisions": {
+        "default": "4ddcef2fd843170c8e2d59a83042978f41037a2b"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/procps-ng/procps.git;protocol=https;branch=master",
+      "version": "4.0.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libtool-2.4.7.tar.xz",
+      "md5": null,
+      "recipe": "libtool-cross",
+      "revisions": {},
+      "sha256": "dd637e270439b208907ceead3f163470ed2ce5723ef97ffbda6463c64b57128a",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.7.orig.tar.xz;downloadfilename=libtool-2.4.7.tar.xz",
+      "version": "2.4.7"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/pixman-0.42.2.tar.gz",
+      "md5": null,
+      "recipe": "pixman",
+      "revisions": {},
+      "sha256": "ea1480efada2fd948bc75366f7c349e1c96d3297d09a3fe62626e38e234a625e",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/p/pixman/pixman_0.42.2.orig.tar.gz;downloadfilename=pixman-0.42.2.tar.gz",
+      "version": "0.42.2"
+    },
+    {
+      "branches": {
+        "gettext": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.autotools-mirror.gettext.git",
+      "md5": null,
+      "recipe": "gettext",
+      "revisions": {
+        "gettext": "0d53c885229fc59ca3ce6a8e70fb3f6d59ece361"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/autotools-mirror/gettext.git;protocol=https;nobranch=1;name=gettext;destsuffix=gettext-0.22.5",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "md5": null,
+      "recipe": "gettext",
+      "revisions": {
+        "gnulib": "dd801be6c84325d140c67ec9869b3844bc5550ac"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/coreutils/gnulib.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gettext-gnulib",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gettext-autopoint-history-0.23.1.tar.xz",
+      "md5": null,
+      "recipe": "gettext",
+      "revisions": {},
+      "sha256": "c1f97a72a7385b7e71dd07b5fea6cdaf12c9b88b564976b23bd8c11857af2970",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gettext/gettext_0.23.1.orig.tar.xz;name=autopoint_history;downloadfilename=gettext-autopoint-history-0.23.1.tar.xz;unpack=0",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/openssl-3.5.9.tar.gz",
+      "md5": null,
+      "recipe": "openssl",
+      "revisions": {},
+      "sha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+      "type": "https",
+      "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz;downloadfilename=openssl-3.5.9.tar.gz",
+      "version": "3.5.9"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.ThomasDickey.ncurses-snapshots.git",
+      "md5": null,
+      "recipe": "ncurses",
+      "revisions": {
+        "default": "1003914e200fd622a27237abca155ce6bf2e6030"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/ThomasDickey/ncurses-snapshots.git;protocol=https;branch=master",
+      "version": "6.4"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/codeberg.org.jmoyer.libaio.git",
+      "md5": null,
+      "recipe": "libaio",
+      "revisions": {
+        "default": "1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://codeberg.org/jmoyer/libaio.git;protocol=https;branch=master",
+      "version": "0.3.113"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.lloyd.yajl",
+      "md5": null,
+      "recipe": "yajl",
+      "revisions": {
+        "default": "a0ecdde0c042b9256170f2f8890dd9451a4240aa"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/lloyd/yajl;branch=master;protocol=https",
+      "version": "2.1.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.pciutils.pciutils.git",
+      "md5": null,
+      "recipe": "pciutils",
+      "revisions": {
+        "default": "08f8e6666a69595ba4532f16a46b9dc46b677860"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/pciutils/pciutils.git;protocol=https;nobranch=1;destsuffix=pciutils-3.11.1",
+      "version": "3.11.1"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.acpica.acpica",
+      "md5": null,
+      "recipe": "acpica-native",
+      "revisions": {
+        "default": "170fc3076a86777077637f10b05c32ac21ac13aa"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/acpica/acpica;protocol=https;branch=master",
+      "version": "20240322"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.ncroxon.gnu-efi.git",
+      "md5": null,
+      "recipe": "gnu-efi",
+      "revisions": {
+        "default": "24c80efc1af996bf8252f4a2f5ffc02d8c44640b"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/ncroxon/gnu-efi.git;protocol=https;nobranch=1;destsuffix=gnu-efi-3.0.17",
+      "version": "3.0.17"
+    },
+    {
+      "branches": {
+        "glib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.glib.git",
+      "md5": null,
+      "recipe": "glib-2.0",
+      "revisions": {
+        "glib": "d40f72e98e4734ba826ba9a278814530720ba760"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/glib.git;protocol=https;nobranch=1;name=glib;destsuffix=glib-2.78.6",
+      "version": "2.78.6"
+    },
+    {
+      "branches": {
+        "gvdb": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.gvdb.git",
+      "md5": null,
+      "recipe": "glib-2.0",
+      "revisions": {
+        "gvdb": "0854af0fdb6d527a8d1999835ac2c5059976c210"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/gvdb.git;protocol=https;nobranch=1;name=gvdb;destsuffix=glib-2.78.6/subprojects/gvdb",
+      "version": "2.78.6"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.python.cpython.git",
+      "md5": null,
+      "recipe": "python3",
+      "revisions": {
+        "default": "e848e4b09ca4bc67c0041c9ce7526dae471d4c36"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/python/cpython.git;protocol=https;nobranch=1",
+      "version": "3.12.15"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.iproute2.iproute2.git",
+      "md5": null,
+      "recipe": "iproute2",
+      "revisions": {
+        "default": "3dc3445bbfa9b84d4166e5837f8d5a4994faf2e7"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/iproute2/iproute2.git;protocol=https;nobranch=1;destsuffix=iproute2-6.7.0",
+      "version": "6.7.0"
+    },
+    {
+      "branches": {
+        "gettext": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.autotools-mirror.gettext.git",
+      "md5": null,
+      "recipe": "gettext-native",
+      "revisions": {
+        "gettext": "0d53c885229fc59ca3ce6a8e70fb3f6d59ece361"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/autotools-mirror/gettext.git;protocol=https;nobranch=1;name=gettext;destsuffix=gettext-0.22.5",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "md5": null,
+      "recipe": "gettext-native",
+      "revisions": {
+        "gnulib": "dd801be6c84325d140c67ec9869b3844bc5550ac"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/coreutils/gnulib.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gettext-gnulib",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gettext-autopoint-history-0.23.1.tar.xz",
+      "md5": null,
+      "recipe": "gettext-native",
+      "revisions": {},
+      "sha256": "c1f97a72a7385b7e71dd07b5fea6cdaf12c9b88b564976b23bd8c11857af2970",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gettext/gettext_0.23.1.orig.tar.xz;name=autopoint_history;downloadfilename=gettext-autopoint-history-0.23.1.tar.xz;unpack=0",
+      "version": "0.22.5"
+    },
+    {
+      "branches": {
+        "default": "main"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.utils.dtc.dtc.git",
+      "md5": null,
+      "recipe": "dtc",
+      "revisions": {
+        "default": "039a99414e778332d8f9c04cbd3072e1dcc62798"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git;branch=main;protocol=https",
+      "version": "1.7.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/xz-5.4.7.tar.gz",
+      "md5": null,
+      "recipe": "xz",
+      "revisions": {},
+      "sha256": "8db6664c48ca07908b92baedcfe7f3ba23f49ef2476864518ab5db6723836e71",
+      "type": "https",
+      "url": "https://github.com/tukaani-project/xz/releases/download/v5.4.7/xz-5.4.7.tar.gz",
+      "version": "5.4.7"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/source.denx.de.u-boot.u-boot.git",
+      "md5": null,
+      "recipe": "u-boot-tools-native",
+      "revisions": {
+        "default": "866ca972d6c3cabeaf6dbac431e8e08bb30b3c8e"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master",
+      "version": "2024.01"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/readline-8.2.tar.gz",
+      "md5": null,
+      "recipe": "readline-native",
+      "revisions": {},
+      "sha256": "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2.orig.tar.gz;name=archive;downloadfilename=readline-8.2.tar.gz",
+      "version": "8.2"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.rpm-software-management.popt.git",
+      "md5": null,
+      "recipe": "popt-native",
+      "revisions": {
+        "default": "916e61045d268f7e37ade5ec047eb77e8299e6ad"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/rpm-software-management/popt.git;protocol=https;nobranch=1;destsuffix=popt-1.19",
+      "version": "1.19"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.savannah.gnu.org.git.config.git",
+      "md5": null,
+      "recipe": "gnu-config-native",
+      "revisions": {
+        "default": "948ae97ca5703224bd3eada06b7a69f40dd15a02"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.savannah.gnu.org/git/config.git;protocol=https;branch=master",
+      "version": "20240101+git"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.autoconf-archive.autoconf-archive.git",
+      "md5": null,
+      "recipe": "autoconf-archive-native",
+      "revisions": {
+        "default": "4cd9fa38f0f6cd6998a8d25d25824a0d59ee4fea"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/autoconf-archive/autoconf-archive.git;protocol=https;nobranch=1",
+      "version": "2023.02.20"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/Linux-PAM-1.5.3.tar.xz",
+      "md5": null,
+      "recipe": "libpam",
+      "revisions": {},
+      "sha256": "7ac4b50feee004a9fa88f1dfd2d2fa738a82896763050cd773b3c54b0a818283",
+      "type": "https",
+      "url": "https://github.com/linux-pam/linux-pam/releases/download/v1.5.3/Linux-PAM-1.5.3.tar.xz",
+      "version": "1.5.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bash-completion-2.12.0.tar.xz",
+      "md5": null,
+      "recipe": "bash-completion",
+      "revisions": {},
+      "sha256": "3eb05b1783c339ef59ed576afb0f678fa4ef49a6de8a696397df3148f8345af9",
+      "type": "https",
+      "url": "https://github.com/scop/bash-completion/releases/download/2.12.0/bash-completion-2.12.0.tar.xz",
+      "version": "2.12.0"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.stevegrubb.libcap-ng.git",
+      "md5": null,
+      "recipe": "libcap-ng",
+      "revisions": {
+        "default": "f5d39702622208b3ada064d7b2eaeaf1454c9bd3"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/stevegrubb/libcap-ng.git;protocol=https;branch=master",
+      "version": "0.8.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/util-linux-2.39.3.tar.xz",
+      "md5": null,
+      "recipe": "util-linux-libuuid",
+      "revisions": {},
+      "sha256": "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.39.3.orig.tar.xz;downloadfilename=util-linux-2.39.3.tar.xz",
+      "version": "2.39.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gtk-doc-1.33.2.tar.xz",
+      "md5": null,
+      "recipe": "gtk-doc-native",
+      "revisions": {},
+      "sha256": "cc1b709a20eb030a278a1f9842a362e00402b7f834ae1df4c1998a723152bf43",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gtk-doc/gtk-doc_1.33.2.orig.tar.xz;name=archive;downloadfilename=gtk-doc-1.33.2.tar.xz",
+      "version": "1.33.2"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.opkg-utils",
+      "md5": null,
+      "recipe": "opkg-utils",
+      "revisions": {
+        "default": "589880d01969eb9af1e66120e731d43193504718"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/opkg-utils;protocol=https;branch=master",
+      "version": "0.6.3"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.besser82.libxcrypt.git",
+      "md5": null,
+      "recipe": "libxcrypt",
+      "revisions": {
+        "default": "f531a36aa916a22ef2ce7d270ba381e264250cbf"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/besser82/libxcrypt.git;branch=master;protocol=https",
+      "version": "4.4.36"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/attr-2.5.1.tar.xz",
+      "md5": null,
+      "recipe": "attr",
+      "revisions": {},
+      "sha256": "db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/a/attr/attr_2.5.1.orig.tar.xz;downloadfilename=attr-2.5.1.tar.xz",
+      "version": "2.5.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/acl-2.3.2.tar.xz",
+      "md5": null,
+      "recipe": "acl",
+      "revisions": {},
+      "sha256": "97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/a/acl/acl_2.3.2.orig.tar.xz;downloadfilename=acl-2.3.2.tar.xz",
+      "version": "2.3.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gmp-6.3.0.tar.xz",
+      "md5": null,
+      "recipe": "gmp",
+      "revisions": {},
+      "sha256": "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898",
+      "type": "https",
+      "url": "https://raw.githubusercontent.com/spleen1981/GMP_tarballs/135946054b0ee10925d9fb58edab7e90d9606145/gmp-6.3.0.tar.xz",
+      "version": "6.3.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.kernelorg-mirror.libs_libcap_libcap.git",
+      "md5": null,
+      "recipe": "libcap",
+      "revisions": {
+        "default": "8bed80f9b54b7bd2a1ee1fdc2124a094733c9356"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/kernelorg-mirror/libs_libcap_libcap.git;protocol=https;nobranch=1;destsuffix=libcap-2.69",
+      "version": "2.69"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/shadow-4.14.2.tar.gz",
+      "md5": null,
+      "recipe": "shadow-native",
+      "revisions": {},
+      "sha256": "a305edf5d19bddbdf5e836d2d609fa8bff2d35458819de4d9f06306a1cf24342",
+      "type": "https",
+      "url": "https://github.com/shadow-maint/shadow/releases/download/4.14.2/shadow-4.14.2.tar.gz",
+      "version": "4.14.2"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.utils.kernel.kmod.kmod.git",
+      "md5": null,
+      "recipe": "kmod",
+      "revisions": {
+        "default": "aff617ea871d0568cc491bd116c0be1e857463bb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git;branch=master;protocol=https",
+      "version": "31"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gperf-3.1-debian.orig.tar.gz",
+      "md5": "190817525c915818ed1118a9ffdeb02f",
+      "recipe": "gperf-native",
+      "revisions": {},
+      "sha256": "1f88819b78187350e7e6ca24b5e15cbf4083659773508d3f018b9b525e9d1cb8",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gperf/gperf_3.1.orig.tar.gz;downloadfilename=gperf-3.1-debian.orig.tar.gz",
+      "version": "3.1"
+    },
+    {
+      "branches": {
+        "default": "release-2.5"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.seccomp.libseccomp.git",
+      "md5": null,
+      "recipe": "libseccomp",
+      "revisions": {
+        "default": "f0b04ab0b4fc0bc2cde6da1f407b4a487fe6d78f"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/seccomp/libseccomp.git;branch=release-2.5;protocol=https",
+      "version": "2.5.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/jinja2-3.1.6.tar.gz",
+      "md5": null,
+      "recipe": "python3-jinja2-native",
+      "revisions": {},
+      "sha256": "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/j/jinja2/jinja2-3.1.6.tar.gz;downloadfilename=jinja2-3.1.6.tar.gz",
+      "version": "3.1.6"
+    },
+    {
+      "branches": {
+        "default": "release"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.facebook.zstd.git",
+      "md5": null,
+      "recipe": "zstd",
+      "revisions": {
+        "default": "63779c798237346c2b245c546c40b72a5a5913fe"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/facebook/zstd.git;branch=release;protocol=https",
+      "version": "1.5.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/meson-1.3.1.tar.gz",
+      "md5": null,
+      "recipe": "meson-native",
+      "revisions": {},
+      "sha256": "6020568bdede1643d4fb41e28215be38eff5d52da28ac7d125457c59e0032ad7",
+      "type": "https",
+      "url": "https://github.com/mesonbuild/meson/releases//download/1.3.1/meson-1.3.1.tar.gz",
+      "version": "1.3.1"
+    },
+    {
+      "branches": {
+        "default": "release"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.ninja-build.ninja.git",
+      "md5": null,
+      "recipe": "ninja-native",
+      "revisions": {
+        "default": "a524bf3f6bacd1b4ad85d719eed2737d8562f27a"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/ninja-build/ninja.git;branch=release;protocol=https",
+      "version": "1.11.1"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.thkukuk.libnsl",
+      "md5": null,
+      "recipe": "libnsl2-native",
+      "revisions": {
+        "default": "d4b22e54b5e6637a69b26eab5faad2a326c9b182"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/thkukuk/libnsl;branch=master;protocol=https",
+      "version": "2.0.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libffi-3.4.6.tar.gz",
+      "md5": null,
+      "recipe": "libffi-native",
+      "revisions": {},
+      "sha256": "b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e",
+      "type": "https",
+      "url": "https://github.com/libffi/libffi/releases//download/v3.4.6/libffi-3.4.6.tar.gz",
+      "version": "3.4.6"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gdbm-1.23.tar.gz",
+      "md5": null,
+      "recipe": "gdbm-native",
+      "revisions": {},
+      "sha256": "74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz;downloadfilename=gdbm-1.23.tar.gz",
+      "version": "1.23"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bzip2-1.0.8.tar.gz",
+      "md5": "67e051268d0c475ea773822f7500d0e5",
+      "recipe": "bzip2-native",
+      "revisions": {},
+      "sha256": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+      "type": "https",
+      "url": "https://mirror.bazel.build/sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz;downloadfilename=bzip2-1.0.8.tar.gz",
+      "version": "1.0.8"
+    },
+    {
+      "branches": {
+        "bzip2-tests": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+      "md5": null,
+      "recipe": "bzip2-native",
+      "revisions": {
+        "bzip2-tests": "f9061c030a25de5b6829e1abf373057309c734c0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+      "version": "1.0.8"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/expat-2.8.3.tar.bz2",
+      "md5": null,
+      "recipe": "expat-native",
+      "revisions": {},
+      "sha256": "b4cc2483927d5e90bf8c40b44a6b95b368b42a8a96e25883fce188b48a92b670",
+      "type": "https",
+      "url": "https://github.com/libexpat/libexpat/releases//download/R_2_8_3/expat-2.8.3.tar.bz2",
+      "version": "2.8.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libedit-20230828-3.1.tar.gz",
+      "md5": null,
+      "recipe": "libedit-native",
+      "revisions": {},
+      "sha256": "4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c69c98814dad",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libe/libedit/libedit_3.1-20230828.orig.tar.gz;downloadfilename=libedit-20230828-3.1.tar.gz",
+      "version": "20230828-3.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/util-linux-2.39.3.tar.xz",
+      "md5": null,
+      "recipe": "util-linux-libuuid-native",
+      "revisions": {},
+      "sha256": "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.39.3.orig.tar.xz;downloadfilename=util-linux-2.39.3.tar.xz",
+      "version": "2.39.3"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.linux-nfs.libtirpc.git",
+      "md5": null,
+      "recipe": "libtirpc-native",
+      "revisions": {
+        "default": "e86eef35f3628b3adf388a522ab5731bb4487f34"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/linux-nfs/libtirpc.git;protocol=https;nobranch=1;destsuffix=libtirpc-1.3.4",
+      "version": "1.3.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/flit-3.9.0.tar.gz",
+      "md5": null,
+      "recipe": "python3-flit-core-native",
+      "revisions": {},
+      "sha256": "d75edf5eb324da20d53570a6a6f87f51e606eee8384925cd66a90611140844c7",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/f/flit/flit-3.9.0.tar.gz;downloadfilename=flit-3.9.0.tar.gz",
+      "version": "3.9.0"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/salsa.debian.org.debian.debianutils.git",
+      "md5": null,
+      "recipe": "debianutils-native",
+      "revisions": {
+        "default": "9e0facf19b17b6d090a5dcc8cacb0c16e5ad9f72"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://salsa.debian.org/debian/debianutils.git;protocol=https;branch=master",
+      "version": "5.16"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/busybox-1.36.1.tar.bz2",
+      "md5": null,
+      "recipe": "busybox",
+      "revisions": {},
+      "sha256": "b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/busybox/busybox_1.36.1.orig.tar.bz2;name=tarball;downloadfilename=busybox-1.36.1.tar.bz2",
+      "version": "1.36.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/netbase_6.4.tar.xz",
+      "md5": null,
+      "recipe": "netbase",
+      "revisions": {},
+      "sha256": "fa6621826ff1150e581bd90bc3c8a4ecafe5df90404f207db6dcdf2c75f26ad7",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/n/netbase/netbase_6.4.tar.xz;downloadfilename=netbase_6.4.tar.xz",
+      "version": "6.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bash-5.2.21.tar.xz",
+      "md5": null,
+      "recipe": "bash",
+      "revisions": {},
+      "sha256": "ec21ab4efd6bd7a6e2802fbda622b81bfc43a8095d721234d4bf075797683014",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.2.21.orig.tar.xz;name=tarball;downloadfilename=bash-5.2.21.tar.xz",
+      "version": "5.2.21"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/perl-5.38.4.tar.gz",
+      "md5": null,
+      "recipe": "perl",
+      "revisions": {},
+      "sha256": "fb888accf8b50b5180e91166e5153608be294c57c19878e95f7659c1f1f12758",
+      "type": "https",
+      "url": "https://www.cpan.org/src/5.0/perl-5.38.4.tar.gz;name=perl",
+      "version": "5.38.4"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.kernel.org.pub.scm.fs.ext2.e2fsprogs.git",
+      "md5": null,
+      "recipe": "e2fsprogs",
+      "revisions": {
+        "default": "25ad8a431331b4d1d444a70b6079456cc612ac40"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git;branch=master;protocol=https",
+      "version": "1.47.0"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/salsa.debian.org.debian.ifupdown.git",
+      "md5": null,
+      "recipe": "ifupdown",
+      "revisions": {
+        "default": "369d9d3c13a0c56ad09fd4f13b4a80eb9a94e270"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://salsa.debian.org/debian/ifupdown.git;protocol=https;branch=master",
+      "version": "0.8.41"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/openssh-9.6p1.tar.gz",
+      "md5": null,
+      "recipe": "openssh",
+      "revisions": {},
+      "sha256": "910211c07255a8c5ad654391b40ee59800710dd8119dd5362de09385aa7a777c",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_9.6p1.orig.tar.gz;downloadfilename=openssh-9.6p1.tar.gz",
+      "version": "9.6p1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/findutils-4.9.0.tar.xz",
+      "md5": null,
+      "recipe": "findutils",
+      "revisions": {},
+      "sha256": "a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/f/findutils/findutils_4.9.0.orig.tar.xz;downloadfilename=findutils-4.9.0.tar.xz",
+      "version": "4.9.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GitMirroring.gawk.git",
+      "md5": null,
+      "recipe": "gawk",
+      "revisions": {
+        "default": "5efd1487e16e68a1bb52fa5ca997d2d51182bff2"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GitMirroring/gawk.git;protocol=https;nobranch=1",
+      "version": "5.3.0"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/git.yoctoproject.org.update-rc.d",
+      "md5": null,
+      "recipe": "update-rc.d",
+      "revisions": {
+        "default": "b8f950105010270a768aa12245d6abf166346015"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://git.yoctoproject.org/update-rc.d;branch=master;protocol=https",
+      "version": "0.8+git"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.legionus.kbd.git",
+      "md5": null,
+      "recipe": "kbd",
+      "revisions": {
+        "default": "d27e4a38e7cb0a0ff0665e8017425911a7cc04f0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/legionus/kbd.git;protocol=https;nobranch=1;destsuffix=kbd-2.6.4",
+      "version": "2.6.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/dbus-1.14.10.tar.xz",
+      "md5": null,
+      "recipe": "dbus",
+      "revisions": {},
+      "sha256": "ba1f21d2bd9d339da2d4aa8780c09df32fea87998b73da24f49ab9df1e36a50f",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.10.orig.tar.xz;downloadfilename=dbus-1.14.10.tar.xz",
+      "version": "1.14.10"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/tar-1.35+dfsg.orig.tar.xz",
+      "md5": null,
+      "recipe": "tar",
+      "revisions": {},
+      "sha256": "9ae57e981c1e73c0eebc2b26c9b0c4497fe310ef1d516ea430efb5470b71f7a8",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.35+dfsg.orig.tar.xz;downloadfilename=tar-1.35+dfsg.orig.tar.xz",
+      "version": "1.35"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/m4-1.4.19.tar.xz",
+      "md5": "0d90823e1426f1da2fd872df0311298d",
+      "recipe": "m4-native",
+      "revisions": {},
+      "sha256": "63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/m/m4/m4_1.4.19.orig.tar.xz;downloadfilename=m4-1.4.19.tar.xz",
+      "version": "1.4.19"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/packaging-23.2.tar.gz",
+      "md5": null,
+      "recipe": "python3-packaging-native",
+      "revisions": {},
+      "sha256": "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/p/packaging/packaging-23.2.tar.gz;downloadfilename=packaging-23.2.tar.gz",
+      "version": "23.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/pyproject_hooks-1.0.0.tar.gz",
+      "md5": null,
+      "recipe": "python3-pyproject-hooks-native",
+      "revisions": {},
+      "sha256": "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/p/pyproject_hooks/pyproject_hooks-1.0.0.tar.gz;downloadfilename=pyproject_hooks-1.0.0.tar.gz",
+      "version": "1.0.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.torvalds.linux.git",
+      "md5": null,
+      "recipe": "linux-libc-headers",
+      "revisions": {
+        "default": "ffc253263a1375a65fa6c9f62a893e9767fbebfa"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/torvalds/linux.git;protocol=https;nobranch=1;destsuffix=linux-6.6",
+      "version": "6.6"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/ca-certificates_20260816.tar.xz",
+      "md5": null,
+      "recipe": "ca-certificates",
+      "revisions": {},
+      "sha256": "d939bcdd0cb058712cf4175bac76997676eb8b68fe9473765e1b40fb3d5b186a",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20260816.tar.xz;downloadfilename=ca-certificates_20260816.tar.xz",
+      "version": "20260816"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+      "md5": null,
+      "recipe": "shared-mime-info",
+      "revisions": {
+        "default": "9a6d6b8e963935f145f3a1ef446552de6996dada"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+      "version": "2.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/packaging-23.2.tar.gz",
+      "md5": null,
+      "recipe": "python3-packaging",
+      "revisions": {},
+      "sha256": "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/p/packaging/packaging-23.2.tar.gz;downloadfilename=packaging-23.2.tar.gz",
+      "version": "23.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/diffutils-3.10.tar.xz",
+      "md5": null,
+      "recipe": "diffutils",
+      "revisions": {},
+      "sha256": "90e5e93cc724e4ebe12ede80df1634063c7a855692685919bfe60b556c9bd09e",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/d/diffutils/diffutils_3.10.orig.tar.xz;downloadfilename=diffutils-3.10.tar.xz",
+      "version": "3.10"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/MarkupSafe-2.1.5.tar.gz",
+      "md5": null,
+      "recipe": "python3-markupsafe-native",
+      "revisions": {},
+      "sha256": "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b",
+      "type": "https",
+      "url": "https://files.pythonhosted.org/packages/source/M/MarkupSafe/MarkupSafe-2.1.5.tar.gz;downloadfilename=MarkupSafe-2.1.5.tar.gz",
+      "version": "2.1.5"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gpg.libgcrypt.git",
+      "md5": null,
+      "recipe": "libgcrypt-native",
+      "revisions": {
+        "default": "d365a41094571f2cce18f27b53ffdceb540f77bb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gpg/libgcrypt.git;protocol=https;nobranch=1;destsuffix=libgcrypt-1.10.4",
+      "version": "1.10.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/lua-5.4.6.tar.gz",
+      "md5": null,
+      "recipe": "lua-native",
+      "revisions": {},
+      "sha256": "7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/lua5.4/lua5.4_5.4.6.orig.tar.gz;name=tarballsrc;downloadfilename=lua-5.4.6.tar.gz",
+      "version": "5.4.6"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.file.file.git",
+      "md5": null,
+      "recipe": "file-native",
+      "revisions": {
+        "default": "4cbd5c8f0851201d203755b76cb66ba991ffd8be"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/file/file.git;branch=master;protocol=https",
+      "version": "5.45"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/cmake-3.28.3.tar.gz",
+      "md5": null,
+      "recipe": "cmake-native",
+      "revisions": {},
+      "sha256": "72b7570e5c8593de6ac4ab433b73eab18c5fb328880460c86ce32608141ad5c1",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3.orig.tar.gz;downloadfilename=cmake-3.28.3.tar.gz",
+      "version": "3.28.3"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.git.git.git",
+      "md5": null,
+      "recipe": "git-native",
+      "revisions": {
+        "default": "080b728d4b2bbdd2c0b9eb9ed6a41195f8303088"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/git/git.git;protocol=https;nobranch=1;destsuffix=git-2.44.4",
+      "version": "2.44.4"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gcc-mirror.gcc.git",
+      "md5": null,
+      "recipe": "gcc-source-13.5.0",
+      "revisions": {
+        "default": "0bba35ae26a574150f6d1ae55f8ab1f4c2314a56"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gcc-mirror/gcc.git;protocol=https;nobranch=1;destsuffix=gcc-13.5.0",
+      "version": "13.5.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/mpfr-4.2.1.tar.xz",
+      "md5": null,
+      "recipe": "mpfr-native",
+      "revisions": {},
+      "sha256": "277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/mpfr4_4.2.1.orig.tar.xz;downloadfilename=mpfr-4.2.1.tar.xz",
+      "version": "4.2.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/pcre2-10.43.tar.bz2",
+      "md5": null,
+      "recipe": "libpcre2-native",
+      "revisions": {},
+      "sha256": "e2a53984ff0b07dfdb5ae4486bbb9b21cca8e7df2434096cc9bf1b728c350bcb",
+      "type": "https",
+      "url": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.43/pcre2-10.43.tar.bz2",
+      "version": "10.43"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.stevegrubb.libcap-ng.git",
+      "md5": null,
+      "recipe": "libcap-ng-native",
+      "revisions": {
+        "default": "f5d39702622208b3ada064d7b2eaeaf1454c9bd3"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/stevegrubb/libcap-ng.git;protocol=https;branch=master",
+      "version": "0.8.5"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/curl-8.7.1.tar.xz",
+      "md5": null,
+      "recipe": "curl-native",
+      "revisions": {},
+      "sha256": "6fea2aac6a4610fbd0400afb0bcddbe7258a64c63f1f68e5855ebc0c659710cd",
+      "type": "https",
+      "url": "https://github.com/curl/curl/releases/download/curl-8_7_1/curl-8.7.1.tar.xz;downloadfilename=curl-8.7.1.tar.xz",
+      "version": "8.7.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libmicrohttpd-1.0.1.tar.gz",
+      "md5": null,
+      "recipe": "libmicrohttpd-native",
+      "revisions": {},
+      "sha256": "a89e09fc9b4de34dde19f4fcb4faaa1ce10299b9908db1132bbfa1de47882b94",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libm/libmicrohttpd/libmicrohttpd_1.0.1.orig.tar.gz;downloadfilename=libmicrohttpd-1.0.1.tar.gz",
+      "version": "1.0.1"
+    },
+    {
+      "branches": {
+        "glib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.glib.git",
+      "md5": null,
+      "recipe": "glib-2.0-native",
+      "revisions": {
+        "glib": "d40f72e98e4734ba826ba9a278814530720ba760"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/glib.git;protocol=https;nobranch=1;name=glib;destsuffix=glib-2.78.6",
+      "version": "2.78.6"
+    },
+    {
+      "branches": {
+        "gvdb": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.gvdb.git",
+      "md5": null,
+      "recipe": "glib-2.0-native",
+      "revisions": {
+        "gvdb": "0854af0fdb6d527a8d1999835ac2c5059976c210"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/gvdb.git;protocol=https;nobranch=1;name=gvdb;destsuffix=glib-2.78.6/subprojects/gvdb",
+      "version": "2.78.6"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GitMirroring.gawk.git",
+      "md5": null,
+      "recipe": "gawk-native",
+      "revisions": {
+        "default": "5efd1487e16e68a1bb52fa5ca997d2d51182bff2"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GitMirroring/gawk.git;protocol=https;nobranch=1",
+      "version": "5.3.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/perl-cross-1.6.2.tar.gz",
+      "md5": null,
+      "recipe": "perlcross-native",
+      "revisions": {},
+      "sha256": "131f7496152ee32067dbac2bc9b44b2f582fc778140e545701b3b2faee782f1d",
+      "type": "https",
+      "url": "https://github.com/arsv/perl-cross/releases//download/1.6.2/perl-cross-1.6.2.tar.gz;name=perl-cross",
+      "version": "1.6.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/make-4.4.1.tar.gz",
+      "md5": null,
+      "recipe": "make-native",
+      "revisions": {},
+      "sha256": "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3",
+      "type": "https",
+      "url": "https://mirror.bazel.build/ftpmirror.gnu.org/gnu/make/make-4.4.1.tar.gz;downloadfilename=make-4.4.1.tar.gz",
+      "version": "4.4.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/acl-2.3.2.tar.xz",
+      "md5": null,
+      "recipe": "acl-native",
+      "revisions": {},
+      "sha256": "97203a72cae99ab89a067fe2210c1cbf052bc492b479eca7d226d9830883b0bd",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/a/acl/acl_2.3.2.orig.tar.xz;downloadfilename=acl-2.3.2.tar.xz",
+      "version": "2.3.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libtasn1-4.20.0.tar.gz",
+      "md5": null,
+      "recipe": "libtasn1-native",
+      "revisions": {},
+      "sha256": "92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0.orig.tar.gz;downloadfilename=libtasn1-4.20.0.tar.gz",
+      "version": "4.20.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libtasn1-4.20.0.tar.gz",
+      "md5": null,
+      "recipe": "libtasn1",
+      "revisions": {},
+      "sha256": "92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0.orig.tar.gz;downloadfilename=libtasn1-4.20.0.tar.gz",
+      "version": "4.20.0"
+    },
+    {
+      "branches": {
+        "libunistring": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GitMirroring.libunistring.git",
+      "md5": null,
+      "recipe": "libunistring",
+      "revisions": {
+        "libunistring": "479b580dedca32662b34336183abfec95b71c42e"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GitMirroring/libunistring.git;protocol=https;nobranch=1;name=libunistring;destsuffix=libunistring-1.2",
+      "version": "1.2"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "md5": null,
+      "recipe": "libunistring",
+      "revisions": {
+        "gnulib": "5828723e285945975dbb3d2e89cd8854d5b7a075"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/coreutils/gnulib.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gnulib",
+      "version": "1.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/nettle-3.9.1.tar.gz",
+      "md5": null,
+      "recipe": "nettle",
+      "revisions": {},
+      "sha256": "ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.9.1.orig.tar.gz;downloadfilename=nettle-3.9.1.tar.gz",
+      "version": "3.9.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libidn2-2.3.7.tar.gz",
+      "md5": null,
+      "recipe": "libidn2",
+      "revisions": {},
+      "sha256": "4c21a791b610b9519b9d0e12b8097bf2f359b12f8dd92647611a929e6bfd7d64",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.3.7.orig.tar.gz;downloadfilename=libidn2-2.3.7.tar.gz",
+      "version": "2.3.7"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.linux-ras.sysfsutils.git",
+      "md5": null,
+      "recipe": "sysfsutils",
+      "revisions": {
+        "default": "da2f1f8500c0af6663a56ce2bff07f67e60a92e0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/linux-ras/sysfsutils.git;protocol=https;branch=master",
+      "version": "2.1.1"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.libxml2.git",
+      "md5": null,
+      "recipe": "libxml2",
+      "revisions": {
+        "default": "02d577715e1951cf114ca4e9adaf5605156c4f4c"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/libxml2.git;protocol=https;nobranch=1;destsuffix=libxml2-2.12.10",
+      "version": "2.12.10"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libffi-3.4.6.tar.gz",
+      "md5": null,
+      "recipe": "libffi",
+      "revisions": {},
+      "sha256": "b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e",
+      "type": "https",
+      "url": "https://github.com/libffi/libffi/releases//download/v3.4.6/libffi-3.4.6.tar.gz",
+      "version": "3.4.6"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/pcre2-10.43.tar.bz2",
+      "md5": null,
+      "recipe": "libpcre2",
+      "revisions": {},
+      "sha256": "e2a53984ff0b07dfdb5ae4486bbb9b21cca8e7df2434096cc9bf1b728c350bcb",
+      "type": "https",
+      "url": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.43/pcre2-10.43.tar.bz2",
+      "version": "10.43"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/bzip2-1.0.8.tar.gz",
+      "md5": "67e051268d0c475ea773822f7500d0e5",
+      "recipe": "bzip2",
+      "revisions": {},
+      "sha256": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+      "type": "https",
+      "url": "https://mirror.bazel.build/sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz;downloadfilename=bzip2-1.0.8.tar.gz",
+      "version": "1.0.8"
+    },
+    {
+      "branches": {
+        "bzip2-tests": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/sourceware.org.git.bzip2-tests.git",
+      "md5": null,
+      "recipe": "bzip2",
+      "revisions": {
+        "bzip2-tests": "f9061c030a25de5b6829e1abf373057309c734c0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://sourceware.org/git/bzip2-tests.git;name=bzip2-tests;branch=master;protocol=https",
+      "version": "1.0.8"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.sqlite.sqlite.git",
+      "md5": null,
+      "recipe": "sqlite3",
+      "revisions": {
+        "default": "b74eb00e2cb05d9749859e6fbe77d229ad1dc1e1"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/sqlite/sqlite.git;protocol=https;nobranch=1;destsuffix=sqlite-source",
+      "version": "3.45.3"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libedit-20230828-3.1.tar.gz",
+      "md5": null,
+      "recipe": "libedit",
+      "revisions": {},
+      "sha256": "4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c69c98814dad",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libe/libedit/libedit_3.1-20230828.orig.tar.gz;downloadfilename=libedit-20230828-3.1.tar.gz",
+      "version": "20230828-3.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/expat-2.8.3.tar.bz2",
+      "md5": null,
+      "recipe": "expat",
+      "revisions": {},
+      "sha256": "b4cc2483927d5e90bf8c40b44a6b95b368b42a8a96e25883fce188b48a92b670",
+      "type": "https",
+      "url": "https://github.com/libexpat/libexpat/releases//download/R_2_8_3/expat-2.8.3.tar.bz2",
+      "version": "2.8.3"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.thkukuk.libnsl",
+      "md5": null,
+      "recipe": "libnsl2",
+      "revisions": {
+        "default": "d4b22e54b5e6637a69b26eab5faad2a326c9b182"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/thkukuk/libnsl;branch=master;protocol=https",
+      "version": "2.0.1"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.linux-nfs.libtirpc.git",
+      "md5": null,
+      "recipe": "libtirpc",
+      "revisions": {
+        "default": "e86eef35f3628b3adf388a522ab5731bb4487f34"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/linux-nfs/libtirpc.git;protocol=https;nobranch=1;destsuffix=libtirpc-1.3.4",
+      "version": "1.3.4"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/gdbm-1.23.tar.gz",
+      "md5": null,
+      "recipe": "gdbm",
+      "revisions": {},
+      "sha256": "74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz;downloadfilename=gdbm-1.23.tar.gz",
+      "version": "1.23"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/iptables-1.8.10.tar.xz",
+      "md5": null,
+      "recipe": "iptables",
+      "revisions": {},
+      "sha256": "5cc255c189356e317d070755ce9371eb63a1b783c34498fb8c30264f3cc59c9c",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/i/iptables/iptables_1.8.10.orig.tar.xz;downloadfilename=iptables-1.8.10.tar.xz",
+      "version": "1.8.10"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libmnl-1.0.5.tar.bz2",
+      "md5": null,
+      "recipe": "libmnl",
+      "revisions": {},
+      "sha256": "274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libm/libmnl/libmnl_1.0.5.orig.tar.bz2;downloadfilename=libmnl-1.0.5.tar.bz2",
+      "version": "1.0.5"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.libbpf.elfutils-mirror.git",
+      "md5": null,
+      "recipe": "elfutils",
+      "revisions": {
+        "default": "18a015c0b0787ba5acb39801ab7c17dac50f584d"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/libbpf/elfutils-mirror.git;protocol=https;nobranch=1;destsuffix=elfutils-0.191",
+      "version": "0.191"
+    },
+    {
+      "branches": {
+        "gnutls": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gnutls.gnutls.git",
+      "md5": null,
+      "recipe": "gnutls-native",
+      "revisions": {
+        "gnutls": "4a4cefef6c194f8fbbffd7fb19651219421b085b"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gnutls/gnutls.git;protocol=https;nobranch=1;name=gnutls;destsuffix=gnutls-3.8.4",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.libidn.gnulib-mirror.git",
+      "md5": null,
+      "recipe": "gnutls-native",
+      "revisions": {
+        "gnulib": "41d5dae3b7d239f167f09e4398f3970845a0ddc0"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/libidn/gnulib-mirror.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gnutls-gnulib",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "nettle": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.nettle.git",
+      "md5": null,
+      "recipe": "gnutls-native",
+      "revisions": {
+        "nettle": "236d79b8bc508ae089f63a75c16f87c7076babdf"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/nettle.git;protocol=https;nobranch=1;name=nettle;destsuffix=gnutls-3.8.4/devel/nettle",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "libtasn1": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.libtasn1.git",
+      "md5": null,
+      "recipe": "gnutls-native",
+      "revisions": {
+        "libtasn1": "2b7ee166f031bea63c5e7badcedc69f1cea69c89"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/libtasn1.git;protocol=https;nobranch=1;name=libtasn1;destsuffix=gnutls-3.8.4/devel/libtasn1",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "cligen": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.com.gnutls.cligen.git",
+      "md5": null,
+      "recipe": "gnutls-native",
+      "revisions": {
+        "cligen": "ed2ed7b19a5bcbc0f39505722058befc923eeeda"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.com/gnutls/cligen.git;protocol=https;nobranch=1;name=cligen;destsuffix=gnutls-3.8.4/cligen",
+      "version": "3.8.4"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GNOME.libxml2.git",
+      "md5": null,
+      "recipe": "libxml2-native",
+      "revisions": {
+        "default": "02d577715e1951cf114ca4e9adaf5605156c4f4c"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GNOME/libxml2.git;protocol=https;nobranch=1;destsuffix=libxml2-2.12.10",
+      "version": "2.12.10"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/ca-certificates_20260816.tar.xz",
+      "md5": null,
+      "recipe": "ca-certificates-native",
+      "revisions": {},
+      "sha256": "d939bcdd0cb058712cf4175bac76997676eb8b68fe9473765e1b40fb3d5b186a",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20260816.tar.xz;downloadfilename=ca-certificates_20260816.tar.xz",
+      "version": "20260816"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libbsd-0.12.1.tar.xz",
+      "md5": null,
+      "recipe": "libbsd-native",
+      "revisions": {},
+      "sha256": "d7747f8ec1baa6ff5c096a9dd587c061233dec90da0f1aedd66d830f6db6996a",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.12.1.orig.tar.xz;downloadfilename=libbsd-0.12.1.tar.xz",
+      "version": "0.12.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/re2c-3.1.tar.xz",
+      "md5": null,
+      "recipe": "re2c-native",
+      "revisions": {},
+      "sha256": "0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029",
+      "type": "https",
+      "url": "https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz",
+      "version": "3.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/unzip60.tar.gz",
+      "md5": "62b490407489521db863b523a7f86375",
+      "recipe": "unzip-native",
+      "revisions": {},
+      "sha256": "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37",
+      "type": "https",
+      "url": "https://downloads.sourceforge.net/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz",
+      "version": "6.0"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/readline-8.2.tar.gz",
+      "md5": null,
+      "recipe": "readline",
+      "revisions": {},
+      "sha256": "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2.orig.tar.gz;name=archive;downloadfilename=readline-8.2.tar.gz",
+      "version": "8.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/rsync-3.2.7.tar.gz",
+      "md5": null,
+      "recipe": "rsync-native",
+      "revisions": {},
+      "sha256": "4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/r/rsync/rsync_3.2.7.orig.tar.gz;downloadfilename=rsync-3.2.7.tar.gz",
+      "version": "3.2.7"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.fanf2.unifdef.git",
+      "md5": null,
+      "recipe": "unifdef-native",
+      "revisions": {
+        "default": "99d17074b9ba66cc9da2ce60fb29c6b1beb0370a"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/fanf2/unifdef.git;protocol=https;nobranch=1",
+      "version": "2.12"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/gitlab.freedesktop.org.xdg.shared-mime-info.git",
+      "md5": null,
+      "recipe": "shared-mime-info-native",
+      "revisions": {
+        "default": "9a6d6b8e963935f145f3a1ef446552de6996dada"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://gitlab.freedesktop.org/xdg/shared-mime-info.git;protocol=https;branch=master",
+      "version": "2.4"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gpg.libgpg-error.git",
+      "md5": null,
+      "recipe": "libgpg-error-native",
+      "revisions": {
+        "default": "77b7c5ff6b756870811acaff53df0ebf1e5c2368"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gpg/libgpg-error.git;protocol=https;nobranch=1;destsuffix=libgpg-error-1.48",
+      "version": "1.48"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.kernelorg-mirror.libs_libcap_libcap.git",
+      "md5": null,
+      "recipe": "libcap-native",
+      "revisions": {
+        "default": "8bed80f9b54b7bd2a1ee1fdc2124a094733c9356"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/kernelorg-mirror/libs_libcap_libcap.git;protocol=https;nobranch=1;destsuffix=libcap-2.69",
+      "version": "2.69"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/lzlib-1.14.tar.xz",
+      "md5": null,
+      "recipe": "lzlib-native",
+      "revisions": {},
+      "sha256": "decd2ef0752a20e77bd13b4c10bbadd5b0289166895a5808f8911ebd9709f324",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/lzlib/lzlib_1.14.orig.tar.xz;downloadfilename=lzlib-1.14.tar.xz",
+      "version": "1.14"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libmicrohttpd-1.0.1.tar.gz",
+      "md5": null,
+      "recipe": "libmicrohttpd",
+      "revisions": {},
+      "sha256": "a89e09fc9b4de34dde19f4fcb4faaa1ce10299b9908db1132bbfa1de47882b94",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libm/libmicrohttpd/libmicrohttpd_1.0.1.orig.tar.gz;downloadfilename=libmicrohttpd-1.0.1.tar.gz",
+      "version": "1.0.1"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libarchive-3.7.9.tar.gz",
+      "md5": null,
+      "recipe": "libarchive",
+      "revisions": {},
+      "sha256": "aa90732c5a6bdda52fda2ad468ac98d75be981c15dde263d7b5cf6af66fd009f",
+      "type": "https",
+      "url": "https://github.com/libarchive/libarchive/releases/download/v3.7.9/libarchive-3.7.9.tar.gz;downloadfilename=libarchive-3.7.9.tar.gz",
+      "version": "3.7.9"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/nettle-3.9.1.tar.gz",
+      "md5": null,
+      "recipe": "nettle-native",
+      "revisions": {},
+      "sha256": "ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/nettle/nettle_3.9.1.orig.tar.gz;downloadfilename=nettle-3.9.1.tar.gz",
+      "version": "3.9.1"
+    },
+    {
+      "branches": {
+        "libunistring": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.GitMirroring.libunistring.git",
+      "md5": null,
+      "recipe": "libunistring-native",
+      "revisions": {
+        "libunistring": "479b580dedca32662b34336183abfec95b71c42e"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/GitMirroring/libunistring.git;protocol=https;nobranch=1;name=libunistring;destsuffix=libunistring-1.2",
+      "version": "1.2"
+    },
+    {
+      "branches": {
+        "gnulib": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.coreutils.gnulib.git",
+      "md5": null,
+      "recipe": "libunistring-native",
+      "revisions": {
+        "gnulib": "5828723e285945975dbb3d2e89cd8854d5b7a075"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/coreutils/gnulib.git;protocol=https;nobranch=1;name=gnulib;destsuffix=gnulib",
+      "version": "1.2"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libidn2-2.3.7.tar.gz",
+      "md5": null,
+      "recipe": "libidn2-native",
+      "revisions": {},
+      "sha256": "4c21a791b610b9519b9d0e12b8097bf2f359b12f8dd92647611a929e6bfd7d64",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.3.7.orig.tar.gz;downloadfilename=libidn2-2.3.7.tar.gz",
+      "version": "2.3.7"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/libmd-1.1.0.tar.xz",
+      "md5": null,
+      "recipe": "libmd-native",
+      "revisions": {},
+      "sha256": "1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332",
+      "type": "https",
+      "url": "https://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.1.0.orig.tar.xz;downloadfilename=libmd-1.1.0.tar.xz",
+      "version": "1.1.0"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gpg.libgcrypt.git",
+      "md5": null,
+      "recipe": "libgcrypt",
+      "revisions": {
+        "default": "d365a41094571f2cce18f27b53ffdceb540f77bb"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gpg/libgcrypt.git;protocol=https;nobranch=1;destsuffix=libgcrypt-1.10.4",
+      "version": "1.10.4"
+    },
+    {
+      "branches": {
+        "default": "master"
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.file.file.git",
+      "md5": null,
+      "recipe": "file",
+      "revisions": {
+        "default": "4cbd5c8f0851201d203755b76cb66ba991ffd8be"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/file/file.git;branch=master;protocol=https",
+      "version": "5.45"
+    },
+    {
+      "branches": {
+        "default": ""
+      },
+      "localpath": "/work/.cache/downloads/git2/github.com.gpg.libgpg-error.git",
+      "md5": null,
+      "recipe": "libgpg-error",
+      "revisions": {
+        "default": "77b7c5ff6b756870811acaff53df0ebf1e5c2368"
+      },
+      "sha256": null,
+      "type": "git",
+      "url": "git://github.com/gpg/libgpg-error.git;protocol=https;nobranch=1;destsuffix=libgpg-error-1.48",
+      "version": "1.48"
+    },
+    {
+      "branches": {},
+      "localpath": "/work/.cache/downloads/lzlib-1.14.tar.xz",
+      "md5": null,
+      "recipe": "lzlib",
+      "revisions": {},
+      "sha256": "decd2ef0752a20e77bd13b4c10bbadd5b0289166895a5808f8911ebd9709f324",
+      "type": "https",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/lzlib/lzlib_1.14.orig.tar.xz;downloadfilename=lzlib-1.14.tar.xz",
+      "version": "1.14"
+    }
+  ]
+}

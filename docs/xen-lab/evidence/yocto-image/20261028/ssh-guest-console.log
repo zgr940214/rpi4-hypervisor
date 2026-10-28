@@ -1,0 +1,15 @@
+Warning: Permanently added '[127.0.0.1]:32929' (ED25519) to the list of known hosts.
+__DOM0_SSH_CONNECTED__
+__GUEST1_PROMPT__# 0
+
+__RC_898186d41f2c_0__
+__GUEST1_PROMPT__# 
+__RC_0bc3d2c94081_0__
+__GUEST1_PROMPT__# guest1 counter: 1/120
+guest1 counter: 2/120
+guest1 counter: 3/120
+
+__GUEST1_PROMPT__# GUEST_SHELL_AFTER_RESUME
+
+__RC_1307f4d207c7_0__
+__GUEST1_PROMPT__# 

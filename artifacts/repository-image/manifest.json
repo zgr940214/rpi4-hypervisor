@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "image": {
+    "name": "pi4-xen-dom0-guest1.img",
+    "bytes": 1295329280,
+    "sha256": "49fe88a3649b446cabcda7aa7c27ad81845bb950a3cfe602b0d057d5ab53e305"
+  },
+  "compressed": {
+    "format": "xz",
+    "bytes": 63271860,
+    "sha256": "a141265be543bfe4e3c0814addff89e82bac0ac9dd8d244429609231b2a4adc5"
+  },
+  "chunks": [
+    {
+      "name": "pi4-xen-dom0-guest1.img.xz.part00001",
+      "bytes": 50331648,
+      "sha256": "0115472437df51050e9386248adf00bc6bb7b166c3a33bb28c3e831ce735cbef"
+    },
+    {
+      "name": "pi4-xen-dom0-guest1.img.xz.part00002",
+      "bytes": 12940212,
+      "sha256": "a041bd1619e29e89befaa023e3a622794aa9c05a472796e3393b343ae25511b2"
+    }
+  ],
+  "evidence": [
+    {
+      "name": "image-checks.json",
+      "bytes": 16953,
+      "sha256": "7a828a75d61df9916f6bc6417cd0632dcb45810371570d53255f050b52bef2df"
+    },
+    {
+      "name": "artifact.json",
+      "bytes": 254,
+      "sha256": "e27509cdd0b7d67f2284353cfdd20b2ccfdd7a913e5a559d69433c954f8a8bcf"
+    },
+    {
+      "name": "versions.json",
+      "bytes": 2717,
+      "sha256": "a610c3e6c2f0fa403ec84f6c34e033b396cbbb4542c52019c9f6d746f5751255"
+    },
+    {
+      "name": "pi4-xen-kernel.config",
+      "bytes": 206529,
+      "sha256": "e89db015e23edce5931bb0fc465ee5d14a060d90ef3c2d8cb3213b4b84fb5983"
+    },
+    {
+      "name": "qemu-report.json",
+      "bytes": 26108,
+      "sha256": "01ea40ed9dd28f06090f90813e755a3389c4a0794e775c81394a35ae724569dd"
+    }
+  ],
+  "verification": {
+    "static_status": "PASS",
+    "yocto_qemu_status": "PASS",
+    "pi4_hardware": "NOT_RUN"
+  }
+}

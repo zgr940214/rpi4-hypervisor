@@ -1,0 +1,85 @@
+{
+  "build_system": "yocto-bitbake",
+  "source_lock": {
+    "release": "scarthgap",
+    "repositories": [
+      {
+        "name": "poky",
+        "url": "https://github.com/yoctoproject/poky.git",
+        "commit": "b6ae714a1d1bfae8384654a13da15996cac64712"
+      },
+      {
+        "name": "meta-openembedded",
+        "url": "https://github.com/openembedded/meta-openembedded.git",
+        "commit": "2db6aece32c7f8ebf6015b468e1b4e21de072e3b"
+      },
+      {
+        "name": "meta-raspberrypi",
+        "url": "https://github.com/agherzan/meta-raspberrypi.git",
+        "commit": "018d44467c4f09eb63f8ea5e86e85d755250cf89"
+      },
+      {
+        "name": "meta-virtualization",
+        "url": "https://git.yoctoproject.org/meta-virtualization",
+        "mirrors": [
+          "https://github.com/hexagon-geo-surv/meta-virtualization.git"
+        ],
+        "commit": "6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819"
+      }
+    ]
+  },
+  "native_wic": "/work/build/tmp/deploy/images/raspberrypi4-64/pi4-xen-dom0-image-raspberrypi4-64.rootfs-20261028131234.wic",
+  "bytes": 1295329280,
+  "machine": "raspberrypi4-64",
+  "distro": "pi4-xen",
+  "kernel": {
+    "kernel_release": "6.6.100-yocto-standard",
+    "machine": "raspberrypi4-64",
+    "recipe": "linux-yocto",
+    "schema_version": 1,
+    "source_revision": "0d5c8af531e021d38d2589c109268b644bdf3320",
+    "version": "6.6.100+git"
+  },
+  "selected_recipes": {
+    "pi4-xen-dom0-image": {
+      "PN": "pi4-xen-dom0-image",
+      "PV": "1.0",
+      "FILE": "/work/meta-pi4-xen-lab/recipes-core/images/pi4-xen-dom0-image.bb"
+    },
+    "pi4-guest1-image": {
+      "PN": "pi4-guest1-image",
+      "PV": "1.0",
+      "FILE": "/work/meta-pi4-xen-lab/recipes-core/images/pi4-guest1-image.bb"
+    },
+    "xen": {
+      "PN": "xen",
+      "PV": "4.19.0+stable",
+      "FILE": "/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen_4.19.bb"
+    },
+    "xen-tools": {
+      "PN": "xen-tools",
+      "PV": "4.19+stable",
+      "FILE": "/work/.cache/sources/meta-virtualization/recipes-extended/xen/xen-tools_4.19.bb"
+    },
+    "virtual/kernel": {
+      "PN": "linux-yocto",
+      "PV": "6.6.100+git",
+      "FILE": "/work/.cache/sources/poky/meta/recipes-kernel/linux/linux-yocto_6.6.bb"
+    },
+    "u-boot": {
+      "PN": "u-boot",
+      "PV": "2024.01",
+      "FILE": "/work/.cache/sources/poky/meta/recipes-bsp/u-boot/u-boot_2024.01.bb"
+    }
+  },
+  "guest_build_outputs": {
+    "pi4-guest1.ext4": {
+      "sha256": "74ca738325733fc64fe1d1058f5f2445602b60206a892ff5f0b2a1e09963d23d",
+      "bytes": 301989888
+    },
+    "pi4-guest1.manifest": {
+      "sha256": "f4c61d02c847664c251ea4fc9e385dac210049bb4a63367e8665abdcc138b8bc",
+      "bytes": 3642
+    }
+  }
+}

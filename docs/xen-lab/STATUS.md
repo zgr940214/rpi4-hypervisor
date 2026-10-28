@@ -21,6 +21,7 @@
 | Yocto Pi4 整卡编译与导出 | PASS | [最终构建导出日志](evidence/yocto-image/20261028/build-export.log)，实际生成 `.wic` 和字节一致的 `.img`；交叉 GCC 13.5、glibc 2.39、Linux、Xen、工具栈及两个根文件系统均完成构建 |
 | 自建整卡静态检查 | PASS | [报告](evidence/yocto-image/20261028/image-checks.json)：41 项 PASS、3 项 NOT_RUN，内嵌 guest、共享内核和启动载荷与部署产物匹配 |
 | 自建整卡 QEMU 启动及 guest 验证 | PASS | [报告](evidence/yocto-image/20261028/report.json)：10/10 项、31/31 条目标命令成功；[来源记录](evidence/yocto-image/20261028/provenance.json)绑定上述最终镜像 |
+| 仓库分片实际还原 | PASS | [记录](evidence/yocto-image/20261028/repository-restore.json)：从两份分片还原到独立文件，并重新计算原镜像与还原文件的完整 SHA256，字节数和摘要均一致 |
 | Pi4 实机启动与运行验证 | NOT_RUN | 尚未连接并运行实体 Pi4；无 Pi 固件 → U-Boot → Xen、实际 SD 卡和 GENET 网卡日志 |
 | 历史 Debian QEMU 实验 | PASS（独立实验） | [报告](evidence/qemu/20261028/report.json)：10/10 项、31/31 条命令通过；不是 Yocto Pi4 镜像 |
 
@@ -75,7 +76,7 @@ Git 不保留私钥的 `0600` 权限；准备脚本会修复权限并验证配�
 
 当前镜像配置随仓库加载，无需依赖此前未应用的网络配置草稿。相同原包继续验证原 SHA256；Git 发布源码、另一压缩格式或 Debian 明确删去手册的 tar 源码，分别以 bbappend 和独立证据记录，不能宣称它们匹配原压缩包哈希。
 
-容器宿主工具用于从 Git 生成发布文件；目标系统和交叉工具链由 Yocto 构建。未使用外部预构建 sstate。`rm_work` 和低空间监控保持启用；曾因约 32 GiB 工作盘不足停止一次，回收旧实验临时文件与闲置容器层后完成构建。源码缓存和成功任务保留；首次复现仍建议准备至少 100 GiB 可用空间，该值是规划建议，不是实测峰值。
+容器宿主工具用于从 Git 生成发布文件；目标系统和交叉工具链由 Yocto 构建。未使用外部预构建 sstate。`rm_work` 和低空间监控保持启用；曾因约 32 GiB 工作盘不足停止，回收旧实验临时文件与闲置容器层后完成构建。源码缓存和成功任务保留；首次复现仍建议准备至少 100 GiB 可用空间，该值是规划建议，不是实测峰值。
 
 实际集成中还修正了内核配置合并顺序：meta-virtualization 的后置片段把三个 Xen 驱动改成模块，最终片段重新要求内建，并保留配置断言。启动分区明确保留独立 `u-boot.bin` 与 Linux `Image`。静态读取使用构建对应的原生 e2fsprogs，支持生成的 ext4 特性。
 

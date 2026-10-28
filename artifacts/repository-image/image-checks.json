@@ -1,0 +1,485 @@
+{
+  "image": "/work/artifacts/pi4-xen-dom0-guest1.img",
+  "scope": "static image inspection",
+  "static_status": "PASS",
+  "checks": [
+    {
+      "name": "native_inspection_tools",
+      "status": "PASS",
+      "detail": {
+        "sysroot": "/work/build/tmp/work/raspberrypi4_64-poky-linux/pi4-xen-dom0-image/1.0/recipe-sysroot-native"
+      }
+    },
+    {
+      "name": "partition_table",
+      "status": "PASS",
+      "detail": [
+        {
+          "number": 1,
+          "type": 12,
+          "offset": 4194304,
+          "size": 174482432,
+          "end": 178676736,
+          "bootable": true
+        },
+        {
+          "number": 2,
+          "type": 131,
+          "offset": 180355072,
+          "size": 1114974208,
+          "end": 1295329280,
+          "bootable": false
+        }
+      ]
+    },
+    {
+      "name": "dom0_kernel_config",
+      "status": "PASS",
+      "detail": {
+        "path": "/work/build/tmp/deploy/images/raspberrypi4-64/pi4-xen-kernel.config",
+        "sha256": "e89db015e23edce5931bb0fc465ee5d14a060d90ef3c2d8cb3213b4b84fb5983",
+        "required_builtins": [
+          "CONFIG_ARM64",
+          "CONFIG_XEN",
+          "CONFIG_HVC_XEN",
+          "CONFIG_XEN_BLKDEV_FRONTEND",
+          "CONFIG_EXT4_FS",
+          "CONFIG_DEVTMPFS",
+          "CONFIG_DEVTMPFS_MOUNT",
+          "CONFIG_XEN_BLKDEV_BACKEND",
+          "CONFIG_BLK_DEV_LOOP",
+          "CONFIG_XEN_DEV_EVTCHN",
+          "CONFIG_XEN_GNTDEV",
+          "CONFIG_XEN_PRIVCMD",
+          "CONFIG_MMC",
+          "CONFIG_MMC_BLOCK",
+          "CONFIG_ARCH_BCM2835",
+          "CONFIG_MMC_SDHCI",
+          "CONFIG_MMC_SDHCI_IPROC",
+          "CONFIG_BCMGENET",
+          "CONFIG_BCM2835_MBOX",
+          "CONFIG_RASPBERRYPI_FIRMWARE"
+        ],
+        "note": "Final .config supplied by build; not a boot test"
+      }
+    },
+    {
+      "name": "guest_kernel_config",
+      "status": "PASS",
+      "detail": {
+        "path": "/work/build/tmp/deploy/images/raspberrypi4-64/pi4-xen-kernel.config",
+        "sha256": "e89db015e23edce5931bb0fc465ee5d14a060d90ef3c2d8cb3213b4b84fb5983",
+        "required_builtins": [
+          "CONFIG_ARM64",
+          "CONFIG_XEN",
+          "CONFIG_HVC_XEN",
+          "CONFIG_XEN_BLKDEV_FRONTEND",
+          "CONFIG_EXT4_FS",
+          "CONFIG_DEVTMPFS",
+          "CONFIG_DEVTMPFS_MOUNT"
+        ],
+        "note": "Final .config supplied by build; not a boot test"
+      }
+    },
+    {
+      "name": "image_sha256",
+      "status": "PASS",
+      "detail": {
+        "sha256": "49fe88a3649b446cabcda7aa7c27ad81845bb950a3cfe602b0d057d5ab53e305",
+        "bytes": 1295329280
+      }
+    },
+    {
+      "name": "boot_file:config.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:start4.elf",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:fixup4.dat",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:u-boot.bin",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:boot.scr",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:xen",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:Image",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "boot_file:bcm2711-rpi-4-b.dtb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "dom0_kernel_image",
+      "status": "PASS",
+      "detail": {
+        "file_size": 27316736,
+        "runtime_size": 27852800,
+        "sha256": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+      }
+    },
+    {
+      "name": "boot_payloads_match_build",
+      "status": "PASS",
+      "detail": {
+        "Image": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84",
+        "xen": "dc2b9ef80b25cdc92a9fad3b0f4c5a45bd278f76617578e7a6a23f8bdef49288"
+      }
+    },
+    {
+      "name": "dom0_filesystem",
+      "status": "PASS",
+      "detail": {
+        "format": "ext4",
+        "block_size": 4096,
+        "blocks": 272210
+      }
+    },
+    {
+      "name": "dom0_superblock",
+      "status": "PASS",
+      "detail": "Filesystem volume name:   root\nLast mounted on:          <not available>\nFilesystem UUID:          1c8fddf3-c5f9-45c7-85f8-b7404db0ac16\nFilesystem magic number:  0xEF53\nFilesystem revision #:    1 (dynamic)\nFilesystem features:      has_journal ext_attr resize_inode dir_index orphan_file filetype extent 64bit flex_bg metadata_csum_seed sparse_super large_file huge_file dir_nlink extra_isize metadata_csum\nFilesystem flags:         signed_directory_hash \nDefault mount options:    user_xattr acl\nFilesystem state:         clean\nErrors behavior:          Continue\nFilesystem OS type:       Linux\nInode count:              136224\nBlock count:              272210\nReserved block count:     13610\nOverhead clusters:        17394\nFree blocks:              201605\nFree inodes:              133883\nFirst block:              0\nBlock size:               4096\nFragment size:            4096\nGroup descriptor size:    64\nReserved GDT blocks:      132\nBlocks per group:         32768\nFragments per group:      32768\nInodes per group:         15136\nInode blocks per group:   946\nFlex block group size:    16\nFilesystem created:       Tue Apr  5 23:00:00 2011\nLast mount time:          n/a\nLast write time:          Tue Apr  5 23:00:00 2011\nMount count:              0\nMaximum mount count:      -1\nLast checked:             Tue Apr  5 23:00:00 2011\nCheck interval:           0 (<none>)\nLifetime writes:          246 MB\nReserved blocks uid:      0 (user root)\nReserved blocks gid:      0 (group root)\nFirst inode:              11\nInode size:\t          256\nRequired extra isize:     32\nDesired extra isize:      32\nJournal inode:            8\nDefault directory hash:   half_md4\nDirectory Hash Seed:      e3ba1af5-6b7d-54be-aaa3-bd9d44ecb5c2\nJournal backup:           inode blocks\nChecksum type:            crc32c\nChecksum:                 0x67664f94\nChecksum seed:            0x81f68d31\nOrphan file inode:        12\nJournal features:         (none)\nTotal journal size:       32M\nTotal journal blocks:     8192\nMax transaction length:   8192\nFast commit length:       0\nJournal sequence:         0x00000001\nJournal start:            0\n\n"
+    },
+    {
+      "name": "dom0_filesystem_integrity",
+      "status": "PASS",
+      "detail": "Pass 1: Checking inodes, blocks, and sizes\nPass 2: Checking directory structure\nPass 3: Checking directory connectivity\nPass 4: Checking reference counts\nPass 5: Checking group summary information\nroot: 2341/136224 files (0.4% non-contiguous), 70605/272210 blocks\n"
+    },
+    {
+      "name": "dom0_yocto_build_identity",
+      "status": "PASS",
+      "detail": {
+        "build_system": "yocto-bitbake",
+        "distro": "pi4-xen",
+        "distro_version": "1.0",
+        "image_recipe": "pi4-xen-dom0-image",
+        "machine": "raspberrypi4-64",
+        "schema_version": 1
+      }
+    },
+    {
+      "name": "dom0_required_files",
+      "status": "PASS",
+      "detail": {
+        "/bin/sh": "/usr/bin/bash.bash",
+        "/sbin/init": "/usr/lib/systemd/systemd",
+        "/usr/sbin/sshd": "/usr/sbin/sshd",
+        "/etc/xen/guest1.cfg": "/etc/xen/guest1.cfg",
+        "/var/lib/xen/images/guest1/Image": "/var/lib/xen/images/guest1/Image",
+        "/var/lib/xen/images/guest1/rootfs.ext4": "/var/lib/xen/images/guest1/rootfs.ext4",
+        "/usr/sbin/guest1-start": "/usr/sbin/guest1-start",
+        "/usr/sbin/guest1-pause-demo": "/usr/sbin/guest1-pause-demo",
+        "/usr/sbin/guest1-common.sh": "/usr/sbin/guest1-common.sh"
+      }
+    },
+    {
+      "name": "dom0_elf_dependencies:xl",
+      "status": "PASS",
+      "detail": [
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libbz2.so.1.0.8",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libfdt.so.1.6.0",
+        "/usr/lib/liblzma.so.5.4.7",
+        "/usr/lib/libnl-3.so.200.26.0",
+        "/usr/lib/libnl-route-3.so.200.26.0",
+        "/usr/lib/libpthread.so.0",
+        "/usr/lib/librt.so.1",
+        "/usr/lib/libuuid.so.1.3.0",
+        "/usr/lib/libxencall.so.1.3",
+        "/usr/lib/libxenctrl.so.4.19.0",
+        "/usr/lib/libxendevicemodel.so.1.4",
+        "/usr/lib/libxenevtchn.so.1.2",
+        "/usr/lib/libxenforeignmemory.so.1.4",
+        "/usr/lib/libxengnttab.so.1.2",
+        "/usr/lib/libxenguest.so.4.19.0",
+        "/usr/lib/libxenhypfs.so.1.0",
+        "/usr/lib/libxenlight.so.4.19.0",
+        "/usr/lib/libxenstore.so.4.0",
+        "/usr/lib/libxentoolcore.so.1.0",
+        "/usr/lib/libxentoollog.so.1.0",
+        "/usr/lib/libxlutil.so.4.19.0",
+        "/usr/lib/libyajl.so.2.1.0",
+        "/usr/lib/libz.so.1.3.1",
+        "/usr/lib/libzstd.so.1.5.5",
+        "/usr/sbin/xl"
+      ]
+    },
+    {
+      "name": "dom0_elf_dependencies:xenstored",
+      "status": "PASS",
+      "detail": [
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libpthread.so.0",
+        "/usr/lib/librt.so.1",
+        "/usr/lib/libxencall.so.1.3",
+        "/usr/lib/libxenctrl.so.4.19.0",
+        "/usr/lib/libxendevicemodel.so.1.4",
+        "/usr/lib/libxenevtchn.so.1.2",
+        "/usr/lib/libxenforeignmemory.so.1.4",
+        "/usr/lib/libxengnttab.so.1.2",
+        "/usr/lib/libxentoolcore.so.1.0",
+        "/usr/lib/libxentoollog.so.1.0",
+        "/usr/sbin/xenstored"
+      ]
+    },
+    {
+      "name": "dom0_elf_dependencies:xenconsoled",
+      "status": "PASS",
+      "detail": [
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libpthread.so.0",
+        "/usr/lib/librt.so.1",
+        "/usr/lib/libxencall.so.1.3",
+        "/usr/lib/libxenctrl.so.4.19.0",
+        "/usr/lib/libxendevicemodel.so.1.4",
+        "/usr/lib/libxenevtchn.so.1.2",
+        "/usr/lib/libxenforeignmemory.so.1.4",
+        "/usr/lib/libxengnttab.so.1.2",
+        "/usr/lib/libxenstore.so.4.0",
+        "/usr/lib/libxentoolcore.so.1.0",
+        "/usr/lib/libxentoollog.so.1.0",
+        "/usr/sbin/xenconsoled"
+      ]
+    },
+    {
+      "name": "dom0_elf_dependencies:sshd",
+      "status": "PASS",
+      "detail": [
+        "/usr/lib/ld-linux-aarch64.so.1",
+        "/usr/lib/libc.so.6",
+        "/usr/lib/libcrypt.so.2.0.0",
+        "/usr/lib/libcrypto.so.3",
+        "/usr/lib/libpam.so.0.85.1",
+        "/usr/lib/libz.so.1.3.1",
+        "/usr/sbin/sshd"
+      ]
+    },
+    {
+      "name": "guest_configuration",
+      "status": "PASS",
+      "detail": {
+        "name": "guest1",
+        "type": "pvh",
+        "memory": 256,
+        "maxmem": 256,
+        "vcpus": 1,
+        "kernel": "/var/lib/xen/images/guest1/Image",
+        "disk": [
+          "format=raw,vdev=xvda,access=rw,backendtype=phy,target=/var/lib/xen/images/guest1/rootfs.ext4"
+        ],
+        "extra": "console=hvc0 root=/dev/xvda rootwait rw",
+        "on_poweroff": "destroy",
+        "on_reboot": "destroy",
+        "on_crash": "destroy"
+      }
+    },
+    {
+      "name": "guest_filesystem",
+      "status": "PASS",
+      "detail": {
+        "format": "ext4",
+        "block_size": 1024,
+        "blocks": 294912
+      }
+    },
+    {
+      "name": "guest_filesystem_integrity",
+      "status": "PASS",
+      "detail": "Pass 1: Checking inodes, blocks, and sizes\nPass 2: Checking directory structure\nPass 3: Checking directory connectivity\nPass 4: Checking reference counts\nPass 5: Checking group summary information\n/tmp/pi4-image-check-qq_xi_b8/guest1.ext4: 1988/73728 files (0.9% non-contiguous), 111165/294912 blocks\n"
+    },
+    {
+      "name": "guest_yocto_build_identity",
+      "status": "PASS",
+      "detail": {
+        "build_system": "yocto-bitbake",
+        "distro": "pi4-xen",
+        "distro_version": "1.0",
+        "image_recipe": "pi4-guest1-image",
+        "machine": "raspberrypi4-64",
+        "schema_version": 1
+      }
+    },
+    {
+      "name": "guest_required_files",
+      "status": "PASS",
+      "detail": {
+        "/bin/sh": "/usr/bin/busybox.nosuid",
+        "/sbin/init": "/usr/lib/systemd/systemd"
+      }
+    },
+    {
+      "name": "guest_hostname",
+      "status": "PASS",
+      "detail": "guest1"
+    },
+    {
+      "name": "guest_kernel_image",
+      "status": "PASS",
+      "detail": {
+        "file_size": 27316736,
+        "runtime_size": 27852800,
+        "sha256": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+      }
+    },
+    {
+      "name": "guest_payloads_match_build",
+      "status": "PASS",
+      "detail": {
+        "artifacts": {
+          "Image": {
+            "bytes": 27316736,
+            "sha256": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+          },
+          "guest.manifest": {
+            "bytes": 3642,
+            "sha256": "f4c61d02c847664c251ea4fc9e385dac210049bb4a63367e8665abdcc138b8bc"
+          },
+          "rootfs.ext4": {
+            "bytes": 301989888,
+            "sha256": "74ca738325733fc64fe1d1058f5f2445602b60206a892ff5f0b2a1e09963d23d"
+          }
+        },
+        "build_system": "yocto-bitbake",
+        "distro": "pi4-xen",
+        "guest_image_recipe": "pi4-guest1-image",
+        "kernel": {
+          "kernel_release": "6.6.100-yocto-standard",
+          "machine": "raspberrypi4-64",
+          "recipe": "linux-yocto",
+          "schema_version": 1,
+          "source_revision": "0d5c8af531e021d38d2589c109268b644bdf3320",
+          "version": "6.6.100+git"
+        },
+        "machine": "raspberrypi4-64",
+        "schema_version": 1
+      }
+    },
+    {
+      "name": "shared_kernel_identity",
+      "status": "PASS",
+      "detail": "f2f1dc4275f741e895c874acfcf07f056f86a7fe5a45b35935bc0d44b31cea84"
+    },
+    {
+      "name": "dom0_services_and_loop_backend",
+      "status": "PASS",
+      "detail": {
+        "/etc/systemd/system/multi-user.target.wants/xenstored.service": "/usr/lib/systemd/system/xenstored.service",
+        "/etc/systemd/system/multi-user.target.wants/xenconsoled.service": "/usr/lib/systemd/system/xenconsoled.service",
+        "/etc/systemd/system/multi-user.target.wants/xen-init-dom0.service": "/usr/lib/systemd/system/xen-init-dom0.service",
+        "/etc/xen/scripts/block": "/etc/xen/scripts/block",
+        "loop_tool": "/sbin/losetup"
+      }
+    },
+    {
+      "name": "guest_console_login_configuration",
+      "status": "PASS",
+      "detail": {
+        "/etc/systemd/system/getty.target.wants/serial-getty@hvc0.service": "/usr/lib/systemd/system/serial-getty@.service",
+        "/etc/systemd/system/serial-getty@hvc0.service.d/autologin.conf": "/etc/systemd/system/serial-getty@hvc0.service.d/autologin.conf",
+        "/sbin/agetty": "/usr/sbin/agetty",
+        "/bin/login": "/usr/bin/login.shadow"
+      }
+    },
+    {
+      "name": "guest_backing_file_writable_configuration",
+      "status": "PASS",
+      "detail": "Owner-writable backing file and no read-only covering fstab entry; runtime I/O still needs Pi4 validation"
+    },
+    {
+      "name": "dom0_ssh_service",
+      "status": "PASS",
+      "detail": {
+        "/etc/systemd/system/sockets.target.wants/sshd.socket": "/usr/lib/systemd/system/sshd.socket"
+      }
+    },
+    {
+      "name": "dom0_wired_network_and_ssh_configuration",
+      "status": "PASS",
+      "detail": {
+        "network": "/etc/systemd/network/20-wired.network",
+        "sshd_drop_in": "/etc/ssh/sshd_config.d/10-pi4-xen.conf"
+      }
+    },
+    {
+      "name": "dom0_ssh_public_key",
+      "status": "PASS",
+      "detail": {
+        "key_count": 1,
+        "path": "/root/.ssh/authorized_keys"
+      }
+    },
+    {
+      "name": "firmware_boot_configuration",
+      "status": "PASS",
+      "detail": {
+        "arm_64bit": "1",
+        "enable_uart": "1",
+        "enable_gic": "1",
+        "kernel": "u-boot.bin"
+      }
+    },
+    {
+      "name": "boot_script_consistency_and_ranges",
+      "status": "PASS",
+      "detail": {
+        "boot_cmd_sha256": "82998b7a7bf092d01110e02c21144a768f3186c06e11da9c11f3666c15de6129",
+        "ranges": [
+          [
+            2097152,
+            3080200,
+            "xen"
+          ],
+          [
+            67108864,
+            94961664,
+            "Image"
+          ],
+          [
+            134217728,
+            135266304,
+            "FDT reservation"
+          ]
+        ],
+        "note": "Static ranges do not prove firmware/U-Boot runtime reservations or EL2 entry"
+      }
+    },
+    {
+      "name": "xen_el2_entry_and_firmware_reservations",
+      "status": "NOT_RUN",
+      "detail": "Check firmware/U-Boot/Xen startup on real Pi4; binary packaging alone cannot establish EL2 entry"
+    },
+    {
+      "name": "ssh_login",
+      "status": "NOT_RUN",
+      "detail": "Static SSH files do not prove network connectivity or possession of the login key"
+    },
+    {
+      "name": "pi4_hardware_boot",
+      "status": "NOT_RUN",
+      "detail": "Requires real Pi4 UART, Dom0 SSH and guest shell validation"
+    }
+  ]
+}

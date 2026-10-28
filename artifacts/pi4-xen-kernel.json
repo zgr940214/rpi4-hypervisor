@@ -1,0 +1,8 @@
+{
+  "kernel_release": "6.6.100-yocto-standard",
+  "machine": "raspberrypi4-64",
+  "recipe": "linux-yocto",
+  "schema_version": 1,
+  "source_revision": "0d5c8af531e021d38d2589c109268b644bdf3320",
+  "version": "6.6.100+git"
+}
