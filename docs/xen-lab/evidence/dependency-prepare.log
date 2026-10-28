@@ -1,0 +1,17 @@
+Lab credentials are in local/credentials/ (contents not logged).
+Pinned source already present: poky
+Pinned source already present: meta-openembedded
+Pinned source already present: meta-raspberrypi
+Fetching meta-virtualization at 6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819
+fatal: unable to access 'https://git.yoctoproject.org/meta-virtualization/': Received HTTP code 403 from proxy after CONNECT
+Traceback (most recent call last):
+  File "/work/scripts/bootstrap.py", line 40, in <module>
+    main()
+  File "/work/scripts/bootstrap.py", line 34, in main
+    git(path, "fetch", "--depth=1", "origin", source["commit"])
+  File "/work/scripts/bootstrap.py", line 12, in git
+    return subprocess.run(["git", "-C", str(path), *args], check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', '-C', '/work/.cache/sources/meta-virtualization', 'fetch', '--depth=1', 'origin', '6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819']' returned non-zero exit status 128.
+COMMAND_EXIT_STATUS=1

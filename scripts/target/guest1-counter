@@ -1,0 +1,18 @@
+#!/bin/sh
+# Run inside guest1. Progress resumes after an xl pause/unpause cycle.
+set -eu
+[ "$#" -le 1 ] || { printf 'Usage: %s [count: 1..3600]\n' "$0" >&2; exit 2; }
+limit=${1:-60}
+case "$limit" in
+    ''|*[!0-9]*) printf '%s\n' 'count must be an integer from 1 to 3600' >&2; exit 2 ;;
+esac
+[ "${#limit}" -le 4 ] && [ "$limit" -ge 1 ] && [ "$limit" -le 3600 ] || {
+    printf '%s\n' 'count must be an integer from 1 to 3600' >&2
+    exit 2
+}
+counter=1
+while [ "$counter" -le "$limit" ]; do
+    printf 'guest1 counter: %s/%s\n' "$counter" "$limit"
+    [ "$counter" -eq "$limit" ] || sleep 1
+    counter=$((counter + 1))
+done

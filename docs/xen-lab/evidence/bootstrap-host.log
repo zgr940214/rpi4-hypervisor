@@ -1,0 +1,25 @@
+Fetching poky at b6ae714a1d1bfae8384654a13da15996cac64712
+From https://github.com/yoctoproject/poky
+ * branch            b6ae714a1d1bfae8384654a13da15996cac64712 -> FETCH_HEAD
+HEAD is now at b6ae714 ref-manual/release-process.rst: add textual legend
+Fetching meta-openembedded at 2db6aece32c7f8ebf6015b468e1b4e21de072e3b
+From https://github.com/openembedded/meta-openembedded
+ * branch            2db6aece32c7f8ebf6015b468e1b4e21de072e3b -> FETCH_HEAD
+HEAD is now at 2db6aec python3-grpcio: update gRPC repo roots
+Fetching meta-raspberrypi at 018d44467c4f09eb63f8ea5e86e85d755250cf89
+From https://github.com/agherzan/meta-raspberrypi
+ * branch            018d44467c4f09eb63f8ea5e86e85d755250cf89 -> FETCH_HEAD
+HEAD is now at 018d444 libcamera-apps: Fix library packaging issues for rpicam_app.so.1.4.2
+Fetching meta-virtualization at 6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819
+fatal: unable to access 'https://git.yoctoproject.org/meta-virtualization/': CONNECT tunnel failed, response 403
+Traceback (most recent call last):
+  File "/workspace/rpi4-hypervisor/scripts/bootstrap.py", line 40, in <module>
+    main()
+  File "/workspace/rpi4-hypervisor/scripts/bootstrap.py", line 34, in main
+    git(path, "fetch", "--depth=1", "origin", source["commit"])
+  File "/workspace/rpi4-hypervisor/scripts/bootstrap.py", line 12, in git
+    return subprocess.run(["git", "-C", str(path), *args], check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', '-C', '/workspace/rpi4-hypervisor/.cache/sources/meta-virtualization', 'fetch', '--depth=1', 'origin', '6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819']' returned non-zero exit status 128.

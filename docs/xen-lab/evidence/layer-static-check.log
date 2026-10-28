@@ -1,0 +1,90 @@
+COMMAND: PYTHONPATH=/workspace/rpi4-hypervisor/.cache/sources/poky/bitbake/lib python3 /tmp/pi4-layer-static-check.py
+SCOPE: metadata lexer syntax, embedded Python syntax, guest config AST, ASCII text only
+NOT_RUN: full BitBake parsing, provider resolution, final Kconfig, compilation, image checks, hardware boot
+VALIDATION_PROGRAM_START
+from pathlib import Path
+import ast
+import hashlib
+import re
+import sys
+import bb.parse.parse_py.BBHandler as handler
+
+root = Path('/workspace/rpi4-hypervisor/meta-pi4-xen-lab')
+print('COMMAND: PYTHONPATH=/workspace/rpi4-hypervisor/.cache/sources/poky/bitbake/lib python3 /tmp/pi4-layer-static-check.py')
+print('SCOPE: metadata lexer syntax, embedded Python syntax, guest config AST, ASCII text only')
+print('NOT_RUN: full BitBake parsing, provider resolution, final Kconfig, compilation, image checks, hardware boot')
+print('VALIDATION_PROGRAM_START')
+print(Path(__file__).read_text())
+print('VALIDATION_PROGRAM_END')
+files = [p for p in root.rglob('*') if p.suffix in ('.bb', '.bbappend', '.inc', '.conf') and 'files' not in p.parts]
+for p in sorted(files):
+    handler.__body__ = []
+    handler.__infunc__ = []
+    handler.__residue__ = []
+    handler.__classname__ = ''
+    handler.__inpython__ = False
+    handler.get_statements(str(p), str(p), p.name)
+    print('PASS METADATA_SYNTAX', p.relative_to(root))
+print('METADATA_SYNTAX_COUNT', len(files))
+for p in sorted(root.rglob('*')):
+    if not p.is_file():
+        continue
+    text = p.read_text()
+    assert text.isascii(), str(p)
+    if p.suffix in ('.bb', '.bbappend'):
+        for match in re.finditer(r'^python ([\w:]+)\([^\n]*\) \{\n(.*?)^\}', text, re.M | re.S):
+            name, body = match.groups()
+            compile('def f():\n' + body, '<' + str(p) + ':' + name + '>', 'exec')
+            print('PASS PYTHON_SYNTAX', p.relative_to(root), name)
+    print('SHA256', hashlib.sha256(p.read_bytes()).hexdigest(), p.relative_to(root))
+cfg = root / 'recipes-extended/pi4-xen-guest1/files/guest1.cfg.in'
+ast.parse(cfg.read_text().replace('@@GUEST_MEMORY@@', '256').replace('@@GUEST_VCPUS@@', '1'))
+print('PASS GUEST_CONFIG_AST')
+print('PASS LAYER_ASCII')
+print('COMMAND_EXIT_STATUS=0')
+
+VALIDATION_PROGRAM_END
+PASS METADATA_SYNTAX conf/distro/pi4-xen.conf
+PASS METADATA_SYNTAX conf/layer.conf
+PASS METADATA_SYNTAX recipes-bsp/u-boot/u-boot_%.bbappend
+PASS METADATA_SYNTAX recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bbappend
+PASS METADATA_SYNTAX recipes-core/images/pi4-guest1-image.bb
+PASS METADATA_SYNTAX recipes-core/images/pi4-xen-dom0-image.bb
+PASS METADATA_SYNTAX recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb
+PASS METADATA_SYNTAX recipes-core/pi4-xen-config/pi4-xen-guest-console.bb
+PASS METADATA_SYNTAX recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb
+PASS METADATA_SYNTAX recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb
+PASS METADATA_SYNTAX recipes-extended/xen/xen-source.inc
+PASS METADATA_SYNTAX recipes-extended/xen/xen-tools_4.19.bbappend
+PASS METADATA_SYNTAX recipes-extended/xen/xen_4.19.bbappend
+PASS METADATA_SYNTAX recipes-kernel/linux/linux-yocto_6.6.bbappend
+METADATA_SYNTAX_COUNT 14
+SHA256 5704eb35b409db20092bf3bdb57c7184e25ed2ada8b866eb5345dae378c99481 conf/distro/pi4-xen.conf
+SHA256 10333abf9cb2b19c2fa2b165271438ba78948423f5699cd36fd3f0563013f298 conf/layer.conf
+SHA256 be82755546d422ba9bfea79d20f5502d88ce1e38dc9032083296fb4bf664c653 recipes-bsp/u-boot/files/pi4-xen-commands.cfg
+SHA256 73858d42c166200bd32836ca3d1dc9a29bae09a32e9fd98fb21dab6a01df7b3e recipes-bsp/u-boot/u-boot_%.bbappend
+SHA256 56cfd278768fdce9da2b91ed12263eb8606516ae81857fbb8a10e5edd9b742fe recipes-bsp/xen-rpi-u-boot-scr/files/boot.cmd.xen.in
+PASS PYTHON_SYNTAX recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bbappend do_validate_pi4_payloads
+SHA256 1b0cef904e464e4a3d2215b1b706a1d4e12d3216aaae587df4e008f429b261f8 recipes-bsp/xen-rpi-u-boot-scr/xen-rpi-u-boot-scr.bbappend
+SHA256 68db09e09d8181c7b3375f189c97fdbdb37f159541522e321e680c099ca8aa73 recipes-core/images/pi4-guest1-image.bb
+PASS PYTHON_SYNTAX recipes-core/images/pi4-xen-dom0-image.bb pi4_dom0_identity
+SHA256 4b04b91458e3ea8aa65393e6dcc8e02d379923096d23df0eb139ab2e29551b82 recipes-core/images/pi4-xen-dom0-image.bb
+SHA256 b238b9a241060d650d879016342d97aa6302c7e2b9ecfe93a869b4ce0557f6f3 recipes-core/pi4-xen-config/files/10-pi4-xen.conf
+SHA256 c15c79a572c1eb8124ab92b7cc695fe20514b1239aabe9feb82b8eed91838388 recipes-core/pi4-xen-config/files/20-wired.network
+SHA256 8ff2054d4a0ec9081e8b7e6cd1581ffa8ae45d5caf2ee72e43872674600f51ea recipes-core/pi4-xen-config/files/autologin.conf
+SHA256 143a55def43df08cd8fd0077981b25b79bf20f270377d50d098a4fdfdb5621ac recipes-core/pi4-xen-config/files/pi4-xen-ready.service
+SHA256 7154e176b441a1c877c3c070e3f4a11b675d4776466054de30c72adfa97cf29d recipes-core/pi4-xen-config/pi4-xen-dom0-config.bb
+SHA256 f675090744752fc4b889b7ffcc1c2e55fcb5f1ebb6005154965426a7607f45f4 recipes-core/pi4-xen-config/pi4-xen-guest-console.bb
+SHA256 bf754852d11799d53934a4701229d2fd3f3aaa6beebe29f4730c301b1abefb27 recipes-extended/pi4-xen-guest1/files/guest1.cfg.in
+SHA256 fe8a3b9f230171d8d233b26151c29d6553c8a3de9669fb903c2485481e0dc381 recipes-extended/pi4-xen-guest1/pi4-xen-guest1.bb
+SHA256 99b3c9a9804fb43aad0124a3be2906d2c712a14b6006c270a46da3bbc3522a4d recipes-extended/pi4-xen-runtime/pi4-xen-runtime.bb
+SHA256 d9a94ceb03d5c9b75d96efd20be42921cabd84e9db6a09c0c4f494c19b45ebfc recipes-extended/xen/xen-source.inc
+SHA256 1017caae860fd82734f27b1e319291808d1cee79285996854d18029e38eb515e recipes-extended/xen/xen-tools_4.19.bbappend
+SHA256 9fa49c320d2f69fc27b72bbce6a26028923f66d7f2c99c18f853b43a119e8506 recipes-extended/xen/xen_4.19.bbappend
+SHA256 58ba58573ef32d3f57c3df1b674a8a7c25b1d55d7b8cca05e7109137ff8a73ff recipes-kernel/linux/files/pi4-xen.cfg
+PASS PYTHON_SYNTAX recipes-kernel/linux/linux-yocto_6.6.bbappend do_pi4_xen_config_check
+SHA256 660458f813322c2cc7d32001a9fa54fca819e1e688f00b01b6c962b4afb405f6 recipes-kernel/linux/linux-yocto_6.6.bbappend
+SHA256 29c6a85752ee61388d098c2764e57de48677435398b2e32de36a92f234ab95b6 wic/pi4-xen.wks
+PASS GUEST_CONFIG_AST
+PASS LAYER_ASCII
+COMMAND_EXIT_STATUS=0

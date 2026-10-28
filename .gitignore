@@ -1,0 +1,12 @@
+/.cache/
+/build/
+/local/*
+!/local/credentials/
+/local/credentials/*
+!/local/credentials/id_ed25519
+!/local/credentials/id_ed25519.pub
+!/local/credentials/root-password.txt
+!/local/credentials/root-password.sha512
+/artifacts/
+__pycache__/
+*.pyc

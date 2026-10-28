@@ -1,0 +1,11 @@
+name = "guest1"
+type = "pvh"
+memory = @@GUEST_MEMORY@@
+maxmem = @@GUEST_MEMORY@@
+vcpus = @@GUEST_VCPUS@@
+kernel = "/var/lib/xen/images/guest1/Image"
+disk = ["target=/var/lib/xen/images/guest1/rootfs.ext4,format=raw,vdev=xvda,access=rw,backendtype=phy"]
+extra = "console=hvc0 root=/dev/xvda rootwait rw"
+on_poweroff = "destroy"
+on_reboot = "destroy"
+on_crash = "destroy"

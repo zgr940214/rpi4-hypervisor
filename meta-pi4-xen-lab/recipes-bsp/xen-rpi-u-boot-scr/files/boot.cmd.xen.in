@@ -1,0 +1,119 @@
+# The Pi firmware must enter U-Boot in Non-secure EL2 with SCR_EL3.HCE=1.
+# U-Boot booti implements the ARM64 Image entry protocol (x0=DTB, MMU off).
+# Firmware enable_gic=1 is supplied by meta-virtualization's Pi4 include.
+# The boot log and real hardware must still verify these entry conditions.
+
+if test "${devtype}" != "mmc"; then
+    echo ERROR: this image expects an SD card boot through U-Boot distro_bootcmd
+    exit 1
+fi
+if test -z "${devnum}" || test -z "${distro_bootpart}"; then
+    echo ERROR: missing U-Boot boot device context
+    exit 1
+fi
+if test -z "${fdt_addr}"; then
+    echo ERROR: missing firmware-provided device tree
+    exit 1
+fi
+
+# These nonoverlapping windows are also checked against the built Image headers.
+# The firmware DTB is copied before any payload load can overwrite its source.
+setenv xen_loadaddr 0x00200000
+setenv kernel_loadaddr 0x04000000
+setenv xen_fdt_addr 0x08000000
+if fdt addr ${fdt_addr}; then
+    if fdt header get original_fdt_size totalsize; then
+        if test 0x${original_fdt_size} -gt 0x000f0000; then
+            echo ERROR: firmware DTB exceeds its reserved window
+            exit 1
+        fi
+    else
+        echo ERROR: cannot read firmware DTB size
+        exit 1
+    fi
+else
+    echo ERROR: invalid firmware DTB
+    exit 1
+fi
+if fdt move ${fdt_addr} ${xen_fdt_addr} 0x00100000; then
+    fdt addr ${xen_fdt_addr}
+else
+    echo ERROR: cannot preserve firmware DTB
+    exit 1
+fi
+
+if fdt get value xen_uart /aliases serial0; then
+    if fdt get value xen_uart_status ${xen_uart} status; then
+        if test "${xen_uart_status}" != "okay"; then
+            echo ERROR: firmware serial0 UART is disabled
+            exit 1
+        fi
+    fi
+else
+    echo ERROR: firmware DTB has no serial0 alias
+    exit 1
+fi
+
+# Preserve the upstream Pi4 Xen PCI workaround only when the nodes exist.
+if fdt print /scb/pcie@7d500000; then
+    fdt set /scb/pcie@7d500000 device_type "pci"
+    if fdt print /scb/pcie@7d500000/pci@1,0/usb@1,0; then
+        fdt rm /scb/pcie@7d500000/pci@1,0/usb@1,0
+    fi
+fi
+
+if part uuid ${devtype} ${devnum}:2 rootfs_partuuid; then
+    echo Dom0 root PARTUUID: ${rootfs_partuuid}
+else
+    echo ERROR: missing Dom0 root partition
+    exit 1
+fi
+
+if size ${devtype} ${devnum}:${distro_bootpart} xen; then
+    setenv xen_size ${filesize}
+    if test 0x${xen_size} -gt 0x00e00000; then
+        echo ERROR: Xen payload exceeds its load window
+        exit 1
+    fi
+else
+    echo ERROR: missing Xen payload
+    exit 1
+fi
+if size ${devtype} ${devnum}:${distro_bootpart} @@KERNEL_IMAGETYPE@@; then
+    setenv kernel_size ${filesize}
+    if test 0x${kernel_size} -gt 0x03f00000; then
+        echo ERROR: Linux payload exceeds its load window
+        exit 1
+    fi
+else
+    echo ERROR: missing Linux payload
+    exit 1
+fi
+if fatload ${devtype} ${devnum}:${distro_bootpart} ${xen_loadaddr} xen; then
+    echo Xen bytes: 0x${filesize}
+else
+    echo ERROR: Xen load failed
+    exit 1
+fi
+if fatload ${devtype} ${devnum}:${distro_bootpart} ${kernel_loadaddr} @@KERNEL_IMAGETYPE@@; then
+    setenv kernel_size 0x${filesize}
+else
+    echo ERROR: Linux load failed
+    exit 1
+fi
+
+if fdt set /chosen '#address-cells' <1> && \
+   fdt set /chosen '#size-cells' <1> && \
+   fdt set /chosen xen,xen-bootargs "console=dtuart dtuart=${xen_uart} dom0_mem=@@RPI_DOM0_MEM@@ @@RPI_DEBUG_XEN_ARGS@@" && \
+   fdt set /chosen xen,dom0-bootargs "console=hvc0 earlycon=xenboot root=PARTUUID=${rootfs_partuuid} rootwait rw net.ifnames=0" && \
+   fdt mknode /chosen dom0 && \
+   fdt set /chosen/dom0 compatible "xen,linux-zimage" "xen,multiboot-module" "multiboot,module" && \
+   fdt set /chosen/dom0 reg <${kernel_loadaddr} ${kernel_size}>; then
+    echo Xen and Dom0 device-tree configuration completed
+else
+    echo ERROR: cannot create Xen boot metadata
+    exit 1
+fi
+fdt print /chosen
+echo Booting Xen with the firmware device tree
+@@KERNEL_BOOTCMD@@ ${xen_loadaddr} - ${xen_fdt_addr}

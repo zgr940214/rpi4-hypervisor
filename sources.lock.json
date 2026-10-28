@@ -1,0 +1,9 @@
+{
+  "release": "scarthgap",
+  "repositories": [
+    {"name": "poky", "url": "https://github.com/yoctoproject/poky.git", "commit": "b6ae714a1d1bfae8384654a13da15996cac64712"},
+    {"name": "meta-openembedded", "url": "https://github.com/openembedded/meta-openembedded.git", "commit": "2db6aece32c7f8ebf6015b468e1b4e21de072e3b"},
+    {"name": "meta-raspberrypi", "url": "https://github.com/agherzan/meta-raspberrypi.git", "commit": "018d44467c4f09eb63f8ea5e86e85d755250cf89"},
+    {"name": "meta-virtualization", "url": "https://git.yoctoproject.org/meta-virtualization", "commit": "6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819"}
+  ]
+}

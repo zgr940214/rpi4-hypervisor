@@ -1,0 +1,13 @@
+[Unit]
+Description=Verify Xen Dom0 toolstack after startup
+Requires=proc-xen.mount xenstored.service xenconsoled.service xen-init-dom0.service
+After=proc-xen.mount xenstored.service xenconsoled.service xen-init-dom0.service
+ConditionPathExists=/proc/xen/capabilities
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/xl info
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

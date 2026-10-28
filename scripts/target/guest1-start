@@ -1,0 +1,59 @@
+#!/bin/sh
+# Start the fixed guest once; optionally attach to its Xen console.
+set -eu
+
+tool_dir=$(CDPATH='' cd "$(dirname "$0")" && pwd)
+. "$tool_dir/guest1-common.sh"
+
+attach=0
+case $#:$* in
+    0:) ;;
+    1:--console) attach=1 ;;
+    *) printf 'Usage: %s [--console]\n' "$0" >&2; exit 2 ;;
+esac
+
+guest1_require_root
+guest1_lock
+trap 'guest1_unlock' 0
+trap 'exit 129' HUP
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+if snapshot=$(guest1_snapshot); then
+    printf '%s\n' 'guest1 already exists; it will not be created again.'
+else
+    query_status=$?
+    if [ "$query_status" -ne 3 ]; then
+        guest1_error 'invalid domain listing; refusing to create guest1'
+        exit 1
+    fi
+    # xl holds its own toolstack lock during creation. The fixed config must
+    # retain name = "guest1" and must not enable automatic renaming.
+    if [ "$attach" = 1 ]; then
+        # -c attaches early enough to observe the kernel boot log.
+        guest1_unlock
+        trap - 0 HUP INT TERM
+        exec xl create -c /etc/xen/guest1.cfg
+    fi
+    xl create /etc/xen/guest1.cfg
+    snapshot=$(guest1_snapshot) || {
+        guest1_error 'creation returned but guest1 is not queryable'
+        exit 1
+    }
+fi
+
+set -- $snapshot
+domain_id=$1
+domain_uuid=$2
+if [ "$attach" = 1 ]; then
+    latest=$(guest1_snapshot) || exit 1
+    set -- $latest
+    [ "$1" = "$domain_id" ] && [ "$2" = "$domain_uuid" ] || {
+        guest1_error 'guest1 changed before console attachment'
+        exit 1
+    }
+    guest1_unlock
+    trap - 0 HUP INT TERM
+    exec xl console "$domain_id"
+fi
+printf 'guest1 is present as domain %s; use xl console guest1.\n' "$domain_id"

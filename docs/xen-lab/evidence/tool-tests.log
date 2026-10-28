@@ -1,0 +1,53 @@
+test_fresh_git_checkout_permissions_are_repaired_before_key_use (test_access.AccessTests) ... ok
+test_mismatched_password_is_detected (test_access.AccessTests) ... ok
+test_mismatched_public_key_is_detected (test_access.AccessTests) ... ok
+test_missing_hash_does_not_replace_existing_password (test_access.AccessTests) ... ok
+test_missing_password_does_not_replace_old_hash (test_access.AccessTests) ... ok
+test_repeated_setup_keeps_usable_matching_credentials (test_access.AccessTests) ... ok
+test_missing_inode_is_detected_despite_debugfs_zero_exit (test_check_image.Ext4IntegrationTests) ... ok
+test_readonly_ext4_extraction_and_directory_symlinks (test_check_image.Ext4IntegrationTests) ... ok
+test_symlink_loop_is_bounded (test_check_image.Ext4IntegrationTests) ... ok
+test_arm64_magic_is_required (test_check_image.ImageCheckTests) ... ok
+test_boot_script_crc_failure_is_reported (test_check_image.ImageCheckTests) ... ok
+test_debugfs_command_injection_rejected (test_check_image.ImageCheckTests) ... ok
+test_duplicate_guest_setting_rejected (test_check_image.ImageCheckTests) ... ok
+test_extra_partition_rejected (test_check_image.ImageCheckTests) ... ok
+test_filesystem_path_escape_rejected (test_check_image.ImageCheckTests) ... ok
+test_gpt_is_explicitly_unsupported (test_check_image.ImageCheckTests) ... ok
+test_guest_config_code_is_never_executed (test_check_image.ImageCheckTests) ... ok
+test_hardware_is_always_not_run (test_check_image.ImageCheckTests) ... ok
+test_invalid_boot_flag_rejected (test_check_image.ImageCheckTests) ... ok
+test_kernel_module_is_not_accepted_for_early_root_driver (test_check_image.ImageCheckTests) ... ok
+test_literal_guest_config (test_check_image.ImageCheckTests) ... ok
+test_nonliteral_guest_setting_rejected (test_check_image.ImageCheckTests) ... ok
+test_overlapping_partitions_rejected (test_check_image.ImageCheckTests) ... ok
+test_packaged_script_cannot_differ_from_deploy_script (test_check_image.ImageCheckTests) ... ok
+test_partitioned_guest_root_rejected (test_check_image.ImageCheckTests) ... ok
+test_readonly_guest_disk_rejected (test_check_image.ImageCheckTests) ... ok
+test_rootfs_is_not_card_image (test_check_image.ImageCheckTests) ... ok
+test_runtime_kernel_size_cannot_overlap_fdt (test_check_image.ImageCheckTests) ... ok
+test_sparse_copy_is_exact_and_source_is_unchanged (test_check_image.ImageCheckTests) ... ok
+test_sparse_copy_reports_truncation (test_check_image.ImageCheckTests) ... ok
+test_truncated_partition_rejected (test_check_image.ImageCheckTests) ... ok
+test_unexpected_backend_rejected (test_check_image.ImageCheckTests) ... ok
+test_valid_two_partition_layout (test_check_image.ImageCheckTests) ... ok
+test_absent_guest_is_created_once (test_target_tools.TargetTools) ... ok
+test_counter_is_finite (test_target_tools.TargetTools) ... ok
+test_domain_zero_is_never_mutated (test_target_tools.TargetTools) ... ok
+test_existing_guest_console (test_target_tools.TargetTools) ... ok
+test_existing_guest_is_not_created (test_target_tools.TargetTools) ... ok
+test_new_guest_attaches_during_creation (test_target_tools.TargetTools) ... ok
+test_originally_paused_is_untouched (test_target_tools.TargetTools) ... ok
+test_pause_duration_is_bounded (test_target_tools.TargetTools) ... ok
+test_pause_failure_after_side_effect_still_cleans_up (test_target_tools.TargetTools) ... ok
+test_pause_resumes_same_domain (test_target_tools.TargetTools) ... ok
+test_query_failure_does_not_create (test_target_tools.TargetTools) ... ok
+test_replaced_domain_is_not_resumed (test_target_tools.TargetTools) ... ok
+test_termination_resumes_guest (test_target_tools.TargetTools) ... ok
+test_unpause_failure_is_failure (test_target_tools.TargetTools) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 1.116s
+
+OK
+COMMAND_EXIT_STATUS=0
