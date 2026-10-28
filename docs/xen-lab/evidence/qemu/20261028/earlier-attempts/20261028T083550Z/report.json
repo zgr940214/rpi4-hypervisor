@@ -1,0 +1,267 @@
+{
+  "started_at": "2026-10-28T08:35:55.518343+00:00",
+  "scope": "QEMU ARM virt; Xen plus validation rootfs and project guest-management scripts",
+  "pi4_image_build": "NOT_RUN",
+  "pi4_hardware": "NOT_RUN",
+  "checks": [
+    {
+      "name": "xen_banner",
+      "status": "PASS",
+      "detail": "Xen 4.19.0 banner observed from emulated ARM execution"
+    },
+    {
+      "name": "xen_and_dom0_boot",
+      "status": "PASS",
+      "detail": "dom0 root shell reached on a real console"
+    },
+    {
+      "name": "dom0_toolstack",
+      "status": "PASS",
+      "detail": {
+        "xl_info": "host                   : pi4-dom0\nrelease                : 6.1.0-54-arm64\nversion                : #1 SMP Debian 6.1.190-1 (2026-10-16)\nmachine                : aarch64\nnr_cpus                : 2\nmax_cpu_id             : 1\nnr_nodes               : 1\ncores_per_socket       : 2\nthreads_per_core       : 1\ncpu_mhz                : 62.500\nhw_caps                : 00000000:00000000:00000000:00000000:00000000:00000000:00000000:00000000\nvirt_caps              : hvm hap vpmu gnttab-v1\narm_sve_vector_length  : 0\ntotal_memory           : 1536\nfree_memory            : 999\nsharing_freed_memory   : 0\nsharing_used_memory    : 0\noutstanding_claims     : 0\nfree_cpus              : 0\nxen_major              : 4\nxen_minor              : 19\nxen_extra              : .0\nxen_version            : 4.19.0\nxen_caps               : xen-3.0-aarch64 xen-3.0-armv7l \nxen_scheduler          : credit2\nxen_pagesize           : 4096\nplatform_params        : virt_start=0x0\nxen_changeset          : Mon Jul 29 18:20:45 2024 +0100 git:026c9fa\nxen_commandline        : console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\ncc_compiler            : aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\ncc_compile_by          : \ncc_compile_domain      : \ncc_compile_date        : Wed Oct 28 07:44:55 UTC 2026\nbuild_id               : 1eab2cddd0654b0c0264b706670f4fba33da8aeb\nxend_config_format     : 4",
+        "initial_domains": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      57.2"
+      }
+    },
+    {
+      "name": "guest1_first_boot_and_writable_root",
+      "status": "PASS",
+      "detail": {
+        "guest_shell": "aarch64 root shell with writable rootfs",
+        "domains": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      70.8\nguest1                                       1   256     1     -b----      20.9",
+        "persisted_file_after_recreate": false
+      }
+    },
+    {
+      "name": "dom0_ssh_and_guest_console_reattach",
+      "status": "PASS",
+      "detail": "Public-key SSH reached Dom0 and xl console reached the existing guest1 shell"
+    },
+    {
+      "name": "guest1_pause_resume_and_project_demo",
+      "status": "PASS",
+      "detail": {
+        "counter_before_pause": 1,
+        "counter_after_resume": 2,
+        "same_guest_uuid": "396bad2d-655a-48a4-9f28-979ca797a951",
+        "project_demo": "Paused guest1 (domain 1) for 1 seconds; Dom0 remains usable.\nResumed guest1 (domain 1).",
+        "measurement": "Functional pause/resume observation, not precise scheduling latency"
+      }
+    },
+    {
+      "name": "guest1_clean_shutdown",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_recreate_and_persistent_root",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "guest1_final_shutdown",
+      "status": "NOT_RUN",
+      "detail": "Not reached yet"
+    },
+    {
+      "name": "source_disk_unchanged",
+      "status": "PASS",
+      "detail": {
+        "sha256_before_and_after": "2cfb2f7d38476d7bd256adf3d23df321ae38077ba6799838ae84f533703e734e"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "stty -echo -onlcr; export PS1='__DOM0_PROMPT__# '; id -u",
+      "exit_code": 0,
+      "output": "{ stty -echo -onlcr; export PS1='__DOM0_PROMPT__# '; id -u; }; result=$?; printf '\\n__RC_28c86f9ba378_%s__\\n' \"$result\"\n0"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "systemctl start qemu-xen.service && systemctl is-active --quiet qemu-xen.service",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl info",
+      "exit_code": 0,
+      "output": "host                   : pi4-dom0\nrelease                : 6.1.0-54-arm64\nversion                : #1 SMP Debian 6.1.190-1 (2026-10-16)\nmachine                : aarch64\nnr_cpus                : 2\nmax_cpu_id             : 1\nnr_nodes               : 1\ncores_per_socket       : 2\nthreads_per_core       : 1\ncpu_mhz                : 62.500\nhw_caps                : 00000000:00000000:00000000:00000000:00000000:00000000:00000000:00000000\nvirt_caps              : hvm hap vpmu gnttab-v1\narm_sve_vector_length  : 0\ntotal_memory           : 1536\nfree_memory            : 999\nsharing_freed_memory   : 0\nsharing_used_memory    : 0\noutstanding_claims     : 0\nfree_cpus              : 0\nxen_major              : 4\nxen_minor              : 19\nxen_extra              : .0\nxen_version            : 4.19.0\nxen_caps               : xen-3.0-aarch64 xen-3.0-armv7l \nxen_scheduler          : credit2\nxen_pagesize           : 4096\nplatform_params        : virt_start=0x0\nxen_changeset          : Mon Jul 29 18:20:45 2024 +0100 git:026c9fa\nxen_commandline        : console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\ncc_compiler            : aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\ncc_compile_by          : \ncc_compile_domain      : \ncc_compile_date        : Wed Oct 28 07:44:55 UTC 2026\nbuild_id               : 1eab2cddd0654b0c0264b706670f4fba33da8aeb\nxend_config_format     : 4"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl list",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      57.2"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl dmesg",
+      "exit_code": 0,
+      "output": "(XEN) Checking for initrd in /chosen\n(XEN) RAM: 0000000040000000 - 000000009fffffff\n(XEN) \n(XEN) MODULE[0]: 0000000040200000 - 000000004033d000 Xen         \n(XEN) MODULE[1]: 0000000048000000 - 0000000048008d5e Device Tree \n(XEN) MODULE[2]: 0000000050000000 - 0000000050677f0d Ramdisk     \n(XEN) MODULE[3]: 0000000045000000 - 0000000046f6dfc0 Kernel      \n(XEN) \n(XEN) \n(XEN) Command line: console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\n(XEN) parameter \"dom0_mem\" has invalid value \"512M,max:512M\", rc=-22!\n(XEN) Domain heap initialised\n(XEN) Booting using Device Tree\n(XEN) Platform: Generic System\n(XEN) Looking for dtuart at \"/pl011@9000000\", options \"\"\n Xen 4.19.0\n(XEN) Xen version 4.19.0 (@) (aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0) debug=n Wed Oct 28 07:44:55 UTC 2026\n(XEN) Latest ChangeSet: Mon Jul 29 18:20:45 2024 +0100 git:026c9fa\n(XEN) build-id: 1eab2cddd0654b0c0264b706670f4fba33da8aeb\n(XEN) Processor: 00000000411fd070: \"ARM Limited\", variant: 0x1, part 0xd07,rev 0x0\n(XEN) 64-bit Execution:\n(XEN)   Processor Features: 0000000001000222 0000000000000000\n(XEN)     Exception Levels: EL3:No EL2:64+32 EL1:64+32 EL0:64+32\n(XEN)     Extensions: FloatingPoint AdvancedSIMD GICv3-SysReg\n(XEN)   Debug Features: 0000000010305106 0000000000000000\n(XEN)   Auxiliary Features: 0000000000000000 0000000000000000\n(XEN)   Memory Model Features: 0000000000001124 0000000000000000\n(XEN)   ISA Features:  0000000000011120 0000000000000000\n(XEN) 32-bit Execution:\n(XEN)   Processor Features: 0000000000000131:0000000010011001\n(XEN)     Instruction Sets: AArch32 A32 Thumb Thumb-2 Jazelle\n(XEN)     Extensions: GenericTimer\n(XEN)   Debug Features: 0000000003010066\n(XEN)   Auxiliary Features: 0000000000000000\n(XEN)   Memory Model Features: 0000000010101105 0000000040000000\n(XEN)                          0000000001260000 0000000002102211\n(XEN)   ISA Features: 0000000002101110 0000000013112111 0000000021232042\n(XEN)                 0000000001112131 0000000000011142 0000000000011121\n(XEN) Using SMC Calling Convention v1.0\n(XEN) Using PSCI v0.2\n(XEN) SMP: Allowing 2 CPUs\n(XEN) enabled workaround for: ARM erratum 832075\n(XEN) enabled workaround for: ARM erratum 834220\n(XEN) enabled workaround for: ARM erratum 1319367\n(XEN) Generic Timer IRQ: phys=30 hyp=26 virt=27 Freq: 62500 KHz\n(XEN) GICv3 initialization:\n(XEN)       gic_dist_addr=0x00000008000000\n(XEN)       gic_maintenance_irq=25\n(XEN)       gic_rdist_stride=0\n(XEN)       gic_rdist_regions=1\n(XEN)       redistributor regions:\n(XEN)         - region 0: 0x000000080a0000 - 0x00000009000000\n(XEN) GICv3: 256 lines, (IID 0000043b).\n(XEN) GICv3: CPU0: Found redistributor in region 0 @00000a004001c000\n(XEN) XSM Framework v1.0.1 initialized\n(XEN) Initialising XSM SILO mode\n(XEN) Using scheduler: SMP Credit Scheduler rev2 (credit2)\n(XEN) Initializing Credit2 scheduler\n(XEN)  load_precision_shift: 18\n(XEN)  load_window_shift: 30\n(XEN)  underload_balance_tolerance: 0\n(XEN)  overload_balance_tolerance: -3\n(XEN)  runqueues arrangement: socket\n(XEN)  cap enforcement granularity: 10ms\n(XEN) load tracking window length 1073741824 ns\n(XEN) Allocated console ring of 16 KiB.\n(XEN) Bringing up CPU1\n(XEN) GICv3: CPU1: Found redistributor in region 0 @00000a004003c000\n(XEN) Brought up 2 CPUs\n(XEN) I/O virtualisation disabled\n(XEN) P2M: 44-bit IPA with 44-bit PA and 8-bit VMID\n(XEN) P2M: 4 levels with order-0 root, VTCR 0x0000000080043594\n(XEN) Scheduling granularity: cpu, 1 CPU per sched-resource\n(XEN) Initializing Credit2 scheduler\n(XEN)  load_precision_shift: 18\n(XEN)  load_window_shift: 30\n(XEN)  underload_balance_tolerance: 0\n(XEN)  overload_balance_tolerance: -3\n(XEN)  runqueues arrangement: socket\n(XEN)  cap enforcement granularity: 10ms\n(XEN) load tracking window length 1073741824 ns\n(XEN) Adding cpu 0 to runqueue 0\n(XEN)  First cpu on runqueue, activating\n(XEN) Adding cpu 1 to runqueue 0\n(XEN) alternatives: Patching with alt table 00000a00002c5a18 -> 00000a00002c6c3c\n(XEN) **** No support for ARM_SMCCC_ARCH_WORKAROUND_1. ****\n(XEN) **** Please update your firmware.                ****\n(XEN) **** Guests without CPU erratum workarounds can deadlock the system! ****\n(XEN) **** Only trusted guests should be used.                             ****\n(XEN) *** LOADING DOMAIN 0 ***\n(XEN) Loading d0 kernel from boot module @ 0000000045000000\n(XEN) Loading ramdisk from boot module @ 0000000050000000\n(XEN) Allocating 1:1 mappings totalling 512MB for dom0:\n(XEN) BANK[0] 0x00000060000000-0x00000080000000 (512MB)\n(XEN) Grant table range: 0x00000040200000-0x00000040240000\n(XEN) Allocating PPI 16 for event channel interrupt\n(XEN) d0: extended region 0: 0x40400000->0x5fe00000\n(XEN) d0: extended region 1: 0x80000000->0x9fe00000\n(XEN) Loading zImage from 0000000045000000 to 0000000060000000-0000000061f6dfc0\n(XEN) Loading d0 initrd from 0000000050000000 to 0x0000000068200000-0x0000000068877f0d\n(XEN) Loading d0 DTB to 0x0000000068000000-0x0000000068001ccb\n(XEN) Initial low memory virq threshold set at 0x4000 pages.\n(XEN) Scrubbing Free RAM in background\n(XEN) Std. Loglevel: Errors, warnings and info\n(XEN) Guest Loglevel: Errors, warnings and info\n(XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch input)\n(XEN) Freed 336kB init memory.\n(XEN) d0v0 Unhandled SMC/HVC: 0x84000050\n(XEN) d0v0 Unhandled SMC/HVC: 0x8600ff01\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER4\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER8\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER12\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER16\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER20\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER24\n(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER28\n(XEN) d0v0: vGICR: SGI: unhandled word write 0x000000ffffffff to ICACTIVER0\n(XEN) d0v1: vGICR: SGI: unhandled word write 0x000000ffffffff to ICACTIVER0"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "test -s /etc/xen/guest1.cfg && test -x /usr/sbin/guest1-start",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "stty -echo -onlcr; export PS1='__GUEST1_PROMPT__# '; id -u",
+      "exit_code": 0,
+      "output": "{ stty -echo -onlcr; export PS1='__GUEST1_PROMPT__# '; id -u; }; result=$?; printf '\\n__RC_e2aaf0ab2058_%s__\\n' \"$result\"\n0"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "hostname",
+      "exit_code": 0,
+      "output": "guest1"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "uname -m",
+      "exit_code": 0,
+      "output": "aarch64"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "printf 'qemu-rootfs-write-ok\\n' > /root/qemu-write-test; sync; cat /root/qemu-write-test",
+      "exit_code": 0,
+      "output": "qemu-rootfs-write-ok"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl list",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      70.8\nguest1                                       1   256     1     -b----      20.9"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "stty -echo -onlcr; export PS1='__GUEST1_PROMPT__# '; id -u",
+      "exit_code": 0,
+      "output": "0"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "test -x /usr/bin/guest1-counter",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl list -v guest1",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)   UUID                            Reason-Code\tSecurity Label\nguest1                                       1   256     1     -b----      21.1 396bad2d-655a-48a4-9f28-979ca797a951        -                -"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl pause guest1; xl list -v guest1",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)   UUID                            Reason-Code\tSecurity Label\nguest1                                       1   256     1     --p---      21.1 396bad2d-655a-48a4-9f28-979ca797a951        -                -"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "printf 'DOM0_ALIVE_WHILE_GUEST_PAUSED\\n'; xl list -v guest1",
+      "exit_code": 0,
+      "output": "DOM0_ALIVE_WHILE_GUEST_PAUSED\nName                                        ID   Mem VCPUs\tState\tTime(s)   UUID                            Reason-Code\tSecurity Label\nguest1                                       1   256     1     --p---      21.1 396bad2d-655a-48a4-9f28-979ca797a951        -                -"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl unpause guest1",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "guest1-pause-demo 1",
+      "exit_code": 0,
+      "output": "Paused guest1 (domain 1) for 1 seconds; Dom0 remains usable.\nResumed guest1 (domain 1)."
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl list -v guest1",
+      "exit_code": 0,
+      "output": "Name                                        ID   Mem VCPUs\tState\tTime(s)   UUID                            Reason-Code\tSecurity Label\nguest1                                       1   256     1     -b----      21.3 396bad2d-655a-48a4-9f28-979ca797a951        -                -"
+    },
+    {
+      "console": "__GUEST1_PROMPT__# ",
+      "command": "printf 'GUEST_SHELL_AFTER_RESUME\\n'",
+      "exit_code": 0,
+      "output": "guest1 counter: 3/120\n\n__GUEST1_PROMPT__# \nGUEST_SHELL_AFTER_RESUME"
+    },
+    {
+      "console": "__DOM0_PROMPT__# ",
+      "command": "xl shutdown -w guest1",
+      "exit_code": 0,
+      "output": "Shutting down domain 1\nWaiting for 1 domains\nDomain 1 has been shut down, reason code 0"
+    }
+  ],
+  "artifacts": {
+    "xen": {
+      "path": "/work/local/qemu/xen",
+      "bytes": 983048,
+      "sha256": "38ec6bab3616fba8ac5fbe1b34263773f69b68b4f9cfd8ac7460bc54ed98bcec"
+    },
+    "kernel": {
+      "path": "/work/local/qemu/Image",
+      "bytes": 32956352,
+      "sha256": "cbc7dcd22b574dee70d2ebe575a525ed7dfeb04aaccc2da67c0b1a776d971098"
+    },
+    "rootfs": {
+      "path": "/work/local/qemu/dom0.ext4",
+      "bytes": 4294967296,
+      "sha256": "2cfb2f7d38476d7bd256adf3d23df321ae38077ba6799838ae84f533703e734e"
+    },
+    "initrd": {
+      "path": "/work/local/qemu/initrd.img",
+      "bytes": 6782733,
+      "sha256": "c3541eca13990fe12c57f064054997c2118a9605090843f3a8b1b238768470d4"
+    }
+  },
+  "status": "FAIL",
+  "disk_mode": "QEMU -snapshot temporary overlay; base disk hash checked after QEMU exits",
+  "qemu_command": [
+    "qemu-system-aarch64",
+    "-machine",
+    "virt,gic-version=3,virtualization=on",
+    "-accel",
+    "tcg",
+    "-cpu",
+    "cortex-a57",
+    "-smp",
+    "2",
+    "-m",
+    "1536",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-snapshot",
+    "-kernel",
+    "/work/local/qemu/xen",
+    "-dtb",
+    "/work/local/qemu/results/20261028T083550Z/xen.dtb",
+    "-device",
+    "loader,file=/work/local/qemu/Image,addr=0x45000000",
+    "-drive",
+    "if=none,id=dom0,format=raw,file=/work/local/qemu/dom0.ext4",
+    "-device",
+    "virtio-blk-device,drive=dom0",
+    "-netdev",
+    "user,id=net0,hostfwd=tcp:127.0.0.1:58581-:22",
+    "-device",
+    "virtio-net-device,netdev=net0",
+    "-device",
+    "loader,file=/work/local/qemu/initrd.img,addr=0x50000000"
+  ],
+  "qemu_version": "QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.31)",
+  "qemu_exit_status": 0,
+  "qemu_signal_status": null,
+  "qemu_stop_reason": "Runner cleanup after the recorded checks",
+  "finished_at": "2026-10-28T08:39:48.943687+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "started_at": "2026-10-28T07:58:05.431757+00:00",
+  "scope": "QEMU ARM virt; Xen plus validation rootfs and project guest-management scripts",
+  "pi4_image_build": "NOT_RUN",
+  "pi4_hardware": "NOT_RUN",
+  "checks": [
+    {
+      "name": "xen_banner",
+      "status": "PASS",
+      "detail": "Xen 4.19.0 banner observed from emulated ARM execution"
+    }
+  ],
+  "commands": [],
+  "artifacts": {
+    "xen": {
+      "path": "/work/local/qemu/xen",
+      "bytes": 983048,
+      "sha256": "38ec6bab3616fba8ac5fbe1b34263773f69b68b4f9cfd8ac7460bc54ed98bcec"
+    },
+    "kernel": {
+      "path": "/work/local/qemu/Image",
+      "bytes": 32956352,
+      "sha256": "cbc7dcd22b574dee70d2ebe575a525ed7dfeb04aaccc2da67c0b1a776d971098"
+    },
+    "rootfs": {
+      "path": "/work/local/qemu/dom0.ext4",
+      "bytes": 4294967296,
+      "sha256": "1dbaa7d1714bf9f077c707d980b260e447523f026ff4e80a8e9a65ac662e4f2e"
+    },
+    "initrd": {
+      "path": "/work/local/qemu/initrd.img",
+      "bytes": 6782733,
+      "sha256": "c3541eca13990fe12c57f064054997c2118a9605090843f3a8b1b238768470d4"
+    }
+  },
+  "status": "FAIL",
+  "qemu_command": [
+    "qemu-system-aarch64",
+    "-machine",
+    "virt,gic-version=3,virtualization=on",
+    "-accel",
+    "tcg",
+    "-cpu",
+    "cortex-a57",
+    "-smp",
+    "2",
+    "-m",
+    "1536",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "stdio",
+    "-no-reboot",
+    "-snapshot",
+    "-kernel",
+    "/work/local/qemu/xen",
+    "-dtb",
+    "/work/local/qemu/results/20261028T075758Z/xen.dtb",
+    "-device",
+    "loader,file=/work/local/qemu/Image,addr=0x45000000",
+    "-drive",
+    "if=none,id=dom0,format=raw,file=/work/local/qemu/dom0.ext4",
+    "-device",
+    "virtio-blk-device,drive=dom0",
+    "-netdev",
+    "user,id=net0,hostfwd=tcp:127.0.0.1:35179-:22",
+    "-device",
+    "virtio-net-device,netdev=net0",
+    "-device",
+    "loader,file=/work/local/qemu/initrd.img,addr=0x50000000"
+  ],
+  "qemu_version": "QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.31)",
+  "qemu_exit_status": 0,
+  "qemu_signal_status": null,
+  "qemu_stop_reason": "Runner cleanup after the recorded checks",
+  "finished_at": "2026-10-28T08:00:43.621057+00:00"
+}

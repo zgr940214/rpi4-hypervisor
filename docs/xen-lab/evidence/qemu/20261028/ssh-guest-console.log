@@ -1,0 +1,21 @@
+Warning: Permanently added '[127.0.0.1]:51509' (ED25519) to the list of known hosts.
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+__DOM0_SSH_CONNECTED__
+[?2004l
+[?2004h__GUEST1_PROMPT__# [?2004l
+0
+
+__RC_fa20a1477725_0__
+[?2004h__GUEST1_PROMPT__# [?2004l
+
+__RC_1d62072e16f6_0__
+[?2004h__GUEST1_PROMPT__# [?2004l
+guest1 counter: 1/120
+guest1 counter: 2/120
+guest1 counter: 3/120
+
+[?2004h__GUEST1_PROMPT__# [?2004l
+GUEST_SHELL_AFTER_RESUME
+
+__RC_32bc5ac4b9e5_0__
+[?2004h__GUEST1_PROMPT__# 

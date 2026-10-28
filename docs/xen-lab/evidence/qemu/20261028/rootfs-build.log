@@ -1,0 +1,615 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.22kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:bookworm-slim@sha256:99c0b25c46d0214d5a2091092e7908907dcaecd6a962cde0ac700acee222b6f3
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [stage-0 1/5] FROM docker.io/library/debian:bookworm-slim@sha256:99c0b25c46d0214d5a2091092e7908907dcaecd6a962cde0ac700acee222b6f3
+#4 DONE 0.0s
+
+#5 [stage-0 2/5] RUN --mount=type=secret,id=ca_bundle,mode=0444     printf 'Acquire::https::CaInfo "/run/secrets/ca_bundle";\n' > /etc/apt/apt.conf.d/99-session-ca;     sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources;     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends       debootstrap debian-archive-keyring qemu-user-static proot e2fsprogs cpio xz-utils       ca-certificates wget gnupg rsync file &&     rm /etc/apt/apt.conf.d/99-session-ca && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 1.36MB 0.1s done
+#6 DONE 0.1s
+
+#7 [stage-0 3/5] COPY proot /tmp/proot
+#7 DONE 2.0s
+
+#8 [stage-0 4/5] RUN --mount=type=secret,id=ca_bundle,mode=0444     printf 'Acquire::https::CaInfo "/run/secrets/ca_bundle";\n' > /etc/apt/apt.conf.d/99-session-ca;     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends       build-essential libtalloc-dev pkg-config &&     make -C /tmp/proot/src -j2 && install -m 0755 /tmp/proot/src/proot /usr/local/bin/proot &&     rm /etc/apt/apt.conf.d/99-session-ca && rm -rf /var/lib/apt/lists/* /tmp/proot
+#8 1.620 Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
+#8 2.171 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#8 2.403 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#8 3.155 Get:4 https://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+#8 6.707 Get:5 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#8 6.919 Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [358 kB]
+#8 6.979 Fetched 9397 kB in 6s (1564 kB/s)
+#8 6.979 Reading package lists...
+#8 7.355 Reading package lists...
+#8 7.729 Building dependency tree...
+#8 7.817 Reading state information...
+#8 7.906 The following additional packages will be installed:
+#8 7.906   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-12 dpkg-dev
+#8 7.906   g++ g++-12 gcc gcc-12 libasan8 libatomic1 libbinutils libc-dev-bin libc6-dev
+#8 7.906   libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-12-dev
+#8 7.906   libgdbm-compat4 libgdbm6 libgomp1 libgprofng0 libgssapi-krb5-2 libisl23
+#8 7.906   libitm1 libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+#8 7.906   liblsan0 libmpc3 libmpfr6 libnsl-dev libnsl2 libperl5.36 libpkgconf3
+#8 7.906   libquadmath0 libstdc++-12-dev libtirpc-common libtirpc-dev libtirpc3
+#8 7.906   libtsan2 libubsan1 linux-libc-dev make patch perl perl-modules-5.36 pkgconf
+#8 7.906   pkgconf-bin rpcsvc-proto
+#8 7.907 Suggested packages:
+#8 7.907   binutils-doc bzip2-doc cpp-doc gcc-12-locales cpp-12-doc debian-keyring
+#8 7.907   g++-multilib g++-12-multilib gcc-12-doc gcc-multilib manpages-dev autoconf
+#8 7.907   automake libtool flex bison gdb gcc-doc gcc-12-multilib glibc-doc
+#8 7.907   sensible-utils git bzr gdbm-l10n krb5-doc krb5-user libstdc++-12-doc
+#8 7.907   make-doc ed diffutils-doc perl-doc libterm-readline-gnu-perl
+#8 7.907   | libterm-readline-perl-perl libtap-harness-archive-perl
+#8 7.907 Recommended packages:
+#8 7.907   fakeroot libalgorithm-merge-perl manpages manpages-dev libc-devtools
+#8 7.907   libfile-fcntllock-perl liblocale-gettext-perl krb5-locales netbase
+#8 8.087 The following NEW packages will be installed:
+#8 8.087   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2 cpp
+#8 8.087   cpp-12 dpkg-dev g++ g++-12 gcc gcc-12 libasan8 libatomic1 libbinutils
+#8 8.087   libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0
+#8 8.087   libdpkg-perl libgcc-12-dev libgdbm-compat4 libgdbm6 libgomp1 libgprofng0
+#8 8.087   libgssapi-krb5-2 libisl23 libitm1 libjansson4 libk5crypto3 libkeyutils1
+#8 8.087   libkrb5-3 libkrb5support0 liblsan0 libmpc3 libmpfr6 libnsl-dev libnsl2
+#8 8.087   libperl5.36 libpkgconf3 libquadmath0 libstdc++-12-dev libtalloc-dev
+#8 8.087   libtirpc-common libtirpc-dev libtirpc3 libtsan2 libubsan1 linux-libc-dev
+#8 8.087   make patch perl perl-modules-5.36 pkg-config pkgconf pkgconf-bin
+#8 8.087   rpcsvc-proto
+#8 8.609 0 upgraded, 59 newly installed, 0 to remove and 0 not upgraded.
+#8 8.609 Need to get 74.3 MB of archives.
+#8 8.609 After this operation, 316 MB of additional disk space will be used.
+#8 8.609 Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u4 [2817 kB]
+#8 10.33 Get:2 https://deb.debian.org/debian bookworm/main amd64 libgdbm6 amd64 1.23-3 [72.2 kB]
+#8 11.10 Get:3 https://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#8 11.38 Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 libperl5.36 amd64 5.36.0-7+deb12u4 [4208 kB]
+#8 13.24 Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 perl amd64 5.36.0-7+deb12u4 [239 kB]
+#8 13.45 Get:6 https://deb.debian.org/debian bookworm/main amd64 bzip2 amd64 1.0.8-5+b1 [49.8 kB]
+#8 14.03 Get:7 https://deb.debian.org/debian bookworm/main amd64 binutils-common amd64 2.40-2 [2487 kB]
+#8 15.24 Get:8 https://deb.debian.org/debian bookworm/main amd64 libbinutils amd64 2.40-2 [572 kB]
+#8 15.47 Get:9 https://deb.debian.org/debian bookworm/main amd64 libctf-nobfd0 amd64 2.40-2 [153 kB]
+#8 15.63 Get:10 https://deb.debian.org/debian bookworm/main amd64 libctf0 amd64 2.40-2 [89.8 kB]
+#8 15.78 Get:11 https://deb.debian.org/debian bookworm/main amd64 libgprofng0 amd64 2.40-2 [812 kB]
+#8 16.02 Get:12 https://deb.debian.org/debian bookworm/main amd64 libjansson4 amd64 2.14-2 [40.8 kB]
+#8 16.22 Get:13 https://deb.debian.org/debian bookworm/main amd64 binutils-x86-64-linux-gnu amd64 2.40-2 [2246 kB]
+#8 16.87 Get:14 https://deb.debian.org/debian bookworm/main amd64 binutils amd64 2.40-2 [65.0 kB]
+#8 17.08 Get:15 https://deb.debian.org/debian bookworm/main amd64 libc-dev-bin amd64 2.36-9+deb12u14 [48.1 kB]
+#8 17.30 Get:16 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.190-1 [2409 kB]
+#8 18.13 Get:17 https://deb.debian.org/debian bookworm/main amd64 libcrypt-dev amd64 1:4.4.33-2 [118 kB]
+#8 18.32 Get:18 https://deb.debian.org/debian bookworm/main amd64 libkrb5support0 amd64 1.20.1-2+deb12u5 [33.2 kB]
+#8 18.55 Get:19 https://deb.debian.org/debian bookworm/main amd64 libk5crypto3 amd64 1.20.1-2+deb12u5 [79.7 kB]
+#8 18.79 Get:20 https://deb.debian.org/debian bookworm/main amd64 libkeyutils1 amd64 1.6.3-2 [8808 B]
+#8 18.98 Get:21 https://deb.debian.org/debian bookworm/main amd64 libkrb5-3 amd64 1.20.1-2+deb12u5 [332 kB]
+#8 19.43 Get:22 https://deb.debian.org/debian bookworm/main amd64 libgssapi-krb5-2 amd64 1.20.1-2+deb12u5 [135 kB]
+#8 19.64 Get:23 https://deb.debian.org/debian bookworm/main amd64 libtirpc-common all 1.3.3+ds-1 [14.0 kB]
+#8 19.84 Get:24 https://deb.debian.org/debian bookworm/main amd64 libtirpc3 amd64 1.3.3+ds-1 [85.2 kB]
+#8 20.04 Get:25 https://deb.debian.org/debian bookworm/main amd64 libnsl2 amd64 1.3.0-2 [39.5 kB]
+#8 20.23 Get:26 https://deb.debian.org/debian bookworm/main amd64 libtirpc-dev amd64 1.3.3+ds-1 [191 kB]
+#8 20.43 Get:27 https://deb.debian.org/debian bookworm/main amd64 libnsl-dev amd64 1.3.0-2 [66.4 kB]
+#8 20.58 Get:28 https://deb.debian.org/debian bookworm/main amd64 rpcsvc-proto amd64 1.4.3-1 [63.3 kB]
+#8 20.78 Get:29 https://deb.debian.org/debian bookworm/main amd64 libc6-dev amd64 2.36-9+deb12u14 [1904 kB]
+#8 21.29 Get:30 https://deb.debian.org/debian bookworm/main amd64 libisl23 amd64 0.25-1.1 [683 kB]
+#8 21.50 Get:31 https://deb.debian.org/debian bookworm/main amd64 libmpfr6 amd64 4.2.0-1 [701 kB]
+#8 21.73 Get:32 https://deb.debian.org/debian bookworm/main amd64 libmpc3 amd64 1.3.1-1 [51.5 kB]
+#8 21.92 Get:33 https://deb.debian.org/debian bookworm/main amd64 cpp-12 amd64 12.2.0-14+deb12u1 [9768 kB]
+#8 24.83 Get:34 https://deb.debian.org/debian bookworm/main amd64 cpp amd64 4:12.2.0-3 [6836 B]
+#8 25.02 Get:35 https://deb.debian.org/debian bookworm/main amd64 libcc1-0 amd64 12.2.0-14+deb12u1 [41.7 kB]
+#8 25.22 Get:36 https://deb.debian.org/debian bookworm/main amd64 libgomp1 amd64 12.2.0-14+deb12u1 [116 kB]
+#8 25.76 Get:37 https://deb.debian.org/debian bookworm/main amd64 libitm1 amd64 12.2.0-14+deb12u1 [26.1 kB]
+#8 25.96 Get:38 https://deb.debian.org/debian bookworm/main amd64 libatomic1 amd64 12.2.0-14+deb12u1 [9376 B]
+#8 26.14 Get:39 https://deb.debian.org/debian bookworm/main amd64 libasan8 amd64 12.2.0-14+deb12u1 [2193 kB]
+#8 26.93 Get:40 https://deb.debian.org/debian bookworm/main amd64 liblsan0 amd64 12.2.0-14+deb12u1 [969 kB]
+#8 27.21 Get:41 https://deb.debian.org/debian bookworm/main amd64 libtsan2 amd64 12.2.0-14+deb12u1 [2197 kB]
+#8 28.00 Get:42 https://deb.debian.org/debian bookworm/main amd64 libubsan1 amd64 12.2.0-14+deb12u1 [883 kB]
+#8 29.32 Get:43 https://deb.debian.org/debian bookworm/main amd64 libquadmath0 amd64 12.2.0-14+deb12u1 [145 kB]
+#8 30.02 Get:44 https://deb.debian.org/debian bookworm/main amd64 libgcc-12-dev amd64 12.2.0-14+deb12u1 [2437 kB]
+#8 30.83 Get:45 https://deb.debian.org/debian bookworm/main amd64 gcc-12 amd64 12.2.0-14+deb12u1 [19.3 MB]
+#8 34.19 Get:46 https://deb.debian.org/debian bookworm/main amd64 gcc amd64 4:12.2.0-3 [5216 B]
+#8 34.56 Get:47 https://deb.debian.org/debian bookworm/main amd64 libstdc++-12-dev amd64 12.2.0-14+deb12u1 [2047 kB]
+#8 35.80 Get:48 https://deb.debian.org/debian bookworm/main amd64 g++-12 amd64 12.2.0-14+deb12u1 [10.7 MB]
+#8 38.28 Get:49 https://deb.debian.org/debian bookworm/main amd64 g++ amd64 4:12.2.0-3 [1356 B]
+#8 38.67 Get:50 https://deb.debian.org/debian bookworm/main amd64 make amd64 4.3-4.1 [396 kB]
+#8 39.31 Get:51 https://deb.debian.org/debian bookworm/main amd64 libdpkg-perl all 1.21.23 [604 kB]
+#8 39.63 Get:52 https://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#8 39.85 Get:53 https://deb.debian.org/debian bookworm/main amd64 dpkg-dev all 1.21.23 [1354 kB]
+#8 40.31 Get:54 https://deb.debian.org/debian bookworm/main amd64 build-essential amd64 12.9 [7704 B]
+#8 40.50 Get:55 https://deb.debian.org/debian bookworm/main amd64 libpkgconf3 amd64 1.8.1-1 [36.1 kB]
+#8 40.70 Get:56 https://deb.debian.org/debian bookworm/main amd64 pkgconf-bin amd64 1.8.1-1 [29.5 kB]
+#8 40.84 Get:57 https://deb.debian.org/debian bookworm/main amd64 pkgconf amd64 1.8.1-1 [25.9 kB]
+#8 40.99 Get:58 https://deb.debian.org/debian bookworm/main amd64 pkg-config amd64 1.8.1-1 [13.7 kB]
+#8 41.34 Get:59 https://deb.debian.org/debian bookworm/main amd64 libtalloc-dev amd64 2.4.0-f2 [59.5 kB]
+#8 41.43 debconf: delaying package configuration, since apt-utils is not installed
+#8 41.45 Fetched 74.3 MB in 33s (2235 kB/s)
+#8 41.47 Selecting previously unselected package perl-modules-5.36.
+#8 41.47 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7614 files and directories currently installed.)
+#8 41.47 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u4_all.deb ...
+#8 41.47 Unpacking perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#8 41.72 Selecting previously unselected package libgdbm6:amd64.
+#8 41.72 Preparing to unpack .../01-libgdbm6_1.23-3_amd64.deb ...
+#8 41.73 Unpacking libgdbm6:amd64 (1.23-3) ...
+#8 41.75 Selecting previously unselected package libgdbm-compat4:amd64.
+#8 41.75 Preparing to unpack .../02-libgdbm-compat4_1.23-3_amd64.deb ...
+#8 41.75 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#8 41.77 Selecting previously unselected package libperl5.36:amd64.
+#8 41.77 Preparing to unpack .../03-libperl5.36_5.36.0-7+deb12u4_amd64.deb ...
+#8 41.77 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#8 42.03 Selecting previously unselected package perl.
+#8 42.03 Preparing to unpack .../04-perl_5.36.0-7+deb12u4_amd64.deb ...
+#8 42.03 Unpacking perl (5.36.0-7+deb12u4) ...
+#8 42.06 Selecting previously unselected package bzip2.
+#8 42.06 Preparing to unpack .../05-bzip2_1.0.8-5+b1_amd64.deb ...
+#8 42.06 Unpacking bzip2 (1.0.8-5+b1) ...
+#8 42.07 Selecting previously unselected package binutils-common:amd64.
+#8 42.07 Preparing to unpack .../06-binutils-common_2.40-2_amd64.deb ...
+#8 42.07 Unpacking binutils-common:amd64 (2.40-2) ...
+#8 42.22 Selecting previously unselected package libbinutils:amd64.
+#8 42.22 Preparing to unpack .../07-libbinutils_2.40-2_amd64.deb ...
+#8 42.22 Unpacking libbinutils:amd64 (2.40-2) ...
+#8 42.27 Selecting previously unselected package libctf-nobfd0:amd64.
+#8 42.27 Preparing to unpack .../08-libctf-nobfd0_2.40-2_amd64.deb ...
+#8 42.27 Unpacking libctf-nobfd0:amd64 (2.40-2) ...
+#8 42.29 Selecting previously unselected package libctf0:amd64.
+#8 42.29 Preparing to unpack .../09-libctf0_2.40-2_amd64.deb ...
+#8 42.29 Unpacking libctf0:amd64 (2.40-2) ...
+#8 42.31 Selecting previously unselected package libgprofng0:amd64.
+#8 42.31 Preparing to unpack .../10-libgprofng0_2.40-2_amd64.deb ...
+#8 42.31 Unpacking libgprofng0:amd64 (2.40-2) ...
+#8 42.37 Selecting previously unselected package libjansson4:amd64.
+#8 42.37 Preparing to unpack .../11-libjansson4_2.14-2_amd64.deb ...
+#8 42.37 Unpacking libjansson4:amd64 (2.14-2) ...
+#8 42.39 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#8 42.39 Preparing to unpack .../12-binutils-x86-64-linux-gnu_2.40-2_amd64.deb ...
+#8 42.39 Unpacking binutils-x86-64-linux-gnu (2.40-2) ...
+#8 42.54 Selecting previously unselected package binutils.
+#8 42.54 Preparing to unpack .../13-binutils_2.40-2_amd64.deb ...
+#8 42.54 Unpacking binutils (2.40-2) ...
+#8 42.56 Selecting previously unselected package libc-dev-bin.
+#8 42.56 Preparing to unpack .../14-libc-dev-bin_2.36-9+deb12u14_amd64.deb ...
+#8 42.56 Unpacking libc-dev-bin (2.36-9+deb12u14) ...
+#8 42.57 Selecting previously unselected package linux-libc-dev:amd64.
+#8 42.57 Preparing to unpack .../15-linux-libc-dev_6.1.190-1_amd64.deb ...
+#8 42.57 Unpacking linux-libc-dev:amd64 (6.1.190-1) ...
+#8 42.67 Selecting previously unselected package libcrypt-dev:amd64.
+#8 42.67 Preparing to unpack .../16-libcrypt-dev_1%3a4.4.33-2_amd64.deb ...
+#8 42.68 Unpacking libcrypt-dev:amd64 (1:4.4.33-2) ...
+#8 42.70 Selecting previously unselected package libkrb5support0:amd64.
+#8 42.70 Preparing to unpack .../17-libkrb5support0_1.20.1-2+deb12u5_amd64.deb ...
+#8 42.70 Unpacking libkrb5support0:amd64 (1.20.1-2+deb12u5) ...
+#8 42.71 Selecting previously unselected package libk5crypto3:amd64.
+#8 42.71 Preparing to unpack .../18-libk5crypto3_1.20.1-2+deb12u5_amd64.deb ...
+#8 42.71 Unpacking libk5crypto3:amd64 (1.20.1-2+deb12u5) ...
+#8 42.73 Selecting previously unselected package libkeyutils1:amd64.
+#8 42.73 Preparing to unpack .../19-libkeyutils1_1.6.3-2_amd64.deb ...
+#8 42.73 Unpacking libkeyutils1:amd64 (1.6.3-2) ...
+#8 42.74 Selecting previously unselected package libkrb5-3:amd64.
+#8 42.74 Preparing to unpack .../20-libkrb5-3_1.20.1-2+deb12u5_amd64.deb ...
+#8 42.74 Unpacking libkrb5-3:amd64 (1.20.1-2+deb12u5) ...
+#8 42.77 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#8 42.77 Preparing to unpack .../21-libgssapi-krb5-2_1.20.1-2+deb12u5_amd64.deb ...
+#8 42.77 Unpacking libgssapi-krb5-2:amd64 (1.20.1-2+deb12u5) ...
+#8 42.79 Selecting previously unselected package libtirpc-common.
+#8 42.79 Preparing to unpack .../22-libtirpc-common_1.3.3+ds-1_all.deb ...
+#8 42.79 Unpacking libtirpc-common (1.3.3+ds-1) ...
+#8 42.80 Selecting previously unselected package libtirpc3:amd64.
+#8 42.80 Preparing to unpack .../23-libtirpc3_1.3.3+ds-1_amd64.deb ...
+#8 42.80 Unpacking libtirpc3:amd64 (1.3.3+ds-1) ...
+#8 42.82 Selecting previously unselected package libnsl2:amd64.
+#8 42.82 Preparing to unpack .../24-libnsl2_1.3.0-2_amd64.deb ...
+#8 42.82 Unpacking libnsl2:amd64 (1.3.0-2) ...
+#8 42.83 Selecting previously unselected package libtirpc-dev:amd64.
+#8 42.83 Preparing to unpack .../25-libtirpc-dev_1.3.3+ds-1_amd64.deb ...
+#8 42.84 Unpacking libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#8 42.86 Selecting previously unselected package libnsl-dev:amd64.
+#8 42.86 Preparing to unpack .../26-libnsl-dev_1.3.0-2_amd64.deb ...
+#8 42.86 Unpacking libnsl-dev:amd64 (1.3.0-2) ...
+#8 42.87 Selecting previously unselected package rpcsvc-proto.
+#8 42.87 Preparing to unpack .../27-rpcsvc-proto_1.4.3-1_amd64.deb ...
+#8 42.87 Unpacking rpcsvc-proto (1.4.3-1) ...
+#8 42.89 Selecting previously unselected package libc6-dev:amd64.
+#8 42.89 Preparing to unpack .../28-libc6-dev_2.36-9+deb12u14_amd64.deb ...
+#8 42.89 Unpacking libc6-dev:amd64 (2.36-9+deb12u14) ...
+#8 43.02 Selecting previously unselected package libisl23:amd64.
+#8 43.03 Preparing to unpack .../29-libisl23_0.25-1.1_amd64.deb ...
+#8 43.03 Unpacking libisl23:amd64 (0.25-1.1) ...
+#8 43.08 Selecting previously unselected package libmpfr6:amd64.
+#8 43.08 Preparing to unpack .../30-libmpfr6_4.2.0-1_amd64.deb ...
+#8 43.08 Unpacking libmpfr6:amd64 (4.2.0-1) ...
+#8 43.11 Selecting previously unselected package libmpc3:amd64.
+#8 43.11 Preparing to unpack .../31-libmpc3_1.3.1-1_amd64.deb ...
+#8 43.12 Unpacking libmpc3:amd64 (1.3.1-1) ...
+#8 43.13 Selecting previously unselected package cpp-12.
+#8 43.13 Preparing to unpack .../32-cpp-12_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.13 Unpacking cpp-12 (12.2.0-14+deb12u1) ...
+#8 43.55 Selecting previously unselected package cpp.
+#8 43.55 Preparing to unpack .../33-cpp_4%3a12.2.0-3_amd64.deb ...
+#8 43.55 Unpacking cpp (4:12.2.0-3) ...
+#8 43.56 Selecting previously unselected package libcc1-0:amd64.
+#8 43.56 Preparing to unpack .../34-libcc1-0_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.57 Unpacking libcc1-0:amd64 (12.2.0-14+deb12u1) ...
+#8 43.58 Selecting previously unselected package libgomp1:amd64.
+#8 43.58 Preparing to unpack .../35-libgomp1_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.58 Unpacking libgomp1:amd64 (12.2.0-14+deb12u1) ...
+#8 43.59 Selecting previously unselected package libitm1:amd64.
+#8 43.59 Preparing to unpack .../36-libitm1_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.60 Unpacking libitm1:amd64 (12.2.0-14+deb12u1) ...
+#8 43.61 Selecting previously unselected package libatomic1:amd64.
+#8 43.61 Preparing to unpack .../37-libatomic1_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.61 Unpacking libatomic1:amd64 (12.2.0-14+deb12u1) ...
+#8 43.62 Selecting previously unselected package libasan8:amd64.
+#8 43.62 Preparing to unpack .../38-libasan8_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.62 Unpacking libasan8:amd64 (12.2.0-14+deb12u1) ...
+#8 43.75 Selecting previously unselected package liblsan0:amd64.
+#8 43.75 Preparing to unpack .../39-liblsan0_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.75 Unpacking liblsan0:amd64 (12.2.0-14+deb12u1) ...
+#8 43.82 Selecting previously unselected package libtsan2:amd64.
+#8 43.82 Preparing to unpack .../40-libtsan2_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.82 Unpacking libtsan2:amd64 (12.2.0-14+deb12u1) ...
+#8 43.95 Selecting previously unselected package libubsan1:amd64.
+#8 43.95 Preparing to unpack .../41-libubsan1_12.2.0-14+deb12u1_amd64.deb ...
+#8 43.95 Unpacking libubsan1:amd64 (12.2.0-14+deb12u1) ...
+#8 44.01 Selecting previously unselected package libquadmath0:amd64.
+#8 44.01 Preparing to unpack .../42-libquadmath0_12.2.0-14+deb12u1_amd64.deb ...
+#8 44.01 Unpacking libquadmath0:amd64 (12.2.0-14+deb12u1) ...
+#8 44.03 Selecting previously unselected package libgcc-12-dev:amd64.
+#8 44.03 Preparing to unpack .../43-libgcc-12-dev_12.2.0-14+deb12u1_amd64.deb ...
+#8 44.03 Unpacking libgcc-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#8 44.16 Selecting previously unselected package gcc-12.
+#8 44.16 Preparing to unpack .../44-gcc-12_12.2.0-14+deb12u1_amd64.deb ...
+#8 44.17 Unpacking gcc-12 (12.2.0-14+deb12u1) ...
+#8 44.66 Selecting previously unselected package gcc.
+#8 44.66 Preparing to unpack .../45-gcc_4%3a12.2.0-3_amd64.deb ...
+#8 44.66 Unpacking gcc (4:12.2.0-3) ...
+#8 44.68 Selecting previously unselected package libstdc++-12-dev:amd64.
+#8 44.68 Preparing to unpack .../46-libstdc++-12-dev_12.2.0-14+deb12u1_amd64.deb ...
+#8 44.68 Unpacking libstdc++-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#8 44.89 Selecting previously unselected package g++-12.
+#8 44.89 Preparing to unpack .../47-g++-12_12.2.0-14+deb12u1_amd64.deb ...
+#8 44.89 Unpacking g++-12 (12.2.0-14+deb12u1) ...
+#8 45.37 Selecting previously unselected package g++.
+#8 45.37 Preparing to unpack .../48-g++_4%3a12.2.0-3_amd64.deb ...
+#8 45.37 Unpacking g++ (4:12.2.0-3) ...
+#8 45.38 Selecting previously unselected package make.
+#8 45.38 Preparing to unpack .../49-make_4.3-4.1_amd64.deb ...
+#8 45.38 Unpacking make (4.3-4.1) ...
+#8 45.41 Selecting previously unselected package libdpkg-perl.
+#8 45.41 Preparing to unpack .../50-libdpkg-perl_1.21.23_all.deb ...
+#8 45.42 Unpacking libdpkg-perl (1.21.23) ...
+#8 45.47 Selecting previously unselected package patch.
+#8 45.47 Preparing to unpack .../51-patch_2.7.6-7_amd64.deb ...
+#8 45.47 Unpacking patch (2.7.6-7) ...
+#8 45.49 Selecting previously unselected package dpkg-dev.
+#8 45.49 Preparing to unpack .../52-dpkg-dev_1.21.23_all.deb ...
+#8 45.49 Unpacking dpkg-dev (1.21.23) ...
+#8 45.56 Selecting previously unselected package build-essential.
+#8 45.56 Preparing to unpack .../53-build-essential_12.9_amd64.deb ...
+#8 45.56 Unpacking build-essential (12.9) ...
+#8 45.58 Selecting previously unselected package libpkgconf3:amd64.
+#8 45.58 Preparing to unpack .../54-libpkgconf3_1.8.1-1_amd64.deb ...
+#8 45.58 Unpacking libpkgconf3:amd64 (1.8.1-1) ...
+#8 45.59 Selecting previously unselected package pkgconf-bin.
+#8 45.59 Preparing to unpack .../55-pkgconf-bin_1.8.1-1_amd64.deb ...
+#8 45.59 Unpacking pkgconf-bin (1.8.1-1) ...
+#8 45.61 Selecting previously unselected package pkgconf:amd64.
+#8 45.61 Preparing to unpack .../56-pkgconf_1.8.1-1_amd64.deb ...
+#8 45.61 Unpacking pkgconf:amd64 (1.8.1-1) ...
+#8 45.62 Selecting previously unselected package pkg-config:amd64.
+#8 45.62 Preparing to unpack .../57-pkg-config_1.8.1-1_amd64.deb ...
+#8 45.63 Unpacking pkg-config:amd64 (1.8.1-1) ...
+#8 45.64 Selecting previously unselected package libtalloc-dev:amd64.
+#8 45.64 Preparing to unpack .../58-libtalloc-dev_2.4.0-f2_amd64.deb ...
+#8 45.64 Unpacking libtalloc-dev:amd64 (2.4.0-f2) ...
+#8 45.66 Setting up libkeyutils1:amd64 (1.6.3-2) ...
+#8 45.66 Setting up libtirpc-common (1.3.3+ds-1) ...
+#8 45.66 Setting up binutils-common:amd64 (2.40-2) ...
+#8 45.66 Setting up linux-libc-dev:amd64 (6.1.190-1) ...
+#8 45.67 Setting up libctf-nobfd0:amd64 (2.40-2) ...
+#8 45.67 Setting up libgomp1:amd64 (12.2.0-14+deb12u1) ...
+#8 45.67 Setting up bzip2 (1.0.8-5+b1) ...
+#8 45.67 Setting up libjansson4:amd64 (2.14-2) ...
+#8 45.67 Setting up libkrb5support0:amd64 (1.20.1-2+deb12u5) ...
+#8 45.68 Setting up perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#8 45.68 Setting up libpkgconf3:amd64 (1.8.1-1) ...
+#8 45.68 Setting up rpcsvc-proto (1.4.3-1) ...
+#8 45.68 Setting up make (4.3-4.1) ...
+#8 45.68 Setting up libmpfr6:amd64 (4.2.0-1) ...
+#8 45.69 Setting up libquadmath0:amd64 (12.2.0-14+deb12u1) ...
+#8 45.69 Setting up libmpc3:amd64 (1.3.1-1) ...
+#8 45.69 Setting up libatomic1:amd64 (12.2.0-14+deb12u1) ...
+#8 45.69 Setting up patch (2.7.6-7) ...
+#8 45.69 Setting up pkgconf-bin (1.8.1-1) ...
+#8 45.70 Setting up libk5crypto3:amd64 (1.20.1-2+deb12u5) ...
+#8 45.70 Setting up libubsan1:amd64 (12.2.0-14+deb12u1) ...
+#8 45.70 Setting up libcrypt-dev:amd64 (1:4.4.33-2) ...
+#8 45.70 Setting up libasan8:amd64 (12.2.0-14+deb12u1) ...
+#8 45.71 Setting up libkrb5-3:amd64 (1.20.1-2+deb12u5) ...
+#8 45.71 Setting up libtsan2:amd64 (12.2.0-14+deb12u1) ...
+#8 45.71 Setting up libbinutils:amd64 (2.40-2) ...
+#8 45.71 Setting up libisl23:amd64 (0.25-1.1) ...
+#8 45.72 Setting up libc-dev-bin (2.36-9+deb12u14) ...
+#8 45.72 Setting up libcc1-0:amd64 (12.2.0-14+deb12u1) ...
+#8 45.72 Setting up liblsan0:amd64 (12.2.0-14+deb12u1) ...
+#8 45.72 Setting up libitm1:amd64 (12.2.0-14+deb12u1) ...
+#8 45.72 Setting up libgdbm6:amd64 (1.23-3) ...
+#8 45.73 Setting up libctf0:amd64 (2.40-2) ...
+#8 45.73 Setting up cpp-12 (12.2.0-14+deb12u1) ...
+#8 45.73 Setting up pkgconf:amd64 (1.8.1-1) ...
+#8 45.73 Setting up libtalloc-dev:amd64 (2.4.0-f2) ...
+#8 45.74 Setting up libgprofng0:amd64 (2.40-2) ...
+#8 45.74 Setting up libgcc-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#8 45.74 Setting up libgssapi-krb5-2:amd64 (1.20.1-2+deb12u5) ...
+#8 45.74 Setting up pkg-config:amd64 (1.8.1-1) ...
+#8 45.75 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#8 45.75 Setting up cpp (4:12.2.0-3) ...
+#8 45.75 Setting up libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#8 45.75 Setting up binutils-x86-64-linux-gnu (2.40-2) ...
+#8 45.76 Setting up libtirpc3:amd64 (1.3.3+ds-1) ...
+#8 45.76 Setting up binutils (2.40-2) ...
+#8 45.76 Setting up perl (5.36.0-7+deb12u4) ...
+#8 45.77 Setting up libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#8 45.77 Setting up gcc-12 (12.2.0-14+deb12u1) ...
+#8 45.78 Setting up libdpkg-perl (1.21.23) ...
+#8 45.78 Setting up libnsl2:amd64 (1.3.0-2) ...
+#8 45.78 Setting up gcc (4:12.2.0-3) ...
+#8 45.79 Setting up dpkg-dev (1.21.23) ...
+#8 45.79 Setting up libnsl-dev:amd64 (1.3.0-2) ...
+#8 45.79 Setting up libc6-dev:amd64 (2.36-9+deb12u14) ...
+#8 45.80 Setting up libstdc++-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#8 45.80 Setting up g++-12 (12.2.0-14+deb12u1) ...
+#8 45.80 Setting up g++ (4:12.2.0-3) ...
+#8 45.81 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+#8 45.81 Setting up build-essential (12.9) ...
+#8 45.81 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#8 45.83 make: Entering directory '/tmp/proot/src'
+#8 45.84 /bin/sh: 1: git: not found
+#8 45.84 /bin/sh: 1: git: not found
+#8 45.84 /bin/sh: 1: git: not found
+#8 45.88   CC	cli/note.o
+#8 45.89   CC	execve/enter.o
+#8 45.91 ./execve/enter.c: In function 'extract_loader':
+#8 45.91 ./execve/enter.c:529:9: warning: 'talloc_autofree_context' is deprecated [-Wdeprecated-declarations]
+#8 45.91   529 |         loader_path = talloc_strdup(talloc_autofree_context(), path);
+#8 45.91       |         ^~~~~~~~~~~
+#8 45.91 In file included from ./execve/enter.c:28:
+#8 45.91 /usr/include/talloc.h:1058:7: note: declared here
+#8 45.91  1058 | void *talloc_autofree_context(void) _DEPRECATED_;
+#8 45.91       |       ^~~~~~~~~~~~~~~~~~~~~~~
+#8 45.92   CC	execve/exit.o
+#8 46.00   CC	execve/shebang.o
+#8 46.01   CC	execve/elf.o
+#8 46.05   CC	execve/ldso.o
+#8 46.07   CC	execve/auxv.o
+#8 46.12   CC	path/binding.o
+#8 46.19   CC	path/glue.o
+#8 46.21 ./path/glue.c: In function 'set_placeholder_destructor':
+#8 46.21 ./path/glue.c:76:9: warning: 'talloc_autofree_context' is deprecated [-Wdeprecated-declarations]
+#8 46.21    76 |         autofreed = talloc_autofree_context();
+#8 46.21       |         ^~~~~~~~~
+#8 46.21 In file included from ./path/glue.c:31:
+#8 46.21 /usr/include/talloc.h:1058:7: note: declared here
+#8 46.21  1058 | void *talloc_autofree_context(void) _DEPRECATED_;
+#8 46.21       |       ^~~~~~~~~~~~~~~~~~~~~~~
+#8 46.23   CC	path/canon.o
+#8 46.26   CC	path/proc.o
+#8 46.29 ./path/proc.c: In function 'readlink_proc':
+#8 46.29 ./path/proc.c:101:25: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-truncation]
+#8 46.29   101 |                         strncpy(result, string, status + 1);    \
+#8 46.29       |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 46.29 ./path/proc.c:107:17: note: in expansion of macro 'SUBSTITUTE'
+#8 46.29   107 |                 SUBSTITUTE(exe, known_tracee->exe);
+#8 46.29       |                 ^~~~~~~~~~
+#8 46.29 ./path/proc.c:97:34: note: length computed here
+#8 46.29    97 |                         status = strlen(string);                \
+#8 46.29       |                                  ^~~~~~~~~~~~~~
+#8 46.29 ./path/proc.c:107:17: note: in expansion of macro 'SUBSTITUTE'
+#8 46.29   107 |                 SUBSTITUTE(exe, known_tracee->exe);
+#8 46.29       |                 ^~~~~~~~~~
+#8 46.29 ./path/proc.c:101:25: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-truncation]
+#8 46.29   101 |                         strncpy(result, string, status + 1);    \
+#8 46.29       |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 46.29 ./path/proc.c:108:17: note: in expansion of macro 'SUBSTITUTE'
+#8 46.29   108 |                 SUBSTITUTE(cwd, known_tracee->fs->cwd);
+#8 46.29       |                 ^~~~~~~~~~
+#8 46.29 ./path/proc.c:97:34: note: length computed here
+#8 46.29    97 |                         status = strlen(string);                \
+#8 46.29       |                                  ^~~~~~~~~~~~~~
+#8 46.29 ./path/proc.c:108:17: note: in expansion of macro 'SUBSTITUTE'
+#8 46.29   108 |                 SUBSTITUTE(cwd, known_tracee->fs->cwd);
+#8 46.29       |                 ^~~~~~~~~~
+#8 46.31   CC	path/temp.o
+#8 46.33 ./path/temp.c: In function 'get_temp_directory':
+#8 46.33 ./path/temp.c:41:9: warning: 'talloc_autofree_context' is deprecated [-Wdeprecated-declarations]
+#8 46.33    41 |         temp_directory = talloc_strdup(talloc_autofree_context(), tmp);
+#8 46.33       |         ^~~~~~~~~~~~~~
+#8 46.33 In file included from ./path/temp.c:9:
+#8 46.33 /usr/include/talloc.h:1058:7: note: declared here
+#8 46.33  1058 | void *talloc_autofree_context(void) _DEPRECATED_;
+#8 46.33       |       ^~~~~~~~~~~~~~~~~~~~~~~
+#8 46.33 ./path/temp.c: In function 'create_temp_name':
+#8 46.33 ./path/temp.c:292:17: warning: 'talloc_autofree_context' is deprecated [-Wdeprecated-declarations]
+#8 46.33   292 |                 context = talloc_autofree_context();
+#8 46.33       |                 ^~~~~~~
+#8 46.33 /usr/include/talloc.h:1058:7: note: declared here
+#8 46.33  1058 | void *talloc_autofree_context(void) _DEPRECATED_;
+#8 46.33       |       ^~~~~~~~~~~~~~~~~~~~~~~
+#8 46.33   CC	syscall/syscall.o
+#8 46.38   CC	syscall/chain.o
+#8 46.38   CC	syscall/enter.o
+#8 46.42   CC	syscall/exit.o
+#8 46.49   CC	syscall/sysnum.o
+#8 46.51   CC	syscall/socket.o
+#8 46.54   CC	syscall/heap.o
+#8 46.54 ./syscall/socket.c: In function 'translate_socketcall_enter':
+#8 46.54 ./syscall/socket.c:148:9: warning: 'strncpy' output may be truncated copying 108 bytes from a string of length 4095 [-Wstringop-truncation]
+#8 46.54   148 |         strncpy(sockaddr.sun_path, host_path, sizeof_path);
+#8 46.54       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 46.56   CC	syscall/rlimit.o
+#8 46.59   CC	tracee/tracee.o
+#8 46.60   CC	tracee/reg.o
+#8 46.66   CC	tracee/event.o
+#8 46.69   CC	ptrace/ptrace.o
+#8 46.78   CC	ptrace/user.o
+#8 46.78   CC	ptrace/wait.o
+#8 46.81   CC	extension/kompat/kompat.o
+#8 46.85   CC	extension/fake_id0/fake_id0.o
+#8 46.86 ./extension/kompat/kompat.c: In function 'parse_utsname':
+#8 46.86 ./extension/kompat/kompat.c:963:17: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-truncation]
+#8 46.86   963 |                 strncpy(config->utsname.release, string, length);
+#8 46.86       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 46.86 In file included from ./extension/kompat/kompat.c:35:
+#8 46.86 ./extension/kompat/kompat.c:962:30: note: length computed here
+#8 46.86   962 |                 length = MIN(strlen(string), sizeof(config->utsname.release) - 1);
+#8 46.86       |                              ^
+#8 46.94   CC	extension/link2symlink/link2symlink.o
+#8 46.99 ./extension/link2symlink/link2symlink.c: In function 'decrement_link_count':
+#8 46.99 ./extension/link2symlink/link2symlink.c:218:17: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-truncation]
+#8 46.99   218 |                 strncpy(new_final, final, strlen(final) - 4);
+#8 46.99       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 46.99 ./extension/link2symlink/link2symlink.c:218:43: note: length computed here
+#8 46.99   218 |                 strncpy(new_final, final, strlen(final) - 4);
+#8 46.99       |                                           ^~~~~~~~~~~~~
+#8 46.99   CC	extension/portmap/portmap.o
+#8 47.01 ./extension/link2symlink/link2symlink.c: In function 'move_and_symlink_path':
+#8 47.01 ./extension/link2symlink/link2symlink.c:139:17: warning: 'strncpy' specified bound depends on the length of the source argument [-Wstringop-truncation]
+#8 47.01   139 |                 strncpy(new_final, final, strlen(final) - 4);
+#8 47.01       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#8 47.01 ./extension/link2symlink/link2symlink.c:139:43: note: length computed here
+#8 47.01   139 |                 strncpy(new_final, final, strlen(final) - 4);
+#8 47.01       |                                           ^~~~~~~~~~~~~
+#8 47.04   CC	extension/portmap/map.o
+#8 47.11   CC	loader/loader.o
+#8 47.11   CC	loader/assembly.o
+#8 47.12   CC	loader/loader-m32.o
+#8 47.13 In file included from ./loader/loader.c:39:
+#8 47.13 ./loader/loader.c: In function '_start':
+#8 47.13 ./loader/assembly-x86_64.h:32:9: warning: listing the stack pointer register 'rsp' in a clobber list is deprecated [-Wdeprecated]
+#8 47.13    32 |         asm volatile (                                          \
+#8 47.13       |         ^~~
+#8 47.13 ./loader/loader.c:261:33: note: in expansion of macro 'BRANCH'
+#8 47.13   261 |                                 BRANCH(stmt->start.stack_pointer, stmt->start.entry_point);
+#8 47.13       |                                 ^~~~~~
+#8 47.13 ./loader/assembly-x86_64.h:32:9: note: the value of the stack pointer after an 'asm' statement must be the same as it was before the statement
+#8 47.13    32 |         asm volatile (                                          \
+#8 47.13       |         ^~~
+#8 47.13 ./loader/loader.c:261:33: note: in expansion of macro 'BRANCH'
+#8 47.13   261 |                                 BRANCH(stmt->start.stack_pointer, stmt->start.entry_point);
+#8 47.13       |                                 ^~~~~~
+#8 47.14 In file included from ./loader/loader.c:43:
+#8 47.14 ./loader/loader.c: In function '_start':
+#8 47.14 ./loader/assembly-x86.h:32:9: warning: listing the stack pointer register 'esp' in a clobber list is deprecated [-Wdeprecated]
+#8 47.14    32 |         asm volatile (                                          \
+#8 47.14       |         ^~~
+#8 47.14 ./loader/loader.c:261:33: note: in expansion of macro 'BRANCH'
+#8 47.14   261 |                                 BRANCH(stmt->start.stack_pointer, stmt->start.entry_point);
+#8 47.14       |                                 ^~~~~~
+#8 47.14 ./loader/assembly-x86.h:32:9: note: the value of the stack pointer after an 'asm' statement must be the same as it was before the statement
+#8 47.14    32 |         asm volatile (                                          \
+#8 47.14       |         ^~~
+#8 47.14 ./loader/loader.c:261:33: note: in expansion of macro 'BRANCH'
+#8 47.14   261 |                                 BRANCH(stmt->start.stack_pointer, stmt->start.entry_point);
+#8 47.14       |                                 ^~~~~~
+#8 47.15   CC	loader/assembly-m32.o
+#8 47.17   LD	loader/loader
+#8 47.17   LD	loader/loader-m32
+#8 47.18   GEN	build.h
+#8 47.18   CC	cli/cli.o
+#8 47.19   CC	cli/proot.o
+#8 47.28   CC	execve/aoxp.o
+#8 47.30   CC	path/path.o
+#8 47.37   CC	syscall/seccomp.o
+#8 47.44   CC	tracee/mem.o
+#8 47.45   CC	extension/extension.o
+#8 47.50   GEN	loader/loader-wrapped.o
+#8 47.50   GEN	loader/loader-m32-wrapped.o
+#8 47.54   LD	proot
+#8 47.56 rm .check_seccomp_filter.o .check_process_vm.o loader.elf .check_seccomp_filter loader-m32.elf .check_process_vm
+#8 47.56 make: Leaving directory '/tmp/proot/src'
+#8 DONE 47.6s
+
+#9 [stage-0 5/5] WORKDIR /work
+#9 DONE 1.5s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.9s done
+#10 writing image sha256:0d2fb14867f4646cd9fd5dea9aec10fad564e944a15ee6980859acbc32df75e9 done
+#10 naming to docker.io/library/pi4-xen-rootfs-builder:bookworm done
+#10 DONE 0.9s
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+systemd-sysv is already the newest version (252.39-1~deb12u2).
+udev is already the newest version (252.39-1~deb12u2).
+openssh-server is already the newest version (1:9.2p1-2+deb12u10).
+iproute2 is already the newest version (6.1.0-3).
+iputils-ping is already the newest version (3:20221126-1+deb12u1).
+procps is already the newest version (2:4.0.2-3).
+util-linux is already the newest version (2.38.1-5+deb12u3).
+kmod is already the newest version (30+20221128-1).
+initramfs-tools is already the newest version (0.142+deb12u3).
+linux-image-arm64 is already the newest version (6.1.190-1).
+libyajl2 is already the newest version (2.1.0-3+deb12u2).
+libaio1 is already the newest version (0.3.113-4).
+libfdt1 is already the newest version (1.6.1-4+b1).
+libpixman-1-0 is already the newest version (0.42.2-1).
+libzstd1 is already the newest version (1.5.4+dfsg2-5).
+liblzma5 is already the newest version (5.4.1-1+deb12u2).
+zlib1g is already the newest version (1:1.2.13.dfsg-1).
+libncurses6 is already the newest version (6.4-4).
+libtinfo6 is already the newest version (6.4-4).
+libnl-3-200 is already the newest version (3.7.0-0.2+b1).
+libnl-route-3-200 is already the newest version (3.7.0-0.2+b1).
+libglib2.0-0 is already the newest version (2.74.6-2+deb12u9).
+libuuid1 is already the newest version (2.38.1-5+deb12u3).
+libbz2-1.0 is already the newest version (1.0.8-5+b1).
+libpng16-16 is already the newest version (1.6.39-2+deb12u6).
+libvdeplug2 is already the newest version (4.0.1-4).
+python3 is already the newest version (3.11.2-1+b1).
+The following NEW packages will be installed:
+  busybox-static
+0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+1 not fully installed or removed.
+Need to get 822 kB of archives.
+After this operation, 1937 kB of additional disk space will be used.
+Get:1 https://deb.debian.org/debian bookworm/main arm64 busybox-static arm64 1:1.35.0-4+deb12u1+b1 [822 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 822 kB in 1s (684 kB/s)
+Selecting previously unselected package busybox-static.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14606 files and directories currently installed.)
+Preparing to unpack .../busybox-static_1%3a1.35.0-4+deb12u1+b1_arm64.deb ...
+Unpacking busybox-static (1:1.35.0-4+deb12u1+b1) ...
+Setting up openssh-server (1:9.2p1-2+deb12u10) ...
+
+Creating config file /etc/ssh/sshd_config with new version
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:Tuoi3F2j6nNdaLDDMV6Dky0XhXxcgiHNJ4gIO/U7epk root@0aa9c7492888 (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:K1j8acwq+xYeUSsOXH2evg31OxO8NDazFe2QTYw3RKQ root@0aa9c7492888 (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:pIgcK4bTALR+Wvl0Rzx9dKT/NVUeIKKR0kUpiUg9BBU root@0aa9c7492888 (ED25519)
+Running in chroot, ignoring request.
+invoke-rc.d: policy-rc.d denied execution of start.
+Created symlink /etc/systemd/system/sshd.service -> /lib/systemd/system/ssh.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/ssh.service -> /lib/systemd/system/ssh.service.
+Setting up busybox-static (1:1.35.0-4+deb12u1+b1) ...
+Processing triggers for initramfs-tools (0.142+deb12u3) ...
+passwd: password changed.
+update-initramfs: Generating /boot/initrd.img-6.1.0-54-arm64
+W: No zstd in /usr/bin:/sbin:/bin, using gzip
+W: Couldn't identify type of root file system for fsck hook
+ldconfig: Can't create temporary cache file /etc/ld.so.cache~: No such file or directory
+PASS: ARM64 Debian rootfs, kernel and initrd prepared; Xen tools and disk export remain separate.

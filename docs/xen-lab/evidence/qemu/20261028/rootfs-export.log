@@ -1,0 +1,15 @@
+e2fsck 1.47.0 (5-Feb-2023)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+guest1: 16574/98304 files (0.1% non-contiguous), 210490/393216 blocks
+e2fsck 1.47.0 (5-Feb-2023)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+dom0: 16834/262144 files (0.1% non-contiguous), 439221/1048576 blocks
+PASS: QEMU Dom0 and guest filesystems exported with matching Xen tools.

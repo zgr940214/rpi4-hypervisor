@@ -1,0 +1,58 @@
+RUNNING: xen_and_dom0_boot
+{
+  "qemu_dump_command": [
+    "qemu-system-aarch64",
+    "-machine",
+    "virt,gic-version=3,virtualization=on,dumpdtb=/work/local/qemu/results/20261028T084517Z/xen.base.dtb",
+    "-cpu",
+    "cortex-a57",
+    "-smp",
+    "2",
+    "-m",
+    "1536",
+    "-display",
+    "none",
+    "-serial",
+    "none",
+    "-monitor",
+    "none",
+    "-nic",
+    "none"
+  ],
+  "uart": "/pl011@9000000",
+  "xen_args": "console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info",
+  "dom0_args": "console=hvc0 earlycon=xenboot root=/dev/vda rw rootwait net.ifnames=0",
+  "modules": [
+    {
+      "kind": "kernel",
+      "path": "/work/local/qemu/Image",
+      "address": 1157627904,
+      "size": 32956352
+    },
+    {
+      "kind": "ramdisk",
+      "path": "/work/local/qemu/initrd.img",
+      "address": 1342177280,
+      "size": 6782733
+    }
+  ]
+}
+PASS: xen_banner: Xen 4.19.0 banner observed from emulated ARM execution
+PASS: xen_and_dom0_boot: dom0 root shell reached on a real console
+RUNNING: dom0_toolstack
+PASS: dom0_toolstack: {'xl_info': 'host                   : pi4-dom0\nrelease                : 6.1.0-54-arm64\nversion                : #1 SMP Debian 6.1.190-1 (2026-10-16)\nmachine                : aarch64\nnr_cpus                : 2\nmax_cpu_id             : 1\nnr_nodes               : 1\ncores_per_socket       : 2\nthreads_per_core       : 1\ncpu_mhz                : 62.500\nhw_caps                : 00000000:00000000:00000000:00000000:00000000:00000000:00000000:00000000\nvirt_caps              : hvm hap vpmu gnttab-v1\narm_sve_vector_length  : 0\ntotal_memory           : 1536\nfree_memory            : 999\nsharing_freed_memory   : 0\nsharing_used_memory    : 0\noutstanding_claims     : 0\nfree_cpus              : 0\nxen_major              : 4\nxen_minor              : 19\nxen_extra              : .0\nxen_version            : 4.19.0\nxen_caps               : xen-3.0-aarch64 xen-3.0-armv7l \nxen_scheduler          : credit2\nxen_pagesize           : 4096\nplatform_params        : virt_start=0x0\nxen_changeset          : Mon Jul 29 18:20:45 2024 +0100 git:026c9fa\nxen_commandline        : console=dtuart dtuart=/pl011@9000000 dom0_mem=512M,max:512M dom0_max_vcpus=2 loglvl=info guest_loglvl=info\ncc_compiler            : aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\ncc_compile_by          : \ncc_compile_domain      : \ncc_compile_date        : Wed Oct 28 07:44:55 UTC 2026\nbuild_id               : 1eab2cddd0654b0c0264b706670f4fba33da8aeb\nxend_config_format     : 4', 'initial_domains': 'Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      57.8'}
+RUNNING: guest1_first_boot_and_writable_root
+PASS: guest1_first_boot_and_writable_root: {'guest_shell': 'aarch64 root shell with writable rootfs', 'domains': 'Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      72.7\nguest1                                       1   256     1     -b----      21.2', 'persisted_file_after_recreate': False}
+RUNNING: dom0_ssh_and_guest_console_reattach
+PASS: dom0_ssh_and_guest_console_reattach: Public-key SSH reached Dom0 and xl console reached the existing guest1 shell
+RUNNING: guest1_pause_resume_and_project_demo
+PASS: guest1_pause_resume_and_project_demo: {'counter_before_pause': 1, 'counter_after_resume': 2, 'same_guest_uuid': '2b211096-8250-402e-aba9-61d24cdc24f7', 'project_demo': 'Paused guest1 (domain 1) for 1 seconds; Dom0 remains usable.\nResumed guest1 (domain 1).', 'measurement': 'Functional pause/resume observation, not precise scheduling latency'}
+RUNNING: guest1_clean_shutdown
+PASS: guest1_clean_shutdown: guest1 shut down and disappeared from the live domain list
+RUNNING: guest1_recreate_and_persistent_root
+PASS: guest1_recreate_and_persistent_root: {'guest_shell': 'aarch64 root shell with writable rootfs', 'domains': 'Name                                        ID   Mem VCPUs\tState\tTime(s)\nDomain-0                                     0   512     2     r-----      93.8\nguest1                                       2   256     1     -b----      20.4', 'persisted_file_after_recreate': True}
+RUNNING: guest1_final_shutdown
+PASS: guest1_final_shutdown: guest1 shut down and disappeared from the live domain list
+PASS: source_disk_unchanged: {'sha256_before_and_after': '2cfb2f7d38476d7bd256adf3d23df321ae38077ba6799838ae84f533703e734e'}
+Report: /work/local/qemu/results/20261028T084517Z/report.json
+COMMAND_EXIT_STATUS=0

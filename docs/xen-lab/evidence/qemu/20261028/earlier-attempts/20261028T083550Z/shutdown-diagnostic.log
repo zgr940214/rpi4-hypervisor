@@ -1,0 +1,26 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+total 4
+-rw------- 1 root root   0 Oct 28 08:36 xen-hotplug.log
+-rw------- 1 root root 195 Oct 28 08:37 xl-guest1.log
+Waiting for domain guest1 (domid 1) to die [pid 401]
+Domain 1 has shut down, reason code 0 0x0
+Action for shutdown reason code 0 is destroy
+Domain 1 needs to be cleaned up: destroying the domain
+Name                                        ID   Mem VCPUs	State	Time(s)   UUID                            Reason-Code	Security Label
+Domain-0                                     0   512     2     r-----      82.6 00000000-0000-0000-0000-000000000000        -                -
+guest1                                       1   256     1     --ps--      23.9 396bad2d-655a-48a4-9f28-979ca797a951        0                -
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  3 08:36 ?        00:00:07 /sbin/init
+root           2       0  0 08:36 ?        00:00:00 [kthreadd]
+root           3       2  0 08:36 ?        00:00:00 [rcu_gp]
+root           4       2  0 08:36 ?        00:00:00 [rcu_par_gp]
+root           5       2  0 08:36 ?        00:00:00 [slub_flushwq]
+root           6       2  0 08:36 ?        00:00:00 [netns]
+root           7       2  0 08:36 ?        00:00:00 [kworker/0:0-events]
+root           8       2  0 08:36 ?        00:00:00 [kworker/0:0H-events_highpri]
+root           9       2  0 08:36 ?        00:00:01 [kworker/u4:0-flush-254:0]
+root          10       2  0 08:36 ?        00:00:00 [mm_percpu_wq]
+root          11       2  0 08:36 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          12       2  0 08:36 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          13       2  0 08:36 ?        00:00:00 [ksoftirqd/0]
+root          14       2  0 08:36 ?        00:00:00 [rcu_sched]

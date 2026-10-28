@@ -18,6 +18,11 @@ with pathlib.Path(os.environ['FAKE_LOG']).open('a') as log:
 command = args[0]
 if command == 'list':
     if s.get('list_error'): sys.exit(4)
+    s['list_count'] = s.get('list_count', 0) + 1
+    if s.get('running_on_recheck') and s['list_count'] == 2:
+        s['state'] = 'r-----'
+    if s.get('replace_on_recheck') and s['list_count'] == 2:
+        s['uuid'] = 'ffeeddcc-bbaa-9988-7766-554433221100'
     print('Name ID Mem VCPUs State Time(s) UUID Reason-Code Security Label')
     print('Domain-0 0 512 4 r----- 2.0 00000000-0000-0000-0000-000000000000')
     if s.get('exists', True):
@@ -84,6 +89,17 @@ class TargetTools(unittest.TestCase):
 
     def test_originally_paused_is_untouched(self):
         self.configure(state='--p---')
+        self.assertNotEqual(self.run_tool('guest1-pause-demo').returncode, 0)
+        self.assertEqual(self.mutations(), [])
+
+    def test_normal_running_blocked_transition_is_allowed(self):
+        self.configure(running_on_recheck=True)
+        result = self.run_tool('guest1-pause-demo')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.mutations(), ['pause 7', 'unpause 7'])
+
+    def test_replacement_before_pause_is_rejected(self):
+        self.configure(replace_on_recheck=True)
         self.assertNotEqual(self.run_tool('guest1-pause-demo').returncode, 0)
         self.assertEqual(self.mutations(), [])
 

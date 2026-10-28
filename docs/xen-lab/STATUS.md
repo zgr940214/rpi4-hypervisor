@@ -4,13 +4,15 @@
 
 ## 当前结论
 
-**基础工程和构建容器已建立；完整镜像构建被官方源站访问权限阻塞，尚无可烧录产物。**
+**QEMU 完整运行验证通过：10/10 项检查通过，31/31 条目标命令退出码为 0，验证脚本退出码为 0。** [原始报告](evidence/qemu/20261028/report.json)记录了 Xen 4.19.0、Dom0、guest1、SSH、磁盘写入、暂停恢复与重新创建。运行时间为 2026-10-28 16:45–16:47（北京时间）。
+
+QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的完整 Yocto 镜像构建仍被官方源站访问阻塞，尚无可烧录产物。详见 [运行方式与范围](QEMU.md)。
 
 | 检查 | 状态 | 证据或原因 |
 | --- | --- | --- |
 | Ubuntu 构建容器 | PASS | `docs/xen-lab/evidence/container-build.log`，实际 Docker 构建成功 |
 | 容器重复构建 | PASS | `docs/xen-lab/evidence/container-repeat.log`，缓存复用、退出码 0 |
-| 目标管理、凭据和镜像检查工具测试 | PASS | `docs/xen-lab/evidence/tool-tests.log`，47 项执行、0 失败、0 跳过，退出码 0 |
+| 目标管理、凭据和镜像检查工具测试 | PASS | [最新记录](evidence/qemu/20261028/helper-tests.log)，49 项执行、0 失败、0 跳过，退出码 0；包含暂停前正常调度状态变化与实例替换的回归检查 |
 | 干净 Git 检出验证 | PASS | 从提交 `a63c6316c8a0455a874ab3f4ec03af15e1e113fb` 本地 clone，凭据初始化、47 项容器测试通过且无跟踪文件变化；`docs/xen-lab/evidence/clean-checkout-test.log` |
 | layer 词法及内嵌 Python 静态检查 | PASS | `docs/xen-lab/evidence/layer-static-check.log`，14 个 metadata 文件；不等同于完整 BitBake 解析 |
 | 保存的云安装脚本演练 | PASS | `docs/xen-lab/evidence/cloud-install.log`，容器缓存复用、凭据复用和 46 项测试通过 |
@@ -20,7 +22,9 @@
 | 完整 BitBake 解析/provider 和任务图 | BLOCKED | 缺少上述正式 layer，尚未运行完整解析 |
 | 目标整卡构建 | BLOCKED | 前置依赖获取失败；未启动 BitBake 编译任务，不能报告构建通过 |
 | 真实镜像静态检查 | NOT_RUN | 尚未生成 `.wic`/`.img`；工具的测试镜像不代表交付镜像 |
-| QEMU 系统启动 | NOT_RUN | 尚无匹配的仿真镜像和系统启动日志，详见 `QEMU.md` |
+| QEMU Xen、Dom0 与 guest1 启动 | PASS | [报告](evidence/qemu/20261028/report.json)与[串口日志](evidence/qemu/20261028/serial.log)：`xl info/list/dmesg`、ARM64 guest root shell、磁盘写入均通过 |
+| QEMU SSH、暂停恢复、关机及重复创建 | PASS | [SSH 控制台日志](evidence/qemu/20261028/ssh-guest-console.log)与上述报告：公钥登录、计数停止/恢复、Dom0 保持响应、同一 guest UUID、重建后文件保留均通过 |
+| QEMU 源磁盘只读保护 | PASS | `-snapshot` 运行前后 Dom0 原始磁盘 SHA256 相同，见报告 `source_disk_unchanged` |
 | Pi4 实机启动、Dom0 SSH、guest shell、暂停恢复及重复创建 | NOT_RUN | 没有已连接的板卡，也尚无镜像 |
 
 ## 工程起点与选择
@@ -55,6 +59,7 @@
 - `scripts/target/`：避免重复创建 guest、有限计数及带清理逻辑的暂停恢复。采用 domain ID 和 UUID 联合核对；CLI 检查与操作仍要求没有其他并发 domain 管理者。
 - `scripts/check-image.py`、`export-image.py`：成功构建后导出字节一致的 raw `.img`，进行只读结构/文件/配置检查并生成版本与 SHA256 证据。
 - `tests/`：运行工具错误路径和真实文件系统读取测试；不把合成测试产物当作启动镜像。
+- `scripts/qemu.sh`、`scripts/qemu/`、`container/qemu.Dockerfile`：构建独立的 ARM64 Xen/Debian 验证系统，在 QEMU 上实际执行项目的 guest 管理脚本，保留串口、SSH 和逐项结果。
 
 ## 仓库交付
 

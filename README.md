@@ -2,9 +2,20 @@
 
 目标：Raspberry Pi 4（AArch64）启动 Xen、Dom0 Linux，并由操作者手动启动唯一的 Linux guest `guest1`。本期不包含 TEE、安全启动或加密服务。
 
-**当前状态：基础工程已建立，工具测试通过；官方 Yocto 源站的网络访问阻塞了完整构建，目前没有可烧录镜像，也没有 Xen 系统启动通过的结论。** 以 [状态和验证记录](docs/xen-lab/STATUS.md) 为准。
+**QEMU 实测通过：Xen 4.19.0 → Dom0 → guest1，SSH、guest shell、磁盘写入、暂停恢复、正常关机与重新创建均通过，10/10 项检查通过。** [原始报告](docs/xen-lab/evidence/qemu/20261028/report.json)。QEMU 使用独立的 Debian ARM64 验证镜像；Pi4 的 Yocto 整卡镜像仍被官方源站访问阻塞，尚无可烧录产物。详见 [状态和验证记录](docs/xen-lab/STATUS.md)。
 
-## 构建
+## QEMU 验证
+
+在 Linux 或 WSL2 的 Linux 文件系统中安装 Docker Engine、Git 和 Python 3，从仓库根目录执行：
+
+```sh
+./scripts/qemu.sh prepare
+./scripts/qemu.sh validate
+```
+
+`prepare` 构建 ARM64 Xen、匹配的工具栈和独立的 Debian 验证磁盘；`validate` 在 QEMU `virt` 上启动真实的 Xen、Dom0 和 guest1，检查 SSH、控制台、磁盘写入、暂停恢复、关机与再次创建，并保存日志和 JSON 报告。使用 TCG，不需要宿主支持 ARM KVM。详情、产物路径和验证范围见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。
+
+## Pi4 镜像构建
 
 在 Linux 或 WSL2 的 Linux 文件系统中工作，安装 Docker Engine 后，从仓库根目录执行：
 
@@ -84,4 +95,4 @@ python3 scripts/check-image.py \
 
 检查器不挂载磁盘、不写入原镜像，检查结果不能代替 Pi4 实机启动、SSH、guest shell 或暂停恢复验证。
 
-已执行的测试原始记录随仓库存放在 `docs/xen-lab/evidence/`。QEMU 可覆盖的范围及尚未执行的步骤见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。
+已执行的测试原始记录随仓库存放在 `docs/xen-lab/evidence/`。QEMU 命令和运行证据见 [QEMU 验证说明](docs/xen-lab/QEMU.md)。

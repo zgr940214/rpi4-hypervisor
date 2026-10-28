@@ -76,10 +76,19 @@ esac
 # Recheck both the identity and state just before the mutation. Other domain
 # managers must remain idle: a CLI check and mutation cannot be made atomic.
 current=$(guest1_snapshot) || exit 1
-[ "$current" = "$snapshot" ] || {
+set -- $current
+[ "$1" = "$domain_id" ] && [ "$2" = "$domain_uuid" ] || {
     guest1_error 'guest1 changed before pause; no change made'
     exit 1
 }
+# Running and blocked are normal scheduler transitions between two queries.
+# Recheck unsafe lifecycle states without treating those transitions as a new VM.
+case "$3" in
+    ??p???|???s??|?????d)
+        guest1_error 'guest1 is no longer safe to pause; no change made'
+        exit 1
+        ;;
+esac
 # Arm cleanup before xl runs, including interruption or an ambiguous xl error.
 pause_requested=1
 xl pause "$domain_id"
