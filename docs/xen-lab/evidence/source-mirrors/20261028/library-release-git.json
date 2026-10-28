@@ -274,6 +274,34 @@
           "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_install: Succeeded",
           "NOTE: recipe glib-2.0-native-1_2.78.6-r0: task do_populate_sysroot: Succeeded"
         ]
+      },
+      "yocto_target_validation": {
+        "machine": "raspberrypi4-64",
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "observations": [
+          {
+            "source_log": "local/logs/build-mirrors-9.log",
+            "line": "NOTE: recipe glib-2.0-1_2.78.6-r0: task do_configure: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-9.log",
+            "line": "NOTE: recipe glib-2.0-1_2.78.6-r0: task do_compile: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe glib-2.0-1_2.78.6-r0: task do_install: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe glib-2.0-1_2.78.6-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
       }
     },
     {
@@ -410,6 +438,34 @@
           "NOTE: recipe libxml2-native-2.12.10-r0: task do_install: Succeeded",
           "NOTE: recipe libxml2-native-2.12.10-r0: task do_populate_sysroot: Succeeded"
         ]
+      },
+      "yocto_target_validation": {
+        "machine": "raspberrypi4-64",
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "observations": [
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe libxml2-2.12.10-r0: task do_configure: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe libxml2-2.12.10-r0: task do_compile: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe libxml2-2.12.10-r0: task do_install: Succeeded"
+          },
+          {
+            "source_log": "local/logs/build-mirrors-10.log",
+            "line": "NOTE: recipe libxml2-2.12.10-r0: task do_populate_sysroot: Succeeded"
+          }
+        ]
       }
     },
     {
@@ -460,7 +516,29 @@
         }
       ],
       "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
-      "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source"
+      "autoreconf": "passed using pi4-xen-qemu:4.19 with transient Ubuntu gettext/autopoint tools; generation used local source",
+      "yocto_target_validation": {
+        "machine": "raspberrypi4-64",
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "source_log": "local/logs/build-mirrors-11.log",
+        "observations": [
+          "NOTE: recipe kbd-2.6.4-r0: task do_configure: Succeeded",
+          "NOTE: recipe kbd-2.6.4-r0: task do_compile: Succeeded",
+          "NOTE: recipe kbd-2.6.4-r0: task do_install: Succeeded",
+          "NOTE: recipe kbd-2.6.4-r0: task do_populate_sysroot: Succeeded"
+        ]
+      },
+      "generated_release_inputs": {
+        "parser": "bison-native generates parser.c/parser.h from the pinned parser.y",
+        "ABOUT-NLS": "copied from Yocto gettext-native; normally supplied by excluded autopoint",
+        "config.rpath": "Yocto autotools supplies it in the declared config auxiliary directory"
+      }
     },
     {
       "package": "pciutils",
@@ -483,7 +561,24 @@
           "result": "passed"
         }
       ],
-      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification."
+      "validation_scope": "Source provenance, original license hashes, sequential application of existing recipe patches, and local checkout only. Not a claim of completed Yocto image build or runtime verification.",
+      "yocto_target_validation": {
+        "machine": "raspberrypi4-64",
+        "result": "passed",
+        "tasks": [
+          "do_configure",
+          "do_compile",
+          "do_install",
+          "do_populate_sysroot"
+        ],
+        "source_log": "local/logs/build-mirrors-10.log",
+        "observations": [
+          "NOTE: recipe pciutils-3.11.1-r0: task do_configure: Succeeded",
+          "NOTE: recipe pciutils-3.11.1-r0: task do_compile: Succeeded",
+          "NOTE: recipe pciutils-3.11.1-r0: task do_install: Succeeded",
+          "NOTE: recipe pciutils-3.11.1-r0: task do_populate_sysroot: Succeeded"
+        ]
+      }
     },
     {
       "package": "popt",
