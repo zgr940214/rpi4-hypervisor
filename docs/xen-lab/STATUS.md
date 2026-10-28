@@ -11,6 +11,7 @@
 | Ubuntu 构建容器 | PASS | `docs/xen-lab/evidence/container-build.log`，实际 Docker 构建成功 |
 | 容器重复构建 | PASS | `docs/xen-lab/evidence/container-repeat.log`，缓存复用、退出码 0 |
 | 目标管理、凭据和镜像检查工具测试 | PASS | `docs/xen-lab/evidence/tool-tests.log`，47 项执行、0 失败、0 跳过，退出码 0 |
+| 干净 Git 检出验证 | PASS | 从提交 `a63c6316c8a0455a874ab3f4ec03af15e1e113fb` 本地 clone，凭据初始化、47 项容器测试通过且无跟踪文件变化；`docs/xen-lab/evidence/clean-checkout-test.log` |
 | layer 词法及内嵌 Python 静态检查 | PASS | `docs/xen-lab/evidence/layer-static-check.log`，14 个 metadata 文件；不等同于完整 BitBake 解析 |
 | 保存的云安装脚本演练 | PASS | `docs/xen-lab/evidence/cloud-install.log`，容器缓存复用、凭据复用和 46 项测试通过 |
 | 凭据生成和复用 | PASS | 本地检查确认重复运行不改变凭据、公私钥匹配、密码与 SHA512 哈希匹配、文件权限 0600；不记录秘密内容 |
